@@ -1,0 +1,33 @@
+node_modules/
+.DS_Store
+*.log
+.env
+.env.local
+.hf/
+
+# Full generated data stays local or on Hugging Face
+dataset/
+public-dataset/
+reviews/
+review-app/
+scripts/
+schema/
+
+# Internal planning and private release notes
+docs/BRAND_REVIEW.md
+docs/CONTRIBUTING.md
+docs/EXPORT_REPORT.md
+docs/HUGGING_FACE_PRIVATE_UPLOAD.md
+docs/LAUNCH_CHECKLIST.md
+docs/LICENSE_RECOMMENDATION.md
+docs/METADATA_REVIEW.md
+docs/METADATA_VALIDATION.md
+docs/QA_GUIDE.md
+docs/QA_SAMPLE_REPORT.md
+docs/RELEASE_RISK_REVIEW.md
+docs/REPLACEMENT_CANDIDATES.md
+docs/SOURCE_AUDIT.md
+
+# Generated packages and caches
+*.tgz
+.cache/

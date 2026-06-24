@@ -1,0 +1,70 @@
+# Ingredient Atlas
+
+![Ingredient Atlas contact sheet](launch/assets/readme-hero.png)
+
+Open ingredient images and metadata for recipe, grocery, pantry, and meal-planning apps.
+
+I made this because recipe apps usually need a simple thing that is weirdly annoying to find: a clean image for garlic, lemon juice, cassava flour, frozen broccoli, and hundreds of other ingredients, with stable slugs and metadata attached.
+
+Ingredient Atlas is incubated by Beets, but it is app-agnostic. You can use it without Beets, private services, or an API key.
+
+## What You Get
+
+- 1,673 ingredient records
+- 5,019 image files
+- WebP thumbnails and PNG fallbacks
+- stable slugs, aliases, categories, checksums, and review status
+- JSONL, Parquet, full manifest, and compact manifest
+- public-safe metadata with internal IDs and prompts redacted
+
+## Quick Use
+
+```js
+import { getIngredientImage } from "ingredient-atlas"
+
+const garlic = getIngredientImage("garlic", {
+  baseUrl: "https://huggingface.co/datasets/ionicam/ingredient-atlas/resolve/main",
+})
+
+console.log(garlic.url)
+```
+
+Or use the dataset files directly from Hugging Face:
+
+https://huggingface.co/datasets/ionicam/ingredient-atlas
+
+## Install
+
+The npm package is prepared but not published yet.
+
+```bash
+npm install ingredient-atlas
+```
+
+Until npm is live, use the Hugging Face files directly.
+
+## Why This Is Different
+
+Most food image datasets are for model training, dish classification, product labels, or nutrition research. Ingredient Atlas is for app builders. The images are isolated ingredient assets with metadata that is useful in UI.
+
+## License
+
+- Code: MIT
+- Metadata: CC0-1.0
+- AI-generated images: CC0-1.0
+
+Release approvals are tracked in `docs/PUBLISHING.md`.
+
+## AI And Nutrition Notes
+
+Images are AI-generated and reviewed on a best-effort basis. They are useful, not perfect.
+
+Nutrition metadata is best-effort ingredient metadata. Some values are USDA-backed, while others are approximate or missing. Do not use it as medical, allergy, or dietary advice.
+
+## Corrections
+
+Found a wrong image, wrong form, bad alias, or missing ingredient? Open an issue after the repo is public, or email hello@ionmesca.com.
+
+## Relationship To Beets
+
+Ingredient Atlas was incubated by Beets. Beets supplied the starting taxonomy, image generation workflow, and review pipeline. Ingredient Atlas is meant to be useful to anyone building food software.

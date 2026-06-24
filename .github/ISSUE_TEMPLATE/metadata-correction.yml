@@ -1,0 +1,24 @@
+name: Metadata correction
+description: Report a bad alias, category, nutrition source, or metadata field.
+labels: ["metadata"]
+body:
+  - type: input
+    id: slug
+    attributes:
+      label: Ingredient slug
+      description: Example: lemon-juice
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: What is wrong or missing?
+      description: Be specific. A screenshot or source link helps.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What should it show or say instead?
+    validations:
+      required: false

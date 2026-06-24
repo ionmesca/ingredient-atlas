@@ -1,0 +1,11 @@
+cff-version: 1.2.0
+title: Ingredient Atlas
+message: "If Ingredient Atlas helps your project, please cite it."
+type: dataset
+authors:
+  - family-names: Mesca
+    given-names: Ion
+repository-code: https://github.com/ionmesca/ingredient-atlas
+url: https://huggingface.co/datasets/ionicam/ingredient-atlas
+license: CC0-1.0
+abstract: "Open ingredient images and metadata for recipe, grocery, pantry, and meal-planning apps. Incubated by Beets."

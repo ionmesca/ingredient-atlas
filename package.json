@@ -1,0 +1,65 @@
+{
+  "name": "ingredient-atlas",
+  "version": "0.1.0",
+  "description": "Open ingredient images and metadata for recipe, grocery, pantry, and meal-planning apps.",
+  "type": "module",
+  "license": "MIT",
+  "types": "./src/index.d.ts",
+  "engines": {
+    "node": ">=18"
+  },
+  "author": {
+    "name": "Ion Mesca",
+    "email": "hello@ionmesca.com",
+    "url": "https://github.com/ionmesca"
+  },
+  "homepage": "https://huggingface.co/datasets/ionicam/ingredient-atlas",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ionmesca/ingredient-atlas.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ionmesca/ingredient-atlas/issues",
+    "email": "hello@ionmesca.com"
+  },
+  "keywords": [
+    "ingredients",
+    "food",
+    "recipe",
+    "grocery",
+    "pantry",
+    "meal-planning",
+    "dataset",
+    "images",
+    "metadata",
+    "huggingface"
+  ],
+  "sideEffects": false,
+  "files": [
+    "data/",
+    "src/",
+    "README.md",
+    "LICENSE",
+    "LICENSE-DATA.md"
+  ],
+  "exports": {
+    ".": {
+      "types": "./src/index.d.ts",
+      "default": "./src/index.js"
+    }
+  },
+  "scripts": {
+    "smoke": "node examples/javascript.mjs && python3 examples/python.py",
+    "pack:check": "npm pack --dry-run",
+    "test": "npm run smoke"
+  },
+  "devDependencies": {
+    "@types/node": "^24.10.1",
+    "convex": "^1.41.0",
+    "parquetjs-lite": "^0.8.7",
+    "sharp": "^0.34.5"
+  },
+  "overrides": {
+    "ws": "^8.21.0"
+  }
+}

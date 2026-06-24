@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ingredient Atlas demo</title>
+  <style>
+    body { margin: 0; font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; color: #111827; background: #f8fafc; }
+    main { max-width: 1080px; margin: 0 auto; padding: 56px 24px; }
+    h1 { font-size: 56px; line-height: 1; margin: 0 0 16px; letter-spacing: 0; }
+    p { color: #475569; font-size: 20px; line-height: 1.5; max-width: 720px; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 18px; margin-top: 36px; }
+    .card { background: white; border: 1px solid #e5e7eb; border-radius: 8px; padding: 18px; }
+    .card img { width: 100%; aspect-ratio: 1 / 1; object-fit: contain; }
+    .card h2 { font-size: 18px; margin: 12px 0 6px; }
+    code { color: #166534; font-size: 14px; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Ingredient Atlas</h1>
+    <p>A tiny local demo using real public-dataset image files. The public release points these paths at Hugging Face hosted files.</p>
+    <section class="grid"><article class="card">
+        <img src="../../public-dataset/images/webp/512/produce/garlic.webp" alt="Garlic" />
+        <h2>Garlic</h2>
+        <code>garlic</code>
+      </article>
+<article class="card">
+        <img src="../../public-dataset/images/webp/512/produce/lemon-juice.webp" alt="Lemon Juice" />
+        <h2>Lemon Juice</h2>
+        <code>lemon-juice</code>
+      </article>
+<article class="card">
+        <img src="../../public-dataset/images/webp/512/beverages/ground-coffee.webp" alt="Ground Coffee" />
+        <h2>Ground Coffee</h2>
+        <code>ground-coffee</code>
+      </article>
+<article class="card">
+        <img src="../../public-dataset/images/webp/512/pantry/cassava-flour.webp" alt="Cassava Flour" />
+        <h2>Cassava Flour</h2>
+        <code>cassava-flour</code>
+      </article>
+<article class="card">
+        <img src="../../public-dataset/images/webp/512/frozen/frozen-broccoli.webp" alt="Frozen Broccoli" />
+        <h2>Frozen Broccoli</h2>
+        <code>frozen-broccoli</code>
+      </article>
+<article class="card">
+        <img src="../../public-dataset/images/webp/512/seafood/tuna-in-oil.webp" alt="Tuna in Oil" />
+        <h2>Tuna in Oil</h2>
+        <code>tuna-in-oil</code>
+      </article></section>
+  </main>
+</body>
+</html>

@@ -44,18 +44,21 @@ The simple line:
 - send thoughtful notes to relevant builders;
 - reply fast when people find issues.
 
-## Launch Sequence
+## Completed Public Release Steps
 
-1. Make Hugging Face public.
-2. Make GitHub public.
-3. Publish npm package.
-4. Create GitHub release.
-5. Post Show HN.
-6. Post r/datasets.
-7. Post a Hugging Face community note.
-8. Send 10 direct outreach notes.
-9. Wait 24 to 48 hours, reply, fix obvious issues.
-10. Send the next 10 notes.
+1. Hugging Face dataset is public.
+2. GitHub repository is public.
+3. npm package is published.
+4. GitHub release is published.
+
+## Manual Launch Sequence
+
+1. Post Show HN.
+2. Post r/datasets if the subreddit rules allow it.
+3. Post a Hugging Face community note.
+4. Send 10 direct outreach notes.
+5. Wait 24 to 48 hours, reply, fix obvious issues.
+6. Send the next 10 notes.
 
 ## Measure
 

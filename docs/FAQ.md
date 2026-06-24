@@ -6,7 +6,7 @@ No. It is a dataset and a small resolver package. You can download files or use 
 
 ## Can I use this in a commercial app?
 
-The public release direction is CC0-1.0 for metadata and images. Check the final dataset card before using it.
+Yes. The dataset metadata and AI-generated images are released under CC0-1.0. The resolver package code is MIT licensed.
 
 ## Are the images AI-generated?
 
@@ -26,4 +26,4 @@ Open Food Facts is excellent for packaged products. Ingredient Atlas is for clea
 
 ## How do I report a bad image?
 
-Open an issue after launch or email hello@ionmesca.com.
+Open a GitHub issue or email hello@ionmesca.com.

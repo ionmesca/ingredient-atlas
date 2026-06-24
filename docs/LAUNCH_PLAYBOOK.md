@@ -2,22 +2,26 @@
 
 The goal is not a loud launch. The goal is to get Ingredient Atlas in front of people who are already building recipe, grocery, pantry, and meal-planning tools.
 
-## Best Sequence
+## Completed Public Release Steps
 
-1. Make Hugging Face public.
-2. Make GitHub public.
-3. Publish npm.
-4. Post Show HN.
-5. Post r/datasets.
-6. Post a short Hugging Face community note.
-7. Send 10 direct notes to maintainers.
-8. Wait, reply, fix issues.
-9. Send another 10 notes only if the first batch gets useful replies.
+1. Hugging Face dataset is public.
+2. GitHub repository is public.
+3. npm package is published.
+4. GitHub release is published.
+
+## Manual Posting Sequence
+
+1. Post Show HN.
+2. Post r/datasets if the subreddit rules allow it.
+3. Post a short Hugging Face community note.
+4. Send 10 direct notes to maintainers.
+5. Wait, reply, fix issues.
+6. Send another 10 notes only if the first batch gets useful replies.
 
 ## What To Say
 
 - I made this because ingredient images are annoying to source cleanly.
-- It is CC0 direction.
+- Metadata and AI-generated images are CC0-1.0.
 - It is useful for recipe apps and pantry tools.
 - It is AI-generated and reviewed, but not perfect.
 - Corrections are welcome.

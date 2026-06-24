@@ -24,3 +24,5 @@ The images are AI-generated and reviewed on a best-effort basis. The dataset is 
 I would love feedback on the dataset card, metadata fields, missing aliases, and any ingredient images that look wrong.
 
 Dataset: https://huggingface.co/datasets/ionicam/ingredient-atlas
+Repo: https://github.com/ionmesca/ingredient-atlas
+npm: https://www.npmjs.com/package/ingredient-atlas

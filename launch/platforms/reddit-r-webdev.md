@@ -30,3 +30,4 @@ const image = getIngredientImage("garlic", {
 The images are AI-generated and reviewed on a best-effort basis. The project is open to corrections.
 
 Repo: https://github.com/ionmesca/ingredient-atlas
+npm: https://www.npmjs.com/package/ingredient-atlas

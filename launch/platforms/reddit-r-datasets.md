@@ -33,3 +33,4 @@ Links:
 
 - Dataset: https://huggingface.co/datasets/ionicam/ingredient-atlas
 - Repo: https://github.com/ionmesca/ingredient-atlas
+- npm: https://www.npmjs.com/package/ingredient-atlas

@@ -27,6 +27,7 @@ The images are AI-generated and reviewed on a best-effort basis. The point is to
 
 Dataset: https://huggingface.co/datasets/ionicam/ingredient-atlas
 Repo: https://github.com/ionmesca/ingredient-atlas
+npm: https://www.npmjs.com/package/ingredient-atlas
 
 If you look at it, I would be especially interested in whether the slug and metadata shape fits your project.
 

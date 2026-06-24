@@ -27,7 +27,7 @@ Include the ingredient slug when you can. A screenshot helps.
 
 ## Pull Requests
 
-Small docs and metadata pull requests are welcome after public launch. For image replacements, open an issue first so we can keep provenance and review notes clean.
+Small docs and metadata pull requests are welcome. For image replacements, open an issue first so we can keep provenance and review notes clean.
 
 ## Tone
 

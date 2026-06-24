@@ -19,3 +19,4 @@ Reply strategy: Reply with examples and ask builders what fields they need.
 
 5/ Dataset: https://huggingface.co/datasets/ionicam/ingredient-atlas
 Repo: https://github.com/ionmesca/ingredient-atlas
+npm: https://www.npmjs.com/package/ingredient-atlas

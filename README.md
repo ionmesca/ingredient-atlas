@@ -8,6 +8,12 @@ I made this because recipe apps usually need a simple thing that is weirdly anno
 
 Ingredient Atlas is incubated by Beets, but it is app-agnostic. You can use it without Beets, private services, or an API key.
 
+Links:
+
+- Dataset: https://huggingface.co/datasets/ionicam/ingredient-atlas
+- npm: https://www.npmjs.com/package/ingredient-atlas
+- Issues: https://github.com/ionmesca/ingredient-atlas/issues
+
 ## What You Get
 
 - 1,673 ingredient records
@@ -18,6 +24,14 @@ Ingredient Atlas is incubated by Beets, but it is app-agnostic. You can use it w
 - public-safe metadata with internal IDs and prompts redacted
 
 ## Quick Use
+
+Install the tiny resolver package:
+
+```bash
+npm install ingredient-atlas
+```
+
+Then resolve an ingredient to the public Hugging Face image files:
 
 ```js
 import { getIngredientImage } from "ingredient-atlas"
@@ -32,16 +46,6 @@ console.log(garlic.url)
 Or use the dataset files directly from Hugging Face:
 
 https://huggingface.co/datasets/ionicam/ingredient-atlas
-
-## Install
-
-The npm package is prepared but not published yet.
-
-```bash
-npm install ingredient-atlas
-```
-
-Until npm is live, use the Hugging Face files directly.
 
 ## Why This Is Different
 
@@ -63,7 +67,7 @@ Nutrition metadata is best-effort ingredient metadata. Some values are USDA-back
 
 ## Corrections
 
-Found a wrong image, wrong form, bad alias, or missing ingredient? Open an issue after the repo is public, or email hello@ionmesca.com.
+Found a wrong image, wrong form, bad alias, or missing ingredient? Open a GitHub issue or email hello@ionmesca.com.
 
 ## Relationship To Beets
 

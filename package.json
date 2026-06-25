@@ -1,6 +1,6 @@
 {
   "name": "ingredient-atlas",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Open ingredient images and metadata for recipe, grocery, pantry, and meal-planning apps.",
   "type": "module",
   "license": "MIT",

@@ -47,6 +47,16 @@ Or use the dataset files directly from Hugging Face:
 
 https://huggingface.co/datasets/ionicam/ingredient-atlas
 
+## Catalog Helpers
+
+The current public dataset is ingredient-first. The resolver also has catalog-named helpers so future records can include food, household, personal-care, and pet shopping items without changing the lookup shape:
+
+```js
+import { getCatalogItemImage } from "ingredient-atlas"
+
+const garlic = getCatalogItemImage("garlic", { kind: "food" })
+```
+
 ## Why This Is Different
 
 Most food image datasets are for model training, dish classification, product labels, or nutrition research. Ingredient Atlas is for app builders. The images are isolated ingredient assets with metadata that is useful in UI.

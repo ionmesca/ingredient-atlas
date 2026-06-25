@@ -1,8 +1,10 @@
 export type IngredientImageVariant = "original" | "webp512" | "png512";
+export type CatalogItemKind = "food" | "household" | "personal" | "pet";
 
 export type IngredientImageResult = {
   slug: string;
   displayName: string;
+  kind: CatalogItemKind;
   category: string;
   path: string;
   url?: string;
@@ -32,6 +34,7 @@ export type IngredientImageAsset = {
 export type IngredientRecord = {
   slug: string;
   displayName: string;
+  kind?: CatalogItemKind;
   category: string;
   images: Record<IngredientImageVariant, IngredientImageAsset>;
   license: IngredientImageResult["license"];
@@ -47,8 +50,15 @@ export type IngredientAtlasManifest = {
 
 export function loadManifest(): IngredientAtlasManifest;
 export function normalizeIngredientSlug(value: unknown): string;
+export function normalizeCatalogSlug(value: unknown): string;
 export function getIngredientImage(
   value: unknown,
-  options?: { variant?: IngredientImageVariant; baseUrl?: string },
+  options?: { variant?: IngredientImageVariant; baseUrl?: string; kind?: CatalogItemKind },
+): IngredientImageResult | null;
+export function getCatalogItemImage(
+  value: unknown,
+  options?: { variant?: IngredientImageVariant; baseUrl?: string; kind?: CatalogItemKind },
 ): IngredientImageResult | null;
 export function listIngredientImages(): IngredientRecord[];
+export function listCatalogItemImages(options?: { kind?: CatalogItemKind }): IngredientRecord[];
+export function listCatalogKinds(): CatalogItemKind[];

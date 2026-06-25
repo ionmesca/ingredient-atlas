@@ -1,0 +1,173 @@
+action,kind,slug,displayName,category,subcategory,source,targetSlug,targetSlugs,metadataPolicy
+alias-only,food,greek-yoghurt,Greek Yoghurt,dairy,alias,beets-shopping-history,greek-yogurt,,map to existing public food record; no new image
+alias-only,food,cooking-olive-oil,Cooking Olive Oil,pantry,alias,beets-shopping-history,olive-oil,,map to existing public food record; no new image
+alias-only,food,good-olive-oil,Good Olive Oil,pantry,alias,beets-shopping-history,olive-oil,,map to existing public food record; no new image
+alias-only,food,heavy-whipping-cream,Heavy Whipping Cream,dairy,alias,beets-shopping-history,heavy-cream,,map to existing public food record; no new image
+generate-image,food,thin-sliced-cheese,Thin Sliced Cheese,dairy,cheese,beets-shopping-history,,,food nutrition allowed when source-backed; otherwise best-effort with caution
+generate-image,food,cotija-cheese,Cotija Cheese,dairy,cheese,beets-shopping-history,,,food nutrition allowed when source-backed; otherwise best-effort with caution
+generate-image,food,beans,Beans,legumes,general,beets-shopping-history,,,food nutrition allowed when source-backed; otherwise best-effort with caution
+generate-image,food,beef-strips,Beef Strips,meat,cut meat,beets-shopping-history,,,food nutrition allowed when source-backed; otherwise best-effort with caution
+generate-image,food,brown-mushrooms,Brown Mushrooms,produce,mushrooms,beets-shopping-history,,,food nutrition allowed when source-backed; otherwise best-effort with caution
+review-only,personal,castor-oil,Castor Oil,personal,ambiguous,beets-shopping-history,,,do not generate until manually resolved
+generate-image,food,chocolate-bunnies,Chocolate Bunnies,bakery,seasonal sweets,beets-shopping-history,,,food nutrition allowed when source-backed; otherwise best-effort with caution
+generate-image,food,chocolate-chips,Chocolate Chips,pantry,baking,beets-shopping-history,,,food nutrition allowed when source-backed; otherwise best-effort with caution
+generate-image,food,coffee-beans,Coffee Beans,beverages,coffee,beets-shopping-history,,,food nutrition allowed when source-backed; otherwise best-effort with caution
+generate-image,food,dry-cottage-cheese,Dry Cottage Cheese,dairy,cheese,beets-shopping-history,,,food nutrition allowed when source-backed; otherwise best-effort with caution
+review-only,food,dry-spices,Dry Spices,spices,ambiguous,beets-shopping-history,,,do not generate until manually resolved
+generate-image,food,elbow-macaroni,Elbow Macaroni,grains,pasta,beets-shopping-history,,,food nutrition allowed when source-backed; otherwise best-effort with caution
+generate-image,food,falafel,Falafel,frozen,prepared food,beets-shopping-history,,,food nutrition allowed when source-backed; otherwise best-effort with caution
+generate-image,food,fish-sticks,Fish Sticks,seafood,prepared seafood,beets-shopping-history,,,food nutrition allowed when source-backed; otherwise best-effort with caution
+generate-image,food,frozen-fries,Frozen Fries,frozen,frozen potatoes,beets-shopping-history,,,food nutrition allowed when source-backed; otherwise best-effort with caution
+generate-image,food,frozen-salmon-patties,Frozen Salmon Patties,seafood,prepared seafood,beets-shopping-history,,,food nutrition allowed when source-backed; otherwise best-effort with caution
+generate-image,food,frozen-vegetables,Frozen Vegetables,frozen,mixed vegetables,beets-shopping-history,,,food nutrition allowed when source-backed; otherwise best-effort with caution
+review-only,food,fruit,Fruit,produce,ambiguous,beets-shopping-history,,,do not generate until manually resolved
+review-only,food,fruits,Fruits,produce,ambiguous,beets-shopping-history,,,do not generate until manually resolved
+generate-image,food,melon,Melon,produce,fruit,beets-shopping-history,,,food nutrition allowed when source-backed; otherwise best-effort with caution
+generate-image,food,mild-salsa,Mild Salsa,condiments,salsa,beets-shopping-history,,,food nutrition allowed when source-backed; otherwise best-effort with caution
+generate-image,food,mini-mozzarella-balls,Mini Mozzarella Balls,dairy,cheese,beets-shopping-history,,,food nutrition allowed when source-backed; otherwise best-effort with caution
+generate-image,food,mini-sausages,Mini Sausages,meat,sausage,beets-shopping-history,,,food nutrition allowed when source-backed; otherwise best-effort with caution
+review-only,food,mixed-fruits,Mixed Fruits,produce,ambiguous,beets-shopping-history,,,do not generate until manually resolved
+generate-image,food,milk-snack-cakes,Milk Snack Cakes,snacks,packaged snack without brand styling,beets-shopping-history,,,food nutrition allowed when source-backed; otherwise best-effort with caution
+generate-image,food,pelmeni,Pelmeni,frozen,dumplings,beets-shopping-history,,,food nutrition allowed when source-backed; otherwise best-effort with caution
+generate-image,food,pineapple-juice,Pineapple Juice,beverages,juice,beets-shopping-history,,,food nutrition allowed when source-backed; otherwise best-effort with caution
+generate-image,food,bear-shaped-potato-snacks,Bear-Shaped Potato Snacks,snacks,chips,beets-shopping-history,,,food nutrition allowed when source-backed; otherwise best-effort with caution
+generate-image,food,pomelo,Pomelo,produce,citrus,beets-shopping-history,,,food nutrition allowed when source-backed; otherwise best-effort with caution
+generate-image,food,sandwich-meat,Sandwich Meat,meat,deli meat,beets-shopping-history,,,food nutrition allowed when source-backed; otherwise best-effort with caution
+generate-image,food,small-sausages,Small Sausages,meat,sausages,beets-shopping-history,,,food nutrition allowed when source-backed; otherwise best-effort with caution
+generate-image,food,soup-greens,Soup Greens,produce,vegetable mix,beets-shopping-history,,,food nutrition allowed when source-backed; otherwise best-effort with caution
+generate-image,food,spring-mix-salad-greens,Spring Mix Salad Greens,produce,leafy greens,beets-shopping-history,,,food nutrition allowed when source-backed; otherwise best-effort with caution
+generate-image,food,star-sprinkles,Star Sprinkles,pantry,baking decoration,beets-shopping-history,,,food nutrition allowed when source-backed; otherwise best-effort with caution
+generate-image,food,steak-seasoning,Steak Seasoning,spices,seasoning blend,beets-shopping-history,,,food nutrition allowed when source-backed; otherwise best-effort with caution
+generate-image,food,sweet-popcorn,Sweet Popcorn,snacks,popcorn,beets-shopping-history,,,food nutrition allowed when source-backed; otherwise best-effort with caution
+review-only,food,syrup,Syrup,pantry,ambiguous,beets-shopping-history,,,do not generate until manually resolved
+generate-image,food,taco-seasoning,Taco Seasoning,spices,seasoning blend,beets-shopping-history,,,food nutrition allowed when source-backed; otherwise best-effort with caution
+generate-image,food,toast,Toast,bakery,bread,beets-shopping-history,,,food nutrition allowed when source-backed; otherwise best-effort with caution
+generate-image,food,trail-mix,Trail Mix,snacks,snack mix,beets-shopping-history,,,food nutrition allowed when source-backed; otherwise best-effort with caution
+generate-image,food,pre-cooked-potatoes,Pre-Cooked Potatoes,produce,potatoes,beets-shopping-history,,,food nutrition allowed when source-backed; otherwise best-effort with caution
+split-before-generation,food,cotija-cheese-or-parmesan,Cotija Cheese Or Parmesan,dairy,compound item,beets-shopping-history,,cotija-cheese|parmesan-cheese,split into atomic records before image generation
+split-before-generation,food,frozen-peas-and-carrots,Frozen Peas And Carrots,frozen,compound item,beets-shopping-history,,frozen-peas|carrot,split into atomic records before image generation
+split-before-generation,food,ground-beef-pork-mix,Ground Beef/Pork Mix,meat,compound item,beets-shopping-history,,ground-beef|ground-pork,split into atomic records before image generation
+split-before-generation,food,half-and-half-or-cream,Half And Half Or Cream,dairy,compound item,beets-shopping-history,,half-and-half|cream,split into atomic records before image generation
+split-before-generation,food,salt-and-pepper,Salt And Pepper,spices,compound item,beets-shopping-history,,salt|black-pepper,split into atomic records before image generation
+generate-image,household,clothes-disinfectant,Clothes Disinfectant,household,laundry,beets-shopping-history,,,omit food nutrient fields; no medical claims; generic public name only
+generate-image,household,bathroom-spray,Bathroom Spray,household,cleaning,beets-shopping-history,,,omit food nutrient fields; no medical claims; generic public name only
+generate-image,personal,cleanser,Cleanser,personal,skin care,beets-shopping-history,,,omit food nutrient fields; no medical claims; generic public name only
+generate-image,pet,dental-sticks,Dental Sticks,pet,pet care,beets-shopping-history,,,omit food nutrient fields; no medical claims; generic public name only
+generate-image,household,diapers,Diapers,household,baby,beets-shopping-history,,,omit food nutrient fields; no medical claims; generic public name only
+generate-image,household,freezer-bags,Freezer Bags,household,kitchen supplies,beets-shopping-history,,,omit food nutrient fields; no medical claims; generic public name only
+generate-image,household,kids-bowls,Kids Bowls,household,child care,beets-shopping-history,,,omit food nutrient fields; no medical claims; generic public name only
+generate-image,personal,kids-shampoo,Kids Shampoo,personal,child care,beets-shopping-history,,,omit food nutrient fields; no medical claims; generic public name only
+generate-image,personal,kids-toothpaste,Kids Toothpaste,personal,child care,beets-shopping-history,,,omit food nutrient fields; no medical claims; generic public name only
+generate-image,personal,night-magnesium,Night Magnesium,personal,supplements,beets-shopping-history,,,omit food nutrient fields; no medical claims; generic public name only
+generate-image,household,pacifiers,Pacifiers,household,baby,beets-shopping-history,,,omit food nutrient fields; no medical claims; generic public name only
+generate-image,household,paper-towels,Paper Towels,household,paper goods,beets-shopping-history,,,omit food nutrient fields; no medical claims; generic public name only
+generate-image,personal,infant-paracetamol,Infant Paracetamol,personal,medicine,beets-shopping-history,,,omit food nutrient fields; no medical claims; generic public name only
+generate-image,personal,pigment-cream,Pigment Cream,personal,skin care,beets-shopping-history,,,omit food nutrient fields; no medical claims; generic public name only
+generate-image,household,hand-soap,Hand Soap,household,cleaning,beets-shopping-history,,,omit food nutrient fields; no medical claims; generic public name only
+generate-image,personal,shampoo,Shampoo,personal,hair care,beets-shopping-history,,,omit food nutrient fields; no medical claims; generic public name only
+generate-image,household,small-toy,Small Toy,household,child care,beets-shopping-history,,,omit food nutrient fields; no medical claims; generic public name only
+generate-image,household,tissues,Tissues,household,paper goods,beets-shopping-history,,,omit food nutrient fields; no medical claims; generic public name only
+generate-image,household,toilet-paper,Toilet Paper,household,paper goods,beets-shopping-history,,,omit food nutrient fields; no medical claims; generic public name only
+generate-image,personal,travel-toothpaste,Travel Toothpaste,personal,oral care,beets-shopping-history,,,omit food nutrient fields; no medical claims; generic public name only
+generate-image,personal,vitamin-c,Vitamin C,personal,supplements,beets-shopping-history,,,omit food nutrient fields; no medical claims; generic public name only
+generate-image,personal,wax-strips,Wax Strips,personal,personal care,beets-shopping-history,,,omit food nutrient fields; no medical claims; generic public name only
+generate-image,household,all-purpose-cleaner,All-Purpose Cleaner,household,cleaning,assumed-non-food-seed,,,omit food nutrient fields; no medical claims; generic public name only
+generate-image,household,glass-cleaner,Glass Cleaner,household,cleaning,assumed-non-food-seed,,,omit food nutrient fields; no medical claims; generic public name only
+generate-image,household,toilet-bowl-cleaner,Toilet Bowl Cleaner,household,cleaning,assumed-non-food-seed,,,omit food nutrient fields; no medical claims; generic public name only
+generate-image,household,disinfecting-wipes,Disinfecting Wipes,household,cleaning,assumed-non-food-seed,,,omit food nutrient fields; no medical claims; generic public name only
+generate-image,household,disinfectant-spray,Disinfectant Spray,household,cleaning,assumed-non-food-seed,,,omit food nutrient fields; no medical claims; generic public name only
+generate-image,household,floor-cleaner,Floor Cleaner,household,cleaning,assumed-non-food-seed,,,omit food nutrient fields; no medical claims; generic public name only
+generate-image,household,wood-polish,Wood Polish,household,cleaning,assumed-non-food-seed,,,omit food nutrient fields; no medical claims; generic public name only
+generate-image,household,limescale-remover,Limescale Remover,household,cleaning,assumed-non-food-seed,,,omit food nutrient fields; no medical claims; generic public name only
+generate-image,household,oven-cleaner,Oven Cleaner,household,cleaning,assumed-non-food-seed,,,omit food nutrient fields; no medical claims; generic public name only
+generate-image,household,dish-soap,Dish Soap,household,dish care,assumed-non-food-seed,,,omit food nutrient fields; no medical claims; generic public name only
+generate-image,household,dishwasher-tablets,Dishwasher Tablets,household,dish care,assumed-non-food-seed,,,omit food nutrient fields; no medical claims; generic public name only
+generate-image,household,dishwasher-rinse-aid,Dishwasher Rinse Aid,household,dish care,assumed-non-food-seed,,,omit food nutrient fields; no medical claims; generic public name only
+generate-image,household,dishwasher-salt,Dishwasher Salt,household,dish care,assumed-non-food-seed,,,omit food nutrient fields; no medical claims; generic public name only
+generate-image,household,sponges,Sponges,household,cleaning tools,assumed-non-food-seed,,,omit food nutrient fields; no medical claims; generic public name only
+generate-image,household,scrub-brushes,Scrub Brushes,household,cleaning tools,assumed-non-food-seed,,,omit food nutrient fields; no medical claims; generic public name only
+generate-image,household,microfiber-cloths,Microfiber Cloths,household,cleaning tools,assumed-non-food-seed,,,omit food nutrient fields; no medical claims; generic public name only
+generate-image,household,trash-bags,Trash Bags,household,storage and bags,assumed-non-food-seed,,,omit food nutrient fields; no medical claims; generic public name only
+generate-image,household,recycling-bags,Recycling Bags,household,storage and bags,assumed-non-food-seed,,,omit food nutrient fields; no medical claims; generic public name only
+generate-image,household,sandwich-bags,Sandwich Bags,household,storage and bags,assumed-non-food-seed,,,omit food nutrient fields; no medical claims; generic public name only
+generate-image,household,aluminum-foil,Aluminum Foil,household,kitchen supplies,assumed-non-food-seed,,,omit food nutrient fields; no medical claims; generic public name only
+generate-image,household,parchment-paper,Parchment Paper,household,kitchen supplies,assumed-non-food-seed,,,omit food nutrient fields; no medical claims; generic public name only
+generate-image,household,plastic-wrap,Plastic Wrap,household,kitchen supplies,assumed-non-food-seed,,,omit food nutrient fields; no medical claims; generic public name only
+generate-image,household,coffee-filters,Coffee Filters,household,kitchen supplies,assumed-non-food-seed,,,omit food nutrient fields; no medical claims; generic public name only
+generate-image,household,laundry-detergent,Laundry Detergent,household,laundry,assumed-non-food-seed,,,omit food nutrient fields; no medical claims; generic public name only
+generate-image,household,fabric-softener,Fabric Softener,household,laundry,assumed-non-food-seed,,,omit food nutrient fields; no medical claims; generic public name only
+generate-image,household,stain-remover,Stain Remover,household,laundry,assumed-non-food-seed,,,omit food nutrient fields; no medical claims; generic public name only
+generate-image,household,oxygen-bleach,Oxygen Bleach,household,laundry,assumed-non-food-seed,,,omit food nutrient fields; no medical claims; generic public name only
+generate-image,household,washing-machine-cleaner,Washing Machine Cleaner,household,laundry,assumed-non-food-seed,,,omit food nutrient fields; no medical claims; generic public name only
+generate-image,household,dryer-sheets,Dryer Sheets,household,laundry,assumed-non-food-seed,,,omit food nutrient fields; no medical claims; generic public name only
+generate-image,household,lint-roller,Lint Roller,household,laundry,assumed-non-food-seed,,,omit food nutrient fields; no medical claims; generic public name only
+generate-image,household,clothespins,Clothespins,household,laundry,assumed-non-food-seed,,,omit food nutrient fields; no medical claims; generic public name only
+generate-image,household,liquid-hand-soap,Liquid Hand Soap,household,cleaning,assumed-non-food-seed,,,omit food nutrient fields; no medical claims; generic public name only
+generate-image,personal,hand-sanitizer,Hand Sanitizer,personal,hygiene,assumed-non-food-seed,,,omit food nutrient fields; no medical claims; generic public name only
+generate-image,household,air-freshener,Air Freshener,household,home care,assumed-non-food-seed,,,omit food nutrient fields; no medical claims; generic public name only
+generate-image,household,drain-cleaner,Drain Cleaner,household,cleaning,assumed-non-food-seed,,,omit food nutrient fields; no medical claims; generic public name only
+generate-image,household,rubber-gloves,Rubber Gloves,household,cleaning tools,assumed-non-food-seed,,,omit food nutrient fields; no medical claims; generic public name only
+generate-image,household,mop-heads,Mop Heads,household,cleaning tools,assumed-non-food-seed,,,omit food nutrient fields; no medical claims; generic public name only
+generate-image,household,broom-refills,Broom Refills,household,cleaning tools,assumed-non-food-seed,,,omit food nutrient fields; no medical claims; generic public name only
+generate-image,household,dustpan,Dustpan,household,cleaning tools,assumed-non-food-seed,,,omit food nutrient fields; no medical claims; generic public name only
+generate-image,household,storage-bins,Storage Bins,household,storage and bags,assumed-non-food-seed,,,omit food nutrient fields; no medical claims; generic public name only
+generate-image,personal,conditioner,Conditioner,personal,hair care,assumed-non-food-seed,,,omit food nutrient fields; no medical claims; generic public name only
+generate-image,personal,body-wash,Body Wash,personal,hygiene,assumed-non-food-seed,,,omit food nutrient fields; no medical claims; generic public name only
+generate-image,personal,bar-soap,Bar Soap,personal,hygiene,assumed-non-food-seed,,,omit food nutrient fields; no medical claims; generic public name only
+generate-image,personal,toothbrushes,Toothbrushes,personal,oral care,assumed-non-food-seed,,,omit food nutrient fields; no medical claims; generic public name only
+generate-image,personal,dental-floss,Dental Floss,personal,oral care,assumed-non-food-seed,,,omit food nutrient fields; no medical claims; generic public name only
+generate-image,personal,mouthwash,Mouthwash,personal,oral care,assumed-non-food-seed,,,omit food nutrient fields; no medical claims; generic public name only
+generate-image,personal,deodorant,Deodorant,personal,hygiene,assumed-non-food-seed,,,omit food nutrient fields; no medical claims; generic public name only
+generate-image,personal,face-wash,Face Wash,personal,skin care,assumed-non-food-seed,,,omit food nutrient fields; no medical claims; generic public name only
+generate-image,personal,moisturizer,Moisturizer,personal,skin care,assumed-non-food-seed,,,omit food nutrient fields; no medical claims; generic public name only
+generate-image,personal,sunscreen,Sunscreen,personal,skin care,assumed-non-food-seed,,,omit food nutrient fields; no medical claims; generic public name only
+generate-image,personal,lip-balm,Lip Balm,personal,skin care,assumed-non-food-seed,,,omit food nutrient fields; no medical claims; generic public name only
+generate-image,personal,cotton-swabs,Cotton Swabs,personal,personal care,assumed-non-food-seed,,,omit food nutrient fields; no medical claims; generic public name only
+generate-image,personal,cotton-pads,Cotton Pads,personal,personal care,assumed-non-food-seed,,,omit food nutrient fields; no medical claims; generic public name only
+generate-image,personal,razors,Razors,personal,personal care,assumed-non-food-seed,,,omit food nutrient fields; no medical claims; generic public name only
+generate-image,personal,shaving-cream,Shaving Cream,personal,personal care,assumed-non-food-seed,,,omit food nutrient fields; no medical claims; generic public name only
+generate-image,personal,hair-gel,Hair Gel,personal,hair care,assumed-non-food-seed,,,omit food nutrient fields; no medical claims; generic public name only
+generate-image,personal,hair-ties,Hair Ties,personal,hair care,assumed-non-food-seed,,,omit food nutrient fields; no medical claims; generic public name only
+generate-image,personal,feminine-pads,Feminine Pads,personal,period care,assumed-non-food-seed,,,omit food nutrient fields; no medical claims; generic public name only
+generate-image,personal,tampons,Tampons,personal,period care,assumed-non-food-seed,,,omit food nutrient fields; no medical claims; generic public name only
+generate-image,personal,panty-liners,Panty Liners,personal,period care,assumed-non-food-seed,,,omit food nutrient fields; no medical claims; generic public name only
+generate-image,personal,makeup-remover,Makeup Remover,personal,skin care,assumed-non-food-seed,,,omit food nutrient fields; no medical claims; generic public name only
+generate-image,personal,nail-clippers,Nail Clippers,personal,personal care,assumed-non-food-seed,,,omit food nutrient fields; no medical claims; generic public name only
+generate-image,personal,nail-polish-remover,Nail Polish Remover,personal,personal care,assumed-non-food-seed,,,omit food nutrient fields; no medical claims; generic public name only
+generate-image,personal,contact-lens-solution,Contact Lens Solution,personal,eye care,assumed-non-food-seed,,,omit food nutrient fields; no medical claims; generic public name only
+generate-image,personal,saline-spray,Saline Spray,personal,medicine,assumed-non-food-seed,,,omit food nutrient fields; no medical claims; generic public name only
+generate-image,personal,bandages,Bandages,personal,first aid,assumed-non-food-seed,,,omit food nutrient fields; no medical claims; generic public name only
+generate-image,personal,antiseptic-cream,Antiseptic Cream,personal,first aid,assumed-non-food-seed,,,omit food nutrient fields; no medical claims; generic public name only
+generate-image,personal,pain-reliever,Pain Reliever,personal,medicine,assumed-non-food-seed,,,omit food nutrient fields; no medical claims; generic public name only
+generate-image,personal,fever-reducer,Fever Reducer,personal,medicine,assumed-non-food-seed,,,omit food nutrient fields; no medical claims; generic public name only
+generate-image,personal,thermometer-covers,Thermometer Covers,personal,medicine,assumed-non-food-seed,,,omit food nutrient fields; no medical claims; generic public name only
+generate-image,personal,hand-cream,Hand Cream,personal,skin care,assumed-non-food-seed,,,omit food nutrient fields; no medical claims; generic public name only
+generate-image,personal,body-lotion,Body Lotion,personal,skin care,assumed-non-food-seed,,,omit food nutrient fields; no medical claims; generic public name only
+generate-image,household,baby-wipes,Baby Wipes,household,baby,assumed-non-food-seed,,,omit food nutrient fields; no medical claims; generic public name only
+generate-image,personal,diaper-cream,Diaper Cream,personal,baby,assumed-non-food-seed,,,omit food nutrient fields; no medical claims; generic public name only
+generate-image,personal,baby-shampoo,Baby Shampoo,personal,baby,assumed-non-food-seed,,,omit food nutrient fields; no medical claims; generic public name only
+generate-image,household,bottle-nipples,Bottle Nipples,household,baby,assumed-non-food-seed,,,omit food nutrient fields; no medical claims; generic public name only
+generate-image,personal,baby-lotion,Baby Lotion,personal,baby,assumed-non-food-seed,,,omit food nutrient fields; no medical claims; generic public name only
+generate-image,household,training-pants,Training Pants,household,baby,assumed-non-food-seed,,,omit food nutrient fields; no medical claims; generic public name only
+generate-image,household,baby-laundry-detergent,Baby Laundry Detergent,household,baby,assumed-non-food-seed,,,omit food nutrient fields; no medical claims; generic public name only
+generate-image,household,teething-rings,Teething Rings,household,baby,assumed-non-food-seed,,,omit food nutrient fields; no medical claims; generic public name only
+generate-image,personal,child-toothbrushes,Child Toothbrushes,personal,child care,assumed-non-food-seed,,,omit food nutrient fields; no medical claims; generic public name only
+generate-image,household,bath-toys,Bath Toys,household,child care,assumed-non-food-seed,,,omit food nutrient fields; no medical claims; generic public name only
+generate-image,pet,dog-food,Dog Food,pet,pet food,assumed-non-food-seed,,,omit food nutrient fields; no medical claims; generic public name only
+generate-image,pet,cat-food,Cat Food,pet,pet food,assumed-non-food-seed,,,omit food nutrient fields; no medical claims; generic public name only
+generate-image,pet,cat-litter,Cat Litter,pet,pet care,assumed-non-food-seed,,,omit food nutrient fields; no medical claims; generic public name only
+generate-image,pet,dog-treats,Dog Treats,pet,pet food,assumed-non-food-seed,,,omit food nutrient fields; no medical claims; generic public name only
+generate-image,pet,cat-treats,Cat Treats,pet,pet food,assumed-non-food-seed,,,omit food nutrient fields; no medical claims; generic public name only
+generate-image,pet,pet-waste-bags,Pet Waste Bags,pet,pet care,assumed-non-food-seed,,,omit food nutrient fields; no medical claims; generic public name only
+generate-image,pet,pet-shampoo,Pet Shampoo,pet,pet care,assumed-non-food-seed,,,omit food nutrient fields; no medical claims; generic public name only
+generate-image,pet,flea-comb,Flea Comb,pet,pet care,assumed-non-food-seed,,,omit food nutrient fields; no medical claims; generic public name only
+generate-image,pet,pet-wipes,Pet Wipes,pet,pet care,assumed-non-food-seed,,,omit food nutrient fields; no medical claims; generic public name only
+generate-image,pet,pet-bowls,Pet Bowls,pet,pet supplies,assumed-non-food-seed,,,omit food nutrient fields; no medical claims; generic public name only
+generate-image,pet,aquarium-filter-cartridges,Aquarium Filter Cartridges,pet,pet supplies,assumed-non-food-seed,,,omit food nutrient fields; no medical claims; generic public name only
+generate-image,household,batteries,Batteries,household,home utility,assumed-non-food-seed,,,omit food nutrient fields; no medical claims; generic public name only
+generate-image,household,light-bulbs,Light Bulbs,household,home utility,assumed-non-food-seed,,,omit food nutrient fields; no medical claims; generic public name only
+generate-image,household,extension-cord,Extension Cord,household,home utility,assumed-non-food-seed,,,omit food nutrient fields; no medical claims; generic public name only
+generate-image,household,painter-tape,Painter Tape,household,home utility,assumed-non-food-seed,,,omit food nutrient fields; no medical claims; generic public name only
+generate-image,household,super-glue,Super Glue,household,home utility,assumed-non-food-seed,,,omit food nutrient fields; no medical claims; generic public name only
+generate-image,household,packing-tape,Packing Tape,household,home utility,assumed-non-food-seed,,,omit food nutrient fields; no medical claims; generic public name only
+generate-image,household,zip-ties,Zip Ties,household,home utility,assumed-non-food-seed,,,omit food nutrient fields; no medical claims; generic public name only

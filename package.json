@@ -51,6 +51,8 @@
   "scripts": {
     "smoke": "node examples/javascript.mjs && python3 examples/python.py",
     "pack:check": "npm pack --dry-run",
+    "catalog:prepare": "node scripts/prepare-catalog-expansion.mjs",
+    "catalog:validate": "node scripts/validate-catalog-expansion.mjs",
     "test": "npm run smoke"
   },
   "devDependencies": {

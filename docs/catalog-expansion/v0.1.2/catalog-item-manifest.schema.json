@@ -1,0 +1,207 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ingredient-atlas.local/schema/catalog-item-manifest.schema.json",
+  "title": "Ingredient Atlas Catalog Item Manifest",
+  "type": "object",
+  "required": ["schemaVersion", "generatedAt", "name", "records"],
+  "properties": {
+    "schemaVersion": { "type": "string" },
+    "generatedAt": { "type": "string", "format": "date-time" },
+    "name": { "type": "string" },
+    "description": { "type": "string" },
+    "records": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/record" }
+    }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "record": {
+      "type": "object",
+      "required": [
+        "id",
+        "slug",
+        "displayName",
+        "kind",
+        "category",
+        "images",
+        "license",
+        "provenance",
+        "review",
+        "metadata"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string", "pattern": "^ia_[a-z0-9_-]+$" },
+        "slug": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" },
+        "displayName": { "type": "string", "minLength": 1 },
+        "kind": {
+          "type": "string",
+          "enum": ["food", "household", "personal", "pet"]
+        },
+        "category": { "type": "string", "minLength": 1 },
+        "subcategory": { "type": ["string", "null"] },
+        "aliases": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": { "type": "string", "minLength": 1 }
+        },
+        "aliasesDe": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": { "type": "string", "minLength": 1 }
+        },
+        "images": {
+          "type": "object",
+          "required": ["original", "webp512", "png512"],
+          "additionalProperties": false,
+          "properties": {
+            "original": { "$ref": "#/$defs/imageFile" },
+            "webp512": { "$ref": "#/$defs/imageFile" },
+            "png512": { "$ref": "#/$defs/imageFile" }
+          }
+        },
+        "license": {
+          "type": "object",
+          "required": ["status", "metadata", "images"],
+          "additionalProperties": false,
+          "properties": {
+            "status": { "type": "string", "enum": ["candidate", "public", "restricted"] },
+            "metadata": { "type": "string" },
+            "images": { "type": "string" },
+            "code": { "type": "string" },
+            "notice": { "type": "string" }
+          }
+        },
+        "provenance": {
+          "type": "object",
+          "required": ["incubatedBy", "aiGenerated", "source"],
+          "additionalProperties": false,
+          "properties": {
+            "incubatedBy": { "type": "string" },
+            "aiGenerated": { "type": "boolean" },
+            "source": { "type": "string" },
+            "sourceDatasetVersion": { "type": "string" }
+          }
+        },
+        "review": {
+          "type": "object",
+          "required": ["status", "publicNameReviewed", "privacyReviewed"],
+          "additionalProperties": false,
+          "properties": {
+            "status": {
+              "type": "string",
+              "enum": ["queued", "needs-review", "approved", "rejected"]
+            },
+            "publicNameReviewed": { "type": "boolean", "const": true },
+            "privacyReviewed": { "type": "boolean", "const": true },
+            "visualQaScore": { "type": "number", "minimum": 0, "maximum": 1 },
+            "notes": { "type": "string" }
+          }
+        },
+        "metadata": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "food": { "$ref": "#/$defs/foodMetadata" },
+            "nonFood": { "$ref": "#/$defs/nonFoodMetadata" }
+          }
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": { "kind": { "const": "food" } },
+            "required": ["kind"]
+          },
+          "then": {
+            "properties": {
+              "metadata": {
+                "required": ["food"],
+                "not": { "required": ["nonFood"] }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "kind": {
+                "enum": ["household", "personal", "pet"]
+              }
+            },
+            "required": ["kind"]
+          },
+          "then": {
+            "properties": {
+              "metadata": {
+                "required": ["nonFood"],
+                "not": { "required": ["food"] }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "imageFile": {
+      "type": "object",
+      "required": ["path", "sha256", "bytes", "width", "height", "contentType"],
+      "additionalProperties": false,
+      "properties": {
+        "path": { "type": "string" },
+        "sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+        "bytes": { "type": "integer", "minimum": 1 },
+        "width": { "type": "integer", "minimum": 1 },
+        "height": { "type": "integer", "minimum": 1 },
+        "contentType": {
+          "type": "string",
+          "enum": ["image/webp", "image/png", "image/jpeg"]
+        }
+      }
+    },
+    "foodMetadata": {
+      "type": "object",
+      "properties": {
+        "nutritionStatus": {
+          "type": "string",
+          "enum": ["not-included", "needs-source-review", "source-backed", "estimated"]
+        },
+        "nutritionPer100g": { "type": "object" },
+        "nutritionSource": { "type": "string" },
+        "nutritionConfidence": {
+          "type": "string",
+          "enum": ["unknown", "low", "medium", "high", "source-backed"]
+        },
+        "nutritionCaution": { "type": "string" },
+        "density": { "type": "object" },
+        "dietary": { "type": "object" },
+        "season": { "type": "string" },
+        "shelfLife": { "type": "string" }
+      }
+    },
+    "nonFoodMetadata": {
+      "type": "object",
+      "required": ["claimPolicy"],
+      "additionalProperties": false,
+      "properties": {
+        "claimPolicy": {
+          "type": "string",
+          "const": "generic item metadata only; no efficacy, safety, dosage, or medical claims"
+        },
+        "useContext": { "type": "array", "items": { "type": "string" } },
+        "storageContext": { "type": "string" },
+        "hazardTags": { "type": "array", "items": { "type": "string" } },
+        "ageBand": { "type": "string" },
+        "petSpecies": { "type": "array", "items": { "type": "string" } },
+        "packagePolicy": {
+          "type": "string",
+          "const": "generic blank packaging only when needed for recognition"
+        },
+        "labelingPolicy": {
+          "type": "string",
+          "const": "no readable brand, dosage, certification, or safety text"
+        }
+      }
+    }
+  }
+}

@@ -13,6 +13,10 @@ export function loadManifest() {
 }
 
 export function normalizeIngredientSlug(value) {
+  return normalizeCatalogSlug(value)
+}
+
+export function normalizeCatalogSlug(value) {
   return String(value ?? "")
     .normalize("NFKD")
     .replace(/[\u0300-\u036f]/g, "")
@@ -24,10 +28,15 @@ export function normalizeIngredientSlug(value) {
 }
 
 export function getIngredientImage(value, options = {}) {
+  return getCatalogItemImage(value, options)
+}
+
+export function getCatalogItemImage(value, options = {}) {
   const manifest = loadManifest()
-  const slug = normalizeIngredientSlug(value)
+  const slug = normalizeCatalogSlug(value)
   const record = manifest.recordsBySlug[slug] ?? manifest.aliases[slug]
   if (!record) return null
+  if (options.kind && resolveRecordKind(record) !== options.kind) return null
 
   const variant = options.variant ?? "webp512"
   const image = record.images[variant]
@@ -36,6 +45,7 @@ export function getIngredientImage(value, options = {}) {
   return {
     slug: record.slug,
     displayName: record.displayName,
+    kind: resolveRecordKind(record),
     category: record.category,
     path: image.path,
     url: options.baseUrl ? joinUrl(options.baseUrl, image.path) : undefined,
@@ -46,7 +56,21 @@ export function getIngredientImage(value, options = {}) {
 }
 
 export function listIngredientImages() {
-  return Object.values(loadManifest().recordsBySlug)
+  return listCatalogItemImages({ kind: "food" })
+}
+
+export function listCatalogItemImages(options = {}) {
+  const records = Object.values(loadManifest().recordsBySlug)
+  if (!options.kind) return records
+  return records.filter((record) => resolveRecordKind(record) === options.kind)
+}
+
+function resolveRecordKind(record) {
+  return record.kind ?? "food"
+}
+
+export function listCatalogKinds() {
+  return [...new Set(Object.values(loadManifest().recordsBySlug).map(resolveRecordKind))].sort()
 }
 
 function joinUrl(baseUrl, path) {

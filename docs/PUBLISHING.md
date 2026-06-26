@@ -57,9 +57,9 @@ After approval:
 
 ```bash
 gh repo edit ionmesca/ingredient-atlas --visibility public
-git tag v0.1.0
-git push origin v0.1.0
-gh release create v0.1.0 --title "Ingredient Atlas v0.1.0" --notes-file launch/platforms/github-release-notes.md
+git tag v0.1.2
+git push origin v0.1.2
+gh release create v0.1.2 --title "Ingredient Atlas v0.1.2" --notes-file launch/platforms/github-release-notes.md
 ```
 
 ## 4. npm Publish

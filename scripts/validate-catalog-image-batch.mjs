@@ -282,9 +282,17 @@ console.log(
 
 async function validate() {
   if (manifest.name !== "Ingredient Atlas") errors.push("manifest name changed")
-  if (manifest.schemaVersion !== "0.1.2-candidate") errors.push(`unexpected schemaVersion ${manifest.schemaVersion}`)
-  if (manifest.status !== "public-v0.1.2-candidate") errors.push(`unexpected status ${manifest.status}`)
-  if (manifest.publicReleaseApproved !== false) errors.push("candidate manifest must not be public-release approved")
+  const isCandidate = manifest.schemaVersion === "0.1.2-candidate" && manifest.status === "public-v0.1.2-candidate"
+  const isRelease = manifest.schemaVersion === "0.1.2" && manifest.status === "public-v0.1.2"
+  if (!isCandidate && !isRelease) {
+    errors.push(`unexpected schema/status ${manifest.schemaVersion} / ${manifest.status}`)
+  }
+  if (isCandidate && manifest.publicReleaseApproved !== false) {
+    errors.push("candidate manifest must not be public-release approved")
+  }
+  if (isRelease && manifest.publicReleaseApproved !== true) {
+    errors.push("release manifest must be public-release approved")
+  }
   if (manifest.records.length !== EXPECTED_RECORDS) {
     errors.push(`record count is ${manifest.records.length}, expected ${EXPECTED_RECORDS}`)
   }
@@ -309,8 +317,9 @@ async function validate() {
     if (batchSummary?.imageFilesAdded !== batch.slugs.length * 3) {
       errors.push(`summary ${batch.summaryKey}.imageFilesAdded is not ${batch.slugs.length * 3}`)
     }
-    if (batchSummary?.status !== "local-candidate-not-published") {
-      errors.push(`summary ${batch.summaryKey}.status is not local-candidate-not-published`)
+    const expectedBatchStatus = isRelease ? "public-v0.1.2" : "local-candidate-not-published"
+    if (batchSummary?.status !== expectedBatchStatus) {
+      errors.push(`summary ${batch.summaryKey}.status is not ${expectedBatchStatus}`)
     }
   }
   if (!Array.isArray(summary.v012ImageBatches) || summary.v012ImageBatches.length !== EXPECTED_BATCHES.length) {
@@ -352,8 +361,9 @@ async function validate() {
       if (!batch.kind && !["household", "personal", "pet"].includes(record.kind)) {
         errors.push(`${slug}: expected non-food kind, got ${record.kind}`)
       }
-      if (record.license?.status !== "public-v0.1.2-candidate") {
-        errors.push(`${slug}: expected candidate license status`)
+      const expectedLicenseStatus = isRelease ? "public-v0.1.2" : "public-v0.1.2-candidate"
+      if (record.license?.status !== expectedLicenseStatus) {
+        errors.push(`${slug}: expected ${expectedLicenseStatus} license status`)
       }
       if (record.review?.status !== batch.reviewStatus) {
         errors.push(`${slug}: unexpected review status ${record.review?.status}`)

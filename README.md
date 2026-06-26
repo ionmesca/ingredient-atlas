@@ -2,7 +2,7 @@
 
 ![Ingredient Atlas contact sheet](launch/assets/readme-hero.png)
 
-Open ingredient images and metadata for recipe, grocery, pantry, and meal-planning apps.
+Open ingredient and household catalog images for recipe, grocery, pantry, and meal-planning apps.
 
 I made this because recipe apps usually need a simple thing that is weirdly annoying to find: a clean image for garlic, lemon juice, cassava flour, frozen broccoli, and hundreds of other ingredients, with stable slugs and metadata attached.
 
@@ -14,16 +14,11 @@ Links:
 - npm: https://www.npmjs.com/package/ingredient-atlas
 - Issues: https://github.com/ionmesca/ingredient-atlas/issues
 
-## v0.1.2 Candidate Note
-
-This branch includes a local v0.1.2 catalog expansion candidate with all 157 queued catalog images generated across food, household, personal-care, and pet batches. Do not publish npm or update Hugging Face from this branch until the new derived image files and refreshed public manifests are uploaded together.
-
 ## What You Get
 
-- 1,673 public v0 ingredient records
-- 1,830 records in this local v0.1.2 candidate branch
-- 5,019 public v0 image files
-- 5,490 local v0.1.2 candidate image files after applying the batches
+- 1,830 public catalog records
+- 5,490 public image files
+- food, household, personal-care, and pet shopping item coverage
 - WebP thumbnails and PNG fallbacks
 - stable slugs, aliases, categories, checksums, and review status
 - JSONL, Parquet, full manifest, and compact manifest
@@ -55,7 +50,7 @@ https://huggingface.co/datasets/ionicam/ingredient-atlas
 
 ## Catalog Helpers
 
-The current public dataset is ingredient-first. The resolver also has catalog-named helpers so future records can include food, household, personal-care, and pet shopping items without changing the lookup shape:
+The resolver has catalog-named helpers for food, household, personal-care, and pet shopping items:
 
 ```js
 import { getCatalogItemImage } from "ingredient-atlas"
@@ -65,7 +60,7 @@ const garlic = getCatalogItemImage("garlic", { kind: "food" })
 
 ## Why This Is Different
 
-Most food image datasets are for model training, dish classification, product labels, or nutrition research. Ingredient Atlas is for app builders. The images are isolated ingredient assets with metadata that is useful in UI.
+Most food image datasets are for model training, dish classification, product labels, or nutrition research. Ingredient Atlas is for app builders. The images are isolated catalog assets with metadata that is useful in UI.
 
 ## License
 
@@ -87,4 +82,4 @@ Found a wrong image, wrong form, bad alias, or missing ingredient? Open a GitHub
 
 ## Relationship To Beets
 
-Ingredient Atlas was incubated by Beets. Beets supplied the starting taxonomy, image generation workflow, and review pipeline. Ingredient Atlas is meant to be useful to anyone building food software.
+Ingredient Atlas was incubated by Beets. Beets supplied the starting taxonomy, image generation workflow, and review pipeline. Ingredient Atlas is meant to be useful to anyone building food, grocery, pantry, and household planning software.

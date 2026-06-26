@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.1.2
+
+- Expanded the public catalog from 1,673 food-first records to 1,830 records.
+- Added generated image coverage for household, personal-care, and pet shopping items.
+- Added catalog helpers for kind-aware lookup across food, household, personal, and pet records.
+- Refreshed public manifests and package metadata for the v0.1.2 release.
+
 ## 0.1.1
 
 - Polished gray and uneven image backgrounds across the public dataset candidate.

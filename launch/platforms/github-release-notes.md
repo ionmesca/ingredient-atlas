@@ -1,11 +1,12 @@
-# Ingredient Atlas v0.1.0
+# Ingredient Atlas v0.1.2
 
-Initial public release.
+Catalog expansion release.
 
 ## Included
 
-- 1,673 ingredient records
-- 5,019 image files
+- 1,830 catalog records
+- 5,490 image files
+- food, household, personal-care, and pet shopping item coverage
 - WebP thumbnails and PNG fallbacks
 - JSONL, Parquet, full manifest, compact manifest, and checksums
 - small npm resolver package

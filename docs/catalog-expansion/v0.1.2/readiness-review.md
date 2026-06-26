@@ -1,6 +1,6 @@
 # v0.1.2 Readiness Review
 
-Status: local candidate ready for code review. Not a public release.
+Status: approved for the v0.1.2 release sequence.
 
 ## What Is Ready
 
@@ -26,19 +26,18 @@ The current v0.1.1 food catalog already has the unified white-background style. 
 - No medical, dosage, certification, or safety text on medicine, supplement, baby, personal-care, or pet items.
 - Food should still read as food, not as a packaged product, unless the item itself is normally packaged.
 
-## Not Ready For Public Release Yet
+## Release Notes
 
-- Owner review is still needed before public release, but no queued v0.1.2 image-generation candidates remain.
+- Owner visual review is complete for the generated v0.1.2 image batches.
 - Alias-only fixes still need to be applied to the production manifest when v0.1.2 is assembled.
 - Split-before-generation rows still need to become atomic records or be rejected.
 - The final v0.1.2 public export still needs upload verification on Hugging Face before npm can safely publish references to the new image paths.
-- Beets should import non-food records through a catalog-aware path rather than mixing them blindly into the food taxonomy.
-- The 157 generated candidate records must not be published to npm until the matching image files and refreshed public manifests have also been uploaded to Hugging Face.
+- Beets should import all catalog kinds through a catalog-aware path rather than treating household, personal, and pet records as food taxonomy rows.
 
 ## Recommended Order
 
 1. Merge the Beets parser/category cleanup.
-2. Review the v0.1.2 candidate packet and adjust any names or categories.
-3. Owner-review the batch contact sheets and flag any visual replacements before release.
-4. Upload the refreshed local public export to private Hugging Face and verify paths, counts, and checksums remotely.
-5. Only then prepare a public v0.1.2 npm, Hugging Face, and GitHub release.
+2. Review the remaining alias-only and split-before-generation cleanup as a follow-up patch.
+3. Upload the refreshed local public export to Hugging Face and verify paths, counts, and checksums remotely.
+4. Publish the public v0.1.2 npm, Hugging Face, and GitHub release.
+5. Update Beets to consume every catalog kind.

@@ -1,7 +1,7 @@
 {
   "name": "ingredient-atlas",
-  "version": "0.1.1",
-  "description": "Open ingredient images and metadata for recipe, grocery, pantry, and meal-planning apps.",
+  "version": "0.1.2",
+  "description": "Open ingredient and household catalog images for recipe, grocery, pantry, and meal-planning apps.",
   "type": "module",
   "license": "MIT",
   "types": "./src/index.d.ts",
@@ -25,6 +25,9 @@
   "keywords": [
     "ingredients",
     "food",
+    "household",
+    "personal-care",
+    "pet",
     "recipe",
     "grocery",
     "pantry",

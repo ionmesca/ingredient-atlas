@@ -1,6 +1,6 @@
 # v0.1.2 Generation Remaining Report
 
-Status: local candidate planning report. Not a public release.
+Status: v0.1.2 release report.
 
 Generated from `docs/catalog-expansion/v0.1.2/catalog-expansion-candidates.json` and `data/manifest.compact.json` after all v0.1.2 image-generation batches were applied.
 
@@ -37,5 +37,5 @@ Generated from `docs/catalog-expansion/v0.1.2/catalog-expansion-candidates.json`
 ## Notes
 
 - The 5 food quantity-realism corrections improved existing generated records and do not add new candidate records.
-- All generated records are local v0.1.2 candidates. They are not approved for public release until owner visual review and Hugging Face upload verification are complete.
-- The strict background verifier currently passes across the full 1,830-record local candidate export.
+- All generated records have been owner-approved for the v0.1.2 public release.
+- The strict background verifier passes across the full 1,830-record public export.

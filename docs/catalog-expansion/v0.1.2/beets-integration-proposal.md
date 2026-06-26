@@ -1,6 +1,6 @@
 # Beets Catalog Expansion Proposal
 
-Status: v0.1.2 local candidate, not a public release.
+Status: v0.1.2 release integration plan.
 
 ## Goal
 
@@ -69,7 +69,7 @@ Beets should map catalog records into the current taxonomy-backed image flow lik
 | `metadata.food` | ingredient metadata | Food only. |
 | `metadata.nonFood` | non-food metadata | No nutrition or medical claims. |
 
-The Beets side should not store non-food records in `ingredientTaxonomy` without either renaming the table or adding a clear `kind` discriminator. The safer v0.1.2 approach is to keep `ingredientTaxonomy` for food and create a parallel import/read layer for catalog visuals, then collapse later if the product model proves stable.
+The Beets side should import every public catalog record. If the current storage model is still named around ingredients, add or preserve a clear `kind` discriminator so household, personal, and pet records do not inherit food-only nutrition or taxonomy behavior.
 
 ## Schema Contract
 

@@ -12,28 +12,72 @@ const parquet = require("parquetjs-lite")
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), "..")
 const PUBLIC_DIR = join(ROOT, "public-dataset")
-const BATCH_SLUGS = [
-  "thin-sliced-cheese",
-  "cotija-cheese",
-  "beans",
-  "beef-strips",
-  "brown-mushrooms",
-  "chocolate-chips",
-  "coffee-beans",
-  "dry-cottage-cheese",
-  "elbow-macaroni",
-  "falafel",
-  "fish-sticks",
-  "frozen-fries",
-  "frozen-salmon-patties",
-  "frozen-vegetables",
-  "melon",
-  "mild-salsa",
-  "mini-mozzarella-balls",
-  "mini-sausages",
-  "pelmeni",
-  "pineapple-juice",
+const EXPECTED_BASE_RECORDS = 1673
+const EXPECTED_BATCHES = [
+  {
+    id: "food-batch-20",
+    summaryKey: "v012Batch20",
+    slugs: [
+      "thin-sliced-cheese",
+      "cotija-cheese",
+      "beans",
+      "beef-strips",
+      "brown-mushrooms",
+      "chocolate-chips",
+      "coffee-beans",
+      "dry-cottage-cheese",
+      "elbow-macaroni",
+      "falafel",
+      "fish-sticks",
+      "frozen-fries",
+      "frozen-salmon-patties",
+      "frozen-vegetables",
+      "melon",
+      "mild-salsa",
+      "mini-mozzarella-balls",
+      "mini-sausages",
+      "pelmeni",
+      "pineapple-juice",
+    ],
+    kind: "food",
+    reviewStatus: "v0.1.2-batch-20-generated",
+  },
+  {
+    id: "non-food-pilot-20",
+    summaryKey: "v012NonFoodPilot20",
+    slugs: [
+      "paper-towels",
+      "toilet-paper",
+      "tissues",
+      "freezer-bags",
+      "aluminum-foil",
+      "parchment-paper",
+      "sponges",
+      "trash-bags",
+      "dish-soap",
+      "laundry-detergent",
+      "batteries",
+      "light-bulbs",
+      "shampoo",
+      "toothbrushes",
+      "dental-floss",
+      "deodorant",
+      "cotton-swabs",
+      "bandages",
+      "pet-waste-bags",
+      "pet-bowls",
+    ],
+    kind: undefined,
+    reviewStatus: "v0.1.2-non-food-pilot-20-generated",
+  },
 ]
+const BATCH_SLUGS = EXPECTED_BATCHES.flatMap((batch) => batch.slugs)
+const EXPECTED_RECORDS = EXPECTED_BASE_RECORDS + BATCH_SLUGS.length
+const EXPECTED_IMAGE_FILES = EXPECTED_RECORDS * 3
+const NON_FOOD_CLAIM_POLICY =
+  "generic item metadata only; no efficacy, safety, dosage, or medical claims"
+const NON_FOOD_PACKAGE_POLICY = "generic blank packaging only when needed for recognition"
+const NON_FOOD_LABELING_POLICY = "no readable brand, dosage, certification, or safety text"
 
 const errors = []
 const manifest = await readJson(join(PUBLIC_DIR, "manifest.json"))
@@ -76,18 +120,43 @@ async function validate() {
   if (manifest.schemaVersion !== "0.1.2-candidate") errors.push(`unexpected schemaVersion ${manifest.schemaVersion}`)
   if (manifest.status !== "public-v0.1.2-candidate") errors.push(`unexpected status ${manifest.status}`)
   if (manifest.publicReleaseApproved !== false) errors.push("candidate manifest must not be public-release approved")
-  if (manifest.records.length !== 1693) errors.push(`record count is ${manifest.records.length}, expected 1693`)
-  if (summary.counts?.publicRecords !== 1693) errors.push("summary publicRecords is not 1693")
-  if (summary.counts?.metadataRows !== 1693) errors.push("summary metadataRows is not 1693")
-  if (summary.counts?.checksumRows !== 5079) errors.push("summary checksumRows is not 5079")
-  if (summary.counts?.imageFiles !== 5079) errors.push("summary imageFiles is not 5079")
-  if (summary.v012Batch20?.recordsAdded !== 20) errors.push("summary v012Batch20.recordsAdded is not 20")
+  if (manifest.records.length !== EXPECTED_RECORDS) {
+    errors.push(`record count is ${manifest.records.length}, expected ${EXPECTED_RECORDS}`)
+  }
+  if (summary.counts?.publicRecords !== EXPECTED_RECORDS) {
+    errors.push(`summary publicRecords is not ${EXPECTED_RECORDS}`)
+  }
+  if (summary.counts?.metadataRows !== EXPECTED_RECORDS) {
+    errors.push(`summary metadataRows is not ${EXPECTED_RECORDS}`)
+  }
+  if (summary.counts?.checksumRows !== EXPECTED_IMAGE_FILES) {
+    errors.push(`summary checksumRows is not ${EXPECTED_IMAGE_FILES}`)
+  }
+  if (summary.counts?.imageFiles !== EXPECTED_IMAGE_FILES) {
+    errors.push(`summary imageFiles is not ${EXPECTED_IMAGE_FILES}`)
+  }
+
+  for (const batch of EXPECTED_BATCHES) {
+    const batchSummary = summary[batch.summaryKey]
+    if (batchSummary?.recordsAdded !== batch.slugs.length) {
+      errors.push(`summary ${batch.summaryKey}.recordsAdded is not ${batch.slugs.length}`)
+    }
+    if (batchSummary?.imageFilesAdded !== batch.slugs.length * 3) {
+      errors.push(`summary ${batch.summaryKey}.imageFilesAdded is not ${batch.slugs.length * 3}`)
+    }
+    if (batchSummary?.status !== "local-candidate-not-published") {
+      errors.push(`summary ${batch.summaryKey}.status is not local-candidate-not-published`)
+    }
+  }
+  if (!Array.isArray(summary.v012ImageBatches) || summary.v012ImageBatches.length !== EXPECTED_BATCHES.length) {
+    errors.push("summary v012ImageBatches is missing or incomplete")
+  }
 
   if (JSON.stringify(publicCompact) !== JSON.stringify(packageCompact)) {
     errors.push("package compact manifest does not match public compact manifest")
   }
-  if (Object.keys(publicCompact.recordsBySlug).length !== 1693) {
-    errors.push("public compact record count is not 1693")
+  if (Object.keys(publicCompact.recordsBySlug).length !== EXPECTED_RECORDS) {
+    errors.push(`public compact record count is not ${EXPECTED_RECORDS}`)
   }
 
   const recordsBySlug = new Map()
@@ -107,50 +176,88 @@ async function validate() {
     }
   }
 
-  for (const slug of BATCH_SLUGS) {
-    const record = recordsBySlug.get(slug)
-    if (!record) {
-      errors.push(`${slug}: missing batch record`)
-      continue
+  for (const batch of EXPECTED_BATCHES) {
+    for (const slug of batch.slugs) {
+      const record = recordsBySlug.get(slug)
+      if (!record) {
+        errors.push(`${slug}: missing batch record`)
+        continue
+      }
+      if (batch.kind && record.kind !== batch.kind) errors.push(`${slug}: expected kind ${batch.kind}`)
+      if (!batch.kind && !["household", "personal", "pet"].includes(record.kind)) {
+        errors.push(`${slug}: expected non-food kind, got ${record.kind}`)
+      }
+      if (record.license?.status !== "public-v0.1.2-candidate") {
+        errors.push(`${slug}: expected candidate license status`)
+      }
+      if (record.review?.status !== batch.reviewStatus) {
+        errors.push(`${slug}: unexpected review status ${record.review?.status}`)
+      }
+      if (!publicCompact.recordsBySlug[slug]) errors.push(`${slug}: missing compact record`)
+
+      if (record.kind === "food") {
+        if (record.metadata?.nutritionSource !== "missing") {
+          errors.push(`${slug}: expected missing nutrition source until source review`)
+        }
+        if (!record.metadata?.nutritionCaution) errors.push(`${slug}: missing nutrition caution`)
+      } else {
+        if (record.metadata?.claimPolicy !== NON_FOOD_CLAIM_POLICY) {
+          errors.push(`${slug}: missing non-food claim policy`)
+        }
+        if (record.metadata?.packagePolicy !== NON_FOOD_PACKAGE_POLICY) {
+          errors.push(`${slug}: missing non-food package policy`)
+        }
+        if (record.metadata?.labelingPolicy !== NON_FOOD_LABELING_POLICY) {
+          errors.push(`${slug}: missing non-food labeling policy`)
+        }
+        if (/nutrition/i.test(JSON.stringify(record.metadata ?? {}))) {
+          errors.push(`${slug}: non-food metadata contains nutrition wording`)
+        }
+      }
     }
-    if (record.kind !== "food") errors.push(`${slug}: expected kind food`)
-    if (record.license?.status !== "public-v0.1.2-candidate") {
-      errors.push(`${slug}: expected candidate license status`)
-    }
-    if (record.metadata?.nutritionSource !== "missing") {
-      errors.push(`${slug}: expected missing nutrition source until source review`)
-    }
-    if (!record.metadata?.nutritionCaution) errors.push(`${slug}: missing nutrition caution`)
-    if (record.review?.status !== "v0.1.2-batch-20-generated") {
-      errors.push(`${slug}: unexpected review status ${record.review?.status}`)
-    }
-    if (!publicCompact.recordsBySlug[slug]) errors.push(`${slug}: missing compact record`)
   }
 
-  if (metadataRows.length !== 1693) errors.push(`metadata row count ${metadataRows.length}, expected 1693`)
+  if (metadataRows.length !== EXPECTED_RECORDS) {
+    errors.push(`metadata row count ${metadataRows.length}, expected ${EXPECTED_RECORDS}`)
+  }
   const metadataBySlug = new Map(metadataRows.map((row) => [row.slug, row]))
   for (const record of manifest.records) {
+    const recordKind = record.kind ?? "food"
     const row = metadataBySlug.get(record.slug)
     if (!row) {
       errors.push(`${record.slug}: missing metadata row`)
       continue
     }
+    if ((row.kind ?? "food") !== recordKind) errors.push(`${record.slug}: metadata kind mismatch`)
     if (row.webp512_sha256 !== record.images.webp512.sha256) {
       errors.push(`${record.slug}: metadata webp512 sha mismatch`)
     }
     if (row.png512_sha256 !== record.images.png512.sha256) {
       errors.push(`${record.slug}: metadata png512 sha mismatch`)
     }
+    if (recordKind !== "food" && row.non_food_claim_policy !== NON_FOOD_CLAIM_POLICY) {
+      errors.push(`${record.slug}: metadata row missing non-food claim policy`)
+    }
+    if (recordKind !== "food" && row.non_food_package_policy !== NON_FOOD_PACKAGE_POLICY) {
+      errors.push(`${record.slug}: metadata row missing non-food package policy`)
+    }
+    if (recordKind !== "food" && row.non_food_labeling_policy !== NON_FOOD_LABELING_POLICY) {
+      errors.push(`${record.slug}: metadata row missing non-food labeling policy`)
+    }
   }
 
   const parquetRows = await countParquetRows(join(PUBLIC_DIR, "metadata.parquet"))
-  if (parquetRows !== 1693) errors.push(`metadata.parquet row count ${parquetRows}, expected 1693`)
+  if (parquetRows !== EXPECTED_RECORDS) {
+    errors.push(`metadata.parquet row count ${parquetRows}, expected ${EXPECTED_RECORDS}`)
+  }
 
   const checksumRows = (await readFile(join(PUBLIC_DIR, "checksums.sha256"), "utf8"))
     .trim()
     .split("\n")
     .filter(Boolean)
-  if (checksumRows.length !== 5079) errors.push(`checksum row count ${checksumRows.length}, expected 5079`)
+  if (checksumRows.length !== EXPECTED_IMAGE_FILES) {
+    errors.push(`checksum row count ${checksumRows.length}, expected ${EXPECTED_IMAGE_FILES}`)
+  }
   const expectedChecksumRows = manifest.records
     .flatMap((record) => Object.values(record.images).map((image) => `${image.sha256}  ${image.path}`))
     .sort()
@@ -159,7 +266,7 @@ async function validate() {
   }
 
   const files = await listFiles(join(PUBLIC_DIR, "images"))
-  if (files.length !== 5079) errors.push(`image file count ${files.length}, expected 5079`)
+  if (files.length !== EXPECTED_IMAGE_FILES) errors.push(`image file count ${files.length}, expected ${EXPECTED_IMAGE_FILES}`)
   for (const file of files) {
     const rel = relative(PUBLIC_DIR, file).split("\\").join("/")
     if (!imagePaths.has(rel)) errors.push(`unreferenced image file ${rel}`)

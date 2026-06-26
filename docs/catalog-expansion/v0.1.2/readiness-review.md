@@ -11,6 +11,8 @@ Status: local candidate ready for code review. Not a public release.
 - Non-food metadata requires a claim policy that avoids nutrition, medical, dosage, safety, or efficacy claims.
 - The package API has a future-safe catalog layer while preserving the ingredient helpers.
 - The first 20 low-risk food images have been generated as a local v0.1.2 candidate batch.
+- Five countable food images were regenerated with smaller, more recipe-app-realistic quantities.
+- A 20-item non-food pilot batch has been generated across household, personal-care, and pet basics.
 
 ## Visual Review
 
@@ -25,7 +27,7 @@ The current v0.1.1 food catalog already has the unified white-background style. 
 
 ## Not Ready For Public Release Yet
 
-- The original 157 queued catalog images are partly started: 20 are generated in `reviews/v0.1.2-batch-20`, and 137 still need to be generated or explicitly deferred.
+- The original 157 queued catalog images are partly started: 40 are generated across `reviews/v0.1.2-batch-20` and `reviews/v0.1.2-non-food-pilot-20`, and 117 still need to be generated or explicitly deferred.
 - Alias-only fixes still need to be applied to the production manifest when v0.1.2 is assembled.
 - Split-before-generation rows still need to become atomic records or be rejected.
 - The final v0.1.2 export still needs image checksums, manifests, package compact manifest updates, and visual QA artifacts.
@@ -36,6 +38,6 @@ The current v0.1.1 food catalog already has the unified white-background style. 
 
 1. Merge the Beets parser/category cleanup.
 2. Review the v0.1.2 candidate packet and adjust any names or categories.
-3. Generate images in batches: food gaps first, then household and personal-care basics, then baby and pet items.
+3. Generate images in batches: remaining food gaps first, then household and personal-care basics, then baby, medicine, supplement, and pet items.
 4. Run background uniformity, visual QA, manifest, checksum, smoke, pack, and audit checks.
 5. Only then prepare a public v0.1.2 release.

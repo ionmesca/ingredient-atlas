@@ -53,6 +53,8 @@
     "pack:check": "npm pack --dry-run",
     "catalog:prepare": "node scripts/prepare-catalog-expansion.mjs",
     "catalog:validate": "node scripts/validate-catalog-expansion.mjs",
+    "catalog:apply-batch20": "node scripts/apply-catalog-image-batch.mjs",
+    "catalog:validate-batch20": "node scripts/validate-catalog-image-batch.mjs",
     "test": "npm run smoke"
   },
   "devDependencies": {

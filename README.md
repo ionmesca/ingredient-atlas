@@ -14,10 +14,16 @@ Links:
 - npm: https://www.npmjs.com/package/ingredient-atlas
 - Issues: https://github.com/ionmesca/ingredient-atlas/issues
 
+## v0.1.2 Candidate Note
+
+This branch includes a local 20-image catalog expansion candidate. Do not publish npm or update Hugging Face from this branch until the new derived image files and refreshed public manifests are uploaded together.
+
 ## What You Get
 
-- 1,673 ingredient records
-- 5,019 image files
+- 1,673 public v0 ingredient records
+- 1,693 records in this local v0.1.2 candidate branch
+- 5,019 public v0 image files
+- 5,079 local v0.1.2 candidate image files after applying the batch
 - WebP thumbnails and PNG fallbacks
 - stable slugs, aliases, categories, checksums, and review status
 - JSONL, Parquet, full manifest, and compact manifest

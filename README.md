@@ -16,14 +16,14 @@ Links:
 
 ## v0.1.2 Candidate Note
 
-This branch includes a local v0.1.2 catalog expansion candidate with 20 food images, 5 food quantity-realism corrections, and a 20-item non-food pilot. Do not publish npm or update Hugging Face from this branch until the new derived image files and refreshed public manifests are uploaded together.
+This branch includes a local v0.1.2 catalog expansion candidate with all 157 queued catalog images generated across food, household, personal-care, and pet batches. Do not publish npm or update Hugging Face from this branch until the new derived image files and refreshed public manifests are uploaded together.
 
 ## What You Get
 
 - 1,673 public v0 ingredient records
-- 1,713 records in this local v0.1.2 candidate branch
+- 1,830 records in this local v0.1.2 candidate branch
 - 5,019 public v0 image files
-- 5,139 local v0.1.2 candidate image files after applying the batches
+- 5,490 local v0.1.2 candidate image files after applying the batches
 - WebP thumbnails and PNG fallbacks
 - stable slugs, aliases, categories, checksums, and review status
 - JSONL, Parquet, full manifest, and compact manifest

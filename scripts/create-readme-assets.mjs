@@ -8,6 +8,7 @@ import sharp from "sharp"
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), "..")
 const PUBLIC_DIR = join(ROOT, "public-dataset")
 const ASSETS_DIR = join(ROOT, "launch", "assets")
+const CUTOUTS_DIR = join(ASSETS_DIR, "readme-cutouts")
 
 const manifest = JSON.parse(
   await readFile(join(PUBLIC_DIR, "manifest.compact.json"), "utf8"),
@@ -16,57 +17,55 @@ const summary = JSON.parse(await readFile(join(PUBLIC_DIR, "summary.json"), "utf
 const bySlug = new Map(
   Object.entries(manifest.recordsBySlug).map(([slug, record]) => [slug, { slug, ...record }]),
 )
+const aliasCount = Object.keys(manifest.aliases).length
 
-const heroRecords = records([
-  "garlic",
-  "lemon-juice",
+const itemSlugs = [
+  "starfruit",
+  "breakfast-radish",
+  "orange",
+  "corn",
+  "jalapeno",
   "avocado",
+  "strawberry",
+  "tomato",
+  "yellow-peach",
+  "carrot",
+  "eggplant",
+  "egg",
+  "apple",
+  "broccoli",
+  "garlic",
+  "lemon",
+  "onion",
+  "ginger",
+  "banana",
+  "blueberry",
+  "sweet-cherry",
+  "pineapple",
+  "watermelon",
+  "bell-pepper",
+  "cucumber",
+  "mushroom",
+  "potato",
+  "zucchini",
+  "basil",
+  "cilantro",
   "salmon",
-  "paper-towels",
-  "hand-sanitizer",
-  "dog-food",
-  "batteries",
+  "chickpeas",
+  "pomegranate",
+  "asparagus",
+  "beet",
+  "celery",
+]
+const items = itemSlugs.map(record)
+const heroTextSlots = new Map([
+  [3, ["Ingredient", "Atlas"]],
+  [10, ["Open", "Dataset"]],
+  [18, [summary.counts.publicRecords.toLocaleString("en-US"), "records"]],
+  [25, [aliasCount.toLocaleString("en-US"), "aliases"]],
+  [32, ["CC0", "images"]],
+  [39, ["18", "categories"]],
 ])
-
-const sheetSections = [
-  {
-    title: "Food",
-    slugs: ["garlic", "lemon-juice", "ginger", "avocado", "salmon", "chickpeas"],
-  },
-  {
-    title: "Household",
-    slugs: [
-      "paper-towels",
-      "dish-soap",
-      "laundry-detergent",
-      "batteries",
-      "aluminum-foil",
-      "trash-bags",
-    ],
-  },
-  {
-    title: "Personal care",
-    slugs: [
-      "hand-sanitizer",
-      "toothbrushes",
-      "sunscreen",
-      "shampoo",
-      "body-wash",
-      "conditioner",
-    ],
-  },
-  {
-    title: "Pets",
-    slugs: [
-      "dog-food",
-      "cat-food",
-      "cat-litter",
-      "dog-treats",
-      "pet-shampoo",
-      "pet-waste-bags",
-    ],
-  },
-].map((section) => ({ ...section, records: records(section.slugs) }))
 
 await createHero()
 await createCatalogSheet()
@@ -76,11 +75,8 @@ console.log(
     {
       hero: "launch/assets/readme-hero.png",
       sheet: "launch/assets/ingredient-atlas-contact-sheet.png",
-      heroRecordsShown: heroRecords.length,
-      sheetRecordsShown: sheetSections.reduce(
-        (count, section) => count + section.records.length,
-        0,
-      ),
+      cutouts: "launch/assets/readme-cutouts/",
+      recordsShown: items.length,
     },
     null,
     2,
@@ -90,170 +86,150 @@ console.log(
 async function createHero() {
   const width = 1600
   const height = 1000
-  const tileWidth = 198
-  const gridX = 365
-  const gridY = 380
-  const gapX = 218
-  const gapY = 188
-  const composites = [{ input: heroSvg(width, height), left: 0, top: 0 }]
+  const columns = 7
+  const slots = columns * 6
+  const itemSlots = Array.from({ length: slots }, (_, index) => index).filter(
+    (index) => !heroTextSlots.has(index),
+  )
+  if (itemSlots.length !== items.length) {
+    throw new Error(`Hero has ${itemSlots.length} item slots for ${items.length} items`)
+  }
 
-  for (let index = 0; index < heroRecords.length; index += 1) {
-    const col = index % 4
-    const row = Math.floor(index / 4)
-    const tileX = gridX + col * gapX
-    const tileY = gridY + row * gapY
-    const image = await fitImage(imagePath(heroRecords[index]), 142, 112)
+  const composites = [{ input: heroCanvasSvg(width, height), left: 0, top: 0 }]
+  for (let index = 0; index < items.length; index += 1) {
+    const center = heroSlotCenter(itemSlots[index])
+    const size = 112 + ((index * 17) % 34)
+    const image = await fitCutout(items[index].slug, size)
     composites.push({
       input: image.buffer,
-      left: tileX + Math.floor((tileWidth - image.width) / 2),
-      top: tileY + 12 + Math.floor((116 - image.height) / 2),
+      left: Math.round(center.x - image.width / 2),
+      top: Math.round(center.y - image.height / 2),
     })
   }
 
-  await sharp({ create: { width, height, channels: 3, background: "#0c0a09" } })
+  await sharp({ create: { width, height, channels: 3, background: "#ffffff" } })
     .composite(composites)
     .png({ compressionLevel: 9 })
     .toFile(join(ASSETS_DIR, "readme-hero.png"))
 }
 
-function heroSvg(width, height) {
-  const tiles = heroRecords
-    .map((record, index) => {
-      const col = index % 4
-      const row = Math.floor(index / 4)
-      const x = 365 + col * 218
-      const y = 380 + row * 188
+function heroCanvasSvg(width, height) {
+  const words = [...heroTextSlots.entries()]
+    .map(([slot, [small, large]]) => {
+      const { x, y } = heroSlotCenter(slot)
       return `
-        <rect x="${x}" y="${y}" width="198" height="172" rx="18" fill="#ffffff" stroke="#dedbd2"/>
-        <text x="${x + 99}" y="${y + 151}" text-anchor="middle" class="item">${escapeXml(record.displayName)}</text>
+        <text x="${x}" y="${y - 7}" text-anchor="middle" class="word-small">${escapeXml(small)}</text>
+        <text x="${x}" y="${y + 23}" text-anchor="middle" class="word-large">${escapeXml(large)}</text>
       `
     })
     .join("")
 
   return svgBuffer(`<svg width="${width}" height="${height}" xmlns="http://www.w3.org/2000/svg">
     <defs>
-      <radialGradient id="canvas" cx="50%" cy="40%" r="72%">
-        <stop offset="0%" stop-color="#1c1917"/>
-        <stop offset="56%" stop-color="#131110"/>
-        <stop offset="100%" stop-color="#0c0a09"/>
-      </radialGradient>
-      <filter id="shadow" x="-20%" y="-20%" width="140%" height="150%">
-        <feDropShadow dx="0" dy="22" stdDeviation="24" flood-color="#000000" flood-opacity="0.48"/>
-      </filter>
+      <pattern id="dots" width="20" height="20" patternUnits="userSpaceOnUse">
+        <circle cx="1" cy="1" r="1" fill="#d7d8d5" fill-opacity="0.72"/>
+      </pattern>
+      <clipPath id="canvas-clip">
+        <rect x="12" y="12" width="1576" height="976" rx="42"/>
+      </clipPath>
     </defs>
     <style>
-      .eyebrow{font:700 14px Arial,sans-serif;letter-spacing:2.2px;fill:#456d4a}
-      .title{font:700 54px Arial,sans-serif;fill:#162019}
-      .sub{font:20px Arial,sans-serif;fill:#536158}
-      .stat{font:700 16px Arial,sans-serif;fill:#26372b}
-      .item{font:700 14px Arial,sans-serif;fill:#263229}
+      .word-small{font:16px Arial,sans-serif;fill:#777a76}
+      .word-large{font:700 25px Arial,sans-serif;fill:#121412}
     </style>
-    <rect width="100%" height="100%" fill="url(#canvas)"/>
-    <rect x="310" y="200" width="980" height="600" rx="28" fill="#f3f1ea" filter="url(#shadow)"/>
-    <text x="365" y="265" class="eyebrow">OPEN CATALOG DATASET</text>
-    <text x="362" y="325" class="title">Ingredient Atlas</text>
-    <text x="365" y="355" class="sub">A clean name and image for every shopping-list item.</text>
-    <rect x="1032" y="267" width="203" height="42" rx="21" fill="#dde9d8"/>
-    <text x="1133" y="294" text-anchor="middle" class="stat">${summary.counts.publicRecords.toLocaleString("en-US")} records</text>
-    ${tiles}
+    <rect width="100%" height="100%" fill="#ffffff"/>
+    <rect x="12" y="12" width="1576" height="976" rx="42" fill="#f7f7f6"/>
+    <rect width="100%" height="100%" fill="url(#dots)" clip-path="url(#canvas-clip)"/>
+    ${words}
   </svg>`)
+}
+
+function heroSlotCenter(slot) {
+  const column = slot % 7
+  const row = Math.floor(slot / 7)
+  return {
+    x: 125 + column * 225,
+    y: 100 + row * 160,
+  }
 }
 
 async function createCatalogSheet() {
   const width = 1600
-  const height = 1000
-  const itemStartX = 430
-  const firstRowY = 245
-  const rowGap = 158
-  const tileWidth = 142
-  const gapX = 157
-  const composites = [{ input: sheetSvg(width, height), left: 0, top: 0 }]
+  const height = 1100
+  const columns = 9
+  const startX = 100
+  const startY = 255
+  const gapX = 175
+  const gapY = 220
+  const composites = [{ input: sheetCanvasSvg(width, height), left: 0, top: 0 }]
 
-  for (let sectionIndex = 0; sectionIndex < sheetSections.length; sectionIndex += 1) {
-    const section = sheetSections[sectionIndex]
-    const tileY = firstRowY + sectionIndex * rowGap
-    for (let index = 0; index < section.records.length; index += 1) {
-      const tileX = itemStartX + index * gapX
-      const image = await fitImage(imagePath(section.records[index]), 105, 82)
-      composites.push({
-        input: image.buffer,
-        left: tileX + Math.floor((tileWidth - image.width) / 2),
-        top: tileY + 8 + Math.floor((86 - image.height) / 2),
-      })
-    }
+  for (let index = 0; index < items.length; index += 1) {
+    const column = index % columns
+    const row = Math.floor(index / columns)
+    const centerX = startX + column * gapX
+    const centerY = startY + row * gapY
+    const image = await fitCutout(items[index].slug, 122)
+    composites.push({
+      input: image.buffer,
+      left: Math.round(centerX - image.width / 2),
+      top: Math.round(centerY - image.height / 2),
+    })
   }
 
-  await sharp({ create: { width, height, channels: 3, background: "#0c0a09" } })
+  await sharp({ create: { width, height, channels: 3, background: "#ffffff" } })
     .composite(composites)
     .png({ compressionLevel: 9 })
     .toFile(join(ASSETS_DIR, "ingredient-atlas-contact-sheet.png"))
 }
 
-function sheetSvg(width, height) {
-  const rows = sheetSections
-    .map((section, sectionIndex) => {
-      const y = 245 + sectionIndex * 158
-      const items = section.records
-        .map((record, index) => {
-          const x = 430 + index * 157
-          return `
-            <rect x="${x}" y="${y}" width="142" height="128" rx="15" fill="#ffffff" stroke="#dedbd2"/>
-            <text x="${x + 71}" y="${y + 112}" text-anchor="middle" class="item">${escapeXml(record.displayName)}</text>
-          `
-        })
-        .join("")
-      return `
-        <text x="200" y="${y + 48}" class="section">${escapeXml(section.title)}</text>
-        <text x="200" y="${y + 75}" class="count">6 records</text>
-        ${items}
-      `
+function sheetCanvasSvg(width, height) {
+  const labels = items
+    .map((item, index) => {
+      const column = index % 9
+      const row = Math.floor(index / 9)
+      const x = 100 + column * 175
+      const y = 255 + row * 220 + 91
+      return `<text x="${x}" y="${y}" text-anchor="middle" class="item">${escapeXml(item.displayName)}</text>`
     })
     .join("")
 
   return svgBuffer(`<svg width="${width}" height="${height}" xmlns="http://www.w3.org/2000/svg">
     <defs>
-      <radialGradient id="canvas" cx="50%" cy="40%" r="72%">
-        <stop offset="0%" stop-color="#1c1917"/>
-        <stop offset="56%" stop-color="#131110"/>
-        <stop offset="100%" stop-color="#0c0a09"/>
-      </radialGradient>
-      <filter id="shadow" x="-20%" y="-20%" width="140%" height="150%">
-        <feDropShadow dx="0" dy="22" stdDeviation="24" flood-color="#000000" flood-opacity="0.48"/>
-      </filter>
+      <pattern id="dots" width="20" height="20" patternUnits="userSpaceOnUse">
+        <circle cx="1" cy="1" r="1" fill="#d7d8d5" fill-opacity="0.72"/>
+      </pattern>
+      <clipPath id="canvas-clip">
+        <rect x="12" y="12" width="1576" height="1076" rx="42"/>
+      </clipPath>
     </defs>
     <style>
-      .title{font:700 46px Arial,sans-serif;fill:#162019}
-      .sub{font:18px Arial,sans-serif;fill:#5a665e}
-      .section{font:700 21px Arial,sans-serif;fill:#263229}
-      .count{font:15px Arial,sans-serif;fill:#788078}
-      .item{font:700 12px Arial,sans-serif;fill:#263229}
+      .eyebrow{font:700 14px Arial,sans-serif;letter-spacing:2.1px;fill:#777a76}
+      .title{font:700 48px Arial,sans-serif;fill:#121412}
+      .sub{font:18px Arial,sans-serif;fill:#666a65}
+      .item{font:700 13px Arial,sans-serif;fill:#282b28}
     </style>
-    <rect width="100%" height="100%" fill="url(#canvas)"/>
-    <rect x="140" y="90" width="1320" height="820" rx="28" fill="#f3f1ea" filter="url(#shadow)"/>
-    <text x="200" y="165" class="title">The whole shopping list</text>
-    <text x="202" y="201" class="sub">24 catalog records shown here. ${summary.counts.publicRecords.toLocaleString("en-US")} records across 18 categories.</text>
-    ${rows}
+    <rect width="100%" height="100%" fill="#ffffff"/>
+    <rect x="12" y="12" width="1576" height="1076" rx="42" fill="#f7f7f6"/>
+    <rect width="100%" height="100%" fill="url(#dots)" clip-path="url(#canvas-clip)"/>
+    <text x="72" y="78" class="eyebrow">OPEN DATASET</text>
+    <text x="68" y="137" class="title">Ingredient Atlas</text>
+    <text x="70" y="173" class="sub">36 of ${summary.counts.publicRecords.toLocaleString("en-US")} records · ${aliasCount.toLocaleString("en-US")} aliases · 18 categories</text>
+    ${labels}
   </svg>`)
 }
 
-function records(slugs) {
-  return slugs.map((slug) => {
-    const record = bySlug.get(slug)
-    if (!record) {
-      throw new Error(`Missing catalog record: ${slug}`)
-    }
-    return record
-  })
+function record(slug) {
+  const value = bySlug.get(slug)
+  if (!value) {
+    throw new Error(`Missing catalog record: ${slug}`)
+  }
+  return value
 }
 
-function imagePath(record) {
-  return join(PUBLIC_DIR, record.images.webp512.path)
-}
-
-async function fitImage(path, width, height) {
-  const buffer = await sharp(path)
-    .resize(width, height, { fit: "inside", withoutEnlargement: true })
-    .flatten({ background: "#ffffff" })
+async function fitCutout(slug, size) {
+  const buffer = await sharp(join(CUTOUTS_DIR, `${slug}.webp`))
+    .trim({ background: { r: 0, g: 0, b: 0, alpha: 0 }, threshold: 2 })
+    .resize(size, size, { fit: "inside", withoutEnlargement: true })
     .png({ compressionLevel: 9 })
     .toBuffer()
   const metadata = await sharp(buffer).metadata()

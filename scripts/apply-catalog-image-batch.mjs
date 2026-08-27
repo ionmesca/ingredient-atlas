@@ -271,7 +271,7 @@ const BATCHES = [
     notes:
       "Generated for the second v0.1.2 food image batch; final owner approval pending before public release.",
     extraSummary: {
-      pilotPurpose: "Finish remaining food image-generation candidates from the Beets shopping-history expansion.",
+      pilotPurpose: "Finish remaining food image-generation candidates from the Buna shopping-history expansion.",
     },
     visualRules: [
       "Pure white background.",
@@ -546,7 +546,7 @@ async function buildRecord(candidate, sourcePath, batch) {
         "Local v0.1.2 candidate. Metadata and AI-generated images are intended for CC0-1.0 public release after final owner approval.",
     },
     provenance: {
-      incubatedBy: "Beets",
+      incubatedBy: "Buna",
       aiGenerated: true,
       source: "Ingredient Atlas v0.1.2 local batch candidate",
       imageWorkflow: batch.imageWorkflow,
@@ -638,7 +638,7 @@ function toMetadataRow(record) {
     metadata_license: record.license.metadata,
     license_status: record.license.status,
     ai_generated: true,
-    incubated_by: "Beets",
+    incubated_by: "Buna",
     review_status: record.review.status,
     replacement_promoted: false,
     nutrition_source: isFood ? record.metadata.nutritionSource : "not-applicable",

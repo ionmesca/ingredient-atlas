@@ -4,9 +4,11 @@
 
 Open ingredient and household catalog images for recipe, grocery, pantry, and meal-planning apps.
 
+It is a dataset, not a service. 1,830 records, one per shopping-list item, each with a stable slug, a display name, a category, aliases, and three generated image files. Metadata and images are CC0-1.0. The resolver package that turns the string `garlic` into an image URL is MIT. Nothing here needs an account, an API key, or a running backend.
+
 I made this because recipe apps usually need a simple thing that is weirdly annoying to find: a clean image for garlic, lemon juice, cassava flour, frozen broccoli, and hundreds of other ingredients, with stable slugs and metadata attached.
 
-Ingredient Atlas is incubated by Beets, but it is app-agnostic. You can use it without Beets, private services, or an API key.
+Ingredient Atlas is built and used by [Buna](https://heybuna.com), an open-source AI-native app that plans a household's food. Buna is app-agnostic about the atlas, and you can use the atlas without Buna.
 
 Links:
 
@@ -14,17 +16,17 @@ Links:
 - npm: https://www.npmjs.com/package/ingredient-atlas
 - Issues: https://github.com/ionmesca/ingredient-atlas/issues
 
-## What You Get
+## What you get
 
-- 1,830 public catalog records
-- 5,490 public image files
+- 1,830 catalog records across 18 categories and 157 subcategories
+- 5,490 image files: for each record, a source WebP, a WebP thumbnail, and a PNG fallback
+- 8,735 aliases, many of them not English. `aglio`, `ail`, `ajo` and `knoblauch` all resolve to `garlic`; `aubergine` lands on `eggplant`, `courgette` on `zucchini`
 - food, household, personal-care, and pet shopping item coverage
-- WebP thumbnails and PNG fallbacks
-- stable slugs, aliases, categories, checksums, and review status
+- stable slugs, categories, SHA-256 checksums, and review status on every image
 - JSONL, Parquet, full manifest, and compact manifest
 - public-safe metadata with internal IDs and prompts redacted
 
-## Quick Use
+## Quick use
 
 Install the tiny resolver package:
 
@@ -48,7 +50,7 @@ Or use the dataset files directly from Hugging Face:
 
 https://huggingface.co/datasets/ionicam/ingredient-atlas
 
-## Catalog Helpers
+## Catalog helpers
 
 The resolver has catalog-named helpers for food, household, personal-care, and pet shopping items:
 
@@ -58,9 +60,9 @@ import { getCatalogItemImage } from "ingredient-atlas"
 const garlic = getCatalogItemImage("garlic", { kind: "food" })
 ```
 
-## Why This Is Different
+## Why this is different
 
-Most food image datasets are for model training, dish classification, product labels, or nutrition research. Ingredient Atlas is for app builders. The images are isolated catalog assets with metadata that is useful in UI.
+Most food image datasets are built for model training, dish classification, product labels, or nutrition research. Food-101 will tell you a photo is pad thai. Open Food Facts knows the barcode on a jar. Neither hands you a square image of raw ginger to put next to a checkbox. That is the gap this fills: isolated catalog assets with metadata you can render in a UI.
 
 ## License
 
@@ -70,7 +72,7 @@ Most food image datasets are for model training, dish classification, product la
 
 Release approvals are tracked in `docs/PUBLISHING.md`.
 
-## AI And Nutrition Notes
+## AI and nutrition notes
 
 Images are AI-generated and reviewed on a best-effort basis. They are useful, not perfect.
 
@@ -80,6 +82,8 @@ Nutrition metadata is best-effort ingredient metadata. Some values are USDA-back
 
 Found a wrong image, wrong form, bad alias, or missing ingredient? Open a GitHub issue or email hello@ionmesca.com.
 
-## Relationship To Beets
+## Relationship to Buna
 
-Ingredient Atlas was incubated by Beets. Beets supplied the starting taxonomy, image generation workflow, and review pipeline. Ingredient Atlas is meant to be useful to anyone building food, grocery, pantry, and household planning software.
+Buna plans a household's food: whose tastes, whose diets, which nights need cooking, over a horizon anywhere from two days to twenty, replanned as life changes. It ships as a web app, a native iOS app, an in-app agent, a voice agent, and a published MCP server, so any assistant can plan a family's meals. It is in TestFlight now.
+
+That work needed a picture and a clean name for every item that can land on a shopping list, so the atlas got built alongside it. Buna supplied the starting taxonomy, the image generation workflow, and the review pipeline. The dataset is published on its own because anyone building food, grocery, pantry, or household planning software runs into the same missing piece.

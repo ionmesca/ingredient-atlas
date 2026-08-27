@@ -4,7 +4,7 @@ Status: approved for the v0.1.2 release sequence.
 
 ## What Is Ready
 
-- The Beets shopping-history audit has been converted into a public-safe candidate packet.
+- The Buna shopping-history audit has been converted into a public-safe candidate packet.
 - The packet separates true food gaps, alias-only fixes, compound split items, review-only rows, and non-food catalog candidates.
 - The schema now requires every record to declare `kind`: `food`, `household`, `personal`, or `pet`.
 - The schema keeps food metadata and non-food metadata mutually exclusive.
@@ -32,12 +32,12 @@ The current v0.1.1 food catalog already has the unified white-background style. 
 - Alias-only fixes still need to be applied to the production manifest when v0.1.2 is assembled.
 - Split-before-generation rows still need to become atomic records or be rejected.
 - The final v0.1.2 public export still needs upload verification on Hugging Face before npm can safely publish references to the new image paths.
-- Beets should import all catalog kinds through a catalog-aware path rather than treating household, personal, and pet records as food taxonomy rows.
+- Buna should import all catalog kinds through a catalog-aware path rather than treating household, personal, and pet records as food taxonomy rows.
 
 ## Recommended Order
 
-1. Merge the Beets parser/category cleanup.
+1. Merge the Buna parser/category cleanup.
 2. Review the remaining alias-only and split-before-generation cleanup as a follow-up patch.
 3. Upload the refreshed local public export to Hugging Face and verify paths, counts, and checksums remotely.
 4. Publish the public v0.1.2 npm, Hugging Face, and GitHub release.
-5. Update Beets to consume every catalog kind.
+5. Update Buna to consume every catalog kind.

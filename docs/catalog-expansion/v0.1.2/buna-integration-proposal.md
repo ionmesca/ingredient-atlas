@@ -1,10 +1,10 @@
-# Beets Catalog Expansion Proposal
+# Buna Catalog Expansion Proposal
 
 Status: v0.1.2 release integration plan.
 
 ## Goal
 
-Expand Ingredient Atlas from food-only ingredient images into a broader shopping catalog that Beets can use for grocery, pantry, household, personal-care, baby, and pet shopping items.
+Expand Ingredient Atlas from food-only ingredient images into a broader shopping catalog that Buna can use for grocery, pantry, household, personal-care, baby, and pet shopping items.
 
 The important design choice is to keep one catalog, but make every record explicit about what kind of item it is.
 
@@ -18,7 +18,7 @@ Food items can keep the current food metadata model. Household, personal, and pe
 
 ## Inputs Reviewed
 
-The Beets production shopping-history audit found:
+The Buna production shopping-history audit found:
 
 - 395 historical shopping rows.
 - 365 normalized item types.
@@ -29,7 +29,7 @@ The Beets production shopping-history audit found:
 - 22 household or non-food candidates.
 - 26 parser/test artifacts that must not become public catalog records.
 
-The v0.1.2 candidate packet adds a curated 100-item non-food seed set on top of the Beets-history findings.
+The v0.1.2 candidate packet adds a curated 100-item non-food seed set on top of the Buna-history findings.
 
 ## Candidate Packet
 
@@ -53,23 +53,23 @@ Current generated summary:
 - Pet candidates: 12.
 - Assumed non-food seed candidates: 100.
 
-## Beets Import Shape
+## Buna Import Shape
 
-Beets should map catalog records into the current taxonomy-backed image flow like this:
+Buna should map catalog records into the current taxonomy-backed image flow like this:
 
-| Catalog field | Beets target | Notes |
+| Catalog field | Buna target | Notes |
 | --- | --- | --- |
 | `slug` | stable key / alias lookup | Stable public ID. |
 | `displayName` | display name | Public-safe generic name. |
 | `kind` | new item kind or derived category group | Required before non-food import. |
-| `category` | shopping category | Existing Beets categories can continue to work. |
+| `category` | shopping category | Existing Buna categories can continue to work. |
 | `subcategory` | optional metadata | Useful for aisle grouping. |
 | `aliases` | alias index | Used by shopping item image resolution. |
 | `images.webp512.path` | image URL resolution | Same as current Ingredient Atlas flow. |
 | `metadata.food` | ingredient metadata | Food only. |
 | `metadata.nonFood` | non-food metadata | No nutrition or medical claims. |
 
-The Beets side should import every public catalog record. If the current storage model is still named around ingredients, add or preserve a clear `kind` discriminator so household, personal, and pet records do not inherit food-only nutrition or taxonomy behavior.
+The Buna side should import every public catalog record. If the current storage model is still named around ingredients, add or preserve a clear `kind` discriminator so household, personal, and pet records do not inherit food-only nutrition or taxonomy behavior.
 
 ## Schema Contract
 
@@ -81,9 +81,9 @@ The proposed manifest schema is intentionally stricter than the current food-onl
 - Non-food records require the claim policy: `generic item metadata only; no efficacy, safety, dosage, or medical claims`.
 - Non-food images must stay generic: no readable brand, dosage, certification, or safety text.
 
-This gives Beets one catalog lookup surface without pretending that toilet paper, shampoo, vitamins, and salmon all share the same metadata model.
+This gives Buna one catalog lookup surface without pretending that toilet paper, shampoo, vitamins, and salmon all share the same metadata model.
 
-## Required Beets Changes Before Import
+## Required Buna Changes Before Import
 
 Already addressed in this branch:
 
@@ -127,14 +127,14 @@ Do not publish v0.1.2 until all of these are true:
 3. Every `generate-image` record has original, WebP 512, and PNG 512 image files.
 4. Every generated image passes background uniformity and visual QA.
 5. Non-food records have no food nutrition metadata.
-6. Public export contains no private names, prompts, internal storage IDs, or Beets-only deployment details.
-7. Beets import can consume food and non-food records without corrupting the current ingredient taxonomy.
+6. Public export contains no private names, prompts, internal storage IDs, or Buna-only deployment details.
+7. Buna import can consume food and non-food records without corrupting the current ingredient taxonomy.
 
 ## Recommendation
 
-Ship the Beets parser/category cleanup first. Then generate v0.1.2 images in two batches:
+Ship the Buna parser/category cleanup first. Then generate v0.1.2 images in two batches:
 
-1. Food gaps and alias fixes from real Beets history.
+1. Food gaps and alias fixes from real Buna history.
 2. Non-food seed set, starting with household paper goods, cleaning supplies, personal-care basics, baby basics, and pet basics.
 
 This keeps the public dataset useful for app builders while avoiding the biggest risk: mixing food nutrition semantics into household and personal-care objects.

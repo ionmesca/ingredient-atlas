@@ -11,6 +11,7 @@ const DATASET_ROOT = join(ROOT, "public-dataset")
 const REPORT_PATH = join(DATASET_ROOT, "pilots", "transparent-cutouts-v0.2.0", "download-summary.json")
 const BASE_URL = "https://huggingface.co/datasets/ionicam/ingredient-atlas/resolve/main"
 const CONCURRENCY = 6
+const allRecords = process.argv.includes("--all-records")
 
 const manifest = JSON.parse(await readFile(MANIFEST_PATH, "utf8"))
 const sample = JSON.parse(await readFile(SAMPLE_PATH, "utf8"))
@@ -18,11 +19,21 @@ const startedAt = new Date()
 const wallStart = performance.now()
 const results = []
 
-if (sample.slugs.length !== 50 || new Set(sample.slugs).size !== 50) {
+if (!allRecords && (sample.slugs.length !== 50 || new Set(sample.slugs).size !== 50)) {
   throw new Error("Pilot sample must contain exactly 50 unique slugs")
 }
 
-const queue = sample.slugs.map((slug) => {
+const selectedSlugs = allRecords
+  ? Object.keys(manifest.recordsBySlug).sort((a, b) => {
+      const categoryOrder = manifest.recordsBySlug[a].category.localeCompare(
+        manifest.recordsBySlug[b].category,
+      )
+      return categoryOrder || a.localeCompare(b)
+    })
+  : sample.slugs
+const selectedIndex = new Map(selectedSlugs.map((slug, index) => [slug, index]))
+
+const queue = selectedSlugs.map((slug) => {
   const record = manifest.recordsBySlug[slug]
   if (!record) throw new Error(`Missing manifest record for ${slug}`)
   return { slug, image: record.images.original }
@@ -34,7 +45,8 @@ const summary = {
   startedAt: startedAt.toISOString(),
   completedAt: new Date().toISOString(),
   wallSeconds: (performance.now() - wallStart) / 1000,
-  requested: sample.slugs.length,
+  mode: allRecords ? "all-records" : "fixed-pilot",
+  requested: selectedSlugs.length,
   downloaded: results.filter((result) => result.status === "downloaded").length,
   reused: results.filter((result) => result.status === "reused").length,
   bytesDownloaded: results
@@ -44,7 +56,9 @@ const summary = {
   authentication: "none-public-resolver",
   paidApiCalls: 0,
   tokenUsage: 0,
-  results: results.sort((a, b) => sample.slugs.indexOf(a.slug) - sample.slugs.indexOf(b.slug)),
+  results: results.sort(
+    (a, b) => selectedIndex.get(a.slug) - selectedIndex.get(b.slug),
+  ),
 }
 
 await mkdir(dirname(REPORT_PATH), { recursive: true })

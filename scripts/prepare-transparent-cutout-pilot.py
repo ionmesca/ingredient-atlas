@@ -316,48 +316,75 @@ def checkerboard(size: tuple[int, int], cell: int = 16) -> Image.Image:
     return board
 
 
-def create_contact_sheet(
+def create_contact_sheets(
     records: list[dict[str, Any]],
     output_root: Path,
     background_name: str,
     columns: int = 5,
-) -> Path:
+    page_size: int = 50,
+) -> list[Path]:
     tile = 180
     label_height = 28
-    rows = math.ceil(len(records) / columns)
-    sheet = Image.new("RGB", (columns * tile, rows * (tile + label_height)), "white")
-    font = ImageFont.load_default(size=13)
-    for index, record in enumerate(records):
-        master = Image.open(record["outputs"]["master"]).convert("RGBA")
-        if background_name == "checker":
-            background = checkerboard((tile, tile))
-        else:
-            background = Image.new("RGBA", (tile, tile), BACKGROUNDS[background_name])
-        preview = master.copy()
-        preview.thumbnail((tile - 20, tile - 20), Image.Resampling.LANCZOS)
-        background.alpha_composite(
-            preview, ((tile - preview.width) // 2, (tile - preview.height) // 2)
+    destinations = []
+    pages = [records[index : index + page_size] for index in range(0, len(records), page_size)]
+    for page_index, page_records in enumerate(pages, start=1):
+        rows = math.ceil(len(page_records) / columns)
+        sheet = Image.new(
+            "RGB", (columns * tile, rows * (tile + label_height)), "white"
         )
-        x = (index % columns) * tile
-        y = (index // columns) * (tile + label_height)
-        sheet.paste(background.convert("RGB"), (x, y))
-        draw = ImageDraw.Draw(sheet)
-        draw.text((x + 8, y + tile + 7), record["slug"], font=font, fill="#262626")
+        font = ImageFont.load_default(size=13)
+        for index, record in enumerate(page_records):
+            master = Image.open(record["outputs"]["master"]).convert("RGBA")
+            if background_name == "checker":
+                background = checkerboard((tile, tile))
+            else:
+                background = Image.new(
+                    "RGBA", (tile, tile), BACKGROUNDS[background_name]
+                )
+            preview = master.copy()
+            preview.thumbnail((tile - 20, tile - 20), Image.Resampling.LANCZOS)
+            background.alpha_composite(
+                preview, ((tile - preview.width) // 2, (tile - preview.height) // 2)
+            )
+            x = (index % columns) * tile
+            y = (index // columns) * (tile + label_height)
+            sheet.paste(background.convert("RGB"), (x, y))
+            draw = ImageDraw.Draw(sheet)
+            draw.text(
+                (x + 8, y + tile + 7), record["slug"], font=font, fill="#262626"
+            )
 
-    destination = output_root / "contact-sheets" / f"contact-{background_name}.png"
-    destination.parent.mkdir(parents=True, exist_ok=True)
-    sheet.save(destination, "PNG", compress_level=9)
-    return destination
+        suffix = "" if len(pages) == 1 else f"-{page_index:03d}"
+        destination = (
+            output_root
+            / "contact-sheets"
+            / f"contact-{background_name}{suffix}.png"
+        )
+        destination.parent.mkdir(parents=True, exist_ok=True)
+        sheet.save(destination, "PNG", compress_level=9)
+        destinations.append(destination)
+    return destinations
 
 
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--manifest", type=Path, required=True)
-    parser.add_argument("--sample", type=Path, required=True)
+    selection = parser.add_mutually_exclusive_group(required=True)
+    selection.add_argument("--sample", type=Path)
+    selection.add_argument(
+        "--all-records",
+        action="store_true",
+        help="Process every manifest record in category and slug order.",
+    )
     parser.add_argument("--dataset-root", type=Path, required=True)
     parser.add_argument("--output-root", type=Path, required=True)
     parser.add_argument("--compare-to", type=Path)
-    parser.add_argument("--model", default="birefnet-general")
+    parser.add_argument("--model", default="isnet-general-use")
+    parser.add_argument(
+        "--model-overrides",
+        type=Path,
+        help="JSON object mapping reviewed slugs to alternate rembg model names.",
+    )
     parser.add_argument("--canvas", type=int, default=512)
     parser.add_argument("--extent", type=int, default=410)
     parser.add_argument(
@@ -366,17 +393,53 @@ def main() -> None:
         default=0,
         help="Optional subject-vicinity limit in pixels; 0 preserves the full source shadow",
     )
+    parser.add_argument(
+        "--slug",
+        action="append",
+        dest="slugs",
+        help="Process only this pilot slug. Repeat to select more than one.",
+    )
     parser.add_argument("--limit", type=int)
     parser.add_argument("--resume", action="store_true")
+    parser.add_argument(
+        "--strict-qa",
+        action="store_true",
+        help="Exit nonzero after writing outputs when any record fails or is flagged.",
+    )
     args = parser.parse_args()
 
     if args.shadow_radius < 0:
         raise SystemExit("--shadow-radius must be 0 or greater")
 
     manifest = json.loads(args.manifest.read_text())
-    sample = json.loads(args.sample.read_text())
     records_by_slug = manifest["recordsBySlug"]
-    if len(sample["slugs"]) != 50 or len(set(sample["slugs"])) != 50:
+    model_overrides: dict[str, str] = {}
+    if args.model_overrides:
+        model_overrides = json.loads(args.model_overrides.read_text())
+        if not isinstance(model_overrides, dict) or not all(
+            isinstance(slug, str) and isinstance(model, str) and model
+            for slug, model in model_overrides.items()
+        ):
+            raise SystemExit("--model-overrides must be a JSON object of slug to model")
+        unknown_override_slugs = sorted(set(model_overrides) - set(records_by_slug))
+        if unknown_override_slugs:
+            raise SystemExit(
+                "Model overrides contain unknown slugs: "
+                + ", ".join(unknown_override_slugs)
+            )
+    if args.all_records:
+        sample = {
+            "id": "transparent-cutouts-v0.2.0-full",
+            "slugs": sorted(
+                records_by_slug,
+                key=lambda slug: (records_by_slug[slug]["category"], slug),
+            ),
+        }
+    else:
+        sample = json.loads(args.sample.read_text())
+    if not args.all_records and (
+        len(sample["slugs"]) != 50 or len(set(sample["slugs"])) != 50
+    ):
         raise SystemExit("Pilot sample must contain exactly 50 unique slugs")
 
     missing_records = [slug for slug in sample["slugs"] if slug not in records_by_slug]
@@ -394,6 +457,17 @@ def main() -> None:
     if missing_sources:
         raise SystemExit("Missing pilot sources:\n" + "\n".join(missing_sources))
 
+    if args.slugs:
+        requested_slugs = list(dict.fromkeys(args.slugs))
+        unknown_slugs = [slug for slug in requested_slugs if slug not in sample["slugs"]]
+        if unknown_slugs:
+            raise SystemExit(
+                "Requested slugs are not in the fixed pilot: "
+                + ", ".join(unknown_slugs)
+            )
+        requested_slug_set = set(requested_slugs)
+        sources = [item for item in sources if item[0] in requested_slug_set]
+
     if args.limit is not None:
         if args.limit < 1:
             raise SystemExit("--limit must be at least 1")
@@ -402,13 +476,25 @@ def main() -> None:
     args.output_root.mkdir(parents=True, exist_ok=True)
     progress_path = args.output_root / "progress.jsonl"
     state_path = args.output_root / "run-state.json"
+    summary_path = args.output_root / "summary.json"
     results: list[dict[str, Any]] = []
     previous_state: dict[str, Any] = {}
+    checkpoint_default_model = args.model
     if args.resume and progress_path.exists():
-        results = [
+        if summary_path.exists():
+            checkpoint_default_model = json.loads(summary_path.read_text()).get(
+                "model", args.model
+            )
+        checkpoint_results = [
             json.loads(line)
             for line in progress_path.read_text().splitlines()
             if line.strip()
+        ]
+        latest_by_slug = {item["slug"]: item for item in checkpoint_results}
+        results = [
+            latest_by_slug[slug]
+            for slug, _, _ in sources
+            if slug in latest_by_slug
         ]
         if state_path.exists():
             previous_state = json.loads(state_path.read_text())
@@ -416,7 +502,12 @@ def main() -> None:
         raise SystemExit(
             f"{progress_path} already exists. Use --resume or choose a new output root."
         )
-    completed_slugs = {item["slug"] for item in results}
+    completed_slugs = {
+        item["slug"]
+        for item in results
+        if item.get("model", checkpoint_default_model)
+        == model_overrides.get(item["slug"], args.model)
+    }
 
     invocation_started_at = datetime.now(UTC)
     started_at = previous_state.get("started_at", invocation_started_at.isoformat())
@@ -425,9 +516,16 @@ def main() -> None:
         previous_state.get("model_session_seconds", 0)
     )
     wall_start = time.perf_counter()
-    session_start = time.perf_counter()
-    session = new_session(args.model)
-    session_seconds = time.perf_counter() - session_start
+    sessions: dict[str, Any] = {}
+    session_seconds = 0.0
+
+    def session_for(model: str) -> Any:
+        nonlocal session_seconds
+        if model not in sessions:
+            session_start = time.perf_counter()
+            sessions[model] = new_session(model)
+            session_seconds += time.perf_counter() - session_start
+        return sessions[model]
 
     def write_run_state() -> None:
         current_state = {
@@ -456,7 +554,8 @@ def main() -> None:
                 original = source_image.convert("RGB")
 
             inference_start = time.perf_counter()
-            cutout = remove(original, session=session).convert("RGBA")
+            model = model_overrides.get(slug, args.model)
+            cutout = remove(original, session=session_for(model)).convert("RGBA")
             inference_seconds = time.perf_counter() - inference_start
 
             shadow_start = time.perf_counter()
@@ -502,6 +601,12 @@ def main() -> None:
                 qa_flags.append("very-large-subject")
             if metrics["shadow_alpha_fraction"] < 0.001:
                 qa_flags.append("little-or-no-shadow")
+            if (
+                metrics["shadow_alpha_fraction"]
+                > metrics["subject_alpha_fraction"] * 1.5
+                and metrics["shadow_alpha_max"] > 0.8
+            ):
+                qa_flags.append("shadow-dominates-subject")
 
             recompose_error = recomposition_mae(original, master)
             if recompose_error > 12:
@@ -524,6 +629,7 @@ def main() -> None:
                 "index": index,
                 "slug": slug,
                 "category": record["category"],
+                "model": model,
                 "source": str(source_path),
                 "source_bytes": source_path.stat().st_size,
                 "source_sha256": sha256(source_path),
@@ -539,6 +645,7 @@ def main() -> None:
                 "determinism": deterministic,
                 "process_peak_rss_bytes": peak_rss_bytes(),
             }
+            results = [item for item in results if item["slug"] != slug]
             results.append(result)
             with progress_path.open("a") as progress:
                 progress.write(json.dumps(result) + "\n")
@@ -552,10 +659,16 @@ def main() -> None:
             failures.append({"slug": slug, "error": f"{type(error).__name__}: {error}"})
             print(f"[{index:02d}/{len(sources)}] {slug}: FAILED {error}", flush=True)
 
+    source_order = {slug: index for index, (slug, _, _) in enumerate(sources)}
+    results.sort(key=lambda item: source_order[item["slug"]])
+    for item in results:
+        item.setdefault("model", checkpoint_default_model)
+
     contact_sheets = []
     for name in ["white", "warm", "dark", "checker"]:
-        contact_sheets.append(
-            str(create_contact_sheet(results, args.output_root, name))
+        contact_sheets.extend(
+            str(path)
+            for path in create_contact_sheets(results, args.output_root, name)
         )
 
     timings = [item["total_seconds"] for item in results]
@@ -602,6 +715,11 @@ def main() -> None:
         "successful": len(results),
         "failed": len(failures),
         "model": args.model,
+        "model_overrides": model_overrides,
+        "model_counts": {
+            model: sum(item.get("model", args.model) == model for item in results)
+            for model in sorted({item.get("model", args.model) for item in results})
+        },
         "runtime": {
             "python": platform.python_version(),
             "platform": platform.platform(),
@@ -670,7 +788,7 @@ def main() -> None:
         "contact_sheets": contact_sheets,
         "records": results,
     }
-    (args.output_root / "summary.json").write_text(json.dumps(summary, indent=2) + "\n")
+    summary_path.write_text(json.dumps(summary, indent=2) + "\n")
     write_run_state()
     print(
         json.dumps(
@@ -690,6 +808,8 @@ def main() -> None:
             indent=2,
         )
     )
+    if args.strict_qa and (summary["failed"] or summary["qa"]["records_with_flags"]):
+        raise SystemExit(2)
 
 
 def peak_rss_bytes() -> int:

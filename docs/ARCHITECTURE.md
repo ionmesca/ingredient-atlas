@@ -15,7 +15,7 @@ The public artifact should contain:
 
 It should not require:
 
-- Beets.
+- Buna.
 - Convex.
 - Gemini.
 - API keys.
@@ -23,7 +23,7 @@ It should not require:
 
 ## Source Boundary
 
-The v0 dataset was incubated by Beets and exported into public-safe files. The
+The v0 dataset was incubated by Buna and exported into public-safe files. The
 private generation pipeline, internal source IDs, raw prompts, and review
 artifacts are not required to use Ingredient Atlas.
 

@@ -11,7 +11,7 @@ Must include:
 - AI image disclosure;
 - nutrition caution;
 - contact email;
-- relationship to Beets;
+- relationship to Buna;
 - known limitations.
 
 Avoid:

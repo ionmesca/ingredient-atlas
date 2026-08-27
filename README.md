@@ -1,6 +1,6 @@
 # Ingredient Atlas
 
-![Ingredient Atlas catalog preview showing food, household, personal-care, and pet items](launch/assets/readme-hero.png)
+![Ingredient Atlas dot-grid canvas with 36 ingredient cutouts and dataset facts](launch/assets/readme-hero.png)
 
 Open ingredient and household catalog images for recipe, grocery, pantry, and meal-planning apps.
 

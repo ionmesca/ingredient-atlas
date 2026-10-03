@@ -31,3 +31,9 @@ docs/SOURCE_AUDIT.md
 # Generated packages and caches
 *.tgz
 .cache/
+
+# Full maintenance receipts include private target bindings; never publish.
+nutrition/receipts.private.json
+nutrition/sync.lock
+nutrition/sync.lock.recovery
+nutrition/*.tmp-*

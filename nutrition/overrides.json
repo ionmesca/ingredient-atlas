@@ -1,0 +1,206 @@
+{
+  "schemaVersion": 1,
+  "overrides": [
+    {
+      "changeId": "sha256:40013ca8370074435cee2e3757deb520df5368cac574e837e234b379e0a84bad",
+      "ingredient": {
+        "slug": "butter",
+        "description": "Butter, salted",
+        "state": "Salted butter, as represented by FDC173410; not unsalted butter.",
+        "unit": "per100g-edible"
+      },
+      "binding": {
+        "id": "ia_butter",
+        "nutritionPath": "/metadata/nutritionPer100g",
+        "baseline": {
+          "ingredient": {
+            "slug": "butter",
+            "description": "Butter, salted",
+            "state": "Salted butter, as represented by FDC173410; not unsalted butter.",
+            "unit": "per100g-edible"
+          },
+          "values": {
+            "calories": 717,
+            "carbsG": 0.06,
+            "fatG": 81.11,
+            "fiberG": 0,
+            "proteinG": 0.85,
+            "sodiumMg": 643,
+            "sugarG": 0.06
+          }
+        },
+        "expectedOldHash": "sha256:2164553f2158074c0c7370be15ad0bfab2b215e8938e1d640d75e9e3b60e8d7d"
+      },
+      "proposed": 51.368,
+      "fieldEvidence": {
+        "saturatedFatG": {
+          "changeId": "sha256:40013ca8370074435cee2e3757deb520df5368cac574e837e234b379e0a84bad",
+          "value": 51.368,
+          "food": {
+            "slug": "butter",
+            "description": "Butter, salted",
+            "state": "Salted butter, as represented by FDC173410; not unsalted butter.",
+            "unit": "per100g-edible"
+          },
+          "origin": {
+            "kind": "dataset",
+            "description": "Existing seven fields from USDA SR Legacy; saturated fat supplements the same assigned food."
+          },
+          "evidence": [
+            {
+              "id": "fdc-173410-sr2018",
+              "dataset": "USDA FoodData Central SR Legacy",
+              "version": "2018-04",
+              "foodId": "173410",
+              "url": "https://fdc.nal.usda.gov/fdc-datasets/FoodData_Central_sr_legacy_food_csv_2018-04.zip",
+              "snapshotHash": "sha256:b80817294b8850530aaedf2e515c02593b1824f763a0ff356e5c2081643e6fd0",
+              "observedAt": "2026-10-03",
+              "reason": "Nutrient 1258, total saturated fatty acids, grams per 100 g of this exact mapped food; published USDA table value."
+            }
+          ],
+          "review": {
+            "status": "accepted",
+            "reviewerId": "/root",
+            "reviewedAt": "2026-10-03",
+            "changeId": "sha256:40013ca8370074435cee2e3757deb520df5368cac574e837e234b379e0a84bad"
+          }
+        }
+      },
+      "overrideHash": "sha256:5e1113f82ba3fd5cc651f5f6ed562dbf253779b07b0ceb3481f14b5e2e4fd85f"
+    },
+    {
+      "changeId": "sha256:7aea3465172736ef6283a335cbf1bd2d0fc5c8ea803fa26d3cce1b6d95e7ee33",
+      "ingredient": {
+        "slug": "chickpea",
+        "description": "Chickpeas (garbanzo beans, bengal gram), mature seeds, raw",
+        "state": "Dry mature raw chickpea seeds, FDC173756; not cooked or canned chickpeas.",
+        "unit": "per100g-edible"
+      },
+      "binding": {
+        "id": "ia_chickpea",
+        "nutritionPath": "/metadata/nutritionPer100g",
+        "baseline": {
+          "ingredient": {
+            "slug": "chickpea",
+            "description": "Chickpeas (garbanzo beans, bengal gram), mature seeds, raw",
+            "state": "Dry mature raw chickpea seeds, FDC173756; not cooked or canned chickpeas.",
+            "unit": "per100g-edible"
+          },
+          "values": {
+            "calories": 378,
+            "carbsG": 62.95,
+            "fatG": 6.04,
+            "fiberG": 12.2,
+            "proteinG": 20.47,
+            "sodiumMg": 24,
+            "sugarG": 10.7
+          }
+        },
+        "expectedOldHash": "sha256:20057801c3565afec7bf0b69efc0e4f7f26dd84d8c54d553a6958500513a9b62"
+      },
+      "proposed": 0.603,
+      "fieldEvidence": {
+        "saturatedFatG": {
+          "changeId": "sha256:7aea3465172736ef6283a335cbf1bd2d0fc5c8ea803fa26d3cce1b6d95e7ee33",
+          "value": 0.603,
+          "food": {
+            "slug": "chickpea",
+            "description": "Chickpeas (garbanzo beans, bengal gram), mature seeds, raw",
+            "state": "Dry mature raw chickpea seeds, FDC173756; not cooked or canned chickpeas.",
+            "unit": "per100g-edible"
+          },
+          "origin": {
+            "kind": "dataset",
+            "description": "Existing seven fields from USDA SR Legacy; saturated fat supplements the same assigned food."
+          },
+          "evidence": [
+            {
+              "id": "fdc-173756-sr2018",
+              "dataset": "USDA FoodData Central SR Legacy",
+              "version": "2018-04",
+              "foodId": "173756",
+              "url": "https://fdc.nal.usda.gov/fdc-datasets/FoodData_Central_sr_legacy_food_csv_2018-04.zip",
+              "snapshotHash": "sha256:b80817294b8850530aaedf2e515c02593b1824f763a0ff356e5c2081643e6fd0",
+              "observedAt": "2026-10-03",
+              "reason": "Nutrient 1258, total saturated fatty acids, grams per 100 g of this exact mapped food; published USDA table value."
+            }
+          ],
+          "review": {
+            "status": "accepted",
+            "reviewerId": "/root",
+            "reviewedAt": "2026-10-03",
+            "changeId": "sha256:7aea3465172736ef6283a335cbf1bd2d0fc5c8ea803fa26d3cce1b6d95e7ee33"
+          }
+        }
+      },
+      "overrideHash": "sha256:42b532580f1679a0150d2dd8703c8391142d9c8e4a7784dbe2f50e0c6994f3cd"
+    },
+    {
+      "changeId": "sha256:eab396f0a33892fcb065c997228489c7e2d23ea85b483a50d210f3124386d918",
+      "ingredient": {
+        "slug": "coconut-milk",
+        "description": "Nuts, coconut milk, raw (liquid expressed from grated meat and water)",
+        "state": "Raw liquid expressed from grated coconut meat and water, FDC170172; not a generic canned or drinking product.",
+        "unit": "per100g-edible"
+      },
+      "binding": {
+        "id": "ia_coconut-milk",
+        "nutritionPath": "/metadata/nutritionPer100g",
+        "baseline": {
+          "ingredient": {
+            "slug": "coconut-milk",
+            "description": "Nuts, coconut milk, raw (liquid expressed from grated meat and water)",
+            "state": "Raw liquid expressed from grated coconut meat and water, FDC170172; not a generic canned or drinking product.",
+            "unit": "per100g-edible"
+          },
+          "values": {
+            "calories": 230,
+            "carbsG": 5.54,
+            "fatG": 23.84,
+            "fiberG": 2.2,
+            "proteinG": 2.29,
+            "sodiumMg": 15,
+            "sugarG": 3.34
+          }
+        },
+        "expectedOldHash": "sha256:f3757570441eb8de56824d098123bda5ce8d8f12be86ce0892b8f86e509c105e"
+      },
+      "proposed": 21.14,
+      "fieldEvidence": {
+        "saturatedFatG": {
+          "changeId": "sha256:eab396f0a33892fcb065c997228489c7e2d23ea85b483a50d210f3124386d918",
+          "value": 21.14,
+          "food": {
+            "slug": "coconut-milk",
+            "description": "Nuts, coconut milk, raw (liquid expressed from grated meat and water)",
+            "state": "Raw liquid expressed from grated coconut meat and water, FDC170172; not a generic canned or drinking product.",
+            "unit": "per100g-edible"
+          },
+          "origin": {
+            "kind": "dataset",
+            "description": "Existing seven fields from USDA SR Legacy; saturated fat supplements the same assigned food."
+          },
+          "evidence": [
+            {
+              "id": "fdc-170172-sr2018",
+              "dataset": "USDA FoodData Central SR Legacy",
+              "version": "2018-04",
+              "foodId": "170172",
+              "url": "https://fdc.nal.usda.gov/fdc-datasets/FoodData_Central_sr_legacy_food_csv_2018-04.zip",
+              "snapshotHash": "sha256:b80817294b8850530aaedf2e515c02593b1824f763a0ff356e5c2081643e6fd0",
+              "observedAt": "2026-10-03",
+              "reason": "Nutrient 1258, total saturated fatty acids, grams per 100 g of this exact mapped food; published USDA table value."
+            }
+          ],
+          "review": {
+            "status": "accepted",
+            "reviewerId": "/root",
+            "reviewedAt": "2026-10-03",
+            "changeId": "sha256:eab396f0a33892fcb065c997228489c7e2d23ea85b483a50d210f3124386d918"
+          }
+        }
+      },
+      "overrideHash": "sha256:517953ad581181089305281e123982723f7925c80d0059319274f72b5f6d1c67"
+    }
+  ]
+}

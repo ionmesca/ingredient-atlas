@@ -1,0 +1,959 @@
+{
+  "schemaVersion": 1,
+  "entries": [
+    {
+      "intentHash": "sha256:b3685043e25a62514e20ac185454ddda114c0661bda6e478a529272b42f60797",
+      "intent": {
+        "version": 1,
+        "writerId": "/root/nutrition_enrichment_review",
+        "record": {
+          "slug": "cooked-white-rice",
+          "displayName": "Cooked White Rice",
+          "category": "grains",
+          "subcategory": "cooked grains",
+          "aliases": [
+            "cooked white rice",
+            "boiled white rice",
+            "steamed white rice",
+            "riz blanc cuit",
+            "riso bianco cotto",
+            "arroz blanco cocido",
+            "orez alb fiert",
+            "gekochter weißer Reis",
+            "gekochter weisser Reis"
+          ],
+          "foodState": "Cooked long-grain unenriched white rice without salt; USDA169757. A household cup is a conventional158g estimate, not source-weighed mass.",
+          "unit": "per100g-edible",
+          "nutritionOrigin": "usda",
+          "nutritionNote": "Cooked long-grain unenriched white rice without salt; USDA169757. A household cup is a conventional158g estimate, not source-weighed mass.",
+          "usdaFdcId": 169757,
+          "nutritionPer100g": {
+            "sugarG": 0.05,
+            "fatG": 0.28,
+            "carbsG": 28.17,
+            "calories": 130,
+            "proteinG": 2.69,
+            "fiberG": 0.4,
+            "sodiumMg": 1,
+            "saturatedFatG": 0.077
+          },
+          "density": {
+            "gPerCup": 158,
+            "source": "usda",
+            "confidence": "high",
+            "unitLabel": "USDA household cup of cooked long-grain white rice; standard portion estimate, not source-weighed mass"
+          },
+          "evidence": [
+            {
+              "url": "https://fdc.nal.usda.gov/fdc-datasets/FoodData_Central_sr_legacy_food_csv_2018-04.zip",
+              "snapshotSha256": "sha256:b80817294b8850530aaedf2e515c02593b1824f763a0ff356e5c2081643e6fd0",
+              "description": "Original USDA SR Legacy food169757; nutrient rows1008/1003/1004/1005/1079/1093/2000/1258 and food_portion85462(cup158g). Values are published table values, including calculated derivations; not a measured recipe."
+            }
+          ],
+          "image": {
+            "sha256": "ebeb86d4de71d3ff10133192cf109d8728cff42453b8c9225f1b167f4e394821",
+            "masterSha256": "65b5387374869dee5f4dd98096377a24f6a904ce08bbb0af708b535e508f2ac3",
+            "width": 512,
+            "height": 512,
+            "contentType": "image/webp",
+            "alpha": true
+          },
+          "imageReview": {
+            "status": "accepted",
+            "reviewerId": "/root/import_contract",
+            "reviewedAt": "2026-10-03",
+            "masterSha256": "65b5387374869dee5f4dd98096377a24f6a904ce08bbb0af708b535e508f2ac3",
+            "notes": "Reviewer model: gpt-6.1-sol. PASS isolated Atlas studio style, complete subject, no crop or stray object. Independently inspected exact master composited at full size over dark RGB, and final PNG/WebP 512 encodings on white, warm, dark and colored checker squares. Subject edges and small soft shadow remain clean; no white halo, flattening or codec damage visible. Rice is visibly cooked long-grain white rice in a simple white bowl; sauce is dark glossy syrup-like sweet soy in a clear bowl. Visual appearance does not establish manufacturer-specific nutrition. Master and derivative hashes/alpha checks are separately bound in the generation receipt.",
+            "styleReferenceSlugs": [
+              "garlic",
+              "carrot",
+              "onion",
+              "tomato",
+              "lemon",
+              "banana",
+              "butter",
+              "coconut-milk",
+              "chickpea",
+              "parsley"
+            ],
+            "backgrounds": [
+              "white",
+              "warm",
+              "dark",
+              "checkerboard"
+            ]
+          }
+        },
+        "intentHash": "sha256:b3685043e25a62514e20ac185454ddda114c0661bda6e478a529272b42f60797",
+        "review": {
+          "status": "accepted",
+          "reviewerId": "/root/import_contract",
+          "reviewedAt": "2026-10-04",
+          "intentHash": "sha256:b3685043e25a62514e20ac185454ddda114c0661bda6e478a529272b42f60797",
+          "notes": "Independently reopened original SR food169757, all eight nutrient IDs and food_portion85462. Exact130kcal/2.69protein/0.28fat/28.17carbs/0.4fiber/1sodium/0.05sugar/0.077saturated-fat match; cup158g remains a documented household estimate, not measured recipe mass. Exact generated master and PNG/WebP512 image bytes independently visually accepted earlier on10refs/four backgrounds. This approves metadata intent only; backend acceptance/deployment/absent-live-state checks remain separate."
+        }
+      },
+      "record": {
+        "id": "ia_cooked-white-rice",
+        "slug": "cooked-white-rice",
+        "displayName": "Cooked White Rice",
+        "category": "grains",
+        "subcategory": "cooked grains",
+        "aliases": [
+          "cooked white rice",
+          "boiled white rice",
+          "steamed white rice",
+          "riz blanc cuit",
+          "riso bianco cotto",
+          "arroz blanco cocido",
+          "orez alb fiert"
+        ],
+        "aliasesDe": [
+          "gekochter weißer Reis",
+          "gekochter weisser Reis"
+        ],
+        "images": {
+          "original": {
+            "path": "catalog-additions/assets/cooked-white-rice/original.webp",
+            "sha256": "ef957e1f0db8a51a1d457cad37e3eef860abaea836adf7b9cf86c67734a1f5ea",
+            "bytes": 67450,
+            "width": 1254,
+            "height": 1254,
+            "contentType": "image/webp"
+          },
+          "transparent": {
+            "webp512": {
+              "path": "catalog-additions/assets/cooked-white-rice/webp512.webp",
+              "sha256": "ebeb86d4de71d3ff10133192cf109d8728cff42453b8c9225f1b167f4e394821",
+              "bytes": 26440,
+              "width": 512,
+              "height": 512,
+              "contentType": "image/webp",
+              "alpha": true
+            },
+            "master": {
+              "path": "catalog-additions/assets/cooked-white-rice/master.png",
+              "sha256": "65b5387374869dee5f4dd98096377a24f6a904ce08bbb0af708b535e508f2ac3",
+              "bytes": 737030,
+              "width": 1254,
+              "height": 1254,
+              "contentType": "image/png",
+              "alpha": true
+            },
+            "png512": {
+              "path": "catalog-additions/assets/cooked-white-rice/png512.png",
+              "sha256": "50ebb2af693861b1fca54308ae5c19772302288f6bf249dff35496fd5e7ede1a",
+              "bytes": 180647,
+              "width": 512,
+              "height": 512,
+              "contentType": "image/png",
+              "alpha": true
+            }
+          },
+          "png512": {
+            "path": "catalog-additions/assets/cooked-white-rice/white512.png",
+            "sha256": "040223a3895ad32495ee437bb733f678c8642ae937726151cd765d8ec30ebde1",
+            "bytes": 124467,
+            "width": 512,
+            "height": 512,
+            "contentType": "image/png"
+          },
+          "webp512": {
+            "path": "catalog-additions/assets/cooked-white-rice/white512.webp",
+            "sha256": "2be925392325dbc16bb42eeb96d08521011e9674912b67e2c88051013412ece8",
+            "bytes": 12348,
+            "width": 512,
+            "height": 512,
+            "contentType": "image/webp"
+          }
+        },
+        "license": {
+          "status": "reviewed-catalog-addition",
+          "metadata": "CC0-1.0",
+          "images": "CC0-1.0",
+          "code": "MIT"
+        },
+        "provenance": {
+          "incubatedBy": "Buna",
+          "aiGenerated": true,
+          "imageGeneration": {
+            "tool": "image_gen",
+            "transparentBackground": true,
+            "mode": "new-generation",
+            "writerId": "/root/nutrition_enrichment_review",
+            "promptVersion": "nasi-state-additions-v1"
+          },
+          "imageReview": {
+            "status": "accepted",
+            "masterSha256": "65b5387374869dee5f4dd98096377a24f6a904ce08bbb0af708b535e508f2ac3",
+            "reviewerId": "/root/import_contract",
+            "reviewedAt": "2026-10-03",
+            "notes": "Reviewer model: gpt-6.1-sol. PASS isolated Atlas studio style, complete subject, no crop or stray object. Independently inspected exact master composited at full size over dark RGB, and final PNG/WebP 512 encodings on white, warm, dark and colored checker squares. Subject edges and small soft shadow remain clean; no white halo, flattening or codec damage visible. Rice is visibly cooked long-grain white rice in a simple white bowl; sauce is dark glossy syrup-like sweet soy in a clear bowl. Visual appearance does not establish manufacturer-specific nutrition. Master and derivative hashes/alpha checks are separately bound in the generation receipt.",
+            "styleReferenceSlugs": [
+              "garlic",
+              "carrot",
+              "onion",
+              "tomato",
+              "lemon",
+              "banana",
+              "butter",
+              "coconut-milk",
+              "chickpea",
+              "parsley"
+            ],
+            "backgrounds": [
+              "white",
+              "warm",
+              "dark",
+              "checkerboard"
+            ]
+          }
+        },
+        "review": {
+          "status": "independently-reviewed-catalog-addition",
+          "sourceImageApproved": true,
+          "metadataReview": {
+            "status": "accepted",
+            "reviewerId": "/root/import_contract",
+            "reviewedAt": "2026-10-04",
+            "intentHash": "sha256:b3685043e25a62514e20ac185454ddda114c0661bda6e478a529272b42f60797",
+            "notes": "Independently reopened original SR food169757, all eight nutrient IDs and food_portion85462. Exact130kcal/2.69protein/0.28fat/28.17carbs/0.4fiber/1sodium/0.05sugar/0.077saturated-fat match; cup158g remains a documented household estimate, not measured recipe mass. Exact generated master and PNG/WebP512 image bytes independently visually accepted earlier on10refs/four backgrounds. This approves metadata intent only; backend acceptance/deployment/absent-live-state checks remain separate."
+          }
+        },
+        "metadata": {
+          "nutritionSource": "usda",
+          "nutritionNote": "Cooked long-grain unenriched white rice without salt; USDA169757. A household cup is a conventional158g estimate, not source-weighed mass.",
+          "nutritionEvidence": [
+            {
+              "url": "https://fdc.nal.usda.gov/fdc-datasets/FoodData_Central_sr_legacy_food_csv_2018-04.zip",
+              "snapshotSha256": "sha256:b80817294b8850530aaedf2e515c02593b1824f763a0ff356e5c2081643e6fd0",
+              "description": "Original USDA SR Legacy food169757; nutrient rows1008/1003/1004/1005/1079/1093/2000/1258 and food_portion85462(cup158g). Values are published table values, including calculated derivations; not a measured recipe."
+            }
+          ],
+          "nutritionPer100g": {
+            "sugarG": 0.05,
+            "fatG": 0.28,
+            "carbsG": 28.17,
+            "calories": 130,
+            "proteinG": 2.69,
+            "fiberG": 0.4,
+            "sodiumMg": 1,
+            "saturatedFatG": 0.077
+          },
+          "usdaFdcId": 169757,
+          "density": {
+            "gPerCup": 158,
+            "source": "usda",
+            "confidence": "high",
+            "unitLabel": "USDA household cup of cooked long-grain white rice; standard portion estimate, not source-weighed mass"
+          },
+          "defaultPreparation": "Cooked long-grain unenriched white rice without salt; USDA169757. A household cup is a conventional158g estimate, not source-weighed mass.",
+          "publicationIntentHash": "sha256:b3685043e25a62514e20ac185454ddda114c0661bda6e478a529272b42f60797",
+          "publicationRecord": {
+            "slug": "cooked-white-rice",
+            "displayName": "Cooked White Rice",
+            "category": "grains",
+            "subcategory": "cooked grains",
+            "aliases": [
+              "cooked white rice",
+              "boiled white rice",
+              "steamed white rice",
+              "riz blanc cuit",
+              "riso bianco cotto",
+              "arroz blanco cocido",
+              "orez alb fiert",
+              "gekochter weißer Reis",
+              "gekochter weisser Reis"
+            ],
+            "foodState": "Cooked long-grain unenriched white rice without salt; USDA169757. A household cup is a conventional158g estimate, not source-weighed mass.",
+            "unit": "per100g-edible",
+            "nutritionOrigin": "usda",
+            "nutritionNote": "Cooked long-grain unenriched white rice without salt; USDA169757. A household cup is a conventional158g estimate, not source-weighed mass.",
+            "usdaFdcId": 169757,
+            "nutritionPer100g": {
+              "sugarG": 0.05,
+              "fatG": 0.28,
+              "carbsG": 28.17,
+              "calories": 130,
+              "proteinG": 2.69,
+              "fiberG": 0.4,
+              "sodiumMg": 1,
+              "saturatedFatG": 0.077
+            },
+            "density": {
+              "gPerCup": 158,
+              "source": "usda",
+              "confidence": "high",
+              "unitLabel": "USDA household cup of cooked long-grain white rice; standard portion estimate, not source-weighed mass"
+            },
+            "evidence": [
+              {
+                "url": "https://fdc.nal.usda.gov/fdc-datasets/FoodData_Central_sr_legacy_food_csv_2018-04.zip",
+                "snapshotSha256": "sha256:b80817294b8850530aaedf2e515c02593b1824f763a0ff356e5c2081643e6fd0",
+                "description": "Original USDA SR Legacy food169757; nutrient rows1008/1003/1004/1005/1079/1093/2000/1258 and food_portion85462(cup158g). Values are published table values, including calculated derivations; not a measured recipe."
+              }
+            ],
+            "image": {
+              "sha256": "ebeb86d4de71d3ff10133192cf109d8728cff42453b8c9225f1b167f4e394821",
+              "masterSha256": "65b5387374869dee5f4dd98096377a24f6a904ce08bbb0af708b535e508f2ac3",
+              "width": 512,
+              "height": 512,
+              "contentType": "image/webp",
+              "alpha": true
+            },
+            "imageReview": {
+              "status": "accepted",
+              "reviewerId": "/root/import_contract",
+              "reviewedAt": "2026-10-03",
+              "masterSha256": "65b5387374869dee5f4dd98096377a24f6a904ce08bbb0af708b535e508f2ac3",
+              "notes": "Reviewer model: gpt-6.1-sol. PASS isolated Atlas studio style, complete subject, no crop or stray object. Independently inspected exact master composited at full size over dark RGB, and final PNG/WebP 512 encodings on white, warm, dark and colored checker squares. Subject edges and small soft shadow remain clean; no white halo, flattening or codec damage visible. Rice is visibly cooked long-grain white rice in a simple white bowl; sauce is dark glossy syrup-like sweet soy in a clear bowl. Visual appearance does not establish manufacturer-specific nutrition. Master and derivative hashes/alpha checks are separately bound in the generation receipt.",
+              "styleReferenceSlugs": [
+                "garlic",
+                "carrot",
+                "onion",
+                "tomato",
+                "lemon",
+                "banana",
+                "butter",
+                "coconut-milk",
+                "chickpea",
+                "parsley"
+              ],
+              "backgrounds": [
+                "white",
+                "warm",
+                "dark",
+                "checkerboard"
+              ]
+            }
+          }
+        }
+      },
+      "sourceHash": "sha256:40d2ce62460df9371289a0071d97d586923427c73a059dd507e0baecbd4ecd8f",
+      "sourceReview": {
+        "status": "pending",
+        "sourceHash": "sha256:40d2ce62460df9371289a0071d97d586923427c73a059dd507e0baecbd4ecd8f"
+      }
+    },
+    {
+      "intentHash": "sha256:0257117e42acbd8e6bfe478036b6a23acda7daf9b19adc5f189182fee2cde490",
+      "intent": {
+        "version": 1,
+        "writerId": "/root/nutrition_enrichment_review",
+        "record": {
+          "slug": "indonesian-sweet-soy-sauce",
+          "displayName": "Indonesian Sweet Soy Sauce",
+          "category": "pantry",
+          "subcategory": "soy sauces",
+          "aliases": [
+            "kecap manis",
+            "ketjap manis",
+            "Indonesian sweet soy sauce",
+            "sauce soja sucrée indonésienne",
+            "salsa di soia dolce indonesiana",
+            "salsa de soja dulce indonesia",
+            "sos de soia dulce indonezian",
+            "indonesische süße Sojasauce",
+            "Ketjap Manis"
+          ],
+          "foodState": "Exact Indonesian Sweet Soy Sauce prepared food identity; product-specific composition remains unknown.",
+          "unit": "per100g-edible",
+          "nutritionOrigin": "missing",
+          "nutritionNote": "Per100g unknown. ABC branded FDC492571 is a published15mL/1Tbsp label reference, not a gram-based generic profile: normalized carbohydrate100g plus other components cannot be treated as exact100g mass. Generic source recipe does not specify brand or gram density. Never use ordinary salty soy sauce or invent zero missing nutrients.",
+          "evidence": [
+            {
+              "url": "https://api.nal.usda.gov/fdc/v1/food/492571",
+              "snapshotSha256": "sha256:987ec1177a81bafda2a4dc7ba0c9251bd24e3debfa98aa45ee90efaa56b25044",
+              "description": "ABC SWEET SOY SAUCE, UPC711844110038; Branded data, modified2017-07-19/published2019-04-01; label units15mL1Tbsp, not grams."
+            }
+          ],
+          "image": {
+            "sha256": "ba1243d1ca95f0316b41ed7d49ae16ad5f5d4f322b9ef19a18110f643950c2d3",
+            "masterSha256": "c4b4c95e3232f9bbaf346b44094957f659daa46d3595aa753f6fd327acf32215",
+            "width": 512,
+            "height": 512,
+            "contentType": "image/webp",
+            "alpha": true
+          },
+          "imageReview": {
+            "status": "accepted",
+            "reviewerId": "/root/import_contract",
+            "reviewedAt": "2026-10-03",
+            "masterSha256": "c4b4c95e3232f9bbaf346b44094957f659daa46d3595aa753f6fd327acf32215",
+            "notes": "Reviewer model: gpt-6.1-sol. PASS isolated Atlas studio style, complete subject, no crop or stray object. Independently inspected exact master composited at full size over dark RGB, and final PNG/WebP 512 encodings on white, warm, dark and colored checker squares. Subject edges and small soft shadow remain clean; no white halo, flattening or codec damage visible. Rice is visibly cooked long-grain white rice in a simple white bowl; sauce is dark glossy syrup-like sweet soy in a clear bowl. Visual appearance does not establish manufacturer-specific nutrition. Master and derivative hashes/alpha checks are separately bound in the generation receipt.",
+            "styleReferenceSlugs": [
+              "garlic",
+              "carrot",
+              "onion",
+              "tomato",
+              "lemon",
+              "banana",
+              "butter",
+              "coconut-milk",
+              "chickpea",
+              "parsley"
+            ],
+            "backgrounds": [
+              "white",
+              "warm",
+              "dark",
+              "checkerboard"
+            ]
+          },
+          "labelServingEvidence": {
+            "quantity": 15,
+            "unit": "mL",
+            "householdMeasure": "1Tbsp",
+            "brand": "ABC",
+            "fdcId": 492571,
+            "description": "archived branded label portion stand-in only; not exact generic ingredient per100g, and not automatically mapped as a FDC mass profile; SUGAR (CONTAINS SODIUM METABISULPHITE), WATER, SALT, SOYBEANS, WHEAT, SODIUM BENZOATE, AS A PRESERVATIVE.",
+            "values": {
+              "calories": 64,
+              "proteinG": 0,
+              "fatG": 0,
+              "carbsG": 15,
+              "fiberG": 0.255,
+              "sodiumMg": 319,
+              "sugarG": 12,
+              "saturatedFatG": 0
+            }
+          }
+        },
+        "intentHash": "sha256:0257117e42acbd8e6bfe478036b6a23acda7daf9b19adc5f189182fee2cde490",
+        "review": {
+          "status": "accepted",
+          "reviewerId": "/root/import_contract",
+          "reviewedAt": "2026-10-04",
+          "intentHash": "sha256:0257117e42acbd8e6bfe478036b6a23acda7daf9b19adc5f189182fee2cde490",
+          "notes": "Independently read original saved FDC492571 response and verified its SHA. Exact15mL/1Tbsp archived label values match, including legitimate zero. Per100g remains unknown; no mass density or generic FDC mapping invented. Source recipe is brand-unspecified. Raw/salty soy is not substituted. Exact generated master and PNG/WebP512 image bytes independently visually accepted earlier on10refs/four backgrounds. This approves metadata intent only; backend acceptance/deployment/absent-live-state checks remain separate."
+        }
+      },
+      "record": {
+        "id": "ia_indonesian-sweet-soy-sauce",
+        "slug": "indonesian-sweet-soy-sauce",
+        "displayName": "Indonesian Sweet Soy Sauce",
+        "category": "pantry",
+        "subcategory": "soy sauces",
+        "aliases": [
+          "kecap manis",
+          "ketjap manis",
+          "Indonesian sweet soy sauce",
+          "sauce soja sucrée indonésienne",
+          "salsa di soia dolce indonesiana",
+          "salsa de soja dulce indonesia",
+          "sos de soia dulce indonezian"
+        ],
+        "aliasesDe": [
+          "indonesische süße Sojasauce",
+          "Ketjap Manis"
+        ],
+        "images": {
+          "original": {
+            "path": "catalog-additions/assets/indonesian-sweet-soy-sauce/original.webp",
+            "sha256": "d18b46d86ae30395793da8530716611fad9bf277c3c8b161d07a0224f417fb5a",
+            "bytes": 92978,
+            "width": 1254,
+            "height": 1254,
+            "contentType": "image/webp"
+          },
+          "transparent": {
+            "webp512": {
+              "path": "catalog-additions/assets/indonesian-sweet-soy-sauce/webp512.webp",
+              "sha256": "ba1243d1ca95f0316b41ed7d49ae16ad5f5d4f322b9ef19a18110f643950c2d3",
+              "bytes": 31578,
+              "width": 512,
+              "height": 512,
+              "contentType": "image/webp",
+              "alpha": true
+            },
+            "master": {
+              "path": "catalog-additions/assets/indonesian-sweet-soy-sauce/master.png",
+              "sha256": "c4b4c95e3232f9bbaf346b44094957f659daa46d3595aa753f6fd327acf32215",
+              "bytes": 821345,
+              "width": 1254,
+              "height": 1254,
+              "contentType": "image/png",
+              "alpha": true
+            },
+            "png512": {
+              "path": "catalog-additions/assets/indonesian-sweet-soy-sauce/png512.png",
+              "sha256": "8a7c78f1a826c2ca62829ae32133ede69392a1433f12f9b564a849391c594744",
+              "bytes": 188793,
+              "width": 512,
+              "height": 512,
+              "contentType": "image/png",
+              "alpha": true
+            }
+          },
+          "png512": {
+            "path": "catalog-additions/assets/indonesian-sweet-soy-sauce/white512.png",
+            "sha256": "4d06da8612ce36bfa3d9d02efb3334e2d4d0805c722bad10757df1eded00e7aa",
+            "bytes": 126455,
+            "width": 512,
+            "height": 512,
+            "contentType": "image/png"
+          },
+          "webp512": {
+            "path": "catalog-additions/assets/indonesian-sweet-soy-sauce/white512.webp",
+            "sha256": "5c421a64d2b358d925ea03b09b34d65d2137e0e6b687b8b4bdf55468f65c6790",
+            "bytes": 18180,
+            "width": 512,
+            "height": 512,
+            "contentType": "image/webp"
+          }
+        },
+        "license": {
+          "status": "reviewed-catalog-addition",
+          "metadata": "CC0-1.0",
+          "images": "CC0-1.0",
+          "code": "MIT"
+        },
+        "provenance": {
+          "incubatedBy": "Buna",
+          "aiGenerated": true,
+          "imageGeneration": {
+            "tool": "image_gen",
+            "transparentBackground": true,
+            "mode": "new-generation",
+            "writerId": "/root/nutrition_enrichment_review",
+            "promptVersion": "nasi-state-additions-v1"
+          },
+          "imageReview": {
+            "status": "accepted",
+            "masterSha256": "c4b4c95e3232f9bbaf346b44094957f659daa46d3595aa753f6fd327acf32215",
+            "reviewerId": "/root/import_contract",
+            "reviewedAt": "2026-10-03",
+            "notes": "Reviewer model: gpt-6.1-sol. PASS isolated Atlas studio style, complete subject, no crop or stray object. Independently inspected exact master composited at full size over dark RGB, and final PNG/WebP 512 encodings on white, warm, dark and colored checker squares. Subject edges and small soft shadow remain clean; no white halo, flattening or codec damage visible. Rice is visibly cooked long-grain white rice in a simple white bowl; sauce is dark glossy syrup-like sweet soy in a clear bowl. Visual appearance does not establish manufacturer-specific nutrition. Master and derivative hashes/alpha checks are separately bound in the generation receipt.",
+            "styleReferenceSlugs": [
+              "garlic",
+              "carrot",
+              "onion",
+              "tomato",
+              "lemon",
+              "banana",
+              "butter",
+              "coconut-milk",
+              "chickpea",
+              "parsley"
+            ],
+            "backgrounds": [
+              "white",
+              "warm",
+              "dark",
+              "checkerboard"
+            ]
+          }
+        },
+        "review": {
+          "status": "independently-reviewed-catalog-addition",
+          "sourceImageApproved": true,
+          "metadataReview": {
+            "status": "accepted",
+            "reviewerId": "/root/import_contract",
+            "reviewedAt": "2026-10-04",
+            "intentHash": "sha256:0257117e42acbd8e6bfe478036b6a23acda7daf9b19adc5f189182fee2cde490",
+            "notes": "Independently read original saved FDC492571 response and verified its SHA. Exact15mL/1Tbsp archived label values match, including legitimate zero. Per100g remains unknown; no mass density or generic FDC mapping invented. Source recipe is brand-unspecified. Raw/salty soy is not substituted. Exact generated master and PNG/WebP512 image bytes independently visually accepted earlier on10refs/four backgrounds. This approves metadata intent only; backend acceptance/deployment/absent-live-state checks remain separate."
+          }
+        },
+        "metadata": {
+          "nutritionSource": "missing",
+          "nutritionNote": "Per100g unknown. ABC branded FDC492571 is a published15mL/1Tbsp label reference, not a gram-based generic profile: normalized carbohydrate100g plus other components cannot be treated as exact100g mass. Generic source recipe does not specify brand or gram density. Never use ordinary salty soy sauce or invent zero missing nutrients.",
+          "nutritionEvidence": [
+            {
+              "url": "https://api.nal.usda.gov/fdc/v1/food/492571",
+              "snapshotSha256": "sha256:987ec1177a81bafda2a4dc7ba0c9251bd24e3debfa98aa45ee90efaa56b25044",
+              "description": "ABC SWEET SOY SAUCE, UPC711844110038; Branded data, modified2017-07-19/published2019-04-01; label units15mL1Tbsp, not grams."
+            }
+          ],
+          "labelServingEvidence": {
+            "quantity": 15,
+            "unit": "mL",
+            "householdMeasure": "1Tbsp",
+            "brand": "ABC",
+            "fdcId": 492571,
+            "description": "archived branded label portion stand-in only; not exact generic ingredient per100g, and not automatically mapped as a FDC mass profile; SUGAR (CONTAINS SODIUM METABISULPHITE), WATER, SALT, SOYBEANS, WHEAT, SODIUM BENZOATE, AS A PRESERVATIVE.",
+            "values": {
+              "calories": 64,
+              "proteinG": 0,
+              "fatG": 0,
+              "carbsG": 15,
+              "fiberG": 0.255,
+              "sodiumMg": 319,
+              "sugarG": 12,
+              "saturatedFatG": 0
+            }
+          },
+          "defaultPreparation": "Exact Indonesian Sweet Soy Sauce prepared food identity; product-specific composition remains unknown.",
+          "publicationIntentHash": "sha256:0257117e42acbd8e6bfe478036b6a23acda7daf9b19adc5f189182fee2cde490",
+          "publicationRecord": {
+            "slug": "indonesian-sweet-soy-sauce",
+            "displayName": "Indonesian Sweet Soy Sauce",
+            "category": "pantry",
+            "subcategory": "soy sauces",
+            "aliases": [
+              "kecap manis",
+              "ketjap manis",
+              "Indonesian sweet soy sauce",
+              "sauce soja sucrée indonésienne",
+              "salsa di soia dolce indonesiana",
+              "salsa de soja dulce indonesia",
+              "sos de soia dulce indonezian",
+              "indonesische süße Sojasauce",
+              "Ketjap Manis"
+            ],
+            "foodState": "Exact Indonesian Sweet Soy Sauce prepared food identity; product-specific composition remains unknown.",
+            "unit": "per100g-edible",
+            "nutritionOrigin": "missing",
+            "nutritionNote": "Per100g unknown. ABC branded FDC492571 is a published15mL/1Tbsp label reference, not a gram-based generic profile: normalized carbohydrate100g plus other components cannot be treated as exact100g mass. Generic source recipe does not specify brand or gram density. Never use ordinary salty soy sauce or invent zero missing nutrients.",
+            "evidence": [
+              {
+                "url": "https://api.nal.usda.gov/fdc/v1/food/492571",
+                "snapshotSha256": "sha256:987ec1177a81bafda2a4dc7ba0c9251bd24e3debfa98aa45ee90efaa56b25044",
+                "description": "ABC SWEET SOY SAUCE, UPC711844110038; Branded data, modified2017-07-19/published2019-04-01; label units15mL1Tbsp, not grams."
+              }
+            ],
+            "image": {
+              "sha256": "ba1243d1ca95f0316b41ed7d49ae16ad5f5d4f322b9ef19a18110f643950c2d3",
+              "masterSha256": "c4b4c95e3232f9bbaf346b44094957f659daa46d3595aa753f6fd327acf32215",
+              "width": 512,
+              "height": 512,
+              "contentType": "image/webp",
+              "alpha": true
+            },
+            "imageReview": {
+              "status": "accepted",
+              "reviewerId": "/root/import_contract",
+              "reviewedAt": "2026-10-03",
+              "masterSha256": "c4b4c95e3232f9bbaf346b44094957f659daa46d3595aa753f6fd327acf32215",
+              "notes": "Reviewer model: gpt-6.1-sol. PASS isolated Atlas studio style, complete subject, no crop or stray object. Independently inspected exact master composited at full size over dark RGB, and final PNG/WebP 512 encodings on white, warm, dark and colored checker squares. Subject edges and small soft shadow remain clean; no white halo, flattening or codec damage visible. Rice is visibly cooked long-grain white rice in a simple white bowl; sauce is dark glossy syrup-like sweet soy in a clear bowl. Visual appearance does not establish manufacturer-specific nutrition. Master and derivative hashes/alpha checks are separately bound in the generation receipt.",
+              "styleReferenceSlugs": [
+                "garlic",
+                "carrot",
+                "onion",
+                "tomato",
+                "lemon",
+                "banana",
+                "butter",
+                "coconut-milk",
+                "chickpea",
+                "parsley"
+              ],
+              "backgrounds": [
+                "white",
+                "warm",
+                "dark",
+                "checkerboard"
+              ]
+            },
+            "labelServingEvidence": {
+              "quantity": 15,
+              "unit": "mL",
+              "householdMeasure": "1Tbsp",
+              "brand": "ABC",
+              "fdcId": 492571,
+              "description": "archived branded label portion stand-in only; not exact generic ingredient per100g, and not automatically mapped as a FDC mass profile; SUGAR (CONTAINS SODIUM METABISULPHITE), WATER, SALT, SOYBEANS, WHEAT, SODIUM BENZOATE, AS A PRESERVATIVE.",
+              "values": {
+                "calories": 64,
+                "proteinG": 0,
+                "fatG": 0,
+                "carbsG": 15,
+                "fiberG": 0.255,
+                "sodiumMg": 319,
+                "sugarG": 12,
+                "saturatedFatG": 0
+              }
+            }
+          }
+        }
+      },
+      "sourceHash": "sha256:4f2df336495bc11d161497a72d294ef7842c7f40562a340423153242a042b40b",
+      "sourceReview": {
+        "status": "pending",
+        "sourceHash": "sha256:4f2df336495bc11d161497a72d294ef7842c7f40562a340423153242a042b40b"
+      }
+    },
+    {
+      "intentHash": "sha256:b7828d165c67550c0d4274ebfe74748dbcf2892ec28022d42e8e69721cda6043",
+      "intent": {
+        "version": 1,
+        "writerId": "/root/nutrition_enrichment_review",
+        "record": {
+          "slug": "fried-shallots",
+          "displayName": "Crispy Fried Shallots",
+          "category": "pantry",
+          "subcategory": "fried aromatics",
+          "aliases": [
+            "fried shallots",
+            "crispy fried shallots",
+            "bawang goreng",
+            "échalotes frites",
+            "scalogno fritto",
+            "chalotas fritas",
+            "șalote prăjite",
+            "frittierte Schalotten",
+            "Röstschalotten"
+          ],
+          "foodState": "Exact Crispy Fried Shallots prepared food identity; product-specific composition remains unknown.",
+          "unit": "per100g-edible",
+          "nutritionOrigin": "missing",
+          "nutritionNote": "Per100g unknown. These are thin crispy fried shallots, not raw shallots or breaded onion rings. No approved mass-based exact or valid stand-in profile has been established. Fat absorption and any coating vary by product; unquantified optional recipe garnish is not an invented weighed quantity.",
+          "evidence": [
+            {
+              "url": "https://api.nal.usda.gov/fdc/v1/foods/search?query=fried%20shallots&dataType=Branded&pageSize=10&requireAllWords=true",
+              "snapshotSha256": "sha256:ecdf3d7260860a4fec02d133afea530d04021a5db9967d1386641b7c608d3605",
+              "description": "Bounded USDA branded search, first10 results; no exact approved thin-crisp profile selected. This is an evidence-limit statement, not proof the USDA has no such food."
+            }
+          ],
+          "image": {
+            "sha256": "178db8fda455ce0142d7546e397be61e00b460d52b9d0e743820844085e143e1",
+            "masterSha256": "36b891292edf23e943a50ae73993f1844d49219b5207f2113c556a4b8d4f163c",
+            "width": 512,
+            "height": 512,
+            "contentType": "image/webp",
+            "alpha": true
+          },
+          "imageReview": {
+            "status": "accepted",
+            "reviewerId": "/root/import_contract",
+            "reviewedAt": "2026-10-04",
+            "masterSha256": "36b891292edf23e943a50ae73993f1844d49219b5207f2113c556a4b8d4f163c",
+            "notes": "Reviewer model: gpt-6.1-sol. PASS isolated Atlas studio style: crisp golden/brown thin shallot slices and rings in a simple white bowl, complete subject without extra objects or crop. Exact master inspected independently with actual alpha composited over dark RGB at full size; encoded PNG/WebP512 inspected on white,warm,dark,colored checker squares. No visible halo/colored edge damage, empty background flattening or codec defect. Numeric brand/product nutrition is not certified by this visual review.",
+            "styleReferenceSlugs": [
+              "garlic",
+              "carrot",
+              "onion",
+              "tomato",
+              "lemon",
+              "banana",
+              "butter",
+              "coconut-milk",
+              "chickpea",
+              "parsley"
+            ],
+            "backgrounds": [
+              "white",
+              "warm",
+              "dark",
+              "checkerboard"
+            ]
+          }
+        },
+        "intentHash": "sha256:b7828d165c67550c0d4274ebfe74748dbcf2892ec28022d42e8e69721cda6043",
+        "review": {
+          "status": "accepted",
+          "reviewerId": "/root/import_contract",
+          "reviewedAt": "2026-10-04",
+          "intentHash": "sha256:b7828d165c67550c0d4274ebfe74748dbcf2892ec28022d42e8e69721cda6043",
+          "notes": "Independently read hash-bound first10 USDA branded search results. No approved exact thin-crisp profile was selected; explicit unknown is honest and bounded. No raw shallot/breaded onion-ring nutrient substitute or weighed garnish invented. Exact generated master and PNG/WebP512 image bytes independently visually accepted earlier on10refs/four backgrounds. This approves metadata intent only; backend acceptance/deployment/absent-live-state checks remain separate."
+        }
+      },
+      "record": {
+        "id": "ia_fried-shallots",
+        "slug": "fried-shallots",
+        "displayName": "Crispy Fried Shallots",
+        "category": "pantry",
+        "subcategory": "fried aromatics",
+        "aliases": [
+          "fried shallots",
+          "crispy fried shallots",
+          "bawang goreng",
+          "échalotes frites",
+          "scalogno fritto",
+          "chalotas fritas",
+          "șalote prăjite"
+        ],
+        "aliasesDe": [
+          "frittierte Schalotten",
+          "Röstschalotten"
+        ],
+        "images": {
+          "original": {
+            "path": "catalog-additions/assets/fried-shallots/original.webp",
+            "sha256": "174eb7eb2eb5b5c9e8f199d5cf78adb58135f8ce01e7024933863995fe4eeea4",
+            "bytes": 249642,
+            "width": 1254,
+            "height": 1254,
+            "contentType": "image/webp"
+          },
+          "transparent": {
+            "webp512": {
+              "path": "catalog-additions/assets/fried-shallots/webp512.webp",
+              "sha256": "178db8fda455ce0142d7546e397be61e00b460d52b9d0e743820844085e143e1",
+              "bytes": 62054,
+              "width": 512,
+              "height": 512,
+              "contentType": "image/webp",
+              "alpha": true
+            },
+            "master": {
+              "path": "catalog-additions/assets/fried-shallots/master.png",
+              "sha256": "36b891292edf23e943a50ae73993f1844d49219b5207f2113c556a4b8d4f163c",
+              "bytes": 1432541,
+              "width": 1254,
+              "height": 1254,
+              "contentType": "image/png",
+              "alpha": true
+            },
+            "png512": {
+              "path": "catalog-additions/assets/fried-shallots/png512.png",
+              "sha256": "8491a02b86dda0ac7a000623e620ad727fcb7cb7deadc09eceb09487ab2bfd55",
+              "bytes": 342935,
+              "width": 512,
+              "height": 512,
+              "contentType": "image/png",
+              "alpha": true
+            }
+          },
+          "png512": {
+            "path": "catalog-additions/assets/fried-shallots/white512.png",
+            "sha256": "482867c04805c8a0d704a999bd29f274b2b26144843dfd730201d731ed334b0c",
+            "bytes": 272384,
+            "width": 512,
+            "height": 512,
+            "contentType": "image/png"
+          },
+          "webp512": {
+            "path": "catalog-additions/assets/fried-shallots/white512.webp",
+            "sha256": "cae7611860b19dd3125b65dffbaa8baabab98779e7c4dfa2f75e91ea2b0ec992",
+            "bytes": 44454,
+            "width": 512,
+            "height": 512,
+            "contentType": "image/webp"
+          }
+        },
+        "license": {
+          "status": "reviewed-catalog-addition",
+          "metadata": "CC0-1.0",
+          "images": "CC0-1.0",
+          "code": "MIT"
+        },
+        "provenance": {
+          "incubatedBy": "Buna",
+          "aiGenerated": true,
+          "imageGeneration": {
+            "tool": "image_gen",
+            "transparentBackground": true,
+            "mode": "new-generation",
+            "writerId": "/root/nutrition_enrichment_review",
+            "promptVersion": "nasi-state-additions-v1"
+          },
+          "imageReview": {
+            "status": "accepted",
+            "masterSha256": "36b891292edf23e943a50ae73993f1844d49219b5207f2113c556a4b8d4f163c",
+            "reviewerId": "/root/import_contract",
+            "reviewedAt": "2026-10-04",
+            "notes": "Reviewer model: gpt-6.1-sol. PASS isolated Atlas studio style: crisp golden/brown thin shallot slices and rings in a simple white bowl, complete subject without extra objects or crop. Exact master inspected independently with actual alpha composited over dark RGB at full size; encoded PNG/WebP512 inspected on white,warm,dark,colored checker squares. No visible halo/colored edge damage, empty background flattening or codec defect. Numeric brand/product nutrition is not certified by this visual review.",
+            "styleReferenceSlugs": [
+              "garlic",
+              "carrot",
+              "onion",
+              "tomato",
+              "lemon",
+              "banana",
+              "butter",
+              "coconut-milk",
+              "chickpea",
+              "parsley"
+            ],
+            "backgrounds": [
+              "white",
+              "warm",
+              "dark",
+              "checkerboard"
+            ]
+          }
+        },
+        "review": {
+          "status": "independently-reviewed-catalog-addition",
+          "sourceImageApproved": true,
+          "metadataReview": {
+            "status": "accepted",
+            "reviewerId": "/root/import_contract",
+            "reviewedAt": "2026-10-04",
+            "intentHash": "sha256:b7828d165c67550c0d4274ebfe74748dbcf2892ec28022d42e8e69721cda6043",
+            "notes": "Independently read hash-bound first10 USDA branded search results. No approved exact thin-crisp profile was selected; explicit unknown is honest and bounded. No raw shallot/breaded onion-ring nutrient substitute or weighed garnish invented. Exact generated master and PNG/WebP512 image bytes independently visually accepted earlier on10refs/four backgrounds. This approves metadata intent only; backend acceptance/deployment/absent-live-state checks remain separate."
+          }
+        },
+        "metadata": {
+          "nutritionSource": "missing",
+          "nutritionNote": "Per100g unknown. These are thin crispy fried shallots, not raw shallots or breaded onion rings. No approved mass-based exact or valid stand-in profile has been established. Fat absorption and any coating vary by product; unquantified optional recipe garnish is not an invented weighed quantity.",
+          "nutritionEvidence": [
+            {
+              "url": "https://api.nal.usda.gov/fdc/v1/foods/search?query=fried%20shallots&dataType=Branded&pageSize=10&requireAllWords=true",
+              "snapshotSha256": "sha256:ecdf3d7260860a4fec02d133afea530d04021a5db9967d1386641b7c608d3605",
+              "description": "Bounded USDA branded search, first10 results; no exact approved thin-crisp profile selected. This is an evidence-limit statement, not proof the USDA has no such food."
+            }
+          ],
+          "defaultPreparation": "Exact Crispy Fried Shallots prepared food identity; product-specific composition remains unknown.",
+          "publicationIntentHash": "sha256:b7828d165c67550c0d4274ebfe74748dbcf2892ec28022d42e8e69721cda6043",
+          "publicationRecord": {
+            "slug": "fried-shallots",
+            "displayName": "Crispy Fried Shallots",
+            "category": "pantry",
+            "subcategory": "fried aromatics",
+            "aliases": [
+              "fried shallots",
+              "crispy fried shallots",
+              "bawang goreng",
+              "échalotes frites",
+              "scalogno fritto",
+              "chalotas fritas",
+              "șalote prăjite",
+              "frittierte Schalotten",
+              "Röstschalotten"
+            ],
+            "foodState": "Exact Crispy Fried Shallots prepared food identity; product-specific composition remains unknown.",
+            "unit": "per100g-edible",
+            "nutritionOrigin": "missing",
+            "nutritionNote": "Per100g unknown. These are thin crispy fried shallots, not raw shallots or breaded onion rings. No approved mass-based exact or valid stand-in profile has been established. Fat absorption and any coating vary by product; unquantified optional recipe garnish is not an invented weighed quantity.",
+            "evidence": [
+              {
+                "url": "https://api.nal.usda.gov/fdc/v1/foods/search?query=fried%20shallots&dataType=Branded&pageSize=10&requireAllWords=true",
+                "snapshotSha256": "sha256:ecdf3d7260860a4fec02d133afea530d04021a5db9967d1386641b7c608d3605",
+                "description": "Bounded USDA branded search, first10 results; no exact approved thin-crisp profile selected. This is an evidence-limit statement, not proof the USDA has no such food."
+              }
+            ],
+            "image": {
+              "sha256": "178db8fda455ce0142d7546e397be61e00b460d52b9d0e743820844085e143e1",
+              "masterSha256": "36b891292edf23e943a50ae73993f1844d49219b5207f2113c556a4b8d4f163c",
+              "width": 512,
+              "height": 512,
+              "contentType": "image/webp",
+              "alpha": true
+            },
+            "imageReview": {
+              "status": "accepted",
+              "reviewerId": "/root/import_contract",
+              "reviewedAt": "2026-10-04",
+              "masterSha256": "36b891292edf23e943a50ae73993f1844d49219b5207f2113c556a4b8d4f163c",
+              "notes": "Reviewer model: gpt-6.1-sol. PASS isolated Atlas studio style: crisp golden/brown thin shallot slices and rings in a simple white bowl, complete subject without extra objects or crop. Exact master inspected independently with actual alpha composited over dark RGB at full size; encoded PNG/WebP512 inspected on white,warm,dark,colored checker squares. No visible halo/colored edge damage, empty background flattening or codec defect. Numeric brand/product nutrition is not certified by this visual review.",
+              "styleReferenceSlugs": [
+                "garlic",
+                "carrot",
+                "onion",
+                "tomato",
+                "lemon",
+                "banana",
+                "butter",
+                "coconut-milk",
+                "chickpea",
+                "parsley"
+              ],
+              "backgrounds": [
+                "white",
+                "warm",
+                "dark",
+                "checkerboard"
+              ]
+            }
+          }
+        }
+      },
+      "sourceHash": "sha256:f81891f922230e76e8e1f2409442c753687b3082cdd2e3c51904b2c3954b08b9",
+      "sourceReview": {
+        "status": "pending",
+        "sourceHash": "sha256:f81891f922230e76e8e1f2409442c753687b3082cdd2e3c51904b2c3954b08b9"
+      }
+    }
+  ]
+}

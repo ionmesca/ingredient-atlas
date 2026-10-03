@@ -37,3 +37,8 @@ nutrition/receipts.private.json
 nutrition/sync.lock
 nutrition/sync.lock.recovery
 nutrition/*.tmp-*
+
+# Catalog addition transaction receipts/locks are operational, not public source.
+catalog-additions/*.private.*
+catalog-additions/*.lock
+catalog-additions/*.catalog-tmp

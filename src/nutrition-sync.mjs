@@ -14,6 +14,7 @@ import {
 } from "node:fs";
 import { join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
+import {acquireExportMaintenance} from "./export-maintenance-lock.mjs";
 const ROOT = fileURLToPath(new URL("..", import.meta.url));
 export const canonical = (v) =>
 	Array.isArray(v)
@@ -412,7 +413,7 @@ function acquireLock(lock) {
 		}
 	}
 }
-export function syncNutrition({
+function syncNutritionOwned({
 	root = ROOT,
 	change,
 	mode = "apply",
@@ -608,6 +609,7 @@ export function syncNutrition({
 		}
 	}
 }
+export function syncNutrition(options){const release=acquireExportMaintenance(options.root??ROOT,'nutrition');try{return syncNutritionOwned(options);}finally{release();}}
 if (
 	process.argv[1] &&
 	resolve(process.argv[1]) === fileURLToPath(import.meta.url)

@@ -55,4 +55,4 @@ nutrition/*.private.*
 nutrition/*.applicability-tmp
 
 # Label transactions retain private operational state.
-nutrition/*.label-tmp
+nutrition/*.candlenut-label-tmp

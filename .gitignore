@@ -53,3 +53,6 @@ node_modules
 # Nutrient input-basis operational files remain private.
 nutrition/*.private.*
 nutrition/*.applicability-tmp
+
+# Label transactions retain private operational state.
+nutrition/*.candlenut-label-tmp

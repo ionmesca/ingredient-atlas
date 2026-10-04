@@ -1,0 +1,211 @@
+{
+  "schemaVersion": 1,
+  "overrides": [
+    {
+      "version": 1,
+      "changeId": "sha256:48ed034e2255d7b62fb618bf908f151e550258db2ea1d8dee7ac30dc1578b694",
+      "writerId": "/root/nutrition_enrichment_review",
+      "slug": "candlenut",
+      "labelEvidence": {
+        "changeId": "sha256:48ed034e2255d7b62fb618bf908f151e550258db2ea1d8dee7ac30dc1578b694",
+        "writerId": "/root/nutrition_enrichment_review",
+        "food": {
+          "slug": "candlenut",
+          "description": "Shelled candlenut cooking kernels; proposed nutrition uses explicit Lucullus47492 manufacturer-label stand-in",
+          "state": "Shelled candlenut kernels for cooking; distinct from macadamia, cashew and peanut.",
+          "unit": "per100g-edible"
+        },
+        "origin": {
+          "kind": "label",
+          "description": "AsianFoodGroup manufacturer-supplied Lucullus47492/EAN8710853051709 label per100g productaslabelled, used explicitly as brandedstand-in for unspecified cooking kernels. Original generic publication origin remains archived; no USDA mapping or exact source-brand claim."
+        },
+        "validation": {
+          "status": "supported",
+          "identityMatched": true,
+          "unitsMatched": true,
+          "notes": "Exact existing candlenut stable identities verified with fresh query and actualAtlas row, both profiles absent. Same kernel commodity supported as explicit brandedstand-in; label thermalstate unspecified. Label sugar0 declaredrounded, carbs EUlabeldefinition, sodium derived fromsalt under primary2.5factor. No generic chemicalzero or allstates measurement claim; count-mass/density separate and not in this numeric intent."
+        },
+        "fields": {
+          "calories": {
+            "value": 671,
+            "evidenceIds": [
+              "lucullus-label"
+            ]
+          },
+          "proteinG": {
+            "value": 14.8,
+            "evidenceIds": [
+              "lucullus-label"
+            ]
+          },
+          "fatG": {
+            "value": 62.8,
+            "evidenceIds": [
+              "lucullus-label"
+            ]
+          },
+          "saturatedFatG": {
+            "value": 4.9,
+            "evidenceIds": [
+              "lucullus-label"
+            ]
+          },
+          "carbsG": {
+            "value": 11.7,
+            "evidenceIds": [
+              "lucullus-label"
+            ]
+          },
+          "sugarG": {
+            "value": 0,
+            "evidenceIds": [
+              "lucullus-label"
+            ]
+          },
+          "fiberG": {
+            "value": 2.07,
+            "evidenceIds": [
+              "lucullus-label"
+            ]
+          },
+          "sodiumMg": {
+            "value": 120,
+            "evidenceIds": [
+              "lucullus-label",
+              "uk-salt-convention"
+            ]
+          }
+        },
+        "evidence": [
+          {
+            "id": "lucullus-label",
+            "dataset": "PS in foodservice manufacturer-supplied Lucullus product specification",
+            "version": "original browser observation2026-10-04",
+            "foodId": "Lucullus47492/EAN8710853051709",
+            "url": "https://psinfoodservice.com/en/product/588678-lucullus-kemirinoten-kg/",
+            "observedAt": "2026-10-04",
+            "snapshotHash": "sha256:cd763a63ce57fdf0702f41efce155c00f638f1978c4496f5eeb375bcf60e8ad3",
+            "reason": "Original source screenshot/AX independently verified producer,item,EAN,sole listedingredientCandlenut and all7 direct per100g nutrient declarations plus0.3g salt. Label rounding retained, EUcarbohydrate definition retained, aslabelled productthermalstate unspecified."
+          },
+          {
+            "id": "uk-salt-convention",
+            "dataset": "UK government Nutrition Technical Guidance",
+            "version": "original archivedPDF",
+            "foodId": "printedpage7 section3 Declaration of salt rather than sodium",
+            "url": "https://assets.publishing.service.gov.uk/media/5a8010d8e5274a2e87db7a62/Nutrition_Technical_Guidance.pdf",
+            "observedAt": "2026-10-04",
+            "snapshotHash": "sha256:c033f8d596febfdb614391a05e7196f6d32d0fe6fc6e8e2f3f3190060295b667",
+            "reason": "Original page7 text/render independently verified salt=sodium*2.5;0.3g salt /2.5 *1000=120mg sodium per100g. Derivedlabel value, not measured sodium; inherits declaration rounding."
+          }
+        ],
+        "review": {
+          "status": "accepted",
+          "reviewerId": "/root",
+          "reviewedAt": "2026-10-04",
+          "changeId": "sha256:48ed034e2255d7b62fb618bf908f151e550258db2ea1d8dee7ac30dc1578b694",
+          "notes": "Independently reviewed exact original live PS manufacturer specification and archived screenshot, plus official UK salt formula. All eight fields accepted solely as explicit Lucullus47492 branded stand-in per100g product as labelled, not a generic raw/cooked laboratory profile. Declared rounded sugar zero and EU carbohydrate definition remain explicit; sodium120mg is derived from0.3g salt. Fresh Buna and both actual Atlas profiles are absent. Preserve original IDs, image/food-state/allergen provenance; density and whole-recipe totals remain outside this change."
+        },
+        "product": {
+          "manufacturer": "Asian Food Group B.V.",
+          "brand": "Lucullus",
+          "itemNumber": "47492",
+          "EAN": "8710853051709",
+          "basis": "per100g-product-as-labelled",
+          "genericStandIn": true,
+          "thermalState": "not-stated"
+        },
+        "definitions": {
+          "carbohydrate": "EU-declared-label",
+          "sugarZero": "declared-label-rounded",
+          "sodium": "declared-salt-divided-by-2.5",
+          "saltG": 0.3,
+          "sodiumFactor": 2.5,
+          "gramToMg": 1000
+        }
+      },
+      "variants": [
+        {
+          "directory": "dataset",
+          "id": "ia_candlenut",
+          "fullNonProfileHash": "sha256:f9ad5875f74c8b25102afe8126a727f83fb699402562f609b67db8838decb787",
+          "fullBeforeHash": "sha256:752ecc86eb620f8626f43cdf711513a507c27ad3737520537c5e8f46fc22dcef",
+          "fullAfterHash": "sha256:27abba8c573199334d8f79bec1b6debdc2bc3b31bc2349140fb9254f3a7cfcad",
+          "jsonlNonProfileHash": "sha256:0bb65da112dbb3eab95eda1c536ad669886f03b5f5862e7b298100d5cc29f7d3",
+          "parquetNonProfileHash": "sha256:ca706f790c818ab837dcef904db808afb54d0560e72c3e77349ddc4a513a5c50",
+          "parquetSchemaHash": "sha256:6cab474b7db6a9a770a10acbab018cbb847aa20a56cfee0fb935ec153192197e",
+          "evidenceColumnPresent": false,
+          "profileColumnPresent": false,
+          "sourceColumnPresent": false,
+          "confidenceColumnPresent": false,
+          "beforeFields": {
+            "nutritionSource": "missing",
+            "nutritionNote": "No accepted exact or valid stand-in per100g profile/portion mass for this cooking identity. Preserve unknown fields; do not inherit a different nut, root or Mediterranean bay profile or invent zero values.",
+            "nutritionEvidence": [
+              {
+                "url": "https://dailycookingquest.com/rendang-sapi-padang-padang-style-beef-rendang.html",
+                "snapshotSha256": "sha256:2aab34f28011cc14980aa727b337727a0913e6dbf2fb0eff616344d8cf2010ac",
+                "description": "Derived independent source-observation snapshot, not raw HTML; verifies the selected Rendang dish and candlenut count only. It does not independently list the turmeric/daun salam leaf lines or establish nutrient values."
+              },
+              {
+                "url": "https://dailycookingquest.com/rendang-sapi-padang-padang-style-beef-rendang.html",
+                "snapshotSha256": "sha256:31cc230b4d36bc781c078f87072ef67cea54feefb6eed361b709f7f2139e78de",
+                "description": "Derived saved writer source-facts snapshot, not raw HTML; complete selected recipe-card ingredient lines explicitly list 10 candlenuts, 2 fresh turmeric leaves and 5 Indonesian bay leaves. Recipe counts are not global food identity or gram conversions; no exact nutrient profile established."
+              }
+            ]
+          },
+          "beforeColumns": {
+            "nutrition_source": "missing",
+            "nutrition_confidence": "missing"
+          },
+          "beforeParquetColumns": {}
+        },
+        {
+          "directory": "public-dataset",
+          "id": "ia_candlenut",
+          "fullNonProfileHash": "sha256:f9ad5875f74c8b25102afe8126a727f83fb699402562f609b67db8838decb787",
+          "fullBeforeHash": "sha256:752ecc86eb620f8626f43cdf711513a507c27ad3737520537c5e8f46fc22dcef",
+          "fullAfterHash": "sha256:27abba8c573199334d8f79bec1b6debdc2bc3b31bc2349140fb9254f3a7cfcad",
+          "jsonlNonProfileHash": "sha256:755552d9e0d6368eab27d4e2c35e22bd9c35b0de9a315ef6c1d94247ba1eceb7",
+          "parquetNonProfileHash": "sha256:7c11d161e155b9440fe12fda1204b6a5bdb11ae53874bae140e89ad57c9a9daa",
+          "parquetSchemaHash": "sha256:cf9320a2d267ae7200a74086d0a3596d8ac4b7ec1e1e8bf538bba6c75e376244",
+          "evidenceColumnPresent": false,
+          "profileColumnPresent": false,
+          "sourceColumnPresent": true,
+          "confidenceColumnPresent": true,
+          "beforeFields": {
+            "nutritionSource": "missing",
+            "nutritionNote": "No accepted exact or valid stand-in per100g profile/portion mass for this cooking identity. Preserve unknown fields; do not inherit a different nut, root or Mediterranean bay profile or invent zero values.",
+            "nutritionEvidence": [
+              {
+                "url": "https://dailycookingquest.com/rendang-sapi-padang-padang-style-beef-rendang.html",
+                "snapshotSha256": "sha256:2aab34f28011cc14980aa727b337727a0913e6dbf2fb0eff616344d8cf2010ac",
+                "description": "Derived independent source-observation snapshot, not raw HTML; verifies the selected Rendang dish and candlenut count only. It does not independently list the turmeric/daun salam leaf lines or establish nutrient values."
+              },
+              {
+                "url": "https://dailycookingquest.com/rendang-sapi-padang-padang-style-beef-rendang.html",
+                "snapshotSha256": "sha256:31cc230b4d36bc781c078f87072ef67cea54feefb6eed361b709f7f2139e78de",
+                "description": "Derived saved writer source-facts snapshot, not raw HTML; complete selected recipe-card ingredient lines explicitly list 10 candlenuts, 2 fresh turmeric leaves and 5 Indonesian bay leaves. Recipe counts are not global food identity or gram conversions; no exact nutrient profile established."
+              }
+            ]
+          },
+          "beforeColumns": {
+            "nutrition_source": "missing",
+            "nutrition_confidence": "missing"
+          },
+          "beforeParquetColumns": {
+            "nutrition_source": "missing",
+            "nutrition_confidence": "missing"
+          }
+        }
+      ],
+      "intentHash": "sha256:83f2b343394588eedf7f4308d4725e10feb18e88795552b06f101af416d4d352",
+      "review": {
+        "status": "accepted",
+        "reviewerId": "/root",
+        "reviewedAt": "2026-10-04",
+        "intentHash": "sha256:83f2b343394588eedf7f4308d4725e10feb18e88795552b06f101af416d4d352",
+        "notes": "Independent root code review and 50 maintenance tests passed. Repeated apply, readback, exact replay, undo and canonical-only rebuild on a fresh isolated copy of all actual Atlas metadata. Both actual target rows and derivative schema freshly recaptured and exactly match the sealed operation. Every other full and Parquet row stayed unchanged; artwork, compact bytes, original publication evidence and whole-chicken policy preserved. Source label and salt conversion independently reviewed under the separate accepted numeric change. Only current candlenut values/source/note/evidence change; no portion mass or recipe-completeness inference."
+      }
+    }
+  ]
+}

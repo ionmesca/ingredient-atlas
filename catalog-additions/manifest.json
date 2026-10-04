@@ -2761,6 +2761,300 @@
         "sourceHash": "sha256:8af11dd88e9629a20a76161647fbac5a71801277ea0bfc287d8085bcfdbc94ce",
         "notes": "Root compared exact public metadata and all six asset byte descriptors to independently approved food identities and sealed live Buna intents. No private operational fields or source photographs included. Unknown nutrition stays unknown; existing Atlas rows will be preserved by append-only adapter."
       }
+    },
+    {
+      "intentHash": "sha256:adee3b68ac5bb15fdfac5e32f2562baf19b44d7da9dd1c89521334cb7c7273bf",
+      "intent": {
+        "version": 1,
+        "writerId": "/root/nutrition_enrichment_review",
+        "record": {
+          "slug": "chinese-celery",
+          "displayName": "Chinese Celery",
+          "category": "herbs",
+          "subcategory": "fresh leaves and stems",
+          "aliases": [
+            "Chinese celery",
+            "daun sop",
+            "céleri chinois",
+            "sedano cinese",
+            "apio chino",
+            "țelină chinezească",
+            "Chinesischer Sellerie"
+          ],
+          "foodState": "Fresh Chinese celery leafy stems (Apium graveolens); distinct thin-stem culinary herb form from thick Western stalk celery and celeriac.",
+          "unit": "per100g-edible",
+          "nutritionOrigin": "missing",
+          "nutritionNote": "No reviewed exact thin-stem/leaf identity per100g profile or garnish quantity. Do not inherit a Western stalk-celery nutrient profile or fabricate zeros. Source Soto garnish is unquantified.",
+          "evidence": [
+            {
+              "url": "https://dailycookingquest.com/soto-ayam-kediri-kediri-chicken-soup.html",
+              "snapshotSha256": "sha256:866ddca2a5e047d36dccde84734f802e174daf71efaebf7c1b906fba9603c76a",
+              "description": "Derived saved writer source-facts snapshot, not raw HTML; selected Soto card explicitly names thinly sliced Chinese celery (daun seledri), without a quantity."
+            },
+            {
+              "url": "https://www.nparks.gov.sg/florafaunaweb/flora/4/6/4691",
+              "snapshotSha256": "sha256:071bf3cad5c1f2b56cfdc7afac9875aa7d7d4883f24ade5240485ea6757675fd",
+              "description": "Primary botanical identity/morphology, Chinese Celery/Daun Sop and Apium graveolens; thin hollow stems and toothed often3-lobed leaves. No nutrient inference and no source-photo redistribution."
+            }
+          ],
+          "image": {
+            "sha256": "164480d0afe11a5d0e4103ffa0c9affd374fe5aae6aae54eac01af6586377ca3",
+            "masterSha256": "061447374da59881615f67ab2da49c07a4992580d94710f7c1c88a806dfc1a39",
+            "width": 512,
+            "height": 512,
+            "contentType": "image/webp",
+            "alpha": true
+          },
+          "imageReview": {
+            "status": "accepted",
+            "reviewerId": "/root",
+            "reviewedAt": "2026-10-04",
+            "masterSha256": "061447374da59881615f67ab2da49c07a4992580d94710f7c1c88a806dfc1a39",
+            "notes": "Root inspected actual full-size alpha composite and both512 PNG/WebP encodings on four backgrounds against ten original Atlas references. Fresh loose narrow green petioles and toothed leafy tops are appropriate Chinese celery form, distinct from thick joined Western celery. Compared with saved primary NParks produce photo and morphology text; generated illustration is not a botanical or nutrient certification. All stems/leaves complete, clean transparent edges, no flattening/codec/crop defect seen. Exact byte hashes verified.",
+            "styleReferenceSlugs": [
+              "garlic",
+              "carrot",
+              "onion",
+              "tomato",
+              "lemon",
+              "banana",
+              "butter",
+              "coconut-milk",
+              "chickpea",
+              "parsley"
+            ],
+            "backgrounds": [
+              "white",
+              "warm",
+              "dark",
+              "checkerboard"
+            ]
+          }
+        },
+        "intentHash": "sha256:adee3b68ac5bb15fdfac5e32f2562baf19b44d7da9dd1c89521334cb7c7273bf",
+        "review": {
+          "status": "accepted",
+          "reviewerId": "/root",
+          "reviewedAt": "2026-10-04",
+          "intentHash": "sha256:adee3b68ac5bb15fdfac5e32f2562baf19b44d7da9dd1c89521334cb7c7273bf",
+          "notes": "Exact Chinese celery leafy-stem identity reviewed against source ingredient facts and primary NParks morphology/photo. Actual generated alpha image passed root independent four-background/full-master review. Existing Western celery not overwritten or nutritionally inherited; new profile/density/FDC remain explicitly unknown. No source photograph is published."
+        }
+      },
+      "record": {
+        "id": "ia_chinese-celery",
+        "slug": "chinese-celery",
+        "displayName": "Chinese Celery",
+        "category": "herbs",
+        "subcategory": "fresh leaves and stems",
+        "aliases": [
+          "Chinese celery",
+          "daun sop",
+          "céleri chinois",
+          "sedano cinese",
+          "apio chino",
+          "țelină chinezească"
+        ],
+        "aliasesDe": [
+          "Chinesischer Sellerie"
+        ],
+        "images": {
+          "original": {
+            "path": "catalog-additions/assets/chinese-celery/original.webp",
+            "sha256": "b3dd80777314ee2750253a1fd28bf445c5e16738dd7085a9bbeb478cfa37ce29",
+            "bytes": 216888,
+            "width": 1254,
+            "height": 1254,
+            "contentType": "image/webp"
+          },
+          "transparent": {
+            "webp512": {
+              "path": "catalog-additions/assets/chinese-celery/webp512.webp",
+              "sha256": "164480d0afe11a5d0e4103ffa0c9affd374fe5aae6aae54eac01af6586377ca3",
+              "bytes": 76996,
+              "width": 512,
+              "height": 512,
+              "contentType": "image/webp",
+              "alpha": true
+            },
+            "master": {
+              "path": "catalog-additions/assets/chinese-celery/master.png",
+              "sha256": "061447374da59881615f67ab2da49c07a4992580d94710f7c1c88a806dfc1a39",
+              "bytes": 1288330,
+              "width": 1254,
+              "height": 1254,
+              "contentType": "image/png",
+              "alpha": true
+            },
+            "png512": {
+              "path": "catalog-additions/assets/chinese-celery/png512.png",
+              "sha256": "50e2ed19fc9c6a16d6a7ab829676f31936642d5b1abf4b647b6d018753e57050",
+              "bytes": 287853,
+              "width": 512,
+              "height": 512,
+              "contentType": "image/png",
+              "alpha": true
+            }
+          },
+          "png512": {
+            "path": "catalog-additions/assets/chinese-celery/white512.png",
+            "sha256": "a480e4ed95662dfdf243e36be4ad7f4ecce01481639e494783eff97476ef2da0",
+            "bytes": 249991,
+            "width": 512,
+            "height": 512,
+            "contentType": "image/png"
+          },
+          "webp512": {
+            "path": "catalog-additions/assets/chinese-celery/white512.webp",
+            "sha256": "f0a494496362955363ad447a5f0fdd7122688068eac00497edda39ea0d63fd10",
+            "bytes": 40838,
+            "width": 512,
+            "height": 512,
+            "contentType": "image/webp"
+          }
+        },
+        "license": {
+          "status": "reviewed-catalog-addition",
+          "metadata": "CC0-1.0",
+          "images": "CC0-1.0",
+          "code": "MIT"
+        },
+        "provenance": {
+          "incubatedBy": "Buna",
+          "aiGenerated": true,
+          "imageGeneration": {
+            "tool": "image_gen",
+            "transparentBackground": true,
+            "mode": "new-generation",
+            "writerId": "/root/nutrition_enrichment_review",
+            "promptVersion": "chinese-celery-state-v1"
+          },
+          "imageReview": {
+            "status": "accepted",
+            "masterSha256": "061447374da59881615f67ab2da49c07a4992580d94710f7c1c88a806dfc1a39",
+            "reviewerId": "/root",
+            "reviewedAt": "2026-10-04",
+            "notes": "Root inspected actual full-size alpha composite and both512 PNG/WebP encodings on four backgrounds against ten original Atlas references. Fresh loose narrow green petioles and toothed leafy tops are appropriate Chinese celery form, distinct from thick joined Western celery. Compared with saved primary NParks produce photo and morphology text; generated illustration is not a botanical or nutrient certification. All stems/leaves complete, clean transparent edges, no flattening/codec/crop defect seen. Exact byte hashes verified.",
+            "styleReferenceSlugs": [
+              "garlic",
+              "carrot",
+              "onion",
+              "tomato",
+              "lemon",
+              "banana",
+              "butter",
+              "coconut-milk",
+              "chickpea",
+              "parsley"
+            ],
+            "backgrounds": [
+              "white",
+              "warm",
+              "dark",
+              "checkerboard"
+            ]
+          }
+        },
+        "review": {
+          "status": "independently-reviewed-catalog-addition",
+          "sourceImageApproved": true,
+          "metadataReview": {
+            "status": "accepted",
+            "reviewerId": "/root",
+            "reviewedAt": "2026-10-04",
+            "intentHash": "sha256:adee3b68ac5bb15fdfac5e32f2562baf19b44d7da9dd1c89521334cb7c7273bf",
+            "notes": "Exact Chinese celery leafy-stem identity reviewed against source ingredient facts and primary NParks morphology/photo. Actual generated alpha image passed root independent four-background/full-master review. Existing Western celery not overwritten or nutritionally inherited; new profile/density/FDC remain explicitly unknown. No source photograph is published."
+          }
+        },
+        "metadata": {
+          "nutritionSource": "missing",
+          "nutritionNote": "No reviewed exact thin-stem/leaf identity per100g profile or garnish quantity. Do not inherit a Western stalk-celery nutrient profile or fabricate zeros. Source Soto garnish is unquantified.",
+          "nutritionEvidence": [
+            {
+              "url": "https://dailycookingquest.com/soto-ayam-kediri-kediri-chicken-soup.html",
+              "snapshotSha256": "sha256:866ddca2a5e047d36dccde84734f802e174daf71efaebf7c1b906fba9603c76a",
+              "description": "Derived saved writer source-facts snapshot, not raw HTML; selected Soto card explicitly names thinly sliced Chinese celery (daun seledri), without a quantity."
+            },
+            {
+              "url": "https://www.nparks.gov.sg/florafaunaweb/flora/4/6/4691",
+              "snapshotSha256": "sha256:071bf3cad5c1f2b56cfdc7afac9875aa7d7d4883f24ade5240485ea6757675fd",
+              "description": "Primary botanical identity/morphology, Chinese Celery/Daun Sop and Apium graveolens; thin hollow stems and toothed often3-lobed leaves. No nutrient inference and no source-photo redistribution."
+            }
+          ],
+          "publicationIntentHash": "sha256:adee3b68ac5bb15fdfac5e32f2562baf19b44d7da9dd1c89521334cb7c7273bf",
+          "publicationRecord": {
+            "slug": "chinese-celery",
+            "displayName": "Chinese Celery",
+            "category": "herbs",
+            "subcategory": "fresh leaves and stems",
+            "aliases": [
+              "Chinese celery",
+              "daun sop",
+              "céleri chinois",
+              "sedano cinese",
+              "apio chino",
+              "țelină chinezească",
+              "Chinesischer Sellerie"
+            ],
+            "foodState": "Fresh Chinese celery leafy stems (Apium graveolens); distinct thin-stem culinary herb form from thick Western stalk celery and celeriac.",
+            "unit": "per100g-edible",
+            "nutritionOrigin": "missing",
+            "nutritionNote": "No reviewed exact thin-stem/leaf identity per100g profile or garnish quantity. Do not inherit a Western stalk-celery nutrient profile or fabricate zeros. Source Soto garnish is unquantified.",
+            "evidence": [
+              {
+                "url": "https://dailycookingquest.com/soto-ayam-kediri-kediri-chicken-soup.html",
+                "snapshotSha256": "sha256:866ddca2a5e047d36dccde84734f802e174daf71efaebf7c1b906fba9603c76a",
+                "description": "Derived saved writer source-facts snapshot, not raw HTML; selected Soto card explicitly names thinly sliced Chinese celery (daun seledri), without a quantity."
+              },
+              {
+                "url": "https://www.nparks.gov.sg/florafaunaweb/flora/4/6/4691",
+                "snapshotSha256": "sha256:071bf3cad5c1f2b56cfdc7afac9875aa7d7d4883f24ade5240485ea6757675fd",
+                "description": "Primary botanical identity/morphology, Chinese Celery/Daun Sop and Apium graveolens; thin hollow stems and toothed often3-lobed leaves. No nutrient inference and no source-photo redistribution."
+              }
+            ],
+            "image": {
+              "sha256": "164480d0afe11a5d0e4103ffa0c9affd374fe5aae6aae54eac01af6586377ca3",
+              "masterSha256": "061447374da59881615f67ab2da49c07a4992580d94710f7c1c88a806dfc1a39",
+              "width": 512,
+              "height": 512,
+              "contentType": "image/webp",
+              "alpha": true
+            },
+            "imageReview": {
+              "status": "accepted",
+              "reviewerId": "/root",
+              "reviewedAt": "2026-10-04",
+              "masterSha256": "061447374da59881615f67ab2da49c07a4992580d94710f7c1c88a806dfc1a39",
+              "notes": "Root inspected actual full-size alpha composite and both512 PNG/WebP encodings on four backgrounds against ten original Atlas references. Fresh loose narrow green petioles and toothed leafy tops are appropriate Chinese celery form, distinct from thick joined Western celery. Compared with saved primary NParks produce photo and morphology text; generated illustration is not a botanical or nutrient certification. All stems/leaves complete, clean transparent edges, no flattening/codec/crop defect seen. Exact byte hashes verified.",
+              "styleReferenceSlugs": [
+                "garlic",
+                "carrot",
+                "onion",
+                "tomato",
+                "lemon",
+                "banana",
+                "butter",
+                "coconut-milk",
+                "chickpea",
+                "parsley"
+              ],
+              "backgrounds": [
+                "white",
+                "warm",
+                "dark",
+                "checkerboard"
+              ]
+            }
+          }
+        }
+      },
+      "sourceHash": "sha256:e162e3afcf403bfd45e570b498f73a8e3862d1deaa06126816a69bb220eeb018",
+      "sourceReview": {
+        "status": "accepted",
+        "reviewerId": "/root",
+        "reviewedAt": "2026-10-04",
+        "sourceHash": "sha256:e162e3afcf403bfd45e570b498f73a8e3862d1deaa06126816a69bb220eeb018",
+        "notes": "Root reviewed exact Chinese celery identity, honest unknown nutrition and all six generated asset descriptors against approved intent and independent source/art review. No original source photograph/private operational data published. Existing celery and all previous records remain unchanged."
+      }
     }
   ]
 }

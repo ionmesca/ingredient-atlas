@@ -3055,6 +3055,1487 @@
         "sourceHash": "sha256:e162e3afcf403bfd45e570b498f73a8e3862d1deaa06126816a69bb220eeb018",
         "notes": "Root reviewed exact Chinese celery identity, honest unknown nutrition and all six generated asset descriptors against approved intent and independent source/art review. No original source photograph/private operational data published. Existing celery and all previous records remain unchanged."
       }
+    },
+    {
+      "intentHash": "sha256:db2e1ed4d8f22be0fecda40f65689497c3406c8f546c7441cf3cd19681a9e79a",
+      "intent": {
+        "version": 1,
+        "writerId": "/root/ingredient_mapping",
+        "record": {
+          "slug": "cooked-puy-lentils",
+          "displayName": "Cooked Puy Lentils",
+          "category": "pantry",
+          "subcategory": "cooked legumes",
+          "aliases": [
+            "cooked Puy lentils",
+            "canned Puy lentils",
+            "lentilles du Puy cuites",
+            "lenticchie di Puy cotte",
+            "lentejas de Puy cocidas",
+            "linte Puy fiartă",
+            "gekochte Puy-Linsen"
+          ],
+          "foodState": "Cooked canned Puy/French green lentils, drained and rinsed before recipe use; source lists1x400g net can, not a weighed400g drained portion.",
+          "unit": "per100g-edible",
+          "nutritionOrigin": "missing",
+          "nutritionNote": "No accepted exact per100g cooked Puy profile. Dry Puy lentils and generic cooked/canned lentils must not become an asserted exact nutrient profile by artwork reuse; drained edible mass is not stated.",
+          "evidence": [
+            {
+              "url": "https://www.mob.co.uk/recipes/greek-gnocchi-traybake",
+              "snapshotSha256": "sha256:80d3a1663653f9f45e990051c58e3cce69581c372379315e8c1dee358ecbef1a",
+              "description": "Saved Mob native-app factual observation packet, not HTML or independently reopened source; exact source ingredient line 6 identifies Cooked Puy Lentils. No exact product nutrition or unobserved edible mass inferred."
+            }
+          ],
+          "image": {
+            "sha256": "7b5d085360f9db1cc0ad60a476e7924fc726b92a890b375da62e7abc7c661101",
+            "masterSha256": "f85de5fcddee2736d740ebf25e92fd1b056d87d4ecb0f4e218bcd10108d91adb",
+            "width": 512,
+            "height": 512,
+            "contentType": "image/webp",
+            "alpha": true
+          },
+          "imageReview": {
+            "status": "accepted",
+            "reviewerId": "/root/verifier_recipes",
+            "reviewedAt": "2026-10-04T07:31:11.957593+00:00",
+            "masterSha256": "f85de5fcddee2736d740ebf25e92fd1b056d87d4ecb0f4e218bcd10108d91adb",
+            "notes": "Accepted artwork-only reuse: cooked brown-green lentils in complete unbranded open can. Canned appearance precedes source drain/rinse; no cultivar, nutrient or drained-mass equivalence. Corrected visibleForm and removed broader generic French-green alias independently reread. Legacy source master remains512px and max alpha254; visible can body/rim complete on four backgrounds.",
+            "styleReferenceSlugs": [
+              "bagel",
+              "baguette",
+              "baking-powder",
+              "baking-soda",
+              "blini",
+              "bread",
+              "breadsticks",
+              "brioche",
+              "challah",
+              "chapati"
+            ],
+            "backgrounds": [
+              "white",
+              "warm",
+              "dark",
+              "checkerboard"
+            ]
+          }
+        },
+        "intentHash": "sha256:db2e1ed4d8f22be0fecda40f65689497c3406c8f546c7441cf3cd19681a9e79a",
+        "review": {
+          "status": "accepted",
+          "intentHash": "sha256:db2e1ed4d8f22be0fecda40f65689497c3406c8f546c7441cf3cd19681a9e79a",
+          "reviewerId": "/root/verifier_recipes",
+          "reviewedAt": "2026-10-04T07:45:44.274Z",
+          "notes": "Exact publication identity, aliases, state, source snapshot evidence and accepted transparent image bytes independently compared with current attached addition/accepted seed. All nutrition remains missing: no per100g values, FDC ID, density, labels or donor allergen/diet data asserted. Source evidence is saved native-app facts; original source reopening and live publication remain separate."
+        }
+      },
+      "record": {
+        "id": "ia_cooked-puy-lentils",
+        "slug": "cooked-puy-lentils",
+        "displayName": "Cooked Puy Lentils",
+        "category": "pantry",
+        "subcategory": "cooked legumes",
+        "aliases": [
+          "cooked Puy lentils",
+          "canned Puy lentils",
+          "lentilles du Puy cuites",
+          "lenticchie di Puy cotte",
+          "lentejas de Puy cocidas",
+          "linte Puy fiartă"
+        ],
+        "aliasesDe": [
+          "gekochte Puy-Linsen"
+        ],
+        "images": {
+          "original": {
+            "path": "catalog-additions/assets/cooked-puy-lentils/original.webp",
+            "sha256": "63cb124a96f5fe525861ef7f76f88b8157ed1234f8586b32d1510ebfdcbacec9",
+            "bytes": 19134,
+            "width": 512,
+            "height": 512,
+            "contentType": "image/webp"
+          },
+          "transparent": {
+            "webp512": {
+              "path": "catalog-additions/assets/cooked-puy-lentils/webp512.webp",
+              "sha256": "7b5d085360f9db1cc0ad60a476e7924fc726b92a890b375da62e7abc7c661101",
+              "bytes": 61862,
+              "width": 512,
+              "height": 512,
+              "contentType": "image/webp",
+              "alpha": true
+            },
+            "master": {
+              "path": "catalog-additions/assets/cooked-puy-lentils/master.png",
+              "sha256": "f85de5fcddee2736d740ebf25e92fd1b056d87d4ecb0f4e218bcd10108d91adb",
+              "bytes": 205304,
+              "width": 512,
+              "height": 512,
+              "contentType": "image/png",
+              "alpha": true
+            },
+            "png512": {
+              "path": "catalog-additions/assets/cooked-puy-lentils/png512.png",
+              "sha256": "6a2e69ea1e9f65ce1d6789d725d7b969e7c0f85ea4aa8e8891cd253989b6498c",
+              "bytes": 288055,
+              "width": 512,
+              "height": 512,
+              "contentType": "image/png",
+              "alpha": true
+            }
+          },
+          "png512": {
+            "path": "catalog-additions/assets/cooked-puy-lentils/white512.png",
+            "sha256": "f6521b38d8a1da353c01e87b378c0c2bfa943f86838a2082207df17e3eea0d73",
+            "bytes": 176389,
+            "width": 512,
+            "height": 512,
+            "contentType": "image/png"
+          },
+          "webp512": {
+            "path": "catalog-additions/assets/cooked-puy-lentils/white512.webp",
+            "sha256": "2d61ff8e49113c12fcd62efdfc716dd4accdd2694a839cdf809d94e887fdb139",
+            "bytes": 19004,
+            "width": 512,
+            "height": 512,
+            "contentType": "image/webp"
+          }
+        },
+        "license": {
+          "status": "reviewed-catalog-addition",
+          "metadata": "CC0-1.0",
+          "images": "CC0-1.0",
+          "code": "MIT"
+        },
+        "provenance": {
+          "incubatedBy": "Buna",
+          "aiGenerated": true,
+          "imageReuse": {
+            "sourceAtlasSlug": "canned-lentils",
+            "variantSha256s": {
+              "master": "f85de5fcddee2736d740ebf25e92fd1b056d87d4ecb0f4e218bcd10108d91adb",
+              "png512": "6a2e69ea1e9f65ce1d6789d725d7b969e7c0f85ea4aa8e8891cd253989b6498c",
+              "webp512": "7b5d085360f9db1cc0ad60a476e7924fc726b92a890b375da62e7abc7c661101"
+            },
+            "kind": "reviewed-atlas-cutout",
+            "version": "0.2.0",
+            "sourcePath": "public-dataset/images/original/pantry/canned-lentils.webp",
+            "sourceSha256": "63cb124a96f5fe525861ef7f76f88b8157ed1234f8586b32d1510ebfdcbacec9",
+            "summarySha256": "9fa4075beac1be283552fc95faaeab5904a63eb986dcb91182d065bf0f7d2019",
+            "qaReviewSha256": "3acb7361bf85539511a29135a41174aa711c521beb4d3d139881b999aa825fef",
+            "handoffSha256": "5c126d900d5ca829bdbb3ca47782f0ac861660227f7e009694560cb1447a34f1",
+            "overridesSha256": "5941f70a6f7f842eab0643ebca9abb5141d67b61b5afba81131b42a40b3d8a3c",
+            "model": "isnet-general-use",
+            "qaFlags": [],
+            "recordedVisualAcceptance": true,
+            "exception": {
+              "kind": "visual-art-only-new-food-identity",
+              "sourceAtlasSlug": "canned-lentils",
+              "sourceSha256": "63cb124a96f5fe525861ef7f76f88b8157ed1234f8586b32d1510ebfdcbacec9",
+              "nutritionReuse": false,
+              "masterByteIdentity": true
+            }
+          },
+          "imageReview": {
+            "status": "accepted",
+            "masterSha256": "f85de5fcddee2736d740ebf25e92fd1b056d87d4ecb0f4e218bcd10108d91adb",
+            "reviewerId": "/root/verifier_recipes",
+            "reviewedAt": "2026-10-04T07:31:11.957593+00:00",
+            "notes": "Accepted artwork-only reuse: cooked brown-green lentils in complete unbranded open can. Canned appearance precedes source drain/rinse; no cultivar, nutrient or drained-mass equivalence. Corrected visibleForm and removed broader generic French-green alias independently reread. Legacy source master remains512px and max alpha254; visible can body/rim complete on four backgrounds.",
+            "styleReferenceSlugs": [
+              "bagel",
+              "baguette",
+              "baking-powder",
+              "baking-soda",
+              "blini",
+              "bread",
+              "breadsticks",
+              "brioche",
+              "challah",
+              "chapati"
+            ],
+            "backgrounds": [
+              "white",
+              "warm",
+              "dark",
+              "checkerboard"
+            ],
+            "png512Sha256": "6a2e69ea1e9f65ce1d6789d725d7b969e7c0f85ea4aa8e8891cd253989b6498c",
+            "webp512Sha256": "7b5d085360f9db1cc0ad60a476e7924fc726b92a890b375da62e7abc7c661101"
+          }
+        },
+        "review": {
+          "status": "independently-reviewed-catalog-addition",
+          "sourceImageApproved": true,
+          "metadataReview": {
+            "status": "accepted",
+            "intentHash": "sha256:db2e1ed4d8f22be0fecda40f65689497c3406c8f546c7441cf3cd19681a9e79a",
+            "reviewerId": "/root/verifier_recipes",
+            "reviewedAt": "2026-10-04T07:45:44.274Z",
+            "notes": "Exact publication identity, aliases, state, source snapshot evidence and accepted transparent image bytes independently compared with current attached addition/accepted seed. All nutrition remains missing: no per100g values, FDC ID, density, labels or donor allergen/diet data asserted. Source evidence is saved native-app facts; original source reopening and live publication remain separate."
+          }
+        },
+        "metadata": {
+          "nutritionSource": "missing",
+          "nutritionNote": "No accepted exact per100g cooked Puy profile. Dry Puy lentils and generic cooked/canned lentils must not become an asserted exact nutrient profile by artwork reuse; drained edible mass is not stated.",
+          "nutritionEvidence": [
+            {
+              "url": "https://www.mob.co.uk/recipes/greek-gnocchi-traybake",
+              "snapshotSha256": "sha256:80d3a1663653f9f45e990051c58e3cce69581c372379315e8c1dee358ecbef1a",
+              "description": "Saved Mob native-app factual observation packet, not HTML or independently reopened source; exact source ingredient line 6 identifies Cooked Puy Lentils. No exact product nutrition or unobserved edible mass inferred."
+            }
+          ],
+          "publicationIntentHash": "sha256:db2e1ed4d8f22be0fecda40f65689497c3406c8f546c7441cf3cd19681a9e79a",
+          "publicationRecord": {
+            "slug": "cooked-puy-lentils",
+            "displayName": "Cooked Puy Lentils",
+            "category": "pantry",
+            "subcategory": "cooked legumes",
+            "aliases": [
+              "cooked Puy lentils",
+              "canned Puy lentils",
+              "lentilles du Puy cuites",
+              "lenticchie di Puy cotte",
+              "lentejas de Puy cocidas",
+              "linte Puy fiartă",
+              "gekochte Puy-Linsen"
+            ],
+            "foodState": "Cooked canned Puy/French green lentils, drained and rinsed before recipe use; source lists1x400g net can, not a weighed400g drained portion.",
+            "unit": "per100g-edible",
+            "nutritionOrigin": "missing",
+            "nutritionNote": "No accepted exact per100g cooked Puy profile. Dry Puy lentils and generic cooked/canned lentils must not become an asserted exact nutrient profile by artwork reuse; drained edible mass is not stated.",
+            "evidence": [
+              {
+                "url": "https://www.mob.co.uk/recipes/greek-gnocchi-traybake",
+                "snapshotSha256": "sha256:80d3a1663653f9f45e990051c58e3cce69581c372379315e8c1dee358ecbef1a",
+                "description": "Saved Mob native-app factual observation packet, not HTML or independently reopened source; exact source ingredient line 6 identifies Cooked Puy Lentils. No exact product nutrition or unobserved edible mass inferred."
+              }
+            ],
+            "image": {
+              "sha256": "7b5d085360f9db1cc0ad60a476e7924fc726b92a890b375da62e7abc7c661101",
+              "masterSha256": "f85de5fcddee2736d740ebf25e92fd1b056d87d4ecb0f4e218bcd10108d91adb",
+              "width": 512,
+              "height": 512,
+              "contentType": "image/webp",
+              "alpha": true
+            },
+            "imageReview": {
+              "status": "accepted",
+              "reviewerId": "/root/verifier_recipes",
+              "reviewedAt": "2026-10-04T07:31:11.957593+00:00",
+              "masterSha256": "f85de5fcddee2736d740ebf25e92fd1b056d87d4ecb0f4e218bcd10108d91adb",
+              "notes": "Accepted artwork-only reuse: cooked brown-green lentils in complete unbranded open can. Canned appearance precedes source drain/rinse; no cultivar, nutrient or drained-mass equivalence. Corrected visibleForm and removed broader generic French-green alias independently reread. Legacy source master remains512px and max alpha254; visible can body/rim complete on four backgrounds.",
+              "styleReferenceSlugs": [
+                "bagel",
+                "baguette",
+                "baking-powder",
+                "baking-soda",
+                "blini",
+                "bread",
+                "breadsticks",
+                "brioche",
+                "challah",
+                "chapati"
+              ],
+              "backgrounds": [
+                "white",
+                "warm",
+                "dark",
+                "checkerboard"
+              ]
+            }
+          }
+        }
+      },
+      "sourceHash": "sha256:0545b359de42cd564d13e0ccb4abc97e46db30819d649c7ff44e7ea85fcbe5ff",
+      "sourceReview": {
+        "status": "accepted",
+        "sourceHash": "sha256:0545b359de42cd564d13e0ccb4abc97e46db30819d649c7ff44e7ea85fcbe5ff",
+        "reviewerId": "/root/verifier_recipes",
+        "reviewedAt": "2026-10-04T07:51:46.508Z",
+        "notes": "Exact public-safe staged source independently checked: accepted intent/full publication record, aliases/state/evidence and explicit missing nutrition preserved. Art-only reuse and new-generation provenance are truthful. All staged asset hashes/bytes/decoded dimensions/formats match; alpha bytes unchanged, opaque compatibility separate. Paprika original256px donor preserved; genuine512 compatibility PNG/WebP visually inspected and reproduced exactly from documented Sharp Lanczos/default-WebP-intermediate pipeline. Credentials, absolute workstation paths, third-party source artifacts and extra files absent. Staged preparation acceptance only; live target apply remains separately gated."
+      }
+    },
+    {
+      "intentHash": "sha256:dcab560b46f34e8674f259fb9a0785c5183e5ef002ca892130a7df8c6a61fdb2",
+      "intent": {
+        "version": 1,
+        "writerId": "/root/ingredient_mapping",
+        "record": {
+          "slug": "mixed-olives",
+          "displayName": "Mixed Olives",
+          "category": "pantry",
+          "subcategory": "olives",
+          "aliases": [
+            "mixed olives",
+            "assorted olives",
+            "olives mélangées",
+            "olive miste",
+            "aceitunas variadas",
+            "măsline mixte",
+            "gemischte Oliven"
+          ],
+          "foodState": "Prepared mixed olives as source ingredient; varieties, packing medium, pitted state and exact formulation are unspecified. Source weighs5¼oz.",
+          "unit": "per100g-edible",
+          "nutritionOrigin": "missing",
+          "nutritionNote": "No exact mixed-variety/packing-medium nutrient profile accepted. Kalamata-only values cannot stand for unspecified mixed olives, and artwork is not evidence of a specific ratio or pitted/drained composition.",
+          "evidence": [
+            {
+              "url": "https://www.mob.co.uk/recipes/greek-gnocchi-traybake",
+              "snapshotSha256": "sha256:80d3a1663653f9f45e990051c58e3cce69581c372379315e8c1dee358ecbef1a",
+              "description": "Saved Mob native-app factual observation packet, not HTML or independently reopened source; exact source ingredient line 11 identifies Mixed Olives. No exact product nutrition or unobserved edible mass inferred."
+            }
+          ],
+          "image": {
+            "sha256": "31e7ea88556408b0647a10ac4d0863c1b4f2971b3ce531acf6d058c093bad7a8",
+            "masterSha256": "8efa4a4d3e6c8d3216d1e9a55d69b0466803a9750d369e53067cc253ff7dfd96",
+            "width": 512,
+            "height": 512,
+            "contentType": "image/webp",
+            "alpha": true
+          },
+          "imageReview": {
+            "status": "accepted",
+            "reviewerId": "/root/verifier_recipes",
+            "reviewedAt": "2026-10-04T07:31:11.995784+00:00",
+            "masterSha256": "8efa4a4d3e6c8d3216d1e9a55d69b0466803a9750d369e53067cc253ff7dfd96",
+            "notes": "Green plus dark purple-black whole olives in complete light bowl; no stuffing, garnish, brand, cultivar ratio, pitted or brine claim. New transparent master and both512 encodings show clean edges and preserved bowl/olives.",
+            "styleReferenceSlugs": [
+              "bagel",
+              "baguette",
+              "baking-powder",
+              "baking-soda",
+              "blini",
+              "bread",
+              "breadsticks",
+              "brioche",
+              "challah",
+              "chapati"
+            ],
+            "backgrounds": [
+              "white",
+              "warm",
+              "dark",
+              "checkerboard"
+            ]
+          }
+        },
+        "intentHash": "sha256:dcab560b46f34e8674f259fb9a0785c5183e5ef002ca892130a7df8c6a61fdb2",
+        "review": {
+          "status": "accepted",
+          "intentHash": "sha256:dcab560b46f34e8674f259fb9a0785c5183e5ef002ca892130a7df8c6a61fdb2",
+          "reviewerId": "/root/verifier_recipes",
+          "reviewedAt": "2026-10-04T07:45:44.278Z",
+          "notes": "Exact publication identity, aliases, state, source snapshot evidence and accepted transparent image bytes independently compared with current attached addition/accepted seed. All nutrition remains missing: no per100g values, FDC ID, density, labels or donor allergen/diet data asserted. Source evidence is saved native-app facts; original source reopening and live publication remain separate."
+        }
+      },
+      "record": {
+        "id": "ia_mixed-olives",
+        "slug": "mixed-olives",
+        "displayName": "Mixed Olives",
+        "category": "pantry",
+        "subcategory": "olives",
+        "aliases": [
+          "mixed olives",
+          "assorted olives",
+          "olives mélangées",
+          "olive miste",
+          "aceitunas variadas",
+          "măsline mixte"
+        ],
+        "aliasesDe": [
+          "gemischte Oliven"
+        ],
+        "images": {
+          "original": {
+            "path": "catalog-additions/assets/mixed-olives/original.webp",
+            "sha256": "e54d96a7cf1a0d3073ea5c8fee9bc5038488bba23218f1a6ca94c605933fca9a",
+            "bytes": 190200,
+            "width": 1254,
+            "height": 1254,
+            "contentType": "image/webp"
+          },
+          "transparent": {
+            "webp512": {
+              "path": "catalog-additions/assets/mixed-olives/webp512.webp",
+              "sha256": "31e7ea88556408b0647a10ac4d0863c1b4f2971b3ce531acf6d058c093bad7a8",
+              "bytes": 51220,
+              "width": 512,
+              "height": 512,
+              "contentType": "image/webp",
+              "alpha": true
+            },
+            "master": {
+              "path": "catalog-additions/assets/mixed-olives/master.png",
+              "sha256": "8efa4a4d3e6c8d3216d1e9a55d69b0466803a9750d369e53067cc253ff7dfd96",
+              "bytes": 1228718,
+              "width": 1254,
+              "height": 1254,
+              "contentType": "image/png",
+              "alpha": true
+            },
+            "png512": {
+              "path": "catalog-additions/assets/mixed-olives/png512.png",
+              "sha256": "f06043d7cb488d311eed24645ad00fe429a7604f162b5468b652356c1dc0b372",
+              "bytes": 301194,
+              "width": 512,
+              "height": 512,
+              "contentType": "image/png",
+              "alpha": true
+            }
+          },
+          "png512": {
+            "path": "catalog-additions/assets/mixed-olives/white512.png",
+            "sha256": "9226bad06805ffbf02137718fed7d962c1aa53689fd0c55910e0a261dccc45d7",
+            "bytes": 241219,
+            "width": 512,
+            "height": 512,
+            "contentType": "image/png"
+          },
+          "webp512": {
+            "path": "catalog-additions/assets/mixed-olives/white512.webp",
+            "sha256": "2df55681e279492521b1a8882dfced3717b049861ff48abf133ab79639ed1679",
+            "bytes": 32462,
+            "width": 512,
+            "height": 512,
+            "contentType": "image/webp"
+          }
+        },
+        "license": {
+          "status": "reviewed-catalog-addition",
+          "metadata": "CC0-1.0",
+          "images": "CC0-1.0",
+          "code": "MIT"
+        },
+        "provenance": {
+          "incubatedBy": "Buna",
+          "aiGenerated": true,
+          "imageGeneration": {
+            "tool": "image_gen",
+            "transparentBackground": true,
+            "mode": "new-generation",
+            "writerId": "/root/ingredient_images"
+          },
+          "imageReview": {
+            "status": "accepted",
+            "masterSha256": "8efa4a4d3e6c8d3216d1e9a55d69b0466803a9750d369e53067cc253ff7dfd96",
+            "reviewerId": "/root/verifier_recipes",
+            "reviewedAt": "2026-10-04T07:31:11.995784+00:00",
+            "notes": "Green plus dark purple-black whole olives in complete light bowl; no stuffing, garnish, brand, cultivar ratio, pitted or brine claim. New transparent master and both512 encodings show clean edges and preserved bowl/olives.",
+            "styleReferenceSlugs": [
+              "bagel",
+              "baguette",
+              "baking-powder",
+              "baking-soda",
+              "blini",
+              "bread",
+              "breadsticks",
+              "brioche",
+              "challah",
+              "chapati"
+            ],
+            "backgrounds": [
+              "white",
+              "warm",
+              "dark",
+              "checkerboard"
+            ],
+            "png512Sha256": "f06043d7cb488d311eed24645ad00fe429a7604f162b5468b652356c1dc0b372",
+            "webp512Sha256": "31e7ea88556408b0647a10ac4d0863c1b4f2971b3ce531acf6d058c093bad7a8"
+          }
+        },
+        "review": {
+          "status": "independently-reviewed-catalog-addition",
+          "sourceImageApproved": true,
+          "metadataReview": {
+            "status": "accepted",
+            "intentHash": "sha256:dcab560b46f34e8674f259fb9a0785c5183e5ef002ca892130a7df8c6a61fdb2",
+            "reviewerId": "/root/verifier_recipes",
+            "reviewedAt": "2026-10-04T07:45:44.278Z",
+            "notes": "Exact publication identity, aliases, state, source snapshot evidence and accepted transparent image bytes independently compared with current attached addition/accepted seed. All nutrition remains missing: no per100g values, FDC ID, density, labels or donor allergen/diet data asserted. Source evidence is saved native-app facts; original source reopening and live publication remain separate."
+          }
+        },
+        "metadata": {
+          "nutritionSource": "missing",
+          "nutritionNote": "No exact mixed-variety/packing-medium nutrient profile accepted. Kalamata-only values cannot stand for unspecified mixed olives, and artwork is not evidence of a specific ratio or pitted/drained composition.",
+          "nutritionEvidence": [
+            {
+              "url": "https://www.mob.co.uk/recipes/greek-gnocchi-traybake",
+              "snapshotSha256": "sha256:80d3a1663653f9f45e990051c58e3cce69581c372379315e8c1dee358ecbef1a",
+              "description": "Saved Mob native-app factual observation packet, not HTML or independently reopened source; exact source ingredient line 11 identifies Mixed Olives. No exact product nutrition or unobserved edible mass inferred."
+            }
+          ],
+          "publicationIntentHash": "sha256:dcab560b46f34e8674f259fb9a0785c5183e5ef002ca892130a7df8c6a61fdb2",
+          "publicationRecord": {
+            "slug": "mixed-olives",
+            "displayName": "Mixed Olives",
+            "category": "pantry",
+            "subcategory": "olives",
+            "aliases": [
+              "mixed olives",
+              "assorted olives",
+              "olives mélangées",
+              "olive miste",
+              "aceitunas variadas",
+              "măsline mixte",
+              "gemischte Oliven"
+            ],
+            "foodState": "Prepared mixed olives as source ingredient; varieties, packing medium, pitted state and exact formulation are unspecified. Source weighs5¼oz.",
+            "unit": "per100g-edible",
+            "nutritionOrigin": "missing",
+            "nutritionNote": "No exact mixed-variety/packing-medium nutrient profile accepted. Kalamata-only values cannot stand for unspecified mixed olives, and artwork is not evidence of a specific ratio or pitted/drained composition.",
+            "evidence": [
+              {
+                "url": "https://www.mob.co.uk/recipes/greek-gnocchi-traybake",
+                "snapshotSha256": "sha256:80d3a1663653f9f45e990051c58e3cce69581c372379315e8c1dee358ecbef1a",
+                "description": "Saved Mob native-app factual observation packet, not HTML or independently reopened source; exact source ingredient line 11 identifies Mixed Olives. No exact product nutrition or unobserved edible mass inferred."
+              }
+            ],
+            "image": {
+              "sha256": "31e7ea88556408b0647a10ac4d0863c1b4f2971b3ce531acf6d058c093bad7a8",
+              "masterSha256": "8efa4a4d3e6c8d3216d1e9a55d69b0466803a9750d369e53067cc253ff7dfd96",
+              "width": 512,
+              "height": 512,
+              "contentType": "image/webp",
+              "alpha": true
+            },
+            "imageReview": {
+              "status": "accepted",
+              "reviewerId": "/root/verifier_recipes",
+              "reviewedAt": "2026-10-04T07:31:11.995784+00:00",
+              "masterSha256": "8efa4a4d3e6c8d3216d1e9a55d69b0466803a9750d369e53067cc253ff7dfd96",
+              "notes": "Green plus dark purple-black whole olives in complete light bowl; no stuffing, garnish, brand, cultivar ratio, pitted or brine claim. New transparent master and both512 encodings show clean edges and preserved bowl/olives.",
+              "styleReferenceSlugs": [
+                "bagel",
+                "baguette",
+                "baking-powder",
+                "baking-soda",
+                "blini",
+                "bread",
+                "breadsticks",
+                "brioche",
+                "challah",
+                "chapati"
+              ],
+              "backgrounds": [
+                "white",
+                "warm",
+                "dark",
+                "checkerboard"
+              ]
+            }
+          }
+        }
+      },
+      "sourceHash": "sha256:b42db4b3241ed5e7f3d8a4395b9834f4cebb2f42ee447476655926d884a26cd8",
+      "sourceReview": {
+        "status": "accepted",
+        "sourceHash": "sha256:b42db4b3241ed5e7f3d8a4395b9834f4cebb2f42ee447476655926d884a26cd8",
+        "reviewerId": "/root/verifier_recipes",
+        "reviewedAt": "2026-10-04T07:51:46.522Z",
+        "notes": "Exact public-safe staged source independently checked: accepted intent/full publication record, aliases/state/evidence and explicit missing nutrition preserved. Art-only reuse and new-generation provenance are truthful. All staged asset hashes/bytes/decoded dimensions/formats match; alpha bytes unchanged, opaque compatibility separate. Paprika original256px donor preserved; genuine512 compatibility PNG/WebP visually inspected and reproduced exactly from documented Sharp Lanczos/default-WebP-intermediate pipeline. Credentials, absolute workstation paths, third-party source artifacts and extra files absent. Staged preparation acceptance only; live target apply remains separately gated."
+      }
+    },
+    {
+      "intentHash": "sha256:86d226abf5605c2d7d11da24bc690e2d2320eb1d7ab701106675b885d40cd891",
+      "intent": {
+        "version": 1,
+        "writerId": "/root/ingredient_mapping",
+        "record": {
+          "slug": "smoked-paprika",
+          "displayName": "Smoked Paprika",
+          "category": "spices",
+          "subcategory": "ground",
+          "aliases": [
+            "smoked paprika",
+            "smoked paprika powder",
+            "pimentón ahumado",
+            "paprika fumé",
+            "paprica affumicata",
+            "boia afumată",
+            "geräuchertes Paprikapulver"
+          ],
+          "foodState": "Ground smoked paprika; source heat grade, brand and formulation unspecified. Source measures½tbsp for harissa beans and2tsp for Cajun tofu.",
+          "unit": "per100g-edible",
+          "nutritionOrigin": "missing",
+          "nutritionNote": "No independently accepted exact smoked-paprika nutrient profile or gram conversion. Plain/sweet/hot paprika values are not adopted merely because powder art is visually reusable.",
+          "evidence": [
+            {
+              "url": "https://www.mob.co.uk/recipes/10-minute-smoky-harissa-creamy-butter-beans",
+              "snapshotSha256": "sha256:4479baa0e9207df344bcd629479b8b8a9f3f31554f7730b25002d4927b204aed",
+              "description": "Saved Mob native-app factual observation packet, not HTML or independently reopened source; exact source ingredient line 5 identifies Smoked Paprika. No exact product nutrition or unobserved edible mass inferred."
+            },
+            {
+              "url": "https://www.mob.co.uk/recipes/cajun-tofu-with-limey-edamame-smash",
+              "snapshotSha256": "sha256:c3ba2a4b59b48f69a1e2307b7cb3d896b1d5f1ccf04a49d85bb3acf6d75c85b6",
+              "description": "Saved Mob native-app factual observation packet, not HTML or independently reopened source; exact source ingredient line 8 identifies Smoked Paprika. No exact product nutrition or unobserved edible mass inferred."
+            }
+          ],
+          "image": {
+            "sha256": "712cb183c36ff808f6801369bed721377425aec61461164ad5a436cbb5db4631",
+            "masterSha256": "7652219d5dfd5ebbc06618db17ca6b556efd049c9f96b9aebfce583db83beebb",
+            "width": 512,
+            "height": 512,
+            "contentType": "image/webp",
+            "alpha": true
+          },
+          "imageReview": {
+            "status": "accepted",
+            "reviewerId": "/root/verifier_recipes",
+            "reviewedAt": "2026-10-04T07:31:12.017345+00:00",
+            "masterSha256": "7652219d5dfd5ebbc06618db17ca6b556efd049c9f96b9aebfce583db83beebb",
+            "notes": "Fine brick-red powder and complete small bowl; small dried red pepper is honestly disclosed as spice-fruit adjunct. No fresh pepper, smoke process, heat grade or brand asserted. Visually suitable art-only reuse; no newart needed. Legacy master256px and existing512 upscaled derivatives are preserved, not claimed newly resolved detail.",
+            "styleReferenceSlugs": [
+              "bagel",
+              "baguette",
+              "baking-powder",
+              "baking-soda",
+              "blini",
+              "bread",
+              "breadsticks",
+              "brioche",
+              "challah",
+              "chapati"
+            ],
+            "backgrounds": [
+              "white",
+              "warm",
+              "dark",
+              "checkerboard"
+            ]
+          }
+        },
+        "intentHash": "sha256:86d226abf5605c2d7d11da24bc690e2d2320eb1d7ab701106675b885d40cd891",
+        "review": {
+          "status": "accepted",
+          "intentHash": "sha256:86d226abf5605c2d7d11da24bc690e2d2320eb1d7ab701106675b885d40cd891",
+          "reviewerId": "/root/verifier_recipes",
+          "reviewedAt": "2026-10-04T07:45:44.280Z",
+          "notes": "Exact publication identity, aliases, state, source snapshot evidence and accepted transparent image bytes independently compared with current attached addition/accepted seed. All nutrition remains missing: no per100g values, FDC ID, density, labels or donor allergen/diet data asserted. Source evidence is saved native-app facts; original source reopening and live publication remain separate."
+        }
+      },
+      "record": {
+        "id": "ia_smoked-paprika",
+        "slug": "smoked-paprika",
+        "displayName": "Smoked Paprika",
+        "category": "spices",
+        "subcategory": "ground",
+        "aliases": [
+          "smoked paprika",
+          "smoked paprika powder",
+          "pimentón ahumado",
+          "paprika fumé",
+          "paprica affumicata",
+          "boia afumată"
+        ],
+        "aliasesDe": [
+          "geräuchertes Paprikapulver"
+        ],
+        "images": {
+          "original": {
+            "path": "catalog-additions/assets/smoked-paprika/original.webp",
+            "sha256": "071e5e625e61d16e0a268b1dfa59b2bd74ff7764220e9a38b7f5f7e8275100e0",
+            "bytes": 5024,
+            "width": 256,
+            "height": 256,
+            "contentType": "image/webp"
+          },
+          "transparent": {
+            "webp512": {
+              "path": "catalog-additions/assets/smoked-paprika/webp512.webp",
+              "sha256": "712cb183c36ff808f6801369bed721377425aec61461164ad5a436cbb5db4631",
+              "bytes": 32612,
+              "width": 512,
+              "height": 512,
+              "contentType": "image/webp",
+              "alpha": true
+            },
+            "master": {
+              "path": "catalog-additions/assets/smoked-paprika/master.png",
+              "sha256": "7652219d5dfd5ebbc06618db17ca6b556efd049c9f96b9aebfce583db83beebb",
+              "bytes": 38055,
+              "width": 256,
+              "height": 256,
+              "contentType": "image/png",
+              "alpha": true
+            },
+            "png512": {
+              "path": "catalog-additions/assets/smoked-paprika/png512.png",
+              "sha256": "42a33e8087f88d5c06b94655970da5dcf4b501efc307533594d5a9a9c7267023",
+              "bytes": 154015,
+              "width": 512,
+              "height": 512,
+              "contentType": "image/png",
+              "alpha": true
+            }
+          },
+          "png512": {
+            "path": "catalog-additions/assets/smoked-paprika/white512.png",
+            "sha256": "c0673a94d985f2e0df939f2cef824a884ccb51f3f4cb49d4cddd0ad038a4577a",
+            "bytes": 146903,
+            "width": 512,
+            "height": 512,
+            "contentType": "image/png"
+          },
+          "webp512": {
+            "path": "catalog-additions/assets/smoked-paprika/white512.webp",
+            "sha256": "9bfa749d235b846221db22cf97ff248c3d4539331c277acd7627928de68ccf3e",
+            "bytes": 10170,
+            "width": 512,
+            "height": 512,
+            "contentType": "image/webp"
+          }
+        },
+        "license": {
+          "status": "reviewed-catalog-addition",
+          "metadata": "CC0-1.0",
+          "images": "CC0-1.0",
+          "code": "MIT"
+        },
+        "provenance": {
+          "incubatedBy": "Buna",
+          "aiGenerated": true,
+          "imageReuse": {
+            "sourceAtlasSlug": "paprika",
+            "variantSha256s": {
+              "master": "7652219d5dfd5ebbc06618db17ca6b556efd049c9f96b9aebfce583db83beebb",
+              "png512": "42a33e8087f88d5c06b94655970da5dcf4b501efc307533594d5a9a9c7267023",
+              "webp512": "712cb183c36ff808f6801369bed721377425aec61461164ad5a436cbb5db4631"
+            },
+            "kind": "reviewed-atlas-cutout",
+            "version": "0.2.0",
+            "sourcePath": "public-dataset/images/original/spices/paprika.webp",
+            "sourceSha256": "071e5e625e61d16e0a268b1dfa59b2bd74ff7764220e9a38b7f5f7e8275100e0",
+            "summarySha256": "9fa4075beac1be283552fc95faaeab5904a63eb986dcb91182d065bf0f7d2019",
+            "qaReviewSha256": "3acb7361bf85539511a29135a41174aa711c521beb4d3d139881b999aa825fef",
+            "handoffSha256": "5c126d900d5ca829bdbb3ca47782f0ac861660227f7e009694560cb1447a34f1",
+            "overridesSha256": "5941f70a6f7f842eab0643ebca9abb5141d67b61b5afba81131b42a40b3d8a3c",
+            "model": "isnet-general-use",
+            "qaFlags": [],
+            "recordedVisualAcceptance": true,
+            "exception": {
+              "kind": "visual-art-only-new-food-identity",
+              "sourceAtlasSlug": "paprika",
+              "sourceSha256": "071e5e625e61d16e0a268b1dfa59b2bd74ff7764220e9a38b7f5f7e8275100e0",
+              "nutritionReuse": false,
+              "masterByteIdentity": true
+            }
+          },
+          "imageReview": {
+            "status": "accepted",
+            "masterSha256": "7652219d5dfd5ebbc06618db17ca6b556efd049c9f96b9aebfce583db83beebb",
+            "reviewerId": "/root/verifier_recipes",
+            "reviewedAt": "2026-10-04T07:31:12.017345+00:00",
+            "notes": "Fine brick-red powder and complete small bowl; small dried red pepper is honestly disclosed as spice-fruit adjunct. No fresh pepper, smoke process, heat grade or brand asserted. Visually suitable art-only reuse; no newart needed. Legacy master256px and existing512 upscaled derivatives are preserved, not claimed newly resolved detail.",
+            "styleReferenceSlugs": [
+              "bagel",
+              "baguette",
+              "baking-powder",
+              "baking-soda",
+              "blini",
+              "bread",
+              "breadsticks",
+              "brioche",
+              "challah",
+              "chapati"
+            ],
+            "backgrounds": [
+              "white",
+              "warm",
+              "dark",
+              "checkerboard"
+            ],
+            "png512Sha256": "42a33e8087f88d5c06b94655970da5dcf4b501efc307533594d5a9a9c7267023",
+            "webp512Sha256": "712cb183c36ff808f6801369bed721377425aec61461164ad5a436cbb5db4631"
+          }
+        },
+        "review": {
+          "status": "independently-reviewed-catalog-addition",
+          "sourceImageApproved": true,
+          "metadataReview": {
+            "status": "accepted",
+            "intentHash": "sha256:86d226abf5605c2d7d11da24bc690e2d2320eb1d7ab701106675b885d40cd891",
+            "reviewerId": "/root/verifier_recipes",
+            "reviewedAt": "2026-10-04T07:45:44.280Z",
+            "notes": "Exact publication identity, aliases, state, source snapshot evidence and accepted transparent image bytes independently compared with current attached addition/accepted seed. All nutrition remains missing: no per100g values, FDC ID, density, labels or donor allergen/diet data asserted. Source evidence is saved native-app facts; original source reopening and live publication remain separate."
+          }
+        },
+        "metadata": {
+          "nutritionSource": "missing",
+          "nutritionNote": "No independently accepted exact smoked-paprika nutrient profile or gram conversion. Plain/sweet/hot paprika values are not adopted merely because powder art is visually reusable.",
+          "nutritionEvidence": [
+            {
+              "url": "https://www.mob.co.uk/recipes/10-minute-smoky-harissa-creamy-butter-beans",
+              "snapshotSha256": "sha256:4479baa0e9207df344bcd629479b8b8a9f3f31554f7730b25002d4927b204aed",
+              "description": "Saved Mob native-app factual observation packet, not HTML or independently reopened source; exact source ingredient line 5 identifies Smoked Paprika. No exact product nutrition or unobserved edible mass inferred."
+            },
+            {
+              "url": "https://www.mob.co.uk/recipes/cajun-tofu-with-limey-edamame-smash",
+              "snapshotSha256": "sha256:c3ba2a4b59b48f69a1e2307b7cb3d896b1d5f1ccf04a49d85bb3acf6d75c85b6",
+              "description": "Saved Mob native-app factual observation packet, not HTML or independently reopened source; exact source ingredient line 8 identifies Smoked Paprika. No exact product nutrition or unobserved edible mass inferred."
+            }
+          ],
+          "publicationIntentHash": "sha256:86d226abf5605c2d7d11da24bc690e2d2320eb1d7ab701106675b885d40cd891",
+          "publicationRecord": {
+            "slug": "smoked-paprika",
+            "displayName": "Smoked Paprika",
+            "category": "spices",
+            "subcategory": "ground",
+            "aliases": [
+              "smoked paprika",
+              "smoked paprika powder",
+              "pimentón ahumado",
+              "paprika fumé",
+              "paprica affumicata",
+              "boia afumată",
+              "geräuchertes Paprikapulver"
+            ],
+            "foodState": "Ground smoked paprika; source heat grade, brand and formulation unspecified. Source measures½tbsp for harissa beans and2tsp for Cajun tofu.",
+            "unit": "per100g-edible",
+            "nutritionOrigin": "missing",
+            "nutritionNote": "No independently accepted exact smoked-paprika nutrient profile or gram conversion. Plain/sweet/hot paprika values are not adopted merely because powder art is visually reusable.",
+            "evidence": [
+              {
+                "url": "https://www.mob.co.uk/recipes/10-minute-smoky-harissa-creamy-butter-beans",
+                "snapshotSha256": "sha256:4479baa0e9207df344bcd629479b8b8a9f3f31554f7730b25002d4927b204aed",
+                "description": "Saved Mob native-app factual observation packet, not HTML or independently reopened source; exact source ingredient line 5 identifies Smoked Paprika. No exact product nutrition or unobserved edible mass inferred."
+              },
+              {
+                "url": "https://www.mob.co.uk/recipes/cajun-tofu-with-limey-edamame-smash",
+                "snapshotSha256": "sha256:c3ba2a4b59b48f69a1e2307b7cb3d896b1d5f1ccf04a49d85bb3acf6d75c85b6",
+                "description": "Saved Mob native-app factual observation packet, not HTML or independently reopened source; exact source ingredient line 8 identifies Smoked Paprika. No exact product nutrition or unobserved edible mass inferred."
+              }
+            ],
+            "image": {
+              "sha256": "712cb183c36ff808f6801369bed721377425aec61461164ad5a436cbb5db4631",
+              "masterSha256": "7652219d5dfd5ebbc06618db17ca6b556efd049c9f96b9aebfce583db83beebb",
+              "width": 512,
+              "height": 512,
+              "contentType": "image/webp",
+              "alpha": true
+            },
+            "imageReview": {
+              "status": "accepted",
+              "reviewerId": "/root/verifier_recipes",
+              "reviewedAt": "2026-10-04T07:31:12.017345+00:00",
+              "masterSha256": "7652219d5dfd5ebbc06618db17ca6b556efd049c9f96b9aebfce583db83beebb",
+              "notes": "Fine brick-red powder and complete small bowl; small dried red pepper is honestly disclosed as spice-fruit adjunct. No fresh pepper, smoke process, heat grade or brand asserted. Visually suitable art-only reuse; no newart needed. Legacy master256px and existing512 upscaled derivatives are preserved, not claimed newly resolved detail.",
+              "styleReferenceSlugs": [
+                "bagel",
+                "baguette",
+                "baking-powder",
+                "baking-soda",
+                "blini",
+                "bread",
+                "breadsticks",
+                "brioche",
+                "challah",
+                "chapati"
+              ],
+              "backgrounds": [
+                "white",
+                "warm",
+                "dark",
+                "checkerboard"
+              ]
+            }
+          }
+        }
+      },
+      "sourceHash": "sha256:14d04d9ab0b245bbabfdd82e0bd9298bfb30d345c62465880e476d962a914d4a",
+      "sourceReview": {
+        "status": "accepted",
+        "sourceHash": "sha256:14d04d9ab0b245bbabfdd82e0bd9298bfb30d345c62465880e476d962a914d4a",
+        "reviewerId": "/root/verifier_recipes",
+        "reviewedAt": "2026-10-04T07:51:46.583Z",
+        "notes": "Exact public-safe staged source independently checked: accepted intent/full publication record, aliases/state/evidence and explicit missing nutrition preserved. Art-only reuse and new-generation provenance are truthful. All staged asset hashes/bytes/decoded dimensions/formats match; alpha bytes unchanged, opaque compatibility separate. Paprika original256px donor preserved; genuine512 compatibility PNG/WebP visually inspected and reproduced exactly from documented Sharp Lanczos/default-WebP-intermediate pipeline. Credentials, absolute workstation paths, third-party source artifacts and extra files absent. Staged preparation acceptance only; live target apply remains separately gated."
+      }
+    },
+    {
+      "intentHash": "sha256:8109d63af64e52842ef596512f1ae612ab769fb1e490d02813c087ef71f630d8",
+      "intent": {
+        "version": 1,
+        "writerId": "/root/ingredient_mapping",
+        "record": {
+          "slug": "canned-lima-beans",
+          "displayName": "Canned Lima Beans",
+          "category": "pantry",
+          "subcategory": "cooked legumes",
+          "aliases": [
+            "canned lima beans",
+            "canned butter beans",
+            "tinned butter beans",
+            "tinned lima beans",
+            "haricots de Lima en conserve",
+            "fagioli di Lima in scatola",
+            "habas de Lima en conserva",
+            "fasole Lima la conservă",
+            "Limabohnen aus der Dose"
+          ],
+          "foodState": "Cooked canned lima/butter beans in packing liquid; recipe adds beans plus half the liquid from2x400g net cans. Separate drained and retained-liquid masses are unknown.",
+          "unit": "per100g-edible",
+          "nutritionOrigin": "missing",
+          "nutritionNote": "No accepted per100g exact generic canned lima-with-retained-liquid profile. Dry mature lima/butter bean and immature green lima numbers are different states.800g net package is not drained bean mass; unknown fields stay missing.",
+          "evidence": [
+            {
+              "url": "https://www.mob.co.uk/recipes/10-minute-smoky-harissa-creamy-butter-beans",
+              "snapshotSha256": "sha256:4479baa0e9207df344bcd629479b8b8a9f3f31554f7730b25002d4927b204aed",
+              "description": "Saved Mob native-app factual observation packet, not HTML or independently reopened source; exact source ingredient line 6 identifies Canned Lima Beans. No exact product nutrition or unobserved edible mass inferred."
+            }
+          ],
+          "image": {
+            "sha256": "56042fba52ed70e5b7dc2f7ecd3e7c350c4bb2658b7c7de15bfcaaa5978a8191",
+            "masterSha256": "c3add56030087a9c5138acf6f200e3e7cc02b5d9fee697f172a19b0072d5b3a2",
+            "width": 512,
+            "height": 512,
+            "contentType": "image/webp",
+            "alpha": true
+          },
+          "imageReview": {
+            "status": "accepted",
+            "reviewerId": "/root/verifier_recipes",
+            "reviewedAt": "2026-10-04T07:31:12.054109+00:00",
+            "masterSha256": "c3add56030087a9c5138acf6f200e3e7cc02b5d9fee697f172a19b0072d5b3a2",
+            "notes": "Large plump moist cream-white cooked lima/butter beans in complete bowl, visibly unlike dry hard or green immature seeds; no sauce/garnish/brand. Artwork does not establish drained edible mass or retained-liquid nutrients.",
+            "styleReferenceSlugs": [
+              "bagel",
+              "baguette",
+              "baking-powder",
+              "baking-soda",
+              "blini",
+              "bread",
+              "breadsticks",
+              "brioche",
+              "challah",
+              "chapati"
+            ],
+            "backgrounds": [
+              "white",
+              "warm",
+              "dark",
+              "checkerboard"
+            ]
+          }
+        },
+        "intentHash": "sha256:8109d63af64e52842ef596512f1ae612ab769fb1e490d02813c087ef71f630d8",
+        "review": {
+          "status": "accepted",
+          "intentHash": "sha256:8109d63af64e52842ef596512f1ae612ab769fb1e490d02813c087ef71f630d8",
+          "reviewerId": "/root/verifier_recipes",
+          "reviewedAt": "2026-10-04T07:45:44.283Z",
+          "notes": "Exact publication identity, aliases, state, source snapshot evidence and accepted transparent image bytes independently compared with current attached addition/accepted seed. All nutrition remains missing: no per100g values, FDC ID, density, labels or donor allergen/diet data asserted. Source evidence is saved native-app facts; original source reopening and live publication remain separate."
+        }
+      },
+      "record": {
+        "id": "ia_canned-lima-beans",
+        "slug": "canned-lima-beans",
+        "displayName": "Canned Lima Beans",
+        "category": "pantry",
+        "subcategory": "cooked legumes",
+        "aliases": [
+          "canned lima beans",
+          "canned butter beans",
+          "tinned butter beans",
+          "tinned lima beans",
+          "haricots de Lima en conserve",
+          "fagioli di Lima in scatola",
+          "habas de Lima en conserva",
+          "fasole Lima la conservă"
+        ],
+        "aliasesDe": [
+          "Limabohnen aus der Dose"
+        ],
+        "images": {
+          "original": {
+            "path": "catalog-additions/assets/canned-lima-beans/original.webp",
+            "sha256": "ee9f4365973ab5c25994dc0a6e04b862338be62f565dd8e6f66c1f1e532e1dc8",
+            "bytes": 150026,
+            "width": 1254,
+            "height": 1254,
+            "contentType": "image/webp"
+          },
+          "transparent": {
+            "webp512": {
+              "path": "catalog-additions/assets/canned-lima-beans/webp512.webp",
+              "sha256": "56042fba52ed70e5b7dc2f7ecd3e7c350c4bb2658b7c7de15bfcaaa5978a8191",
+              "bytes": 47482,
+              "width": 512,
+              "height": 512,
+              "contentType": "image/webp",
+              "alpha": true
+            },
+            "master": {
+              "path": "catalog-additions/assets/canned-lima-beans/master.png",
+              "sha256": "c3add56030087a9c5138acf6f200e3e7cc02b5d9fee697f172a19b0072d5b3a2",
+              "bytes": 1260105,
+              "width": 1254,
+              "height": 1254,
+              "contentType": "image/png",
+              "alpha": true
+            },
+            "png512": {
+              "path": "catalog-additions/assets/canned-lima-beans/png512.png",
+              "sha256": "2fc6101eb7984190286ebdee12841b335187037bcf678d55d66a8583412e0caa",
+              "bytes": 332571,
+              "width": 512,
+              "height": 512,
+              "contentType": "image/png",
+              "alpha": true
+            }
+          },
+          "png512": {
+            "path": "catalog-additions/assets/canned-lima-beans/white512.png",
+            "sha256": "839d1ddf6ef44069c7914c0fee415bff27e03a5319b404aa1bcddb5ada8e38f6",
+            "bytes": 241255,
+            "width": 512,
+            "height": 512,
+            "contentType": "image/png"
+          },
+          "webp512": {
+            "path": "catalog-additions/assets/canned-lima-beans/white512.webp",
+            "sha256": "4d5d65868e033b5767ef65e2b919517627df89a313114a763228b202fc53ea72",
+            "bytes": 25686,
+            "width": 512,
+            "height": 512,
+            "contentType": "image/webp"
+          }
+        },
+        "license": {
+          "status": "reviewed-catalog-addition",
+          "metadata": "CC0-1.0",
+          "images": "CC0-1.0",
+          "code": "MIT"
+        },
+        "provenance": {
+          "incubatedBy": "Buna",
+          "aiGenerated": true,
+          "imageGeneration": {
+            "tool": "image_gen",
+            "transparentBackground": true,
+            "mode": "new-generation",
+            "writerId": "/root/ingredient_images"
+          },
+          "imageReview": {
+            "status": "accepted",
+            "masterSha256": "c3add56030087a9c5138acf6f200e3e7cc02b5d9fee697f172a19b0072d5b3a2",
+            "reviewerId": "/root/verifier_recipes",
+            "reviewedAt": "2026-10-04T07:31:12.054109+00:00",
+            "notes": "Large plump moist cream-white cooked lima/butter beans in complete bowl, visibly unlike dry hard or green immature seeds; no sauce/garnish/brand. Artwork does not establish drained edible mass or retained-liquid nutrients.",
+            "styleReferenceSlugs": [
+              "bagel",
+              "baguette",
+              "baking-powder",
+              "baking-soda",
+              "blini",
+              "bread",
+              "breadsticks",
+              "brioche",
+              "challah",
+              "chapati"
+            ],
+            "backgrounds": [
+              "white",
+              "warm",
+              "dark",
+              "checkerboard"
+            ],
+            "png512Sha256": "2fc6101eb7984190286ebdee12841b335187037bcf678d55d66a8583412e0caa",
+            "webp512Sha256": "56042fba52ed70e5b7dc2f7ecd3e7c350c4bb2658b7c7de15bfcaaa5978a8191"
+          }
+        },
+        "review": {
+          "status": "independently-reviewed-catalog-addition",
+          "sourceImageApproved": true,
+          "metadataReview": {
+            "status": "accepted",
+            "intentHash": "sha256:8109d63af64e52842ef596512f1ae612ab769fb1e490d02813c087ef71f630d8",
+            "reviewerId": "/root/verifier_recipes",
+            "reviewedAt": "2026-10-04T07:45:44.283Z",
+            "notes": "Exact publication identity, aliases, state, source snapshot evidence and accepted transparent image bytes independently compared with current attached addition/accepted seed. All nutrition remains missing: no per100g values, FDC ID, density, labels or donor allergen/diet data asserted. Source evidence is saved native-app facts; original source reopening and live publication remain separate."
+          }
+        },
+        "metadata": {
+          "nutritionSource": "missing",
+          "nutritionNote": "No accepted per100g exact generic canned lima-with-retained-liquid profile. Dry mature lima/butter bean and immature green lima numbers are different states.800g net package is not drained bean mass; unknown fields stay missing.",
+          "nutritionEvidence": [
+            {
+              "url": "https://www.mob.co.uk/recipes/10-minute-smoky-harissa-creamy-butter-beans",
+              "snapshotSha256": "sha256:4479baa0e9207df344bcd629479b8b8a9f3f31554f7730b25002d4927b204aed",
+              "description": "Saved Mob native-app factual observation packet, not HTML or independently reopened source; exact source ingredient line 6 identifies Canned Lima Beans. No exact product nutrition or unobserved edible mass inferred."
+            }
+          ],
+          "publicationIntentHash": "sha256:8109d63af64e52842ef596512f1ae612ab769fb1e490d02813c087ef71f630d8",
+          "publicationRecord": {
+            "slug": "canned-lima-beans",
+            "displayName": "Canned Lima Beans",
+            "category": "pantry",
+            "subcategory": "cooked legumes",
+            "aliases": [
+              "canned lima beans",
+              "canned butter beans",
+              "tinned butter beans",
+              "tinned lima beans",
+              "haricots de Lima en conserve",
+              "fagioli di Lima in scatola",
+              "habas de Lima en conserva",
+              "fasole Lima la conservă",
+              "Limabohnen aus der Dose"
+            ],
+            "foodState": "Cooked canned lima/butter beans in packing liquid; recipe adds beans plus half the liquid from2x400g net cans. Separate drained and retained-liquid masses are unknown.",
+            "unit": "per100g-edible",
+            "nutritionOrigin": "missing",
+            "nutritionNote": "No accepted per100g exact generic canned lima-with-retained-liquid profile. Dry mature lima/butter bean and immature green lima numbers are different states.800g net package is not drained bean mass; unknown fields stay missing.",
+            "evidence": [
+              {
+                "url": "https://www.mob.co.uk/recipes/10-minute-smoky-harissa-creamy-butter-beans",
+                "snapshotSha256": "sha256:4479baa0e9207df344bcd629479b8b8a9f3f31554f7730b25002d4927b204aed",
+                "description": "Saved Mob native-app factual observation packet, not HTML or independently reopened source; exact source ingredient line 6 identifies Canned Lima Beans. No exact product nutrition or unobserved edible mass inferred."
+              }
+            ],
+            "image": {
+              "sha256": "56042fba52ed70e5b7dc2f7ecd3e7c350c4bb2658b7c7de15bfcaaa5978a8191",
+              "masterSha256": "c3add56030087a9c5138acf6f200e3e7cc02b5d9fee697f172a19b0072d5b3a2",
+              "width": 512,
+              "height": 512,
+              "contentType": "image/webp",
+              "alpha": true
+            },
+            "imageReview": {
+              "status": "accepted",
+              "reviewerId": "/root/verifier_recipes",
+              "reviewedAt": "2026-10-04T07:31:12.054109+00:00",
+              "masterSha256": "c3add56030087a9c5138acf6f200e3e7cc02b5d9fee697f172a19b0072d5b3a2",
+              "notes": "Large plump moist cream-white cooked lima/butter beans in complete bowl, visibly unlike dry hard or green immature seeds; no sauce/garnish/brand. Artwork does not establish drained edible mass or retained-liquid nutrients.",
+              "styleReferenceSlugs": [
+                "bagel",
+                "baguette",
+                "baking-powder",
+                "baking-soda",
+                "blini",
+                "bread",
+                "breadsticks",
+                "brioche",
+                "challah",
+                "chapati"
+              ],
+              "backgrounds": [
+                "white",
+                "warm",
+                "dark",
+                "checkerboard"
+              ]
+            }
+          }
+        }
+      },
+      "sourceHash": "sha256:a79f2b54f94850209a71fe28d1783421bae841ce764aec9b999abd5a5054132b",
+      "sourceReview": {
+        "status": "accepted",
+        "sourceHash": "sha256:a79f2b54f94850209a71fe28d1783421bae841ce764aec9b999abd5a5054132b",
+        "reviewerId": "/root/verifier_recipes",
+        "reviewedAt": "2026-10-04T07:51:46.602Z",
+        "notes": "Exact public-safe staged source independently checked: accepted intent/full publication record, aliases/state/evidence and explicit missing nutrition preserved. Art-only reuse and new-generation provenance are truthful. All staged asset hashes/bytes/decoded dimensions/formats match; alpha bytes unchanged, opaque compatibility separate. Paprika original256px donor preserved; genuine512 compatibility PNG/WebP visually inspected and reproduced exactly from documented Sharp Lanczos/default-WebP-intermediate pipeline. Credentials, absolute workstation paths, third-party source artifacts and extra files absent. Staged preparation acceptance only; live target apply remains separately gated."
+      }
+    },
+    {
+      "intentHash": "sha256:bc02a2849d0ae49cc51ebbcdcd06e8b7d5a2fd0eb404a223158c6de8dc6fe1c3",
+      "intent": {
+        "version": 1,
+        "writerId": "/root/ingredient_mapping",
+        "record": {
+          "slug": "vegan-cream-cheese",
+          "displayName": "Vegan Cream Cheese",
+          "category": "pantry",
+          "subcategory": "plant-based spreads",
+          "aliases": [
+            "vegan cream cheese",
+            "plant-based cream cheese",
+            "fromage à tartiner végétalien",
+            "formaggio spalmabile vegano",
+            "queso crema vegano",
+            "cremă de brânză vegană",
+            "veganer Frischkäse"
+          ],
+          "foodState": "Plain vegan cream-cheese spread; source calls for1tbsp, with no brand or cashew/soy/coconut/oat formulation specified.",
+          "unit": "per100g-edible",
+          "nutritionOrigin": "missing",
+          "nutritionNote": "No accepted generic vegan-cream-cheese nutrient profile or product-specific tablespoon mass. Reused dairy cream-cheese artwork provides appearance only; dairy nutrients, density, allergen flags and animal-rennet status are not copied. Plant base and possible allergens remain product-specific.",
+          "evidence": [
+            {
+              "url": "https://www.mob.co.uk/recipes/10-minute-smoky-harissa-creamy-butter-beans",
+              "snapshotSha256": "sha256:4479baa0e9207df344bcd629479b8b8a9f3f31554f7730b25002d4927b204aed",
+              "description": "Saved Mob native-app factual observation packet, not HTML or independently reopened source; exact source ingredient line 7 identifies Vegan Cream Cheese. No exact product nutrition or unobserved edible mass inferred."
+            }
+          ],
+          "image": {
+            "sha256": "7be52ce6c3a0e2846ca669ab24800a3d225b2efec305063682006dc0fd612dfb",
+            "masterSha256": "75e99454420ae62cefc2020a6fa001db3b83abd158c676a870504b637d5537f6",
+            "width": 512,
+            "height": 512,
+            "contentType": "image/webp",
+            "alpha": true
+          },
+          "imageReview": {
+            "status": "accepted",
+            "reviewerId": "/root/verifier_recipes",
+            "reviewedAt": "2026-10-04T07:31:12.077073+00:00",
+            "masterSha256": "75e99454420ae62cefc2020a6fa001db3b83abd158c676a870504b637d5537f6",
+            "notes": "Plain off-white spread in complete ramekin; texture supports generic vegan cream-cheese illustration without asserting cashew/soy/coconut base. Dairy donor supplies only image bytes; no donor nutrients, density, allergens or animal-rennet flags copied.",
+            "styleReferenceSlugs": [
+              "bagel",
+              "baguette",
+              "baking-powder",
+              "baking-soda",
+              "blini",
+              "bread",
+              "breadsticks",
+              "brioche",
+              "challah",
+              "chapati"
+            ],
+            "backgrounds": [
+              "white",
+              "warm",
+              "dark",
+              "checkerboard"
+            ]
+          }
+        },
+        "intentHash": "sha256:bc02a2849d0ae49cc51ebbcdcd06e8b7d5a2fd0eb404a223158c6de8dc6fe1c3",
+        "review": {
+          "status": "accepted",
+          "intentHash": "sha256:bc02a2849d0ae49cc51ebbcdcd06e8b7d5a2fd0eb404a223158c6de8dc6fe1c3",
+          "reviewerId": "/root/verifier_recipes",
+          "reviewedAt": "2026-10-04T07:45:44.285Z",
+          "notes": "Exact publication identity, aliases, state, source snapshot evidence and accepted transparent image bytes independently compared with current attached addition/accepted seed. All nutrition remains missing: no per100g values, FDC ID, density, labels or donor allergen/diet data asserted. Source evidence is saved native-app facts; original source reopening and live publication remain separate."
+        }
+      },
+      "record": {
+        "id": "ia_vegan-cream-cheese",
+        "slug": "vegan-cream-cheese",
+        "displayName": "Vegan Cream Cheese",
+        "category": "pantry",
+        "subcategory": "plant-based spreads",
+        "aliases": [
+          "vegan cream cheese",
+          "plant-based cream cheese",
+          "fromage à tartiner végétalien",
+          "formaggio spalmabile vegano",
+          "queso crema vegano",
+          "cremă de brânză vegană"
+        ],
+        "aliasesDe": [
+          "veganer Frischkäse"
+        ],
+        "images": {
+          "original": {
+            "path": "catalog-additions/assets/vegan-cream-cheese/original.webp",
+            "sha256": "04bc956776842067b81e02e2a3a3930970bfb96e6dcdb6d01d80c719556093ce",
+            "bytes": 17770,
+            "width": 512,
+            "height": 512,
+            "contentType": "image/webp"
+          },
+          "transparent": {
+            "webp512": {
+              "path": "catalog-additions/assets/vegan-cream-cheese/webp512.webp",
+              "sha256": "7be52ce6c3a0e2846ca669ab24800a3d225b2efec305063682006dc0fd612dfb",
+              "bytes": 27304,
+              "width": 512,
+              "height": 512,
+              "contentType": "image/webp",
+              "alpha": true
+            },
+            "master": {
+              "path": "catalog-additions/assets/vegan-cream-cheese/master.png",
+              "sha256": "75e99454420ae62cefc2020a6fa001db3b83abd158c676a870504b637d5537f6",
+              "bytes": 131572,
+              "width": 512,
+              "height": 512,
+              "contentType": "image/png",
+              "alpha": true
+            },
+            "png512": {
+              "path": "catalog-additions/assets/vegan-cream-cheese/png512.png",
+              "sha256": "814e40b2e51619afa5ca36f6bb6e77cb26c8d0fe9b4e616d9c7904d169e883a7",
+              "bytes": 170457,
+              "width": 512,
+              "height": 512,
+              "contentType": "image/png",
+              "alpha": true
+            }
+          },
+          "png512": {
+            "path": "catalog-additions/assets/vegan-cream-cheese/white512.png",
+            "sha256": "02adce0546378a8c498f4dee03bf96707775e33d8f4bd07c70592ca7e114e503",
+            "bytes": 139327,
+            "width": 512,
+            "height": 512,
+            "contentType": "image/png"
+          },
+          "webp512": {
+            "path": "catalog-additions/assets/vegan-cream-cheese/white512.webp",
+            "sha256": "4c95375bcdea6506993726949869c91b4e16ec7fbb0f05bcbd5877454c6c1ff5",
+            "bytes": 13372,
+            "width": 512,
+            "height": 512,
+            "contentType": "image/webp"
+          }
+        },
+        "license": {
+          "status": "reviewed-catalog-addition",
+          "metadata": "CC0-1.0",
+          "images": "CC0-1.0",
+          "code": "MIT"
+        },
+        "provenance": {
+          "incubatedBy": "Buna",
+          "aiGenerated": true,
+          "imageReuse": {
+            "sourceAtlasSlug": "cream-cheese",
+            "variantSha256s": {
+              "master": "75e99454420ae62cefc2020a6fa001db3b83abd158c676a870504b637d5537f6",
+              "png512": "814e40b2e51619afa5ca36f6bb6e77cb26c8d0fe9b4e616d9c7904d169e883a7",
+              "webp512": "7be52ce6c3a0e2846ca669ab24800a3d225b2efec305063682006dc0fd612dfb"
+            },
+            "kind": "reviewed-atlas-cutout",
+            "version": "0.2.0",
+            "sourcePath": "public-dataset/images/original/dairy/cream-cheese.webp",
+            "sourceSha256": "04bc956776842067b81e02e2a3a3930970bfb96e6dcdb6d01d80c719556093ce",
+            "summarySha256": "9fa4075beac1be283552fc95faaeab5904a63eb986dcb91182d065bf0f7d2019",
+            "qaReviewSha256": "3acb7361bf85539511a29135a41174aa711c521beb4d3d139881b999aa825fef",
+            "handoffSha256": "5c126d900d5ca829bdbb3ca47782f0ac861660227f7e009694560cb1447a34f1",
+            "overridesSha256": "5941f70a6f7f842eab0643ebca9abb5141d67b61b5afba81131b42a40b3d8a3c",
+            "model": "isnet-general-use",
+            "qaFlags": [],
+            "recordedVisualAcceptance": true,
+            "exception": {
+              "kind": "visual-art-only-new-food-identity",
+              "sourceAtlasSlug": "cream-cheese",
+              "sourceSha256": "04bc956776842067b81e02e2a3a3930970bfb96e6dcdb6d01d80c719556093ce",
+              "nutritionReuse": false,
+              "masterByteIdentity": true
+            }
+          },
+          "imageReview": {
+            "status": "accepted",
+            "masterSha256": "75e99454420ae62cefc2020a6fa001db3b83abd158c676a870504b637d5537f6",
+            "reviewerId": "/root/verifier_recipes",
+            "reviewedAt": "2026-10-04T07:31:12.077073+00:00",
+            "notes": "Plain off-white spread in complete ramekin; texture supports generic vegan cream-cheese illustration without asserting cashew/soy/coconut base. Dairy donor supplies only image bytes; no donor nutrients, density, allergens or animal-rennet flags copied.",
+            "styleReferenceSlugs": [
+              "bagel",
+              "baguette",
+              "baking-powder",
+              "baking-soda",
+              "blini",
+              "bread",
+              "breadsticks",
+              "brioche",
+              "challah",
+              "chapati"
+            ],
+            "backgrounds": [
+              "white",
+              "warm",
+              "dark",
+              "checkerboard"
+            ],
+            "png512Sha256": "814e40b2e51619afa5ca36f6bb6e77cb26c8d0fe9b4e616d9c7904d169e883a7",
+            "webp512Sha256": "7be52ce6c3a0e2846ca669ab24800a3d225b2efec305063682006dc0fd612dfb"
+          }
+        },
+        "review": {
+          "status": "independently-reviewed-catalog-addition",
+          "sourceImageApproved": true,
+          "metadataReview": {
+            "status": "accepted",
+            "intentHash": "sha256:bc02a2849d0ae49cc51ebbcdcd06e8b7d5a2fd0eb404a223158c6de8dc6fe1c3",
+            "reviewerId": "/root/verifier_recipes",
+            "reviewedAt": "2026-10-04T07:45:44.285Z",
+            "notes": "Exact publication identity, aliases, state, source snapshot evidence and accepted transparent image bytes independently compared with current attached addition/accepted seed. All nutrition remains missing: no per100g values, FDC ID, density, labels or donor allergen/diet data asserted. Source evidence is saved native-app facts; original source reopening and live publication remain separate."
+          }
+        },
+        "metadata": {
+          "nutritionSource": "missing",
+          "nutritionNote": "No accepted generic vegan-cream-cheese nutrient profile or product-specific tablespoon mass. Reused dairy cream-cheese artwork provides appearance only; dairy nutrients, density, allergen flags and animal-rennet status are not copied. Plant base and possible allergens remain product-specific.",
+          "nutritionEvidence": [
+            {
+              "url": "https://www.mob.co.uk/recipes/10-minute-smoky-harissa-creamy-butter-beans",
+              "snapshotSha256": "sha256:4479baa0e9207df344bcd629479b8b8a9f3f31554f7730b25002d4927b204aed",
+              "description": "Saved Mob native-app factual observation packet, not HTML or independently reopened source; exact source ingredient line 7 identifies Vegan Cream Cheese. No exact product nutrition or unobserved edible mass inferred."
+            }
+          ],
+          "publicationIntentHash": "sha256:bc02a2849d0ae49cc51ebbcdcd06e8b7d5a2fd0eb404a223158c6de8dc6fe1c3",
+          "publicationRecord": {
+            "slug": "vegan-cream-cheese",
+            "displayName": "Vegan Cream Cheese",
+            "category": "pantry",
+            "subcategory": "plant-based spreads",
+            "aliases": [
+              "vegan cream cheese",
+              "plant-based cream cheese",
+              "fromage à tartiner végétalien",
+              "formaggio spalmabile vegano",
+              "queso crema vegano",
+              "cremă de brânză vegană",
+              "veganer Frischkäse"
+            ],
+            "foodState": "Plain vegan cream-cheese spread; source calls for1tbsp, with no brand or cashew/soy/coconut/oat formulation specified.",
+            "unit": "per100g-edible",
+            "nutritionOrigin": "missing",
+            "nutritionNote": "No accepted generic vegan-cream-cheese nutrient profile or product-specific tablespoon mass. Reused dairy cream-cheese artwork provides appearance only; dairy nutrients, density, allergen flags and animal-rennet status are not copied. Plant base and possible allergens remain product-specific.",
+            "evidence": [
+              {
+                "url": "https://www.mob.co.uk/recipes/10-minute-smoky-harissa-creamy-butter-beans",
+                "snapshotSha256": "sha256:4479baa0e9207df344bcd629479b8b8a9f3f31554f7730b25002d4927b204aed",
+                "description": "Saved Mob native-app factual observation packet, not HTML or independently reopened source; exact source ingredient line 7 identifies Vegan Cream Cheese. No exact product nutrition or unobserved edible mass inferred."
+              }
+            ],
+            "image": {
+              "sha256": "7be52ce6c3a0e2846ca669ab24800a3d225b2efec305063682006dc0fd612dfb",
+              "masterSha256": "75e99454420ae62cefc2020a6fa001db3b83abd158c676a870504b637d5537f6",
+              "width": 512,
+              "height": 512,
+              "contentType": "image/webp",
+              "alpha": true
+            },
+            "imageReview": {
+              "status": "accepted",
+              "reviewerId": "/root/verifier_recipes",
+              "reviewedAt": "2026-10-04T07:31:12.077073+00:00",
+              "masterSha256": "75e99454420ae62cefc2020a6fa001db3b83abd158c676a870504b637d5537f6",
+              "notes": "Plain off-white spread in complete ramekin; texture supports generic vegan cream-cheese illustration without asserting cashew/soy/coconut base. Dairy donor supplies only image bytes; no donor nutrients, density, allergens or animal-rennet flags copied.",
+              "styleReferenceSlugs": [
+                "bagel",
+                "baguette",
+                "baking-powder",
+                "baking-soda",
+                "blini",
+                "bread",
+                "breadsticks",
+                "brioche",
+                "challah",
+                "chapati"
+              ],
+              "backgrounds": [
+                "white",
+                "warm",
+                "dark",
+                "checkerboard"
+              ]
+            }
+          }
+        }
+      },
+      "sourceHash": "sha256:ce0e8c037a01def8de22eb68c11b95fc3ba6a8188007c43fb6ef55aaa24b7d5f",
+      "sourceReview": {
+        "status": "accepted",
+        "sourceHash": "sha256:ce0e8c037a01def8de22eb68c11b95fc3ba6a8188007c43fb6ef55aaa24b7d5f",
+        "reviewerId": "/root/verifier_recipes",
+        "reviewedAt": "2026-10-04T07:51:46.622Z",
+        "notes": "Exact public-safe staged source independently checked: accepted intent/full publication record, aliases/state/evidence and explicit missing nutrition preserved. Art-only reuse and new-generation provenance are truthful. All staged asset hashes/bytes/decoded dimensions/formats match; alpha bytes unchanged, opaque compatibility separate. Paprika original256px donor preserved; genuine512 compatibility PNG/WebP visually inspected and reproduced exactly from documented Sharp Lanczos/default-WebP-intermediate pipeline. Credentials, absolute workstation paths, third-party source artifacts and extra files absent. Staged preparation acceptance only; live target apply remains separately gated."
+      }
     }
   ]
 }

@@ -14,6 +14,7 @@ import { join, dirname, resolve } from "node:path";
 import { createRequire } from "node:module";
 import { canonical, hash } from "./nutrition-sync.mjs";
 import {loadAliasOverrides,syncAliases} from "./alias-writeback.mjs";
+import {loadApplicabilityOverrides,syncApplicability} from './nutrition-applicability.mjs';
 import {acquireExportMaintenance} from "./export-maintenance-lock.mjs";
 const require = createRequire(import.meta.url),
 	parquet = require("parquetjs-lite");
@@ -510,13 +511,13 @@ async function applyCanonicalAdditionRecords({ root, write = false }) {
 	}
 }
 export async function applyCanonicalAdditions({root,write=false}) {
- const release=acquireExportMaintenance(root,'append');let overrides,result;
- try{overrides=loadAliasOverrides(root);result=await applyCanonicalAdditionRecords({root,write});}finally{release();}
+ const release=acquireExportMaintenance(root,'append');let overrides,applicability,result;
+ try{overrides=loadAliasOverrides(root);applicability=loadApplicabilityOverrides(root);result=await applyCanonicalAdditionRecords({root,write});}finally{release();}
  // Append is fully committed/read back before alias work reacquires the same lock.
- if(!overrides.length)return result;
- const aliases=[];
+ const aliases=[],policies=[];
  for(const intent of overrides)aliases.push(await syncAliases({root,intent,write}));
- return {...result,aliasCorrections:aliases};
+ for(const intent of applicability)policies.push(await syncApplicability({root,intent,write}));
+ return {...result,...(aliases.length?{aliasCorrections:aliases}:{}),...(policies.length?{nutritionApplicability:policies}:{})};
 }
 function installCanonicalAdditionsOwned({ root, stageRoot, write = false }) {
 	root = resolve(root);

@@ -1,0 +1,11 @@
+# Whole-chicken nutrient mass basis
+
+`src/nutrition-applicability.mjs` adds only reviewed `metadata.nutritionApplicability` to the existing whole-chicken row. The raw meat-only per100g profile, gross1500g purchase convention, IDs, aliases, images, licenses and unrelated metadata stay unchanged.
+
+Capture both actual export baselines with `captureApplicabilityIntent`. An independent reviewer accepts the exact immutable body hash. `syncApplicability` supports dry-run/apply/readback/replay/undo; CLI flags are `--root`, `--intent`, `--mode`, `--write`, and undo’s `--expected-result-hash`. It holds the shared export-maintenance lock before reading any baseline through write/readback. Changed unrelated target fields, profile identity, derivative metadata, schema, pending transaction or source seal block the operation.
+
+Full manifests receive the typed policy. JSONL and Parquet receive only the optional `nutrition_applicability_json` column; every original row value is preserved. Compact manifests carry no numeric metadata and remain unchanged. Image files are never opened or written. Undo restores the prior absence/schema and refuses to remove a column containing another ingredient’s later policy.
+
+`nutrition/applicability.json` is the versionable public-safe canonical source: ingredient/FDC identity, policy/source archive hash, before-state hashes and independent review. Private operational receipts/pending files are ignored by Git. A fresh guarded canonical append restores the policy from that source without needing private receipts. Each completed append/alias/policy phase releases and reacquires the same lock and revalidates its target; there is no nested-lock deadlock.
+
+The Buna consumer carries this policy separately from numeric origin. Gross or unspecified whole-bird input is unresolved nutrient mass. It does not invent a yield, replace a profile, alter source quantities or automatically recompute old recipes. Stored unsafe computed summaries can be withheld at read time; provided manual/imported/agent estimates remain visible. Root coordinates separately reviewed policy operations in both destinations; neither code installation nor a dry run authorizes production writes.

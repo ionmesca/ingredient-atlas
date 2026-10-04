@@ -1,0 +1,48 @@
+{
+  "schemaVersion": 1,
+  "overrides": [
+    {
+      "version": 1,
+      "changeId": "atlas-whole-chicken-edible-basis-2026-10-04",
+      "writerId": "/root/nutrition_enrichment_review",
+      "slug": "whole-chicken",
+      "policy": {
+        "policy": "explicit-edible-mass-required",
+        "profileMassBasis": "edible-meat-only",
+        "defaultInputMassBasis": "gross-as-purchased",
+        "sourceFdcId": 171052,
+        "evidenceSha256": "b80817294b8850530aaedf2e515c02593b1824f763a0ff356e5c2081643e6fd0",
+        "reason": "The per100g profile represents raw edible chicken meat only. A whole bird purchase mass includes bones and skin; it is not edible meat mass. Use an explicitly reviewed edible-meat mass, or leave the nutrient contribution unresolved. The1500g whole-bird convention remains for purchase/display only."
+      },
+      "variants": [
+        {
+          "directory": "dataset",
+          "id": "ia_whole-chicken",
+          "fullNonPolicyHash": "sha256:c0e1afb933dbd6e4bca4b0ddbcca88757e426ecee9922a012daddd5d0fffba91",
+          "jsonlNonPolicyHash": "sha256:0a2aa0e0552116fcded61bb847bf26aad16602814d27b9f05596e745b838a99e",
+          "parquetNonPolicyHash": "sha256:8ba24cc052c992f2eac97f571cf0b7007fefe9b57725ed41b9f437f42cca9a7c",
+          "parquetSchemaHash": "sha256:db0bfcf297656534786383b1298b6868ce4ceec99ee75fab23dacd6b084d275a",
+          "policyColumnPresent": false
+        },
+        {
+          "directory": "public-dataset",
+          "id": "ia_whole-chicken",
+          "fullNonPolicyHash": "sha256:89e7dab7c1ef04b6d03e266a65539f75d7e284b11b75c564f8fa599c6216030e",
+          "jsonlNonPolicyHash": "sha256:f40b98ea79e41c47513ced7d9617335905106c2cc128a81117c4837fb980ec98",
+          "parquetNonPolicyHash": "sha256:683efae34919170cab12e8d7130acc809553064a267453ecc7cfd089307d8da3",
+          "parquetSchemaHash": "sha256:b711317382a4226ad6af93b09347d2c33711be04f62f0de328cb21aa8609685d",
+          "policyColumnPresent": false
+        }
+      ],
+      "intentHash": "sha256:0275223cb1d920848508d2619f614c67367a472c0a161a1c326ed98b9c2b47a4",
+      "review": {
+        "status": "accepted",
+        "intentHash": "sha256:0275223cb1d920848508d2619f614c67367a472c0a161a1c326ed98b9c2b47a4",
+        "reviewerId": "/root/import_contract",
+        "notes": "Original USDA SR Legacy food 171052 is raw chicken meat only. The reviewed policy requires explicit edible mass while retaining all existing nutrient values and the whole-bird purchase convention. Exact baseline and immutable-field checks, shared maintenance locking, raw-byte concurrency checks, replay, undo and canonical regeneration preservation were independently inspected and tested.",
+        "reviewedAt": "2026-10-04T03:28:05.587754+00:00",
+        "model": "gpt-6.1-sol"
+      }
+    }
+  ]
+}

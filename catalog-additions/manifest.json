@@ -960,6 +960,922 @@
         "reviewedAt": "2026-10-04",
         "notes": "Exact root-requested product-copy deletion reviewed: metadata.defaultPreparation omitted; full precise foodState retained unchanged in accepted publication intent/receipt. Nutrients/explicit absence/notes/label/density and all six image files remain identical to previous independent approval. This approves canonical source only; live append/readback separate."
       }
+    },
+    {
+      "intentHash": "sha256:2b5b60c37443f54ec407066daffe820a727c7d538f7ea9eb33d0451196f4ff6c",
+      "intent": {
+        "version": 1,
+        "writerId": "/root/nutrition_enrichment_review",
+        "record": {
+          "slug": "glutinous-rice-flour",
+          "displayName": "Glutinous Rice Flour",
+          "category": "pantry",
+          "subcategory": "flours",
+          "aliases": [
+            "glutinous rice flour",
+            "sweet rice flour",
+            "sticky rice flour",
+            "tepung ketan",
+            "mochiko",
+            "Klebreismehl"
+          ],
+          "foodState": "Dry plain white glutinous rice flour; generic recipe identity, archived ERAWAN branded gram-based label stand-in, not ordinary rice flour.",
+          "unit": "per100g-edible",
+          "nutritionOrigin": "usda-stand-in",
+          "nutritionNote": "Dry plain white glutinous rice flour; generic recipe identity, archived ERAWAN branded gram-based label stand-in, not ordinary rice flour. Published USDA FDC branded stand-in table values per100g, from a gram-based label; zero entries are genuinely label-published/rounded, not absent nutrients filled with zeros. Not an exact measured ingredient batch.",
+          "usdaFdcId": 364843,
+          "nutritionPer100g": {
+            "saturatedFatG": 0,
+            "sodiumMg": 0,
+            "fiberG": 0,
+            "fatG": 0,
+            "sugarG": 0,
+            "proteinG": 6.67,
+            "carbsG": 80,
+            "calories": 367
+          },
+          "evidence": [
+            {
+              "url": "https://api.nal.usda.gov/fdc/v1/food/364843",
+              "snapshotSha256": "sha256:1ab80fd5c82efaa1393fdf58262d72fdc7acb804e7968f16de4fa30ae231f235",
+              "description": "GLUTINOUS RICE FLOUR; ERAWAN; ingredients GLUTINOUS RICE, WATER; serving30.0g; published4/1/2019. Archived source-specific stand-in."
+            }
+          ],
+          "image": {
+            "sha256": "23e192cb9996c8ece3ce1d639adf5111c3a90b93926b55e7283410ecf6d2559f",
+            "masterSha256": "75a5f0c242c654c26e69273ef73831e2d98771e042fb21e96801fcb301647878",
+            "width": 512,
+            "height": 512,
+            "contentType": "image/webp",
+            "alpha": true
+          },
+          "imageReview": {
+            "status": "accepted",
+            "reviewerId": "/root/import_contract",
+            "reviewedAt": "2026-10-04",
+            "masterSha256": "75a5f0c242c654c26e69273ef73831e2d98771e042fb21e96801fcb301647878",
+            "notes": "Reviewer model: gpt-6.1-sol. PASS generic fine white rice-flour powder in the original simple bowl. Explicit ART-ONLY reuse exception: visually appropriate white rice powder is reused from reviewed rice-flour cutout without claiming it proves glutinous variety or inheriting ordinary rice-flour nutrition. New canonical food identity and source-specific reviewed profile remain separate. Independently inspected exact master with actual alpha composited over dark and both PNG/WebP512 encodings on four backgrounds; edges/soft shadow complete and clean, no visible flattening/halo/crop/codec defect. Exact image hashes independently checked.",
+            "styleReferenceSlugs": [
+              "garlic",
+              "carrot",
+              "onion",
+              "tomato",
+              "lemon",
+              "banana",
+              "butter",
+              "coconut-milk",
+              "chickpea",
+              "parsley"
+            ],
+            "backgrounds": [
+              "white",
+              "warm",
+              "dark",
+              "checkerboard"
+            ]
+          }
+        },
+        "intentHash": "sha256:2b5b60c37443f54ec407066daffe820a727c7d538f7ea9eb33d0451196f4ff6c",
+        "review": {
+          "status": "accepted",
+          "reviewerId": "/root",
+          "reviewedAt": "2026-10-04",
+          "intentHash": "sha256:2b5b60c37443f54ec407066daffe820a727c7d538f7ea9eb33d0451196f4ff6c",
+          "notes": "Root independently inspected original saved FDC 364843 JSON, exact food/ingredients, gram-based serving, all eight published per100g values and the label fields including genuine rounded zeros. Accepted only as an explicitly archived branded stand-in for the generic identity, not a measured batch or universal product profile. Existing nutrition is not replaced. Original snapshot and approved transparent derivative hashes match; prior independent visual review remains bound."
+        }
+      },
+      "record": {
+        "id": "ia_glutinous-rice-flour",
+        "slug": "glutinous-rice-flour",
+        "displayName": "Glutinous Rice Flour",
+        "category": "pantry",
+        "subcategory": "flours",
+        "aliases": [
+          "glutinous rice flour",
+          "sweet rice flour",
+          "sticky rice flour",
+          "tepung ketan",
+          "mochiko"
+        ],
+        "aliasesDe": [
+          "Klebreismehl"
+        ],
+        "images": {
+          "original": {
+            "path": "catalog-additions/assets/glutinous-rice-flour/original.webp",
+            "sha256": "2d6bff1f7349526cc324cf8473d230e677821e392de91a2d82f1904484424d58",
+            "bytes": 16732,
+            "width": 512,
+            "height": 512,
+            "contentType": "image/webp"
+          },
+          "transparent": {
+            "webp512": {
+              "path": "catalog-additions/assets/glutinous-rice-flour/webp512.webp",
+              "sha256": "23e192cb9996c8ece3ce1d639adf5111c3a90b93926b55e7283410ecf6d2559f",
+              "bytes": 34808,
+              "width": 512,
+              "height": 512,
+              "contentType": "image/webp",
+              "alpha": true
+            },
+            "master": {
+              "path": "catalog-additions/assets/glutinous-rice-flour/master.png",
+              "sha256": "75a5f0c242c654c26e69273ef73831e2d98771e042fb21e96801fcb301647878",
+              "bytes": 178991,
+              "width": 512,
+              "height": 512,
+              "contentType": "image/png",
+              "alpha": true
+            },
+            "png512": {
+              "path": "catalog-additions/assets/glutinous-rice-flour/png512.png",
+              "sha256": "65c6a0000760476972b793036315cee294d80d8e4186e3f41d51c594c32a3e0a",
+              "bytes": 190110,
+              "width": 512,
+              "height": 512,
+              "contentType": "image/png",
+              "alpha": true
+            }
+          },
+          "png512": {
+            "path": "catalog-additions/assets/glutinous-rice-flour/white512.png",
+            "sha256": "15885c559dc3d4574eaa5211d3efb83da3a8b3b25f98ac6030d631ff5d2c0c24",
+            "bytes": 193096,
+            "width": 512,
+            "height": 512,
+            "contentType": "image/png"
+          },
+          "webp512": {
+            "path": "catalog-additions/assets/glutinous-rice-flour/white512.webp",
+            "sha256": "19f4367b58f5cf2a5ba843eca91d1113cf73edf25031459b4f4a9ed121995e06",
+            "bytes": 16440,
+            "width": 512,
+            "height": 512,
+            "contentType": "image/webp"
+          }
+        },
+        "license": {
+          "status": "reviewed-catalog-addition",
+          "metadata": "CC0-1.0",
+          "images": "CC0-1.0",
+          "code": "MIT"
+        },
+        "provenance": {
+          "incubatedBy": "Buna",
+          "aiGenerated": true,
+          "imageReuse": {
+            "sourceAtlasSlug": "rice-flour",
+            "kind": "reviewed-atlas-cutout",
+            "version": "0.2.0",
+            "sourcePath": "public-dataset/images/original/pantry/rice-flour.webp",
+            "sourceSha256": "2d6bff1f7349526cc324cf8473d230e677821e392de91a2d82f1904484424d58",
+            "summarySha256": "9fa4075beac1be283552fc95faaeab5904a63eb986dcb91182d065bf0f7d2019",
+            "qaReviewSha256": "3acb7361bf85539511a29135a41174aa711c521beb4d3d139881b999aa825fef",
+            "handoffSha256": "5c126d900d5ca829bdbb3ca47782f0ac861660227f7e009694560cb1447a34f1",
+            "overridesSha256": "5941f70a6f7f842eab0643ebca9abb5141d67b61b5afba81131b42a40b3d8a3c",
+            "model": "isnet-general-use",
+            "qaFlags": [],
+            "recordedVisualAcceptance": true,
+            "exception": {
+              "kind": "visual-art-only-new-food-identity",
+              "sourceAtlasSlug": "rice-flour",
+              "sourceSha256": "2d6bff1f7349526cc324cf8473d230e677821e392de91a2d82f1904484424d58",
+              "sourceVersion": "0.2.0",
+              "nutritionReuse": false,
+              "masterByteIdentity": true,
+              "approvedAlpha512Sha256": "23e192cb9996c8ece3ce1d639adf5111c3a90b93926b55e7283410ecf6d2559f"
+            }
+          },
+          "imageReview": {
+            "status": "accepted",
+            "masterSha256": "75a5f0c242c654c26e69273ef73831e2d98771e042fb21e96801fcb301647878",
+            "reviewerId": "/root/import_contract",
+            "reviewedAt": "2026-10-04",
+            "notes": "Reviewer model: gpt-6.1-sol. PASS generic fine white rice-flour powder in the original simple bowl. Explicit ART-ONLY reuse exception: visually appropriate white rice powder is reused from reviewed rice-flour cutout without claiming it proves glutinous variety or inheriting ordinary rice-flour nutrition. New canonical food identity and source-specific reviewed profile remain separate. Independently inspected exact master with actual alpha composited over dark and both PNG/WebP512 encodings on four backgrounds; edges/soft shadow complete and clean, no visible flattening/halo/crop/codec defect. Exact image hashes independently checked.",
+            "styleReferenceSlugs": [
+              "garlic",
+              "carrot",
+              "onion",
+              "tomato",
+              "lemon",
+              "banana",
+              "butter",
+              "coconut-milk",
+              "chickpea",
+              "parsley"
+            ],
+            "backgrounds": [
+              "white",
+              "warm",
+              "dark",
+              "checkerboard"
+            ]
+          }
+        },
+        "review": {
+          "status": "independently-reviewed-catalog-addition",
+          "sourceImageApproved": true,
+          "metadataReview": {
+            "status": "accepted",
+            "reviewerId": "/root",
+            "reviewedAt": "2026-10-04",
+            "intentHash": "sha256:2b5b60c37443f54ec407066daffe820a727c7d538f7ea9eb33d0451196f4ff6c",
+            "notes": "Root independently inspected original saved FDC 364843 JSON, exact food/ingredients, gram-based serving, all eight published per100g values and the label fields including genuine rounded zeros. Accepted only as an explicitly archived branded stand-in for the generic identity, not a measured batch or universal product profile. Existing nutrition is not replaced. Original snapshot and approved transparent derivative hashes match; prior independent visual review remains bound."
+          }
+        },
+        "metadata": {
+          "nutritionSource": "usda-stand-in",
+          "nutritionNote": "Dry plain white glutinous rice flour; generic recipe identity, archived ERAWAN branded gram-based label stand-in, not ordinary rice flour. Published USDA FDC branded stand-in table values per100g, from a gram-based label; zero entries are genuinely label-published/rounded, not absent nutrients filled with zeros. Not an exact measured ingredient batch.",
+          "nutritionEvidence": [
+            {
+              "url": "https://api.nal.usda.gov/fdc/v1/food/364843",
+              "snapshotSha256": "sha256:1ab80fd5c82efaa1393fdf58262d72fdc7acb804e7968f16de4fa30ae231f235",
+              "description": "GLUTINOUS RICE FLOUR; ERAWAN; ingredients GLUTINOUS RICE, WATER; serving30.0g; published4/1/2019. Archived source-specific stand-in."
+            }
+          ],
+          "nutritionPer100g": {
+            "saturatedFatG": 0,
+            "sodiumMg": 0,
+            "fiberG": 0,
+            "fatG": 0,
+            "sugarG": 0,
+            "proteinG": 6.67,
+            "carbsG": 80,
+            "calories": 367
+          },
+          "usdaFdcId": 364843,
+          "publicationIntentHash": "sha256:2b5b60c37443f54ec407066daffe820a727c7d538f7ea9eb33d0451196f4ff6c",
+          "publicationRecord": {
+            "slug": "glutinous-rice-flour",
+            "displayName": "Glutinous Rice Flour",
+            "category": "pantry",
+            "subcategory": "flours",
+            "aliases": [
+              "glutinous rice flour",
+              "sweet rice flour",
+              "sticky rice flour",
+              "tepung ketan",
+              "mochiko",
+              "Klebreismehl"
+            ],
+            "foodState": "Dry plain white glutinous rice flour; generic recipe identity, archived ERAWAN branded gram-based label stand-in, not ordinary rice flour.",
+            "unit": "per100g-edible",
+            "nutritionOrigin": "usda-stand-in",
+            "nutritionNote": "Dry plain white glutinous rice flour; generic recipe identity, archived ERAWAN branded gram-based label stand-in, not ordinary rice flour. Published USDA FDC branded stand-in table values per100g, from a gram-based label; zero entries are genuinely label-published/rounded, not absent nutrients filled with zeros. Not an exact measured ingredient batch.",
+            "usdaFdcId": 364843,
+            "nutritionPer100g": {
+              "saturatedFatG": 0,
+              "sodiumMg": 0,
+              "fiberG": 0,
+              "fatG": 0,
+              "sugarG": 0,
+              "proteinG": 6.67,
+              "carbsG": 80,
+              "calories": 367
+            },
+            "evidence": [
+              {
+                "url": "https://api.nal.usda.gov/fdc/v1/food/364843",
+                "snapshotSha256": "sha256:1ab80fd5c82efaa1393fdf58262d72fdc7acb804e7968f16de4fa30ae231f235",
+                "description": "GLUTINOUS RICE FLOUR; ERAWAN; ingredients GLUTINOUS RICE, WATER; serving30.0g; published4/1/2019. Archived source-specific stand-in."
+              }
+            ],
+            "image": {
+              "sha256": "23e192cb9996c8ece3ce1d639adf5111c3a90b93926b55e7283410ecf6d2559f",
+              "masterSha256": "75a5f0c242c654c26e69273ef73831e2d98771e042fb21e96801fcb301647878",
+              "width": 512,
+              "height": 512,
+              "contentType": "image/webp",
+              "alpha": true
+            },
+            "imageReview": {
+              "status": "accepted",
+              "reviewerId": "/root/import_contract",
+              "reviewedAt": "2026-10-04",
+              "masterSha256": "75a5f0c242c654c26e69273ef73831e2d98771e042fb21e96801fcb301647878",
+              "notes": "Reviewer model: gpt-6.1-sol. PASS generic fine white rice-flour powder in the original simple bowl. Explicit ART-ONLY reuse exception: visually appropriate white rice powder is reused from reviewed rice-flour cutout without claiming it proves glutinous variety or inheriting ordinary rice-flour nutrition. New canonical food identity and source-specific reviewed profile remain separate. Independently inspected exact master with actual alpha composited over dark and both PNG/WebP512 encodings on four backgrounds; edges/soft shadow complete and clean, no visible flattening/halo/crop/codec defect. Exact image hashes independently checked.",
+              "styleReferenceSlugs": [
+                "garlic",
+                "carrot",
+                "onion",
+                "tomato",
+                "lemon",
+                "banana",
+                "butter",
+                "coconut-milk",
+                "chickpea",
+                "parsley"
+              ],
+              "backgrounds": [
+                "white",
+                "warm",
+                "dark",
+                "checkerboard"
+              ]
+            }
+          }
+        }
+      },
+      "sourceHash": "sha256:aa0b73f0ff33a69694108da2c5f353e197e350d398887a386e82da18a69598e8",
+      "sourceReview": {
+        "status": "accepted",
+        "sourceHash": "sha256:aa0b73f0ff33a69694108da2c5f353e197e350d398887a386e82da18a69598e8",
+        "reviewerId": "/root",
+        "reviewedAt": "2026-10-04",
+        "notes": "Root independently compared this derived canonical row to the exact accepted ingredient intent, all nutrition values/absence/evidence, aliases, no preparation-provenance leak and six copied image hashes. Branded stand-ins and explicit missing profile remain correctly distinct. Generic rice-flour image reuse is art-only and its approved bytes are unchanged; no ordinary flour nutrition is inherited. This approves source install/append with the previously independently accepted guarded adapter; existing aliases remain unchanged pending separate correction."
+      }
+    },
+    {
+      "intentHash": "sha256:1d55b935ad471d43a0fef6c3be56beeeab84f3d6386d7affd5369487d62297e9",
+      "intent": {
+        "version": 1,
+        "writerId": "/root/nutrition_enrichment_review",
+        "record": {
+          "slug": "palm-sugar",
+          "displayName": "Palm Sugar",
+          "category": "pantry",
+          "subcategory": "sweeteners",
+          "aliases": [
+            "palm sugar",
+            "gula aren",
+            "gula jawa",
+            "gula merah",
+            "sucre de palme",
+            "zucchero di palma",
+            "azúcar de palma",
+            "Palmzucker"
+          ],
+          "foodState": "Generic solid brown palm sugar, finely shaved for the recipe; species/brand unspecified. Archived U.S. Trading gram-based label is a conventional stand-in, not coconut-specific inheritance.",
+          "unit": "per100g-edible",
+          "nutritionOrigin": "usda-stand-in",
+          "nutritionNote": "Generic solid brown palm sugar, finely shaved for the recipe; species/brand unspecified. Archived U.S. Trading gram-based label is a conventional stand-in, not coconut-specific inheritance. Published USDA FDC branded stand-in table values per100g, from a gram-based label; zero entries are genuinely label-published/rounded, not absent nutrients filled with zeros. Not an exact measured ingredient batch.",
+          "usdaFdcId": 2033749,
+          "nutritionPer100g": {
+            "proteinG": 0,
+            "sugarG": 84.21,
+            "sodiumMg": 211,
+            "saturatedFatG": 0,
+            "carbsG": 84.21,
+            "fiberG": 0,
+            "calories": 337,
+            "fatG": 0
+          },
+          "evidence": [
+            {
+              "url": "https://api.nal.usda.gov/fdc/v1/food/2033749",
+              "snapshotSha256": "sha256:e87b121b384200fe56033cd25d5a99b0e8073a64c74e35346c996a902a939193",
+              "description": "PALM SUGAR; U. S. Trading Company; ingredients PALM SUGAR; serving19.0g; published10/28/2021. Archived source-specific stand-in."
+            }
+          ],
+          "image": {
+            "sha256": "a8fc5a4196c1543ec1dc34982c81978a52b67fe9f4b40c66e1756c54aa54fde1",
+            "masterSha256": "3bf8f309344d331813f759b2eea9fcf5a1ea895eee27fbd5f08e13b75110d760",
+            "width": 512,
+            "height": 512,
+            "contentType": "image/webp",
+            "alpha": true
+          },
+          "imageReview": {
+            "status": "accepted",
+            "reviewerId": "/root/import_contract",
+            "reviewedAt": "2026-10-04",
+            "masterSha256": "3bf8f309344d331813f759b2eea9fcf5a1ea895eee27fbd5f08e13b75110d760",
+            "notes": "Reviewer model: gpt-6.1-sol. PASS solid brown palm-sugar puck with visible shaved/broken pieces and crumbs; appropriate prepared sugar form, not species/brand nutrition proof. Independently inspected exact master with actual alpha composited over dark and both PNG/WebP512 encodings on four backgrounds; edges/soft shadow complete and clean, no visible flattening/halo/crop/codec defect. Exact image hashes independently checked.",
+            "styleReferenceSlugs": [
+              "garlic",
+              "carrot",
+              "onion",
+              "tomato",
+              "lemon",
+              "banana",
+              "butter",
+              "coconut-milk",
+              "chickpea",
+              "parsley"
+            ],
+            "backgrounds": [
+              "white",
+              "warm",
+              "dark",
+              "checkerboard"
+            ]
+          }
+        },
+        "intentHash": "sha256:1d55b935ad471d43a0fef6c3be56beeeab84f3d6386d7affd5369487d62297e9",
+        "review": {
+          "status": "accepted",
+          "reviewerId": "/root",
+          "reviewedAt": "2026-10-04",
+          "intentHash": "sha256:1d55b935ad471d43a0fef6c3be56beeeab84f3d6386d7affd5369487d62297e9",
+          "notes": "Root independently inspected original saved FDC 2033749 JSON, exact food/ingredients, gram-based serving, all eight published per100g values and the label fields including genuine rounded zeros. Accepted only as an explicitly archived branded stand-in for the generic identity, not a measured batch or universal product profile. Existing nutrition is not replaced. Original snapshot and approved transparent derivative hashes match; prior independent visual review remains bound."
+        }
+      },
+      "record": {
+        "id": "ia_palm-sugar",
+        "slug": "palm-sugar",
+        "displayName": "Palm Sugar",
+        "category": "pantry",
+        "subcategory": "sweeteners",
+        "aliases": [
+          "palm sugar",
+          "gula aren",
+          "gula jawa",
+          "gula merah",
+          "sucre de palme",
+          "zucchero di palma",
+          "azúcar de palma"
+        ],
+        "aliasesDe": [
+          "Palmzucker"
+        ],
+        "images": {
+          "original": {
+            "path": "catalog-additions/assets/palm-sugar/original.webp",
+            "sha256": "2980b201b1998d52e6bd5c1d54207c0b2ebc2424978b04541a3bdce718334bc0",
+            "bytes": 277662,
+            "width": 1254,
+            "height": 1254,
+            "contentType": "image/webp"
+          },
+          "transparent": {
+            "webp512": {
+              "path": "catalog-additions/assets/palm-sugar/webp512.webp",
+              "sha256": "a8fc5a4196c1543ec1dc34982c81978a52b67fe9f4b40c66e1756c54aa54fde1",
+              "bytes": 67868,
+              "width": 512,
+              "height": 512,
+              "contentType": "image/webp",
+              "alpha": true
+            },
+            "master": {
+              "path": "catalog-additions/assets/palm-sugar/master.png",
+              "sha256": "3bf8f309344d331813f759b2eea9fcf5a1ea895eee27fbd5f08e13b75110d760",
+              "bytes": 1349991,
+              "width": 1254,
+              "height": 1254,
+              "contentType": "image/png",
+              "alpha": true
+            },
+            "png512": {
+              "path": "catalog-additions/assets/palm-sugar/png512.png",
+              "sha256": "33b55c71393edf1ecef3a225d6f01efe3fc2e5d9ea1aadc045587d199d5f97af",
+              "bytes": 290846,
+              "width": 512,
+              "height": 512,
+              "contentType": "image/png",
+              "alpha": true
+            }
+          },
+          "png512": {
+            "path": "catalog-additions/assets/palm-sugar/white512.png",
+            "sha256": "4bc27a66f533677b57391417e212027db07ad6ede1fd1a18d7823b524e0dad23",
+            "bytes": 248800,
+            "width": 512,
+            "height": 512,
+            "contentType": "image/png"
+          },
+          "webp512": {
+            "path": "catalog-additions/assets/palm-sugar/white512.webp",
+            "sha256": "2906f13489479757c87074fac994d45bec7ddefa492bc4a88b3b012276b7fc1e",
+            "bytes": 45796,
+            "width": 512,
+            "height": 512,
+            "contentType": "image/webp"
+          }
+        },
+        "license": {
+          "status": "reviewed-catalog-addition",
+          "metadata": "CC0-1.0",
+          "images": "CC0-1.0",
+          "code": "MIT"
+        },
+        "provenance": {
+          "incubatedBy": "Buna",
+          "aiGenerated": true,
+          "imageGeneration": {
+            "tool": "image_gen",
+            "transparentBackground": true,
+            "mode": "new-generation",
+            "writerId": "/root/nutrition_enrichment_review",
+            "promptVersion": "next-pilot-ingredients-v1"
+          },
+          "imageReview": {
+            "status": "accepted",
+            "masterSha256": "3bf8f309344d331813f759b2eea9fcf5a1ea895eee27fbd5f08e13b75110d760",
+            "reviewerId": "/root/import_contract",
+            "reviewedAt": "2026-10-04",
+            "notes": "Reviewer model: gpt-6.1-sol. PASS solid brown palm-sugar puck with visible shaved/broken pieces and crumbs; appropriate prepared sugar form, not species/brand nutrition proof. Independently inspected exact master with actual alpha composited over dark and both PNG/WebP512 encodings on four backgrounds; edges/soft shadow complete and clean, no visible flattening/halo/crop/codec defect. Exact image hashes independently checked.",
+            "styleReferenceSlugs": [
+              "garlic",
+              "carrot",
+              "onion",
+              "tomato",
+              "lemon",
+              "banana",
+              "butter",
+              "coconut-milk",
+              "chickpea",
+              "parsley"
+            ],
+            "backgrounds": [
+              "white",
+              "warm",
+              "dark",
+              "checkerboard"
+            ]
+          }
+        },
+        "review": {
+          "status": "independently-reviewed-catalog-addition",
+          "sourceImageApproved": true,
+          "metadataReview": {
+            "status": "accepted",
+            "reviewerId": "/root",
+            "reviewedAt": "2026-10-04",
+            "intentHash": "sha256:1d55b935ad471d43a0fef6c3be56beeeab84f3d6386d7affd5369487d62297e9",
+            "notes": "Root independently inspected original saved FDC 2033749 JSON, exact food/ingredients, gram-based serving, all eight published per100g values and the label fields including genuine rounded zeros. Accepted only as an explicitly archived branded stand-in for the generic identity, not a measured batch or universal product profile. Existing nutrition is not replaced. Original snapshot and approved transparent derivative hashes match; prior independent visual review remains bound."
+          }
+        },
+        "metadata": {
+          "nutritionSource": "usda-stand-in",
+          "nutritionNote": "Generic solid brown palm sugar, finely shaved for the recipe; species/brand unspecified. Archived U.S. Trading gram-based label is a conventional stand-in, not coconut-specific inheritance. Published USDA FDC branded stand-in table values per100g, from a gram-based label; zero entries are genuinely label-published/rounded, not absent nutrients filled with zeros. Not an exact measured ingredient batch.",
+          "nutritionEvidence": [
+            {
+              "url": "https://api.nal.usda.gov/fdc/v1/food/2033749",
+              "snapshotSha256": "sha256:e87b121b384200fe56033cd25d5a99b0e8073a64c74e35346c996a902a939193",
+              "description": "PALM SUGAR; U. S. Trading Company; ingredients PALM SUGAR; serving19.0g; published10/28/2021. Archived source-specific stand-in."
+            }
+          ],
+          "nutritionPer100g": {
+            "proteinG": 0,
+            "sugarG": 84.21,
+            "sodiumMg": 211,
+            "saturatedFatG": 0,
+            "carbsG": 84.21,
+            "fiberG": 0,
+            "calories": 337,
+            "fatG": 0
+          },
+          "usdaFdcId": 2033749,
+          "publicationIntentHash": "sha256:1d55b935ad471d43a0fef6c3be56beeeab84f3d6386d7affd5369487d62297e9",
+          "publicationRecord": {
+            "slug": "palm-sugar",
+            "displayName": "Palm Sugar",
+            "category": "pantry",
+            "subcategory": "sweeteners",
+            "aliases": [
+              "palm sugar",
+              "gula aren",
+              "gula jawa",
+              "gula merah",
+              "sucre de palme",
+              "zucchero di palma",
+              "azúcar de palma",
+              "Palmzucker"
+            ],
+            "foodState": "Generic solid brown palm sugar, finely shaved for the recipe; species/brand unspecified. Archived U.S. Trading gram-based label is a conventional stand-in, not coconut-specific inheritance.",
+            "unit": "per100g-edible",
+            "nutritionOrigin": "usda-stand-in",
+            "nutritionNote": "Generic solid brown palm sugar, finely shaved for the recipe; species/brand unspecified. Archived U.S. Trading gram-based label is a conventional stand-in, not coconut-specific inheritance. Published USDA FDC branded stand-in table values per100g, from a gram-based label; zero entries are genuinely label-published/rounded, not absent nutrients filled with zeros. Not an exact measured ingredient batch.",
+            "usdaFdcId": 2033749,
+            "nutritionPer100g": {
+              "proteinG": 0,
+              "sugarG": 84.21,
+              "sodiumMg": 211,
+              "saturatedFatG": 0,
+              "carbsG": 84.21,
+              "fiberG": 0,
+              "calories": 337,
+              "fatG": 0
+            },
+            "evidence": [
+              {
+                "url": "https://api.nal.usda.gov/fdc/v1/food/2033749",
+                "snapshotSha256": "sha256:e87b121b384200fe56033cd25d5a99b0e8073a64c74e35346c996a902a939193",
+                "description": "PALM SUGAR; U. S. Trading Company; ingredients PALM SUGAR; serving19.0g; published10/28/2021. Archived source-specific stand-in."
+              }
+            ],
+            "image": {
+              "sha256": "a8fc5a4196c1543ec1dc34982c81978a52b67fe9f4b40c66e1756c54aa54fde1",
+              "masterSha256": "3bf8f309344d331813f759b2eea9fcf5a1ea895eee27fbd5f08e13b75110d760",
+              "width": 512,
+              "height": 512,
+              "contentType": "image/webp",
+              "alpha": true
+            },
+            "imageReview": {
+              "status": "accepted",
+              "reviewerId": "/root/import_contract",
+              "reviewedAt": "2026-10-04",
+              "masterSha256": "3bf8f309344d331813f759b2eea9fcf5a1ea895eee27fbd5f08e13b75110d760",
+              "notes": "Reviewer model: gpt-6.1-sol. PASS solid brown palm-sugar puck with visible shaved/broken pieces and crumbs; appropriate prepared sugar form, not species/brand nutrition proof. Independently inspected exact master with actual alpha composited over dark and both PNG/WebP512 encodings on four backgrounds; edges/soft shadow complete and clean, no visible flattening/halo/crop/codec defect. Exact image hashes independently checked.",
+              "styleReferenceSlugs": [
+                "garlic",
+                "carrot",
+                "onion",
+                "tomato",
+                "lemon",
+                "banana",
+                "butter",
+                "coconut-milk",
+                "chickpea",
+                "parsley"
+              ],
+              "backgrounds": [
+                "white",
+                "warm",
+                "dark",
+                "checkerboard"
+              ]
+            }
+          }
+        }
+      },
+      "sourceHash": "sha256:4c2ed295ea2a68b214a0e37d8e53dfb8cd07f348e9fbe66bac84e66af87d4151",
+      "sourceReview": {
+        "status": "accepted",
+        "sourceHash": "sha256:4c2ed295ea2a68b214a0e37d8e53dfb8cd07f348e9fbe66bac84e66af87d4151",
+        "reviewerId": "/root",
+        "reviewedAt": "2026-10-04",
+        "notes": "Root independently compared this derived canonical row to the exact accepted ingredient intent, all nutrition values/absence/evidence, aliases, no preparation-provenance leak and six copied image hashes. Branded stand-ins and explicit missing profile remain correctly distinct. Generic rice-flour image reuse is art-only and its approved bytes are unchanged; no ordinary flour nutrition is inherited. This approves source install/append with the previously independently accepted guarded adapter; existing aliases remain unchanged pending separate correction."
+      }
+    },
+    {
+      "intentHash": "sha256:4e356d1aff2acbb18e78a1b1259617e6cd38960ff8409b974c52ea090dd8850e",
+      "intent": {
+        "version": 1,
+        "writerId": "/root/nutrition_enrichment_review",
+        "record": {
+          "slug": "prawn-crackers",
+          "displayName": "Prawn Crackers",
+          "category": "pantry",
+          "subcategory": "crackers",
+          "aliases": [
+            "prawn crackers",
+            "shrimp crackers",
+            "kerupuk udang",
+            "krupuk udang",
+            "Krabbenchips",
+            "Garnelenchips"
+          ],
+          "foodState": "Ready-to-eat cooked fried/puffed Indonesian prawn crackers; not uncooked dried pellets. Generic optional recipe garnish, brand and gram quantity unspecified.",
+          "unit": "per100g-edible",
+          "nutritionOrigin": "missing",
+          "nutritionNote": "No accepted per100g profile for the generic ready-to-eat fried/puffed cracker state. Brand/composition/oil uptake vary, and original recipe uses optional garnish without a weighed quantity. Do not inherit raw prawn or raw/dry cracker numbers.",
+          "evidence": [
+            {
+              "url": "https://www.recipetineats.com/gado-gado-indonesian-salad-with-peanut-sauce/",
+              "snapshotSha256": "sha256:a8c63a1a28bc4565b27a3fd811c49e406dd2b14c4a021fc2aeed43cb26e1bb6a",
+              "description": "Derived paraphrased source-observation snapshot by independent reviewer, not raw article HTML. Original Gado recipe identifies optional prawn-cracker garnish; no measured ingredient mass/product-specific nutrition established."
+            }
+          ],
+          "image": {
+            "sha256": "d78d394778ca300aa5f6d83e721d517e0ff79b70f908f121b6e13ce1ec0af008",
+            "masterSha256": "46b88ca90c0bbcf4cf69cde336c68b4b277e20ae75f74e39019e23f366be7fac",
+            "width": 512,
+            "height": 512,
+            "contentType": "image/webp",
+            "alpha": true
+          },
+          "imageReview": {
+            "status": "accepted",
+            "reviewerId": "/root/import_contract",
+            "reviewedAt": "2026-10-04",
+            "masterSha256": "46b88ca90c0bbcf4cf69cde336c68b4b277e20ae75f74e39019e23f366be7fac",
+            "notes": "Reviewer model: gpt-6.1-sol. PASS light cream airy curled cooked cracker surfaces; complete clean subject, no packaging/extra props. Independently inspected exact master with actual alpha composited over dark and both PNG/WebP512 encodings on four backgrounds; edges/soft shadow complete and clean, no visible flattening/halo/crop/codec defect. Exact image hashes independently checked.",
+            "styleReferenceSlugs": [
+              "garlic",
+              "carrot",
+              "onion",
+              "tomato",
+              "lemon",
+              "banana",
+              "butter",
+              "coconut-milk",
+              "chickpea",
+              "parsley"
+            ],
+            "backgrounds": [
+              "white",
+              "warm",
+              "dark",
+              "checkerboard"
+            ]
+          }
+        },
+        "intentHash": "sha256:4e356d1aff2acbb18e78a1b1259617e6cd38960ff8409b974c52ea090dd8850e",
+        "review": {
+          "status": "accepted",
+          "reviewerId": "/root",
+          "reviewedAt": "2026-10-04",
+          "intentHash": "sha256:4e356d1aff2acbb18e78a1b1259617e6cd38960ff8409b974c52ea090dd8850e",
+          "notes": "Root independently inspected saved original-source observation: optional ready-to-eat prawn crackers, count15, with no measured mass or product label. Accepted identity and explicit unknown profile. The source snapshot is honestly described as derived reviewer observations, not raw HTML. USDA429 is an access stop and was not used to claim no matching food exists. Approved image bytes match independent alpha/style review."
+        }
+      },
+      "record": {
+        "id": "ia_prawn-crackers",
+        "slug": "prawn-crackers",
+        "displayName": "Prawn Crackers",
+        "category": "pantry",
+        "subcategory": "crackers",
+        "aliases": [
+          "prawn crackers",
+          "shrimp crackers",
+          "kerupuk udang",
+          "krupuk udang"
+        ],
+        "aliasesDe": [
+          "Krabbenchips",
+          "Garnelenchips"
+        ],
+        "images": {
+          "original": {
+            "path": "catalog-additions/assets/prawn-crackers/original.webp",
+            "sha256": "752be4141540d163dcc3479be18b4f1ea54d02e744ec826e26741d4282a72cf9",
+            "bytes": 250016,
+            "width": 1254,
+            "height": 1254,
+            "contentType": "image/webp"
+          },
+          "transparent": {
+            "webp512": {
+              "path": "catalog-additions/assets/prawn-crackers/webp512.webp",
+              "sha256": "d78d394778ca300aa5f6d83e721d517e0ff79b70f908f121b6e13ce1ec0af008",
+              "bytes": 60812,
+              "width": 512,
+              "height": 512,
+              "contentType": "image/webp",
+              "alpha": true
+            },
+            "master": {
+              "path": "catalog-additions/assets/prawn-crackers/master.png",
+              "sha256": "46b88ca90c0bbcf4cf69cde336c68b4b277e20ae75f74e39019e23f366be7fac",
+              "bytes": 1493265,
+              "width": 1254,
+              "height": 1254,
+              "contentType": "image/png",
+              "alpha": true
+            },
+            "png512": {
+              "path": "catalog-additions/assets/prawn-crackers/png512.png",
+              "sha256": "ee418e7443f1c29843527e050c2c4c0ac899b2ba9426a3f11c51dcab71db62ce",
+              "bytes": 322051,
+              "width": 512,
+              "height": 512,
+              "contentType": "image/png",
+              "alpha": true
+            }
+          },
+          "png512": {
+            "path": "catalog-additions/assets/prawn-crackers/white512.png",
+            "sha256": "00bedccbcd7460c8a611615c9b64d87718ef48f568d3fc99de4245961a184168",
+            "bytes": 262739,
+            "width": 512,
+            "height": 512,
+            "contentType": "image/png"
+          },
+          "webp512": {
+            "path": "catalog-additions/assets/prawn-crackers/white512.webp",
+            "sha256": "624f40061485042b471b91caad1936b52a69ea6bf9cca7c906cdf4c4fba78644",
+            "bytes": 34362,
+            "width": 512,
+            "height": 512,
+            "contentType": "image/webp"
+          }
+        },
+        "license": {
+          "status": "reviewed-catalog-addition",
+          "metadata": "CC0-1.0",
+          "images": "CC0-1.0",
+          "code": "MIT"
+        },
+        "provenance": {
+          "incubatedBy": "Buna",
+          "aiGenerated": true,
+          "imageGeneration": {
+            "tool": "image_gen",
+            "transparentBackground": true,
+            "mode": "new-generation",
+            "writerId": "/root/nutrition_enrichment_review",
+            "promptVersion": "next-pilot-ingredients-v1"
+          },
+          "imageReview": {
+            "status": "accepted",
+            "masterSha256": "46b88ca90c0bbcf4cf69cde336c68b4b277e20ae75f74e39019e23f366be7fac",
+            "reviewerId": "/root/import_contract",
+            "reviewedAt": "2026-10-04",
+            "notes": "Reviewer model: gpt-6.1-sol. PASS light cream airy curled cooked cracker surfaces; complete clean subject, no packaging/extra props. Independently inspected exact master with actual alpha composited over dark and both PNG/WebP512 encodings on four backgrounds; edges/soft shadow complete and clean, no visible flattening/halo/crop/codec defect. Exact image hashes independently checked.",
+            "styleReferenceSlugs": [
+              "garlic",
+              "carrot",
+              "onion",
+              "tomato",
+              "lemon",
+              "banana",
+              "butter",
+              "coconut-milk",
+              "chickpea",
+              "parsley"
+            ],
+            "backgrounds": [
+              "white",
+              "warm",
+              "dark",
+              "checkerboard"
+            ]
+          }
+        },
+        "review": {
+          "status": "independently-reviewed-catalog-addition",
+          "sourceImageApproved": true,
+          "metadataReview": {
+            "status": "accepted",
+            "reviewerId": "/root",
+            "reviewedAt": "2026-10-04",
+            "intentHash": "sha256:4e356d1aff2acbb18e78a1b1259617e6cd38960ff8409b974c52ea090dd8850e",
+            "notes": "Root independently inspected saved original-source observation: optional ready-to-eat prawn crackers, count15, with no measured mass or product label. Accepted identity and explicit unknown profile. The source snapshot is honestly described as derived reviewer observations, not raw HTML. USDA429 is an access stop and was not used to claim no matching food exists. Approved image bytes match independent alpha/style review."
+          }
+        },
+        "metadata": {
+          "nutritionSource": "missing",
+          "nutritionNote": "No accepted per100g profile for the generic ready-to-eat fried/puffed cracker state. Brand/composition/oil uptake vary, and original recipe uses optional garnish without a weighed quantity. Do not inherit raw prawn or raw/dry cracker numbers.",
+          "nutritionEvidence": [
+            {
+              "url": "https://www.recipetineats.com/gado-gado-indonesian-salad-with-peanut-sauce/",
+              "snapshotSha256": "sha256:a8c63a1a28bc4565b27a3fd811c49e406dd2b14c4a021fc2aeed43cb26e1bb6a",
+              "description": "Derived paraphrased source-observation snapshot by independent reviewer, not raw article HTML. Original Gado recipe identifies optional prawn-cracker garnish; no measured ingredient mass/product-specific nutrition established."
+            }
+          ],
+          "publicationIntentHash": "sha256:4e356d1aff2acbb18e78a1b1259617e6cd38960ff8409b974c52ea090dd8850e",
+          "publicationRecord": {
+            "slug": "prawn-crackers",
+            "displayName": "Prawn Crackers",
+            "category": "pantry",
+            "subcategory": "crackers",
+            "aliases": [
+              "prawn crackers",
+              "shrimp crackers",
+              "kerupuk udang",
+              "krupuk udang",
+              "Krabbenchips",
+              "Garnelenchips"
+            ],
+            "foodState": "Ready-to-eat cooked fried/puffed Indonesian prawn crackers; not uncooked dried pellets. Generic optional recipe garnish, brand and gram quantity unspecified.",
+            "unit": "per100g-edible",
+            "nutritionOrigin": "missing",
+            "nutritionNote": "No accepted per100g profile for the generic ready-to-eat fried/puffed cracker state. Brand/composition/oil uptake vary, and original recipe uses optional garnish without a weighed quantity. Do not inherit raw prawn or raw/dry cracker numbers.",
+            "evidence": [
+              {
+                "url": "https://www.recipetineats.com/gado-gado-indonesian-salad-with-peanut-sauce/",
+                "snapshotSha256": "sha256:a8c63a1a28bc4565b27a3fd811c49e406dd2b14c4a021fc2aeed43cb26e1bb6a",
+                "description": "Derived paraphrased source-observation snapshot by independent reviewer, not raw article HTML. Original Gado recipe identifies optional prawn-cracker garnish; no measured ingredient mass/product-specific nutrition established."
+              }
+            ],
+            "image": {
+              "sha256": "d78d394778ca300aa5f6d83e721d517e0ff79b70f908f121b6e13ce1ec0af008",
+              "masterSha256": "46b88ca90c0bbcf4cf69cde336c68b4b277e20ae75f74e39019e23f366be7fac",
+              "width": 512,
+              "height": 512,
+              "contentType": "image/webp",
+              "alpha": true
+            },
+            "imageReview": {
+              "status": "accepted",
+              "reviewerId": "/root/import_contract",
+              "reviewedAt": "2026-10-04",
+              "masterSha256": "46b88ca90c0bbcf4cf69cde336c68b4b277e20ae75f74e39019e23f366be7fac",
+              "notes": "Reviewer model: gpt-6.1-sol. PASS light cream airy curled cooked cracker surfaces; complete clean subject, no packaging/extra props. Independently inspected exact master with actual alpha composited over dark and both PNG/WebP512 encodings on four backgrounds; edges/soft shadow complete and clean, no visible flattening/halo/crop/codec defect. Exact image hashes independently checked.",
+              "styleReferenceSlugs": [
+                "garlic",
+                "carrot",
+                "onion",
+                "tomato",
+                "lemon",
+                "banana",
+                "butter",
+                "coconut-milk",
+                "chickpea",
+                "parsley"
+              ],
+              "backgrounds": [
+                "white",
+                "warm",
+                "dark",
+                "checkerboard"
+              ]
+            }
+          }
+        }
+      },
+      "sourceHash": "sha256:3d95777e87aa9546144c37cf682bfbdd664b15ba16483505f1f73542f41e5fb4",
+      "sourceReview": {
+        "status": "accepted",
+        "sourceHash": "sha256:3d95777e87aa9546144c37cf682bfbdd664b15ba16483505f1f73542f41e5fb4",
+        "reviewerId": "/root",
+        "reviewedAt": "2026-10-04",
+        "notes": "Root independently compared this derived canonical row to the exact accepted ingredient intent, all nutrition values/absence/evidence, aliases, no preparation-provenance leak and six copied image hashes. Branded stand-ins and explicit missing profile remain correctly distinct. Generic rice-flour image reuse is art-only and its approved bytes are unchanged; no ordinary flour nutrition is inherited. This approves source install/append with the previously independently accepted guarded adapter; existing aliases remain unchanged pending separate correction."
+      }
     }
   ]
 }

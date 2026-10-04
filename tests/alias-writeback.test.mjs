@@ -9,16 +9,20 @@ import {hash,syncNutrition} from '../src/nutrition-sync.mjs';
 import {acquireExportMaintenance} from '../src/export-maintenance-lock.mjs';
 const pq=createRequire(import.meta.url)('parquetjs-lite');
 const json=p=>JSON.parse(readFileSync(p));const put=(p,d)=>writeFileSync(p,JSON.stringify(d,null,2)+'\n');
-async function setup(){
+async function setup({red=false}={}){
  const root=mkdtempSync(join(tmpdir(),'atlas-alias-test-'));
  const old={id:'ia_soy-sauce',slug:'soy-sauce',aliases:['soy sauce','kecap manis','ketjap'],aliasesDe:['Sojasauce'],images:{original:{sha256:'unchanged-image'}},metadata:{nutritionPer100g:{calories:53},nutritionSource:'manual'}};
  const sweet={id:'ia_indonesian-sweet-soy-sauce',slug:'indonesian-sweet-soy-sauce',aliases:['kecap manis','ketjap manis'],aliasesDe:[],metadata:{nutritionSource:'missing'},images:{original:{sha256:'sweet-image'}}};
+ const lentils={id:'ia_lentils',slug:'lentils',aliases:['lentils','red lentils','green lentils','masoor'],aliasesDe:['Linsen'],metadata:{nutritionSource:'manual',nutritionPer100g:{calories:353,proteinG:25.8},density:{gPerCup:192}},images:{original:{sha256:'old-brown-image'}}};
+ const redLentils={id:'ia_red-lentils',slug:'red-lentils',aliases:['red lentils','lentilles rouges'],aliasesDe:['rote Linsen'],metadata:{nutritionSource:'missing',nutritionNote:'TEST ONLY no inherited nutrient/density profile'},images:{original:{sha256:'new-red-image'}}};
  const other={id:'ia_other',slug:'other',aliases:['other alias'],metadata:{x:42},images:{original:{sha256:'other-image'}}};
+ const records=[old,sweet,other,...(red?[lentils,redLentils]:[])];
  for(const dir of ['dataset','public-dataset']){
-  mkdirSync(join(root,dir),{recursive:true});put(join(root,dir,'manifest.json'),{generatedAt:'fixed',records:[old,sweet,other]});
+  mkdirSync(join(root,dir),{recursive:true});put(join(root,dir,'manifest.json'),{generatedAt:'fixed',records});
   const c={recordsBySlug:{'soy-sauce':old,'indonesian-sweet-soy-sauce':sweet,other},aliases:{'kecap-manis':old,'soy-sauce':old,ketjap:old,'ketjap-manis':sweet,'other-alias':other}};
+  if(red){c.recordsBySlug.lentils=lentils;c.recordsBySlug['red-lentils']=redLentils;Object.assign(c.aliases,{'red-lentils':lentils,lentils,'green-lentils':lentils,masoor:lentils,'lentilles-rouges':redLentils});}
   put(join(root,dir,'manifest.compact.json'),c);
-  const rows=[old,sweet,other].map(r=>({slug:r.slug,aliases:r.aliases,source_job_id:'PRIVATE-fixture-'+r.slug,value:42}));
+  const rows=records.map(r=>({slug:r.slug,aliases:r.aliases,source_job_id:'PRIVATE-fixture-'+r.slug,value:42}));
   writeFileSync(join(root,dir,'metadata.jsonl'),rows.map(JSON.stringify).join('\n')+'\n');
   const schema=new pq.ParquetSchema({slug:{type:'UTF8'},aliases_json:{type:'UTF8'},source_job_id:{type:'UTF8'},value:{type:'INT32'}}),writer=await pq.ParquetWriter.openFile(schema,join(root,dir,'metadata.parquet'));
   for(const r of rows)await writer.appendRow({...r,aliases_json:JSON.stringify(r.aliases)});await writer.close();
@@ -26,7 +30,7 @@ async function setup(){
  }
  mkdirSync(join(root,'data'));writeFileSync(join(root,'data/manifest.compact.json'),readFileSync(join(root,'public-dataset/manifest.compact.json')));
  const intent=await captureAliasIntent(root,'fixture-writer');intent.review={status:'accepted',intentHash:intent.intentHash,reviewerId:'fixture-reviewer',notes:'TEST ONLY exact alias review'};
- return {root,intent,old,sweet,other};
+ return {root,intent,old,sweet,other,lentils,redLentils};
 }
 async function rows(path){const r=await pq.ParquetReader.openFile(path),c=r.getCursor(),out=[];let x;while((x=await c.next()))out.push(x);await r.close();return out;}
 test('exact alias apply/readback/replay/undo preserves all other fields and image bytes',async()=>{
@@ -53,3 +57,51 @@ test('pending transaction blocks guarded append and resealed private source fiel
 test('one shared lock serializes all export writers before baseline reads',async()=>{const f=await setup();try{const before=readFileSync(join(f.root,'dataset/manifest.json'));for(const operation of ['alias','nutrition','append','source-install']){const release=acquireExportMaintenance(f.root,operation);try{await assert.rejects(syncAliases({...f,write:true}),/Export maintenance locked/);await assert.rejects(applyCanonicalAdditions({root:f.root,write:true}),/Export maintenance locked/);assert.throws(()=>syncNutrition({root:f.root,change:{},write:true}),/Export maintenance locked/);assert.throws(()=>installCanonicalAdditions({root:f.root,stageRoot:'/nonexistent-stage',write:true}),/Export maintenance locked/);assert.deepEqual(readFileSync(join(f.root,'dataset/manifest.json')),before);}finally{release();}}}finally{rmSync(f.root,{recursive:true,force:true});}});
 test('actual asynchronous alias writer blocks append and nutrition until readback completes',async()=>{const f=await setup();try{const applying=syncAliases({...f,write:true});assert.ok(existsSync(join(f.root,'export-maintenance.lock')));await assert.rejects(applyCanonicalAdditions({root:f.root,write:true}),/Export maintenance locked/);assert.throws(()=>syncNutrition({root:f.root,change:{},write:true}),/Export maintenance locked/);assert.equal((await applying).status,'applied');assert.ok(!existsSync(join(f.root,'export-maintenance.lock')));assert.equal((await applyCanonicalAdditions({root:f.root,write:true})).aliasCorrections[0].status,'already-applied');}finally{rmSync(f.root,{recursive:true,force:true});}});
 test('executable CLI applies and reads back the exact reviewed alias intent',async()=>{const f=await setup();try{const p=join(f.root,'intent.json');put(p,f.intent);const cli=fileURLToPath(new URL('../src/alias-writeback.mjs',import.meta.url)),args=[cli,'--root',f.root,'--intent',p];const apply=JSON.parse(execFileSync(process.execPath,[...args,'--write'],{encoding:'utf8'}));assert.equal(apply.status,'applied');const readback=JSON.parse(execFileSync(process.execPath,[...args,'--mode','readback'],{encoding:'utf8'}));assert.equal(readback.state,'after');assert.equal(json(join(f.root,'data/manifest.compact.json')).aliases['kecap-manis'].slug,'indonesian-sweet-soy-sauce');}finally{rmSync(f.root,{recursive:true,force:true});}});
+
+const dataFiles=['dataset/manifest.json','dataset/manifest.compact.json','dataset/metadata.jsonl','dataset/metadata.parquet','public-dataset/manifest.json','public-dataset/manifest.compact.json','public-dataset/metadata.jsonl','public-dataset/metadata.parquet','data/manifest.compact.json'];
+const snapshot=root=>new Map(dataFiles.map(p=>[p,readFileSync(join(root,p))]));
+async function redIntent(f){const i=await captureAliasIntent(f.root,'fixture-red-writer',undefined,'red lentils');i.review={status:'accepted',intentHash:i.intentHash,reviewerId:'fixture-independent-red-reviewer',notes:'TEST ONLY exact red alias review'};return i;}
+function assertOwners(f,{kecap,red}){for(const p of ['dataset/manifest.compact.json','public-dataset/manifest.compact.json','data/manifest.compact.json']){const d=json(join(f.root,p));assert.equal(d.aliases['kecap-manis'].slug,kecap?'indonesian-sweet-soy-sauce':'soy-sauce');assert.equal(d.aliases['red-lentils'].slug,red?'red-lentils':'lentils');assert.equal(d.aliases.masoor.slug,'lentils');assert.equal(d.aliases['green-lentils'].slug,'lentils');assert.equal(d.aliases.ketjap.slug,'soy-sauce');}}
+
+test('red apply/replay/undo coexists with byte-unchanged legacy kecap source and receipt',async()=>{
+ const f=await setup({red:true});try{
+  const red=await redIntent(f),appliedSoy=await syncAliases({...f,write:true});
+  const sourceBeforeRed=readFileSync(join(f.root,'aliases/overrides.json')),legacyReceipt=readFileSync(join(f.root,'aliases/receipt.private.json'));
+  const beforeRed=snapshot(f.root),beforeParquet=await rows(join(f.root,'dataset/metadata.parquet'));
+  const appliedRed=await syncAliases({root:f.root,intent:red,write:true});assert.equal(appliedRed.status,'applied');
+  assertOwners(f,{kecap:true,red:true});assert.deepEqual(readFileSync(join(f.root,'aliases/receipt.private.json')),legacyReceipt);
+  assert.equal(loadAliasOverrides(f.root).length,2);assert.deepEqual(loadAliasOverrides(f.root)[0],f.intent);
+  for(const dir of ['dataset','public-dataset']){const records=json(join(f.root,dir,'manifest.json')).records;assert.deepEqual(records.find(r=>r.slug==='lentils'),{...f.lentils,aliases:['lentils','green lentils','masoor']});assert.deepEqual(records.find(r=>r.slug==='red-lentils'),f.redLentils);assert.deepEqual(records.find(r=>r.slug==='other'),f.other);}
+  const afterParquet=await rows(join(f.root,'dataset/metadata.parquet'));assert.deepEqual(afterParquet.filter(r=>r.slug!=='lentils'),beforeParquet.filter(r=>r.slug!=='lentils'));
+  assert.deepEqual({...afterParquet.find(r=>r.slug==='lentils'),aliases_json:beforeParquet.find(r=>r.slug==='lentils').aliases_json},beforeParquet.find(r=>r.slug==='lentils'));
+  const after=snapshot(f.root),redReceipt=readFileSync(join(f.root,'aliases/receipts/red-lentils.private.json'));
+  assert.equal((await syncAliases({root:f.root,intent:red,write:true})).status,'already-applied');assert.equal((await syncAliases({...f,write:true})).status,'already-applied');
+  for(const[p,b]of after)assert.deepEqual(readFileSync(join(f.root,p)),b);assert.deepEqual(readFileSync(join(f.root,'aliases/receipts/red-lentils.private.json')),redReceipt);
+  await assert.rejects(syncAliases({root:f.root,intent:red,mode:'undo',write:true,expectedResultHash:appliedSoy.resultHash}),/Undo requires receipt/);
+  assert.equal((await syncAliases({root:f.root,intent:red,mode:'undo',write:true,expectedResultHash:appliedRed.resultHash})).status,'undone');assertOwners(f,{kecap:true,red:false});
+  assert.deepEqual(readFileSync(join(f.root,'aliases/overrides.json')),sourceBeforeRed);assert.deepEqual(readFileSync(join(f.root,'aliases/receipt.private.json')),legacyReceipt);
+  for(const[p,b]of beforeRed){if(!p.endsWith('.parquet'))assert.deepEqual(readFileSync(join(f.root,p)),b);}assert.deepEqual(await rows(join(f.root,'dataset/metadata.parquet')),beforeParquet);
+  assert.equal((await syncAliases({root:f.root,intent:red,mode:'undo',write:true,expectedResultHash:appliedRed.resultHash})).status,'already-undone');
+  await assert.rejects(syncAliases({root:f.root,intent:red,write:true}),/Reapplying an undone/);
+ }finally{rmSync(f.root,{recursive:true,force:true});}
+});
+
+test('legacy kecap reversal leaves independently applied red operation and receipt untouched',async()=>{
+ const f=await setup({red:true});try{const red=await redIntent(f),redResult=await syncAliases({root:f.root,intent:red,write:true});const source=readFileSync(join(f.root,'aliases/overrides.json')),receipt=readFileSync(join(f.root,'aliases/receipts/red-lentils.private.json'));const soy=await syncAliases({...f,write:true});assertOwners(f,{red:true,kecap:true});await syncAliases({...f,mode:'undo',write:true,expectedResultHash:soy.resultHash});assertOwners(f,{red:true,kecap:false});assert.deepEqual(readFileSync(join(f.root,'aliases/overrides.json')),source);assert.deepEqual(readFileSync(join(f.root,'aliases/receipts/red-lentils.private.json')),receipt);assert.equal((await syncAliases({root:f.root,intent:red,mode:'readback'})).resultHash,redResult.resultHash);assert.equal((await syncAliases({root:f.root,intent:red,write:true})).status,'already-applied');}finally{rmSync(f.root,{recursive:true,force:true});}
+});
+
+test('both canonical operations survive fresh rebuild without private receipts or duplicate overrides',async()=>{
+ const f=await setup({red:true});try{const red=await redIntent(f),before=snapshot(f.root);await syncAliases({...f,write:true});await syncAliases({root:f.root,intent:red,write:true});rmSync(join(f.root,'aliases/receipt.private.json'));rmSync(join(f.root,'aliases/receipts/red-lentils.private.json'));const overrides=loadAliasOverrides(f.root);assert.deepEqual(overlayAliases(structuredClone(f.old),overrides),{...f.old,aliases:['soy sauce','ketjap']});assert.deepEqual(overlayAliases(structuredClone(f.lentils),overrides),{...f.lentils,aliases:['lentils','green lentils','masoor']});for(const[p,b]of before)writeFileSync(join(f.root,p),b);const result=await applyCanonicalAdditions({root:f.root,write:true});assert.deepEqual(result.aliasCorrections.map(r=>r.status),['applied','applied']);assertOwners(f,{kecap:true,red:true});assert.equal(loadAliasOverrides(f.root).length,2);assert.equal((await applyCanonicalAdditions({root:f.root,write:true})).aliasCorrections.length,2);}finally{rmSync(f.root,{recursive:true,force:true});}
+});
+
+test('red capture requires actual target row and sealed stable IDs; unrelated overrides are rejected',async()=>{
+ const f=await setup({red:true});try{const red=await redIntent(f),bad=structuredClone(red);bad.variants[0].to.id='ia_other';const{intentHash,review,...body}=bad;bad.intentHash=hash(body);bad.review.intentHash=bad.intentHash;assert.throws(()=>validateAliasIntent(bad),/Stable alias IDs/);const unsupported=structuredClone(red);unsupported.alias='green lentils';assert.throws(()=>validateAliasIntent(unsupported),/Unsupported bounded/);mkdirSync(join(f.root,'aliases'));put(join(f.root,'aliases/overrides.json'),{schemaVersion:1,overrides:[red,red]});assert.throws(()=>loadAliasOverrides(f.root),/duplicate/);for(const dir of ['dataset','public-dataset']){const p=join(f.root,dir,'manifest.json'),d=json(p);d.records=d.records.filter(r=>r.slug!=='red-lentils');put(p,d);}await assert.rejects(redIntent(f),/Exact unique alias ingredient/);}finally{rmSync(f.root,{recursive:true,force:true});}
+});
+
+test('red numeric drift and canonical source edits during async apply or no-op fail without overwriting them',async()=>{
+ const f=await setup({red:true});try{const red=await redIntent(f);await syncAliases({...f,write:true});const p=join(f.root,'dataset/manifest.json'),d=json(p);d.records.find(r=>r.slug==='lentils').metadata.nutritionPer100g.calories=354;put(p,d);await assert.rejects(syncAliases({root:f.root,intent:red,write:true}),/unrelated/);assert.equal(json(p).records.find(r=>r.slug==='lentils').metadata.nutritionPer100g.calories,354);d.records.find(r=>r.slug==='lentils').metadata.nutritionPer100g.calories=353;put(p,d);const before=snapshot(f.root),source=join(f.root,'aliases/overrides.json'),sourceBytes=readFileSync(source),receipt=readFileSync(join(f.root,'aliases/receipt.private.json'));const applying=syncAliases({root:f.root,intent:red,write:true});put(source,{schemaVersion:1,overrides:[]});await assert.rejects(applying,/Concurrent canonical alias source/);assert.deepEqual(json(source).overrides,[]);for(const[p,b]of before)assert.deepEqual(readFileSync(join(f.root,p)),b);assert.deepEqual(readFileSync(join(f.root,'aliases/receipt.private.json')),receipt);writeFileSync(source,sourceBytes);await syncAliases({root:f.root,intent:red,write:true});const after=snapshot(f.root),replay=syncAliases({root:f.root,intent:red,write:true});put(source,{schemaVersion:1,overrides:[]});await assert.rejects(replay,/Concurrent canonical alias source/);for(const[p,b]of after)assert.deepEqual(readFileSync(join(f.root,p)),b);}finally{rmSync(f.root,{recursive:true,force:true});}
+});
+
+test('a second operation cannot reuse the first change ID or overwrite its canonical intent',async()=>{
+ const f=await setup({red:true});try{await syncAliases({...f,write:true});const source=readFileSync(join(f.root,'aliases/overrides.json')),receipt=readFileSync(join(f.root,'aliases/receipt.private.json')),before=snapshot(f.root);const red=await captureAliasIntent(f.root,'fixture-red-writer',f.intent.changeId,'red lentils');red.review={status:'accepted',intentHash:red.intentHash,reviewerId:'fixture-independent-reviewer',notes:'TEST ONLY collision review'};await assert.rejects(syncAliases({root:f.root,intent:red,write:true}),/change ID already belongs/);assert.deepEqual(readFileSync(join(f.root,'aliases/overrides.json')),source);assert.deepEqual(readFileSync(join(f.root,'aliases/receipt.private.json')),receipt);for(const[p,b]of before)assert.deepEqual(readFileSync(join(f.root,p)),b);assertOwners(f,{kecap:true,red:false});}finally{rmSync(f.root,{recursive:true,force:true});}
+});

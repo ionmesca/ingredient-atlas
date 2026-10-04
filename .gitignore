@@ -42,3 +42,10 @@ nutrition/*.tmp-*
 catalog-additions/*.private.*
 catalog-additions/*.lock
 catalog-additions/*.catalog-tmp
+
+# Exact alias correction operation receipts are private; canonical source is tracked.
+aliases/*.private.*
+aliases/*.lock
+aliases/*.alias-tmp
+export-maintenance.lock
+node_modules

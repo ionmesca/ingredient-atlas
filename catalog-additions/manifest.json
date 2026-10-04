@@ -1876,6 +1876,891 @@
         "reviewedAt": "2026-10-04",
         "notes": "Root independently compared this derived canonical row to the exact accepted ingredient intent, all nutrition values/absence/evidence, aliases, no preparation-provenance leak and six copied image hashes. Branded stand-ins and explicit missing profile remain correctly distinct. Generic rice-flour image reuse is art-only and its approved bytes are unchanged; no ordinary flour nutrition is inherited. This approves source install/append with the previously independently accepted guarded adapter; existing aliases remain unchanged pending separate correction."
       }
+    },
+    {
+      "intentHash": "sha256:943ec0314ecb418e63d180aaccf8aaa42b5149362a6b3b05e3c10482d236a031",
+      "intent": {
+        "version": 1,
+        "writerId": "/root/nutrition_enrichment_review",
+        "record": {
+          "slug": "candlenut",
+          "displayName": "Candlenuts",
+          "category": "nuts",
+          "subcategory": "cooking kernels",
+          "aliases": [
+            "candlenuts",
+            "candlenut",
+            "kemiri",
+            "Aleurites moluccanus kernels",
+            "Lichtnüsse",
+            "Kemirinüsse"
+          ],
+          "foodState": "Shelled candlenut kernels for cooking; distinct from macadamia, cashew and peanut.",
+          "unit": "per100g-edible",
+          "nutritionOrigin": "missing",
+          "nutritionNote": "No accepted exact or valid stand-in per100g profile/portion mass for this cooking identity. Preserve unknown fields; do not inherit a different nut, root or Mediterranean bay profile or invent zero values.",
+          "evidence": [
+            {
+              "url": "https://dailycookingquest.com/rendang-sapi-padang-padang-style-beef-rendang.html",
+              "snapshotSha256": "sha256:2aab34f28011cc14980aa727b337727a0913e6dbf2fb0eff616344d8cf2010ac",
+              "description": "Derived independent source-observation snapshot, not raw HTML; verifies the selected Rendang dish and candlenut count only. It does not independently list the turmeric/daun salam leaf lines or establish nutrient values."
+            },
+            {
+              "url": "https://dailycookingquest.com/rendang-sapi-padang-padang-style-beef-rendang.html",
+              "snapshotSha256": "sha256:31cc230b4d36bc781c078f87072ef67cea54feefb6eed361b709f7f2139e78de",
+              "description": "Derived saved writer source-facts snapshot, not raw HTML; complete selected recipe-card ingredient lines explicitly list 10 candlenuts, 2 fresh turmeric leaves and 5 Indonesian bay leaves. Recipe counts are not global food identity or gram conversions; no exact nutrient profile established."
+            }
+          ],
+          "image": {
+            "sha256": "6ead8d38e1bfe3aa7f76d36213f8be3b41c2fd03cecb4c8c3a23695d5bddb100",
+            "masterSha256": "c269da157e1cd186e6f0616aac207e03bf86bb04ceb261b5b5599f77b46d057f",
+            "width": 512,
+            "height": 512,
+            "contentType": "image/webp",
+            "alpha": true
+          },
+          "imageReview": {
+            "status": "accepted",
+            "reviewerId": "/root/import_contract",
+            "reviewedAt": "2026-10-04",
+            "masterSha256": "c269da157e1cd186e6f0616aac207e03bf86bb04ceb261b5b5599f77b46d057f",
+            "notes": "Reviewer model: gpt-6.1-sol. PASS pale irregular roughly rounded candlenut kernels with natural creases and floury surface; visibly distinct from smooth macadamia kernels. Independently inspected exact full-size dark alpha composite and both512 PNG/WebP four-background composites against10 Atlas style refs; clean complete edges, no visible flattening/halo/crop/codec defect. Checker display is simplified by viewer; transparency also verified directly from decoded master and derivative alpha. Exact three byte hashes checked independently.",
+            "styleReferenceSlugs": [
+              "garlic",
+              "carrot",
+              "onion",
+              "tomato",
+              "lemon",
+              "banana",
+              "butter",
+              "coconut-milk",
+              "chickpea",
+              "parsley"
+            ],
+            "backgrounds": [
+              "white",
+              "warm",
+              "dark",
+              "checkerboard"
+            ]
+          }
+        },
+        "intentHash": "sha256:943ec0314ecb418e63d180aaccf8aaa42b5149362a6b3b05e3c10482d236a031",
+        "review": {
+          "status": "accepted",
+          "reviewerId": "/root",
+          "reviewedAt": "2026-10-04",
+          "intentHash": "sha256:943ec0314ecb418e63d180aaccf8aaa42b5149362a6b3b05e3c10482d236a031",
+          "notes": "Root reviewed exact food identity, aliases and source evidence. Specific recipe counts removed from global food state; saved writer ingredient facts and independent observations have distinct truthful evidence labels. Numeric nutrition and density remain explicitly unknown, with no borrowed species/food-state profile or invented zeros. Image master and actual alpha512 bytes independently passed both Sol and root visual review; no default cooking preparation is inferred."
+        }
+      },
+      "record": {
+        "id": "ia_candlenut",
+        "slug": "candlenut",
+        "displayName": "Candlenuts",
+        "category": "nuts",
+        "subcategory": "cooking kernels",
+        "aliases": [
+          "candlenuts",
+          "candlenut",
+          "kemiri",
+          "Aleurites moluccanus kernels"
+        ],
+        "aliasesDe": [
+          "Lichtnüsse",
+          "Kemirinüsse"
+        ],
+        "images": {
+          "original": {
+            "path": "catalog-additions/assets/candlenut/original.webp",
+            "sha256": "264e15d89a1c491ed292fe746ab4b0001ca5162b1649dae91c8ff60c8f866540",
+            "bytes": 210468,
+            "width": 1254,
+            "height": 1254,
+            "contentType": "image/webp"
+          },
+          "transparent": {
+            "webp512": {
+              "path": "catalog-additions/assets/candlenut/webp512.webp",
+              "sha256": "6ead8d38e1bfe3aa7f76d36213f8be3b41c2fd03cecb4c8c3a23695d5bddb100",
+              "bytes": 50470,
+              "width": 512,
+              "height": 512,
+              "contentType": "image/webp",
+              "alpha": true
+            },
+            "master": {
+              "path": "catalog-additions/assets/candlenut/master.png",
+              "sha256": "c269da157e1cd186e6f0616aac207e03bf86bb04ceb261b5b5599f77b46d057f",
+              "bytes": 1231135,
+              "width": 1254,
+              "height": 1254,
+              "contentType": "image/png",
+              "alpha": true
+            },
+            "png512": {
+              "path": "catalog-additions/assets/candlenut/png512.png",
+              "sha256": "c25a89f5514f664f65046bf821e8d1ca79e654e0f96423a983aa6ca81af3bd8d",
+              "bytes": 287663,
+              "width": 512,
+              "height": 512,
+              "contentType": "image/png",
+              "alpha": true
+            }
+          },
+          "png512": {
+            "path": "catalog-additions/assets/candlenut/white512.png",
+            "sha256": "74ccdbea994f751069effff3143af32240cc921f52bc69d68a9cf276657d0b92",
+            "bytes": 244302,
+            "width": 512,
+            "height": 512,
+            "contentType": "image/png"
+          },
+          "webp512": {
+            "path": "catalog-additions/assets/candlenut/white512.webp",
+            "sha256": "96b0ce4b3a9eddbbda8376091dddc615f1be2d3ea82a1e05957114de10019b1c",
+            "bytes": 30802,
+            "width": 512,
+            "height": 512,
+            "contentType": "image/webp"
+          }
+        },
+        "license": {
+          "status": "reviewed-catalog-addition",
+          "metadata": "CC0-1.0",
+          "images": "CC0-1.0",
+          "code": "MIT"
+        },
+        "provenance": {
+          "incubatedBy": "Buna",
+          "aiGenerated": true,
+          "imageGeneration": {
+            "tool": "image_gen",
+            "transparentBackground": true,
+            "mode": "new-generation",
+            "writerId": "/root/nutrition_enrichment_review",
+            "promptVersion": "rendang-ingredient-state-v1"
+          },
+          "imageReview": {
+            "status": "accepted",
+            "masterSha256": "c269da157e1cd186e6f0616aac207e03bf86bb04ceb261b5b5599f77b46d057f",
+            "reviewerId": "/root/import_contract",
+            "reviewedAt": "2026-10-04",
+            "notes": "Reviewer model: gpt-6.1-sol. PASS pale irregular roughly rounded candlenut kernels with natural creases and floury surface; visibly distinct from smooth macadamia kernels. Independently inspected exact full-size dark alpha composite and both512 PNG/WebP four-background composites against10 Atlas style refs; clean complete edges, no visible flattening/halo/crop/codec defect. Checker display is simplified by viewer; transparency also verified directly from decoded master and derivative alpha. Exact three byte hashes checked independently.",
+            "styleReferenceSlugs": [
+              "garlic",
+              "carrot",
+              "onion",
+              "tomato",
+              "lemon",
+              "banana",
+              "butter",
+              "coconut-milk",
+              "chickpea",
+              "parsley"
+            ],
+            "backgrounds": [
+              "white",
+              "warm",
+              "dark",
+              "checkerboard"
+            ]
+          }
+        },
+        "review": {
+          "status": "independently-reviewed-catalog-addition",
+          "sourceImageApproved": true,
+          "metadataReview": {
+            "status": "accepted",
+            "reviewerId": "/root",
+            "reviewedAt": "2026-10-04",
+            "intentHash": "sha256:943ec0314ecb418e63d180aaccf8aaa42b5149362a6b3b05e3c10482d236a031",
+            "notes": "Root reviewed exact food identity, aliases and source evidence. Specific recipe counts removed from global food state; saved writer ingredient facts and independent observations have distinct truthful evidence labels. Numeric nutrition and density remain explicitly unknown, with no borrowed species/food-state profile or invented zeros. Image master and actual alpha512 bytes independently passed both Sol and root visual review; no default cooking preparation is inferred."
+          }
+        },
+        "metadata": {
+          "nutritionSource": "missing",
+          "nutritionNote": "No accepted exact or valid stand-in per100g profile/portion mass for this cooking identity. Preserve unknown fields; do not inherit a different nut, root or Mediterranean bay profile or invent zero values.",
+          "nutritionEvidence": [
+            {
+              "url": "https://dailycookingquest.com/rendang-sapi-padang-padang-style-beef-rendang.html",
+              "snapshotSha256": "sha256:2aab34f28011cc14980aa727b337727a0913e6dbf2fb0eff616344d8cf2010ac",
+              "description": "Derived independent source-observation snapshot, not raw HTML; verifies the selected Rendang dish and candlenut count only. It does not independently list the turmeric/daun salam leaf lines or establish nutrient values."
+            },
+            {
+              "url": "https://dailycookingquest.com/rendang-sapi-padang-padang-style-beef-rendang.html",
+              "snapshotSha256": "sha256:31cc230b4d36bc781c078f87072ef67cea54feefb6eed361b709f7f2139e78de",
+              "description": "Derived saved writer source-facts snapshot, not raw HTML; complete selected recipe-card ingredient lines explicitly list 10 candlenuts, 2 fresh turmeric leaves and 5 Indonesian bay leaves. Recipe counts are not global food identity or gram conversions; no exact nutrient profile established."
+            }
+          ],
+          "publicationIntentHash": "sha256:943ec0314ecb418e63d180aaccf8aaa42b5149362a6b3b05e3c10482d236a031",
+          "publicationRecord": {
+            "slug": "candlenut",
+            "displayName": "Candlenuts",
+            "category": "nuts",
+            "subcategory": "cooking kernels",
+            "aliases": [
+              "candlenuts",
+              "candlenut",
+              "kemiri",
+              "Aleurites moluccanus kernels",
+              "Lichtnüsse",
+              "Kemirinüsse"
+            ],
+            "foodState": "Shelled candlenut kernels for cooking; distinct from macadamia, cashew and peanut.",
+            "unit": "per100g-edible",
+            "nutritionOrigin": "missing",
+            "nutritionNote": "No accepted exact or valid stand-in per100g profile/portion mass for this cooking identity. Preserve unknown fields; do not inherit a different nut, root or Mediterranean bay profile or invent zero values.",
+            "evidence": [
+              {
+                "url": "https://dailycookingquest.com/rendang-sapi-padang-padang-style-beef-rendang.html",
+                "snapshotSha256": "sha256:2aab34f28011cc14980aa727b337727a0913e6dbf2fb0eff616344d8cf2010ac",
+                "description": "Derived independent source-observation snapshot, not raw HTML; verifies the selected Rendang dish and candlenut count only. It does not independently list the turmeric/daun salam leaf lines or establish nutrient values."
+              },
+              {
+                "url": "https://dailycookingquest.com/rendang-sapi-padang-padang-style-beef-rendang.html",
+                "snapshotSha256": "sha256:31cc230b4d36bc781c078f87072ef67cea54feefb6eed361b709f7f2139e78de",
+                "description": "Derived saved writer source-facts snapshot, not raw HTML; complete selected recipe-card ingredient lines explicitly list 10 candlenuts, 2 fresh turmeric leaves and 5 Indonesian bay leaves. Recipe counts are not global food identity or gram conversions; no exact nutrient profile established."
+              }
+            ],
+            "image": {
+              "sha256": "6ead8d38e1bfe3aa7f76d36213f8be3b41c2fd03cecb4c8c3a23695d5bddb100",
+              "masterSha256": "c269da157e1cd186e6f0616aac207e03bf86bb04ceb261b5b5599f77b46d057f",
+              "width": 512,
+              "height": 512,
+              "contentType": "image/webp",
+              "alpha": true
+            },
+            "imageReview": {
+              "status": "accepted",
+              "reviewerId": "/root/import_contract",
+              "reviewedAt": "2026-10-04",
+              "masterSha256": "c269da157e1cd186e6f0616aac207e03bf86bb04ceb261b5b5599f77b46d057f",
+              "notes": "Reviewer model: gpt-6.1-sol. PASS pale irregular roughly rounded candlenut kernels with natural creases and floury surface; visibly distinct from smooth macadamia kernels. Independently inspected exact full-size dark alpha composite and both512 PNG/WebP four-background composites against10 Atlas style refs; clean complete edges, no visible flattening/halo/crop/codec defect. Checker display is simplified by viewer; transparency also verified directly from decoded master and derivative alpha. Exact three byte hashes checked independently.",
+              "styleReferenceSlugs": [
+                "garlic",
+                "carrot",
+                "onion",
+                "tomato",
+                "lemon",
+                "banana",
+                "butter",
+                "coconut-milk",
+                "chickpea",
+                "parsley"
+              ],
+              "backgrounds": [
+                "white",
+                "warm",
+                "dark",
+                "checkerboard"
+              ]
+            }
+          }
+        }
+      },
+      "sourceHash": "sha256:22562831838c80d46a5ac9f981cf7d9d8cbe3e8fd8f09af6e3d9b597857042d4",
+      "sourceReview": {
+        "status": "accepted",
+        "reviewerId": "/root",
+        "reviewedAt": "2026-10-04",
+        "sourceHash": "sha256:22562831838c80d46a5ac9f981cf7d9d8cbe3e8fd8f09af6e3d9b597857042d4",
+        "notes": "Root compared exact public metadata and all six asset byte descriptors to independently approved food identities and sealed live Buna intents. No private operational fields or source photographs included. Unknown nutrition stays unknown; existing Atlas rows will be preserved by append-only adapter."
+      }
+    },
+    {
+      "intentHash": "sha256:aecc11789400552ec7624a828cfe2789e45c65a840be8a25b5414412ae01a38a",
+      "intent": {
+        "version": 1,
+        "writerId": "/root/nutrition_enrichment_review",
+        "record": {
+          "slug": "turmeric-leaves",
+          "displayName": "Turmeric Leaves",
+          "category": "herbs",
+          "subcategory": "fresh leaves",
+          "aliases": [
+            "turmeric leaves",
+            "daun kunyit",
+            "Curcuma longa leaves",
+            "Kurkuma-Blätter"
+          ],
+          "foodState": "Fresh turmeric leaves used as cooking aromatics; distinct from turmeric rhizome and ground turmeric.",
+          "unit": "per100g-edible",
+          "nutritionOrigin": "missing",
+          "nutritionNote": "No accepted exact or valid stand-in per100g profile/portion mass for this cooking identity. Preserve unknown fields; do not inherit a different nut, root or Mediterranean bay profile or invent zero values.",
+          "evidence": [
+            {
+              "url": "https://dailycookingquest.com/rendang-sapi-padang-padang-style-beef-rendang.html",
+              "snapshotSha256": "sha256:2aab34f28011cc14980aa727b337727a0913e6dbf2fb0eff616344d8cf2010ac",
+              "description": "Derived independent source-observation snapshot, not raw HTML; verifies the selected Rendang dish and candlenut count only. It does not independently list the turmeric/daun salam leaf lines or establish nutrient values."
+            },
+            {
+              "url": "https://dailycookingquest.com/rendang-sapi-padang-padang-style-beef-rendang.html",
+              "snapshotSha256": "sha256:31cc230b4d36bc781c078f87072ef67cea54feefb6eed361b709f7f2139e78de",
+              "description": "Derived saved writer source-facts snapshot, not raw HTML; complete selected recipe-card ingredient lines explicitly list 10 candlenuts, 2 fresh turmeric leaves and 5 Indonesian bay leaves. Recipe counts are not global food identity or gram conversions; no exact nutrient profile established."
+            }
+          ],
+          "image": {
+            "sha256": "31a8a63bba59505260e02d161332f6f6fdac186bcbf6402573e6da980001ffdb",
+            "masterSha256": "392f5b8286bfe00dae7910f7f2003543cce93dc1d7badad08d3c99e7b2490d5d",
+            "width": 512,
+            "height": 512,
+            "contentType": "image/webp",
+            "alpha": true
+          },
+          "imageReview": {
+            "status": "accepted",
+            "reviewerId": "/root/import_contract",
+            "reviewedAt": "2026-10-04",
+            "masterSha256": "392f5b8286bfe00dae7910f7f2003543cce93dc1d7badad08d3c99e7b2490d5d",
+            "notes": "Reviewer model: gpt-6.1-sol. PASS fresh long pointed green turmeric leaves with strong central rib and fine oblique/parallel veins; no turmeric-root substitution. Independently inspected exact full-size dark alpha composite and both512 PNG/WebP four-background composites against10 Atlas style refs; clean complete edges, no visible flattening/halo/crop/codec defect. Checker display is simplified by viewer; transparency also verified directly from decoded master and derivative alpha. Exact three byte hashes checked independently.",
+            "styleReferenceSlugs": [
+              "garlic",
+              "carrot",
+              "onion",
+              "tomato",
+              "lemon",
+              "banana",
+              "butter",
+              "coconut-milk",
+              "chickpea",
+              "parsley"
+            ],
+            "backgrounds": [
+              "white",
+              "warm",
+              "dark",
+              "checkerboard"
+            ]
+          }
+        },
+        "intentHash": "sha256:aecc11789400552ec7624a828cfe2789e45c65a840be8a25b5414412ae01a38a",
+        "review": {
+          "status": "accepted",
+          "reviewerId": "/root",
+          "reviewedAt": "2026-10-04",
+          "intentHash": "sha256:aecc11789400552ec7624a828cfe2789e45c65a840be8a25b5414412ae01a38a",
+          "notes": "Root reviewed exact food identity, aliases and source evidence. Specific recipe counts removed from global food state; saved writer ingredient facts and independent observations have distinct truthful evidence labels. Numeric nutrition and density remain explicitly unknown, with no borrowed species/food-state profile or invented zeros. Image master and actual alpha512 bytes independently passed both Sol and root visual review; no default cooking preparation is inferred."
+        }
+      },
+      "record": {
+        "id": "ia_turmeric-leaves",
+        "slug": "turmeric-leaves",
+        "displayName": "Turmeric Leaves",
+        "category": "herbs",
+        "subcategory": "fresh leaves",
+        "aliases": [
+          "turmeric leaves",
+          "daun kunyit",
+          "Curcuma longa leaves"
+        ],
+        "aliasesDe": [
+          "Kurkuma-Blätter"
+        ],
+        "images": {
+          "original": {
+            "path": "catalog-additions/assets/turmeric-leaves/original.webp",
+            "sha256": "50cd8f34036e209d1542d5ec3a6e94baa4d360b036aaaaebcd39031de76284bf",
+            "bytes": 197956,
+            "width": 1254,
+            "height": 1254,
+            "contentType": "image/webp"
+          },
+          "transparent": {
+            "webp512": {
+              "path": "catalog-additions/assets/turmeric-leaves/webp512.webp",
+              "sha256": "31a8a63bba59505260e02d161332f6f6fdac186bcbf6402573e6da980001ffdb",
+              "bytes": 47128,
+              "width": 512,
+              "height": 512,
+              "contentType": "image/webp",
+              "alpha": true
+            },
+            "master": {
+              "path": "catalog-additions/assets/turmeric-leaves/master.png",
+              "sha256": "392f5b8286bfe00dae7910f7f2003543cce93dc1d7badad08d3c99e7b2490d5d",
+              "bytes": 1261934,
+              "width": 1254,
+              "height": 1254,
+              "contentType": "image/png",
+              "alpha": true
+            },
+            "png512": {
+              "path": "catalog-additions/assets/turmeric-leaves/png512.png",
+              "sha256": "6a7f0bc9baaaa71eec90507c9f64f8320103accb102dfafbde599e849bf0e58d",
+              "bytes": 301348,
+              "width": 512,
+              "height": 512,
+              "contentType": "image/png",
+              "alpha": true
+            }
+          },
+          "png512": {
+            "path": "catalog-additions/assets/turmeric-leaves/white512.png",
+            "sha256": "67c80af611bcc87bbce47b204f3c5f784740993fbec5c065113f2547044303a0",
+            "bytes": 255765,
+            "width": 512,
+            "height": 512,
+            "contentType": "image/png"
+          },
+          "webp512": {
+            "path": "catalog-additions/assets/turmeric-leaves/white512.webp",
+            "sha256": "d51f0620438ba6abc672701595cf5a7c99b8ae1c467913816627498f7145947d",
+            "bytes": 29470,
+            "width": 512,
+            "height": 512,
+            "contentType": "image/webp"
+          }
+        },
+        "license": {
+          "status": "reviewed-catalog-addition",
+          "metadata": "CC0-1.0",
+          "images": "CC0-1.0",
+          "code": "MIT"
+        },
+        "provenance": {
+          "incubatedBy": "Buna",
+          "aiGenerated": true,
+          "imageGeneration": {
+            "tool": "image_gen",
+            "transparentBackground": true,
+            "mode": "new-generation",
+            "writerId": "/root/nutrition_enrichment_review",
+            "promptVersion": "rendang-ingredient-state-v1"
+          },
+          "imageReview": {
+            "status": "accepted",
+            "masterSha256": "392f5b8286bfe00dae7910f7f2003543cce93dc1d7badad08d3c99e7b2490d5d",
+            "reviewerId": "/root/import_contract",
+            "reviewedAt": "2026-10-04",
+            "notes": "Reviewer model: gpt-6.1-sol. PASS fresh long pointed green turmeric leaves with strong central rib and fine oblique/parallel veins; no turmeric-root substitution. Independently inspected exact full-size dark alpha composite and both512 PNG/WebP four-background composites against10 Atlas style refs; clean complete edges, no visible flattening/halo/crop/codec defect. Checker display is simplified by viewer; transparency also verified directly from decoded master and derivative alpha. Exact three byte hashes checked independently.",
+            "styleReferenceSlugs": [
+              "garlic",
+              "carrot",
+              "onion",
+              "tomato",
+              "lemon",
+              "banana",
+              "butter",
+              "coconut-milk",
+              "chickpea",
+              "parsley"
+            ],
+            "backgrounds": [
+              "white",
+              "warm",
+              "dark",
+              "checkerboard"
+            ]
+          }
+        },
+        "review": {
+          "status": "independently-reviewed-catalog-addition",
+          "sourceImageApproved": true,
+          "metadataReview": {
+            "status": "accepted",
+            "reviewerId": "/root",
+            "reviewedAt": "2026-10-04",
+            "intentHash": "sha256:aecc11789400552ec7624a828cfe2789e45c65a840be8a25b5414412ae01a38a",
+            "notes": "Root reviewed exact food identity, aliases and source evidence. Specific recipe counts removed from global food state; saved writer ingredient facts and independent observations have distinct truthful evidence labels. Numeric nutrition and density remain explicitly unknown, with no borrowed species/food-state profile or invented zeros. Image master and actual alpha512 bytes independently passed both Sol and root visual review; no default cooking preparation is inferred."
+          }
+        },
+        "metadata": {
+          "nutritionSource": "missing",
+          "nutritionNote": "No accepted exact or valid stand-in per100g profile/portion mass for this cooking identity. Preserve unknown fields; do not inherit a different nut, root or Mediterranean bay profile or invent zero values.",
+          "nutritionEvidence": [
+            {
+              "url": "https://dailycookingquest.com/rendang-sapi-padang-padang-style-beef-rendang.html",
+              "snapshotSha256": "sha256:2aab34f28011cc14980aa727b337727a0913e6dbf2fb0eff616344d8cf2010ac",
+              "description": "Derived independent source-observation snapshot, not raw HTML; verifies the selected Rendang dish and candlenut count only. It does not independently list the turmeric/daun salam leaf lines or establish nutrient values."
+            },
+            {
+              "url": "https://dailycookingquest.com/rendang-sapi-padang-padang-style-beef-rendang.html",
+              "snapshotSha256": "sha256:31cc230b4d36bc781c078f87072ef67cea54feefb6eed361b709f7f2139e78de",
+              "description": "Derived saved writer source-facts snapshot, not raw HTML; complete selected recipe-card ingredient lines explicitly list 10 candlenuts, 2 fresh turmeric leaves and 5 Indonesian bay leaves. Recipe counts are not global food identity or gram conversions; no exact nutrient profile established."
+            }
+          ],
+          "publicationIntentHash": "sha256:aecc11789400552ec7624a828cfe2789e45c65a840be8a25b5414412ae01a38a",
+          "publicationRecord": {
+            "slug": "turmeric-leaves",
+            "displayName": "Turmeric Leaves",
+            "category": "herbs",
+            "subcategory": "fresh leaves",
+            "aliases": [
+              "turmeric leaves",
+              "daun kunyit",
+              "Curcuma longa leaves",
+              "Kurkuma-Blätter"
+            ],
+            "foodState": "Fresh turmeric leaves used as cooking aromatics; distinct from turmeric rhizome and ground turmeric.",
+            "unit": "per100g-edible",
+            "nutritionOrigin": "missing",
+            "nutritionNote": "No accepted exact or valid stand-in per100g profile/portion mass for this cooking identity. Preserve unknown fields; do not inherit a different nut, root or Mediterranean bay profile or invent zero values.",
+            "evidence": [
+              {
+                "url": "https://dailycookingquest.com/rendang-sapi-padang-padang-style-beef-rendang.html",
+                "snapshotSha256": "sha256:2aab34f28011cc14980aa727b337727a0913e6dbf2fb0eff616344d8cf2010ac",
+                "description": "Derived independent source-observation snapshot, not raw HTML; verifies the selected Rendang dish and candlenut count only. It does not independently list the turmeric/daun salam leaf lines or establish nutrient values."
+              },
+              {
+                "url": "https://dailycookingquest.com/rendang-sapi-padang-padang-style-beef-rendang.html",
+                "snapshotSha256": "sha256:31cc230b4d36bc781c078f87072ef67cea54feefb6eed361b709f7f2139e78de",
+                "description": "Derived saved writer source-facts snapshot, not raw HTML; complete selected recipe-card ingredient lines explicitly list 10 candlenuts, 2 fresh turmeric leaves and 5 Indonesian bay leaves. Recipe counts are not global food identity or gram conversions; no exact nutrient profile established."
+              }
+            ],
+            "image": {
+              "sha256": "31a8a63bba59505260e02d161332f6f6fdac186bcbf6402573e6da980001ffdb",
+              "masterSha256": "392f5b8286bfe00dae7910f7f2003543cce93dc1d7badad08d3c99e7b2490d5d",
+              "width": 512,
+              "height": 512,
+              "contentType": "image/webp",
+              "alpha": true
+            },
+            "imageReview": {
+              "status": "accepted",
+              "reviewerId": "/root/import_contract",
+              "reviewedAt": "2026-10-04",
+              "masterSha256": "392f5b8286bfe00dae7910f7f2003543cce93dc1d7badad08d3c99e7b2490d5d",
+              "notes": "Reviewer model: gpt-6.1-sol. PASS fresh long pointed green turmeric leaves with strong central rib and fine oblique/parallel veins; no turmeric-root substitution. Independently inspected exact full-size dark alpha composite and both512 PNG/WebP four-background composites against10 Atlas style refs; clean complete edges, no visible flattening/halo/crop/codec defect. Checker display is simplified by viewer; transparency also verified directly from decoded master and derivative alpha. Exact three byte hashes checked independently.",
+              "styleReferenceSlugs": [
+                "garlic",
+                "carrot",
+                "onion",
+                "tomato",
+                "lemon",
+                "banana",
+                "butter",
+                "coconut-milk",
+                "chickpea",
+                "parsley"
+              ],
+              "backgrounds": [
+                "white",
+                "warm",
+                "dark",
+                "checkerboard"
+              ]
+            }
+          }
+        }
+      },
+      "sourceHash": "sha256:c047c155bc2a63de185bc6fe51a5139a442ae1a0fe1520c64fa5a52608fcb2f6",
+      "sourceReview": {
+        "status": "accepted",
+        "reviewerId": "/root",
+        "reviewedAt": "2026-10-04",
+        "sourceHash": "sha256:c047c155bc2a63de185bc6fe51a5139a442ae1a0fe1520c64fa5a52608fcb2f6",
+        "notes": "Root compared exact public metadata and all six asset byte descriptors to independently approved food identities and sealed live Buna intents. No private operational fields or source photographs included. Unknown nutrition stays unknown; existing Atlas rows will be preserved by append-only adapter."
+      }
+    },
+    {
+      "intentHash": "sha256:246ffea646faa33849316cc76e0994e97bcdc8fdf7bce663ae4fa2a32c8bf6f7",
+      "intent": {
+        "version": 1,
+        "writerId": "/root/nutrition_enrichment_review",
+        "record": {
+          "slug": "indonesian-bay-leaves",
+          "displayName": "Indonesian Bay Leaves",
+          "category": "herbs",
+          "subcategory": "fresh leaves",
+          "aliases": [
+            "Indonesian bay leaves",
+            "Indonesian bay leaf",
+            "daun salam",
+            "salam leaves",
+            "Syzygium polyanthum leaves",
+            "Indonesische Lorbeerblätter",
+            "Daun Salam"
+          ],
+          "foodState": "Fresh Syzygium polyanthum (daun salam) cooking leaves; distinct from Mediterranean Laurus nobilis.",
+          "unit": "per100g-edible",
+          "nutritionOrigin": "missing",
+          "nutritionNote": "No accepted exact or valid stand-in per100g profile/portion mass for this cooking identity. Preserve unknown fields; do not inherit a different nut, root or Mediterranean bay profile or invent zero values.",
+          "evidence": [
+            {
+              "url": "https://dailycookingquest.com/rendang-sapi-padang-padang-style-beef-rendang.html",
+              "snapshotSha256": "sha256:2aab34f28011cc14980aa727b337727a0913e6dbf2fb0eff616344d8cf2010ac",
+              "description": "Derived independent source-observation snapshot, not raw HTML; verifies the selected Rendang dish and candlenut count only. It does not independently list the turmeric/daun salam leaf lines or establish nutrient values."
+            },
+            {
+              "url": "https://dailycookingquest.com/rendang-sapi-padang-padang-style-beef-rendang.html",
+              "snapshotSha256": "sha256:31cc230b4d36bc781c078f87072ef67cea54feefb6eed361b709f7f2139e78de",
+              "description": "Derived saved writer source-facts snapshot, not raw HTML; complete selected recipe-card ingredient lines explicitly list 10 candlenuts, 2 fresh turmeric leaves and 5 Indonesian bay leaves. Recipe counts are not global food identity or gram conversions; no exact nutrient profile established."
+            },
+            {
+              "url": "https://www.nparks.gov.sg/florafaunaweb/flora/3/1/3164",
+              "snapshotSha256": "sha256:d5622ddaf6d17f7aad0da4b525942a4539b123eb77c1428d0fd81e1c45370ca7",
+              "description": "Primary NParks botanical identity and leaf morphology; no source photograph redistributed or nutrient values inferred."
+            }
+          ],
+          "image": {
+            "sha256": "837615e75e2ab165ca70aa895367e8fe14742598ca6c4b28a7090e914ad6226a",
+            "masterSha256": "320adaaf6682a303e28f897e6b3f39adef118b4da11b4b8f68a637f6d3c83d1f",
+            "width": 512,
+            "height": 512,
+            "contentType": "image/webp",
+            "alpha": true
+          },
+          "imageReview": {
+            "status": "accepted",
+            "reviewerId": "/root/import_contract",
+            "reviewedAt": "2026-10-04",
+            "masterSha256": "320adaaf6682a303e28f897e6b3f39adef118b4da11b4b8f68a637f6d3c83d1f",
+            "notes": "Reviewer model: gpt-6.1-sol. PASS broad pointed elliptic green daun salam leaves with curved paired side veins; visually compared independently to existing private original NParks foliage photo. Artwork is newly generated, not a source-photo copy; this review does not certify nutrients or exact botanical identification from illustration alone. Independently inspected exact full-size dark alpha composite and both512 PNG/WebP four-background composites against10 Atlas style refs; clean complete edges, no visible flattening/halo/crop/codec defect. Checker display is simplified by viewer; transparency also verified directly from decoded master and derivative alpha. Exact three byte hashes checked independently.",
+            "styleReferenceSlugs": [
+              "garlic",
+              "carrot",
+              "onion",
+              "tomato",
+              "lemon",
+              "banana",
+              "butter",
+              "coconut-milk",
+              "chickpea",
+              "parsley"
+            ],
+            "backgrounds": [
+              "white",
+              "warm",
+              "dark",
+              "checkerboard"
+            ]
+          }
+        },
+        "intentHash": "sha256:246ffea646faa33849316cc76e0994e97bcdc8fdf7bce663ae4fa2a32c8bf6f7",
+        "review": {
+          "status": "accepted",
+          "reviewerId": "/root",
+          "reviewedAt": "2026-10-04",
+          "intentHash": "sha256:246ffea646faa33849316cc76e0994e97bcdc8fdf7bce663ae4fa2a32c8bf6f7",
+          "notes": "Root reviewed exact food identity, aliases and source evidence. Specific recipe counts removed from global food state; saved writer ingredient facts and independent observations have distinct truthful evidence labels. Numeric nutrition and density remain explicitly unknown, with no borrowed species/food-state profile or invented zeros. Image master and actual alpha512 bytes independently passed both Sol and root visual review; no default cooking preparation is inferred."
+        }
+      },
+      "record": {
+        "id": "ia_indonesian-bay-leaves",
+        "slug": "indonesian-bay-leaves",
+        "displayName": "Indonesian Bay Leaves",
+        "category": "herbs",
+        "subcategory": "fresh leaves",
+        "aliases": [
+          "Indonesian bay leaves",
+          "Indonesian bay leaf",
+          "daun salam",
+          "salam leaves",
+          "Syzygium polyanthum leaves"
+        ],
+        "aliasesDe": [
+          "Indonesische Lorbeerblätter",
+          "Daun Salam"
+        ],
+        "images": {
+          "original": {
+            "path": "catalog-additions/assets/indonesian-bay-leaves/original.webp",
+            "sha256": "942bbf4c3c88a45f80a86c407b0ed725cbb6969f3547d48f377a7f2d80e90f7c",
+            "bytes": 233922,
+            "width": 1254,
+            "height": 1254,
+            "contentType": "image/webp"
+          },
+          "transparent": {
+            "webp512": {
+              "path": "catalog-additions/assets/indonesian-bay-leaves/webp512.webp",
+              "sha256": "837615e75e2ab165ca70aa895367e8fe14742598ca6c4b28a7090e914ad6226a",
+              "bytes": 57936,
+              "width": 512,
+              "height": 512,
+              "contentType": "image/webp",
+              "alpha": true
+            },
+            "master": {
+              "path": "catalog-additions/assets/indonesian-bay-leaves/master.png",
+              "sha256": "320adaaf6682a303e28f897e6b3f39adef118b4da11b4b8f68a637f6d3c83d1f",
+              "bytes": 1400396,
+              "width": 1254,
+              "height": 1254,
+              "contentType": "image/png",
+              "alpha": true
+            },
+            "png512": {
+              "path": "catalog-additions/assets/indonesian-bay-leaves/png512.png",
+              "sha256": "1a9786184c8b7df90069ba55084597659f44711a28c9992034b28e7428fad43f",
+              "bytes": 314779,
+              "width": 512,
+              "height": 512,
+              "contentType": "image/png",
+              "alpha": true
+            }
+          },
+          "png512": {
+            "path": "catalog-additions/assets/indonesian-bay-leaves/white512.png",
+            "sha256": "97c082bf494ac9bd44c0314c5f360bb0ddb680a0bf5f65add060cf69f5bb0c8d",
+            "bytes": 266135,
+            "width": 512,
+            "height": 512,
+            "contentType": "image/png"
+          },
+          "webp512": {
+            "path": "catalog-additions/assets/indonesian-bay-leaves/white512.webp",
+            "sha256": "d1837d71bf0b266fb6f89daafb6f6dd1c5cbf5dbcc3382d278e093469dfc9e76",
+            "bytes": 35374,
+            "width": 512,
+            "height": 512,
+            "contentType": "image/webp"
+          }
+        },
+        "license": {
+          "status": "reviewed-catalog-addition",
+          "metadata": "CC0-1.0",
+          "images": "CC0-1.0",
+          "code": "MIT"
+        },
+        "provenance": {
+          "incubatedBy": "Buna",
+          "aiGenerated": true,
+          "imageGeneration": {
+            "tool": "image_gen",
+            "transparentBackground": true,
+            "mode": "new-generation",
+            "writerId": "/root/nutrition_enrichment_review",
+            "promptVersion": "rendang-ingredient-state-v1"
+          },
+          "imageReview": {
+            "status": "accepted",
+            "masterSha256": "320adaaf6682a303e28f897e6b3f39adef118b4da11b4b8f68a637f6d3c83d1f",
+            "reviewerId": "/root/import_contract",
+            "reviewedAt": "2026-10-04",
+            "notes": "Reviewer model: gpt-6.1-sol. PASS broad pointed elliptic green daun salam leaves with curved paired side veins; visually compared independently to existing private original NParks foliage photo. Artwork is newly generated, not a source-photo copy; this review does not certify nutrients or exact botanical identification from illustration alone. Independently inspected exact full-size dark alpha composite and both512 PNG/WebP four-background composites against10 Atlas style refs; clean complete edges, no visible flattening/halo/crop/codec defect. Checker display is simplified by viewer; transparency also verified directly from decoded master and derivative alpha. Exact three byte hashes checked independently.",
+            "styleReferenceSlugs": [
+              "garlic",
+              "carrot",
+              "onion",
+              "tomato",
+              "lemon",
+              "banana",
+              "butter",
+              "coconut-milk",
+              "chickpea",
+              "parsley"
+            ],
+            "backgrounds": [
+              "white",
+              "warm",
+              "dark",
+              "checkerboard"
+            ]
+          }
+        },
+        "review": {
+          "status": "independently-reviewed-catalog-addition",
+          "sourceImageApproved": true,
+          "metadataReview": {
+            "status": "accepted",
+            "reviewerId": "/root",
+            "reviewedAt": "2026-10-04",
+            "intentHash": "sha256:246ffea646faa33849316cc76e0994e97bcdc8fdf7bce663ae4fa2a32c8bf6f7",
+            "notes": "Root reviewed exact food identity, aliases and source evidence. Specific recipe counts removed from global food state; saved writer ingredient facts and independent observations have distinct truthful evidence labels. Numeric nutrition and density remain explicitly unknown, with no borrowed species/food-state profile or invented zeros. Image master and actual alpha512 bytes independently passed both Sol and root visual review; no default cooking preparation is inferred."
+          }
+        },
+        "metadata": {
+          "nutritionSource": "missing",
+          "nutritionNote": "No accepted exact or valid stand-in per100g profile/portion mass for this cooking identity. Preserve unknown fields; do not inherit a different nut, root or Mediterranean bay profile or invent zero values.",
+          "nutritionEvidence": [
+            {
+              "url": "https://dailycookingquest.com/rendang-sapi-padang-padang-style-beef-rendang.html",
+              "snapshotSha256": "sha256:2aab34f28011cc14980aa727b337727a0913e6dbf2fb0eff616344d8cf2010ac",
+              "description": "Derived independent source-observation snapshot, not raw HTML; verifies the selected Rendang dish and candlenut count only. It does not independently list the turmeric/daun salam leaf lines or establish nutrient values."
+            },
+            {
+              "url": "https://dailycookingquest.com/rendang-sapi-padang-padang-style-beef-rendang.html",
+              "snapshotSha256": "sha256:31cc230b4d36bc781c078f87072ef67cea54feefb6eed361b709f7f2139e78de",
+              "description": "Derived saved writer source-facts snapshot, not raw HTML; complete selected recipe-card ingredient lines explicitly list 10 candlenuts, 2 fresh turmeric leaves and 5 Indonesian bay leaves. Recipe counts are not global food identity or gram conversions; no exact nutrient profile established."
+            },
+            {
+              "url": "https://www.nparks.gov.sg/florafaunaweb/flora/3/1/3164",
+              "snapshotSha256": "sha256:d5622ddaf6d17f7aad0da4b525942a4539b123eb77c1428d0fd81e1c45370ca7",
+              "description": "Primary NParks botanical identity and leaf morphology; no source photograph redistributed or nutrient values inferred."
+            }
+          ],
+          "publicationIntentHash": "sha256:246ffea646faa33849316cc76e0994e97bcdc8fdf7bce663ae4fa2a32c8bf6f7",
+          "publicationRecord": {
+            "slug": "indonesian-bay-leaves",
+            "displayName": "Indonesian Bay Leaves",
+            "category": "herbs",
+            "subcategory": "fresh leaves",
+            "aliases": [
+              "Indonesian bay leaves",
+              "Indonesian bay leaf",
+              "daun salam",
+              "salam leaves",
+              "Syzygium polyanthum leaves",
+              "Indonesische Lorbeerblätter",
+              "Daun Salam"
+            ],
+            "foodState": "Fresh Syzygium polyanthum (daun salam) cooking leaves; distinct from Mediterranean Laurus nobilis.",
+            "unit": "per100g-edible",
+            "nutritionOrigin": "missing",
+            "nutritionNote": "No accepted exact or valid stand-in per100g profile/portion mass for this cooking identity. Preserve unknown fields; do not inherit a different nut, root or Mediterranean bay profile or invent zero values.",
+            "evidence": [
+              {
+                "url": "https://dailycookingquest.com/rendang-sapi-padang-padang-style-beef-rendang.html",
+                "snapshotSha256": "sha256:2aab34f28011cc14980aa727b337727a0913e6dbf2fb0eff616344d8cf2010ac",
+                "description": "Derived independent source-observation snapshot, not raw HTML; verifies the selected Rendang dish and candlenut count only. It does not independently list the turmeric/daun salam leaf lines or establish nutrient values."
+              },
+              {
+                "url": "https://dailycookingquest.com/rendang-sapi-padang-padang-style-beef-rendang.html",
+                "snapshotSha256": "sha256:31cc230b4d36bc781c078f87072ef67cea54feefb6eed361b709f7f2139e78de",
+                "description": "Derived saved writer source-facts snapshot, not raw HTML; complete selected recipe-card ingredient lines explicitly list 10 candlenuts, 2 fresh turmeric leaves and 5 Indonesian bay leaves. Recipe counts are not global food identity or gram conversions; no exact nutrient profile established."
+              },
+              {
+                "url": "https://www.nparks.gov.sg/florafaunaweb/flora/3/1/3164",
+                "snapshotSha256": "sha256:d5622ddaf6d17f7aad0da4b525942a4539b123eb77c1428d0fd81e1c45370ca7",
+                "description": "Primary NParks botanical identity and leaf morphology; no source photograph redistributed or nutrient values inferred."
+              }
+            ],
+            "image": {
+              "sha256": "837615e75e2ab165ca70aa895367e8fe14742598ca6c4b28a7090e914ad6226a",
+              "masterSha256": "320adaaf6682a303e28f897e6b3f39adef118b4da11b4b8f68a637f6d3c83d1f",
+              "width": 512,
+              "height": 512,
+              "contentType": "image/webp",
+              "alpha": true
+            },
+            "imageReview": {
+              "status": "accepted",
+              "reviewerId": "/root/import_contract",
+              "reviewedAt": "2026-10-04",
+              "masterSha256": "320adaaf6682a303e28f897e6b3f39adef118b4da11b4b8f68a637f6d3c83d1f",
+              "notes": "Reviewer model: gpt-6.1-sol. PASS broad pointed elliptic green daun salam leaves with curved paired side veins; visually compared independently to existing private original NParks foliage photo. Artwork is newly generated, not a source-photo copy; this review does not certify nutrients or exact botanical identification from illustration alone. Independently inspected exact full-size dark alpha composite and both512 PNG/WebP four-background composites against10 Atlas style refs; clean complete edges, no visible flattening/halo/crop/codec defect. Checker display is simplified by viewer; transparency also verified directly from decoded master and derivative alpha. Exact three byte hashes checked independently.",
+              "styleReferenceSlugs": [
+                "garlic",
+                "carrot",
+                "onion",
+                "tomato",
+                "lemon",
+                "banana",
+                "butter",
+                "coconut-milk",
+                "chickpea",
+                "parsley"
+              ],
+              "backgrounds": [
+                "white",
+                "warm",
+                "dark",
+                "checkerboard"
+              ]
+            }
+          }
+        }
+      },
+      "sourceHash": "sha256:8af11dd88e9629a20a76161647fbac5a71801277ea0bfc287d8085bcfdbc94ce",
+      "sourceReview": {
+        "status": "accepted",
+        "reviewerId": "/root",
+        "reviewedAt": "2026-10-04",
+        "sourceHash": "sha256:8af11dd88e9629a20a76161647fbac5a71801277ea0bfc287d8085bcfdbc94ce",
+        "notes": "Root compared exact public metadata and all six asset byte descriptors to independently approved food identities and sealed live Buna intents. No private operational fields or source photographs included. Unknown nutrition stays unknown; existing Atlas rows will be preserved by append-only adapter."
+      }
     }
   ]
 }

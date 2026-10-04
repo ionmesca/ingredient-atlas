@@ -15,6 +15,7 @@ import { createRequire } from "node:module";
 import { canonical, hash } from "./nutrition-sync.mjs";
 import {loadAliasOverrides,syncAliases} from "./alias-writeback.mjs";
 import {loadApplicabilityOverrides,syncApplicability} from './nutrition-applicability.mjs';
+import {loadCandlenutLabelOverrides,overlayCandlenutLabel,syncCandlenutLabel} from './candlenut-label.mjs';
 import {acquireExportMaintenance} from "./export-maintenance-lock.mjs";
 const require = createRequire(import.meta.url),
 	parquet = require("parquetjs-lite");
@@ -150,7 +151,7 @@ export function loadCanonicalAdditions(root) {
 	}
 	return source.entries;
 }
-export function appendRecords(records, entries) {
+export function appendRecords(records, entries, labelOverrides = []) {
 	const result = [...records];
 	for (const e of entries) {
 		validateCanonicalAddition(e);
@@ -158,7 +159,7 @@ export function appendRecords(records, entries) {
 			(r) => r.slug === e.record.slug || r.id === e.record.id,
 		);
 		if (matches.length) {
-			if (matches.length !== 1 || !same(matches[0], e.record))
+			if (matches.length !== 1 || !(same(matches[0], e.record) || (labelOverrides.length && same(matches[0], overlayCandlenutLabel(structuredClone(e.record), labelOverrides)))))
 				throw Error(`Existing row conflict: ${e.record.slug}`);
 		} else result.push(e.record);
 	}
@@ -222,6 +223,7 @@ export const metadataRow = (r, privateDataset = false) => ({
 	incubated_by: "Buna",
 	review_status: r.review.status,
 	replacement_promoted: false,
+	...(r.metadata.nutritionLabelEvidence ? {nutrition_label_evidence_json: canonical(r.metadata.nutritionLabelEvidence), nutrition_per100g_json:canonical(r.metadata.nutritionPer100g)} : {}),
 	nutrition_source: r.metadata.nutritionSource,
 	nutrition_confidence:
 		r.metadata.nutritionSource === "missing" ? "missing" : "source-backed",
@@ -274,7 +276,7 @@ async function parquetBytes(root, path, rows) {
 	rmSync(file);
 	return bytes;
 }
-async function verifyExistingDerivatives(root, dir, entries) {
+async function verifyExistingDerivatives(root, dir, entries, labelOverrides = []) {
 	if (!entries.length) return;
 	const cp = join(root, dir, "manifest.compact.json"),
 		jp = join(root, dir, "metadata.jsonl"),
@@ -319,7 +321,13 @@ async function verifyExistingDerivatives(root, dir, entries) {
 				if (
 					matches.length !== 1 ||
 					Object.keys(reader.schema.fields).some(
-						(k) => !same(matches[0][k] ?? null, expected[k] ?? null),
+						(k) => {
+ const label=labelOverrides.find(o=>o.variants.some(v=>v.directory===dir));const variant=label?.variants.find(v=>v.directory===dir);
+ // A reviewed label transaction may add nullable source columns to legacy private Parquet.
+ // Preserve absence on every other old row; never invent source fields to fill them.
+ if(dir==='dataset'&&e.record.slug!=='candlenut'&&matches[0][k]===undefined&&reader.schema.schema[k]?.optional===true&&((k==='nutrition_source'&&variant?.sourceColumnPresent===false)||(k==='nutrition_confidence'&&variant?.confidenceColumnPresent===false)))return false;
+ return !same(matches[0][k]??null,expected[k]??null);
+ },
 					)
 				)
 					throw Error("Changed/missing addition parquet metadata");
@@ -329,7 +337,7 @@ async function verifyExistingDerivatives(root, dir, entries) {
 		}
 	}
 }
-async function applyCanonicalAdditionRecords({ root, write = false }) {
+async function applyCanonicalAdditionRecords({ root, write = false, labelOverrides = [] }) {
 	root = resolve(root);
 	const entries = loadCanonicalAdditions(root);
 	if (!entries.length) return { status: "empty", added: 0 };
@@ -362,12 +370,14 @@ async function applyCanonicalAdditionRecords({ root, write = false }) {
 			if (!existsSync(mp)) continue;
 			const manifest = JSON.parse(readFileSync(mp)),
 				old = manifest.records,
-				records = appendRecords(old, entries);
+				records = appendRecords(old, entries, labelOverrides);
+			const derivativeEntries=entries.map(e=>({...e,record:old.find(r=>r.slug===e.record.slug&&r.metadata?.nutritionLabelEvidence)??e.record}));
 			counts[dir] = { before: old.length, after: records.length };
 			await verifyExistingDerivatives(
 				root,
 				dir,
-				entries.filter((e) => old.some((r) => r.slug === e.record.slug)),
+				derivativeEntries.filter((e) => old.some((r) => r.slug === e.record.slug)),
+ labelOverrides,
 			);
 			if (records.length === old.length) {
 				for (const e of entries)
@@ -479,12 +489,7 @@ async function applyCanonicalAdditionRecords({ root, write = false }) {
 					const p = join(root, dir, "manifest.json");
 					if (
 						existsSync(p) &&
-						!same(
-							JSON.parse(readFileSync(p)).records.find(
-								(r) => r.slug === e.record.slug,
-							),
-							e.record,
-						)
+						!(() => {const actual=JSON.parse(readFileSync(p)).records.find(r=>r.slug===e.record.slug);return same(actual,e.record)||(labelOverrides.length&&same(actual,overlayCandlenutLabel(structuredClone(e.record),labelOverrides)));})()
 					)
 						throw Error("Readback differs");
 				}
@@ -511,13 +516,14 @@ async function applyCanonicalAdditionRecords({ root, write = false }) {
 	}
 }
 export async function applyCanonicalAdditions({root,write=false}) {
- const release=acquireExportMaintenance(root,'append');let overrides,applicability,result;
- try{overrides=loadAliasOverrides(root);applicability=loadApplicabilityOverrides(root);result=await applyCanonicalAdditionRecords({root,write});}finally{release();}
+ const release=acquireExportMaintenance(root,'append');let overrides,applicability,labelOverrides,result;
+ try{overrides=loadAliasOverrides(root);applicability=loadApplicabilityOverrides(root);labelOverrides=loadCandlenutLabelOverrides(root);result=await applyCanonicalAdditionRecords({root,write,labelOverrides});}finally{release();}
  // Append is fully committed/read back before alias work reacquires the same lock.
- const aliases=[],policies=[];
+ const aliases=[],policies=[],labels=[];
  for(const intent of overrides)aliases.push(await syncAliases({root,intent,write}));
  for(const intent of applicability)policies.push(await syncApplicability({root,intent,write}));
- return {...result,...(aliases.length?{aliasCorrections:aliases}:{}),...(policies.length?{nutritionApplicability:policies}:{})};
+ for(const intent of labelOverrides)labels.push(await syncCandlenutLabel({root,intent,write}));
+ return {...result,...(labels.length?{nutritionLabels:labels}:{}),...(aliases.length?{aliasCorrections:aliases}:{}),...(policies.length?{nutritionApplicability:policies}:{})};
 }
 function installCanonicalAdditionsOwned({ root, stageRoot, write = false }) {
 	root = resolve(root);

@@ -1,0 +1,117 @@
+{
+  "changeId": "sha256:48ed034e2255d7b62fb618bf908f151e550258db2ea1d8dee7ac30dc1578b694",
+  "writerId": "TEST-ONLY-numeric-writer",
+  "food": {
+    "slug": "candlenut",
+    "description": "Shelled candlenut cooking kernels; proposed nutrition uses explicit Lucullus47492 manufacturer-label stand-in",
+    "state": "Shelled candlenut kernels for cooking; distinct from macadamia, cashew and peanut.",
+    "unit": "per100g-edible"
+  },
+  "origin": {
+    "kind": "label",
+    "description": "AsianFoodGroup manufacturer-supplied Lucullus47492/EAN8710853051709 label per100g productaslabelled, used explicitly as brandedstand-in for unspecified cooking kernels. Original generic publication origin remains archived; no USDA mapping or exact source-brand claim."
+  },
+  "validation": {
+    "status": "supported",
+    "identityMatched": true,
+    "unitsMatched": true,
+    "notes": "Exact existing candlenut stable identities verified with fresh query and actualAtlas row, both profiles absent. Same kernel commodity supported as explicit brandedstand-in; label thermalstate unspecified. Label sugar0 declaredrounded, carbs EUlabeldefinition, sodium derived fromsalt under primary2.5factor. No generic chemicalzero or allstates measurement claim; count-mass/density separate and not in this numeric intent."
+  },
+  "fields": {
+    "calories": {
+      "value": 671,
+      "evidenceIds": [
+        "lucullus-label"
+      ]
+    },
+    "proteinG": {
+      "value": 14.8,
+      "evidenceIds": [
+        "lucullus-label"
+      ]
+    },
+    "fatG": {
+      "value": 62.8,
+      "evidenceIds": [
+        "lucullus-label"
+      ]
+    },
+    "saturatedFatG": {
+      "value": 4.9,
+      "evidenceIds": [
+        "lucullus-label"
+      ]
+    },
+    "carbsG": {
+      "value": 11.7,
+      "evidenceIds": [
+        "lucullus-label"
+      ]
+    },
+    "sugarG": {
+      "value": 0,
+      "evidenceIds": [
+        "lucullus-label"
+      ]
+    },
+    "fiberG": {
+      "value": 2.07,
+      "evidenceIds": [
+        "lucullus-label"
+      ]
+    },
+    "sodiumMg": {
+      "value": 120,
+      "evidenceIds": [
+        "lucullus-label",
+        "uk-salt-convention"
+      ]
+    }
+  },
+  "evidence": [
+    {
+      "id": "lucullus-label",
+      "dataset": "PS in foodservice manufacturer-supplied Lucullus product specification",
+      "version": "original browser observation2026-10-04",
+      "foodId": "Lucullus47492/EAN8710853051709",
+      "url": "https://psinfoodservice.com/en/product/588678-lucullus-kemirinoten-kg/",
+      "observedAt": "2026-10-04",
+      "snapshotHash": "sha256:cd763a63ce57fdf0702f41efce155c00f638f1978c4496f5eeb375bcf60e8ad3",
+      "reason": "Original source screenshot/AX independently verified producer,item,EAN,sole listedingredientCandlenut and all7 direct per100g nutrient declarations plus0.3g salt. Label rounding retained, EUcarbohydrate definition retained, aslabelled productthermalstate unspecified."
+    },
+    {
+      "id": "uk-salt-convention",
+      "dataset": "UK government Nutrition Technical Guidance",
+      "version": "original archivedPDF",
+      "foodId": "printedpage7 section3 Declaration of salt rather than sodium",
+      "url": "https://assets.publishing.service.gov.uk/media/5a8010d8e5274a2e87db7a62/Nutrition_Technical_Guidance.pdf",
+      "observedAt": "2026-10-04",
+      "snapshotHash": "sha256:c033f8d596febfdb614391a05e7196f6d32d0fe6fc6e8e2f3f3190060295b667",
+      "reason": "Original page7 text/render independently verified salt=sodium*2.5;0.3g salt /2.5 *1000=120mg sodium per100g. Derivedlabel value, not measured sodium; inherits declaration rounding."
+    }
+  ],
+  "review": {
+    "status": "accepted",
+    "reviewerId": "TEST-ONLY-independent-numeric-reviewer",
+    "reviewedAt": "2026-10-04",
+    "changeId": "sha256:48ed034e2255d7b62fb618bf908f151e550258db2ea1d8dee7ac30dc1578b694",
+    "notes": "Synthetic isolated test acceptance; never operational approval"
+  },
+  "product": {
+    "manufacturer": "Asian Food Group B.V.",
+    "brand": "Lucullus",
+    "itemNumber": "47492",
+    "EAN": "8710853051709",
+    "basis": "per100g-product-as-labelled",
+    "genericStandIn": true,
+    "thermalState": "not-stated"
+  },
+  "definitions": {
+    "carbohydrate": "EU-declared-label",
+    "sugarZero": "declared-label-rounded",
+    "sodium": "declared-salt-divided-by-2.5",
+    "saltG": 0.3,
+    "sodiumFactor": 2.5,
+    "gramToMg": 1000
+  }
+}

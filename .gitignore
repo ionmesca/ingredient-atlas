@@ -49,3 +49,7 @@ aliases/*.lock
 aliases/*.alias-tmp
 export-maintenance.lock
 node_modules
+
+# Nutrient input-basis operational files remain private.
+nutrition/*.private.*
+nutrition/*.applicability-tmp
